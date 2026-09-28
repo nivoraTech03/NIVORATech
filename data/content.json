@@ -1,0 +1,360 @@
+{
+  "site": {
+    "name": "NIVORA",
+    "descriptor": "Independent Digital Studio",
+    "shortName": "nivora",
+    "tagline": "Modern websites built with intention.",
+    "description": "NIVORA creates modern, responsive websites and digital experiences using React, Next.js and modern web technologies.",
+    "email": "nivora1403@gmail.com",
+    "socials": {
+      "linkedin": "https://linkedin.com",
+      "email": "mailto:nivora1403@gmail.com",
+      "whatsapp": "https://wa.me/919575450177"
+    },
+    "copyright": "© 2026 NIVORA. All rights reserved."
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Work",
+        "href": "/work"
+      },
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "cta": {
+      "label": "Start a Project",
+      "href": "/contact"
+    }
+  },
+  "hero": {
+    "eyebrow": "INDEPENDENT DIGITAL STUDIO",
+    "heading": "Websites built to make your business stand out.",
+    "description": "Modern, responsive websites designed and developed with thoughtful interfaces, clean code and technologies that fit the project.",
+    "primaryCta": {
+      "label": "View Our Work",
+      "href": "/work"
+    },
+    "secondaryCta": {
+      "label": "Start a Project",
+      "href": "/contact"
+    }
+  },
+  "technologies": {
+    "title": "Built with modern web technologies",
+    "items": [
+      {
+        "name": "React",
+        "category": "Frontend"
+      },
+      {
+        "name": "Next.js",
+        "category": "Framework"
+      },
+      {
+        "name": "TypeScript",
+        "category": "Language"
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Styling"
+      },
+      {
+        "name": "WordPress",
+        "category": "CMS"
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "skyodeals",
+      "slug": "skyodeals",
+      "number": "01",
+      "title": "SkyOdeals — Flight Booking & Travel Portal",
+      "category": "PHP Web Application & Booking Platform",
+      "clientType": "Travel & Tourism Agency",
+      "architecture": "Custom PHP, MySQL, Bootstrap & REST APIs",
+      "description": "A high-performance travel and flight booking portal engineered with custom PHP backend, real-time fare search filtering, promotional deal carousels, and responsive enquiry workflows.",
+      "technologies": [
+        "PHP",
+        "MySQL",
+        "JavaScript",
+        "Bootstrap 5",
+        "REST APIs",
+        "CSS3",
+        "Responsive Design"
+      ],
+      "image": "/images/skyodeals.jpg",
+      "overview": "SkyOdeals is a premier international flight and hotel booking agency platform. We developed a comprehensive web portal that allows prospective travelers to search routes, explore discounted international airfares, compare airline deals, and submit customized booking quote requests directly to travel agents.",
+      "challenge": "The agency required a responsive, lightning-fast web platform capable of handling complex multi-city flight search UI, dynamic promotional fare banners, and customer booking lead capture that converts visitors into confirmed reservations across low-bandwidth mobile connections.",
+      "approach": "Architected a modular PHP application with efficient database indexing for flight packages, dynamic search widgets using vanilla JavaScript and Bootstrap, and streamlined customer lead routing to travel agents for immediate follow-up via call or WhatsApp.",
+      "whatWasBuilt": [
+        "Dynamic multi-city and round-trip flight search and inquiry interface",
+        "Custom PHP & MySQL backend with deal management and automated booking quote generation",
+        "Mobile-first responsive frontend built with Bootstrap and modern CSS3 transitions",
+        "Promotional deal carousels, customer reviews showcase, and instant call-to-action booking buttons",
+        "Fast-loading lead capture system ensuring zero inquiries are dropped"
+      ],
+      "stats": [
+        { "label": "Technology", "value": "PHP & MySQL" },
+        { "label": "UI Framework", "value": "Bootstrap 5" },
+        { "label": "Mobile Score", "value": "98/100" },
+        { "label": "Lead Conversion", "value": "+64%" }
+      ],
+      "liveUrl": "https://skyodeals.com/"
+    },
+    {
+      "id": "hitias-academy",
+      "slug": "hitias-academy",
+      "number": "02",
+      "title": "HIT IAS Academy — UPSC & State PCS Portal",
+      "category": "WordPress & Elementor Educational Platform",
+      "clientType": "Civil Services Coaching Institute",
+      "architecture": "WordPress CMS, Elementor Pro, Contact Form 7",
+      "description": "An institutional educational website built on WordPress with Elementor Pro, featuring structured UPSC/State PCS course catalogs, Contact Form 7 lead capture, and study material downloads.",
+      "technologies": [
+        "WordPress",
+        "Elementor Pro",
+        "Contact Form 7",
+        "PHP",
+        "MySQL",
+        "SEO Optimization",
+        "Responsive Design"
+      ],
+      "image": "/images/hitias.jpg",
+      "overview": "HIT IAS Academy is a top-tier Civil Services preparation institute guiding aspirants for UPSC, UPPSC, and State PCS examinations. We designed and engineered a conversion-focused educational platform with dynamic course syllabi, faculty credentials, downloadable test papers, and instant student admission inquiry funnels.",
+      "challenge": "The academy needed an accessible, non-technical editorial workflow to publish daily current affairs, batch schedules, and notification popups, while delivering sub-second load times and flawless mobile usability for hundreds of daily student visits.",
+      "approach": "Engineered a bespoke WordPress site using Elementor Pro for modular page sections, customized Contact Form 7 with anti-spam protections and automated email alerts, and fine-tuned caching, asset delivery, and image optimization for rapid mobile rendering.",
+      "whatWasBuilt": [
+        "Custom WordPress website architecture utilizing Elementor Pro for dynamic page layouts",
+        "Structured course catalog with comprehensive syllabus breakdowns and upcoming batch timelines",
+        "High-conversion student admission and demo class registration forms via Contact Form 7",
+        "Current affairs archive and downloadable PDF study material repository",
+        "Complete on-page SEO optimization and security hardening for educational portal compliance"
+      ],
+      "stats": [
+        { "label": "Platform", "value": "WordPress + Elementor" },
+        { "label": "Forms Engine", "value": "Contact Form 7" },
+        { "label": "Load Time", "value": "< 1.2s" },
+        { "label": "Admissions Inquiries", "value": "+110%" }
+      ],
+      "liveUrl": "https://hitias.renutech.in/"
+    }
+  ],
+  "services": {
+    "eyebrow": "WHAT WE BUILD",
+    "title": "Focused website services tailored to your goals",
+    "description": "From single-page launch pads to high-performance Next.js websites, we build digital experiences that deliver results.",
+    "items": [
+      {
+        "id": "business-websites",
+        "number": "01",
+        "title": "Business Websites",
+        "shortDescription": "Professional responsive websites for businesses, brands and professionals.",
+        "description": "A tailored web presence that clearly communicates your value proposition, establishes trust, and turns visitors into clients. Built to scale as your business evolves.",
+        "deliverables": [
+          "Custom responsive design",
+          "Clear content layout",
+          "SEO-ready structure",
+          "Fast loading speeds"
+        ]
+      },
+      {
+        "id": "landing-pages",
+        "number": "02",
+        "title": "Landing Pages",
+        "shortDescription": "Focused landing pages for products, services and campaigns.",
+        "description": "High-converting, single-page experiences designed with clear visual hierarchy, compelling calls-to-action, and friction-free user flows.",
+        "deliverables": [
+          "Conversion-centered design",
+          "Device optimization",
+          "Analytics integration",
+          "Speed optimization"
+        ]
+      },
+      {
+        "id": "react-nextjs-websites",
+        "number": "03",
+        "title": "React & Next.js Websites",
+        "shortDescription": "Fast, modern and scalable websites using React and Next.js.",
+        "description": "Built on the cutting edge of the modern web stack. Leveraging server rendering, static generation, TypeScript, and clean component architecture.",
+        "deliverables": [
+          "Next.js App Router architecture",
+          "Strict TypeScript typing",
+          "Tailwind CSS styling",
+          "Optimal Core Web Vitals"
+        ]
+      },
+      {
+        "id": "wordpress-websites",
+        "number": "04",
+        "title": "WordPress Websites",
+        "shortDescription": "Professional WordPress websites and customizations.",
+        "description": "Clean, reliable WordPress builds and customizations designed for clients who need full content editorial control without bloated templates.",
+        "deliverables": [
+          "Custom theme setup",
+          "Intuitive editor setup",
+          "Performance tuning",
+          "Security best practices"
+        ]
+      }
+    ]
+  },
+  "whyNivora": {
+    "eyebrow": "WHY NIVORA",
+    "title": "Built with intention.",
+    "description": "We treat every project as a piece of craftsmanship. No bloated templates, no unnecessary complexity.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Responsive by default",
+        "description": "Every layout is designed and rigorously tested to look and feel natural across mobile, tablet, and desktop viewports."
+      },
+      {
+        "number": "02",
+        "title": "Clean and maintainable frontend",
+        "description": "Modular component architecture, semantic HTML, and clean styling make future updates straightforward."
+      },
+      {
+        "number": "03",
+        "title": "Modern technology",
+        "description": "Built using proven modern frameworks like React, Next.js, and TypeScript for long-term stability and speed."
+      },
+      {
+        "number": "04",
+        "title": "Attention to detail",
+        "description": "Thoughtful typography, subtle micro-interactions, balanced whitespace, and solid performance from day one."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "HOW WE WORK",
+    "title": "A straightforward, transparent process",
+    "description": "From your initial idea to the final deployed site, here is how every project comes together.",
+    "steps": [
+      {
+        "step": "01",
+        "name": "Discover",
+        "description": "Understand the business, audience and project goals."
+      },
+      {
+        "step": "02",
+        "name": "Plan",
+        "description": "Define the structure, content and technical approach."
+      },
+      {
+        "step": "03",
+        "name": "Build",
+        "description": "Design and develop the responsive experience."
+      },
+      {
+        "step": "04",
+        "name": "Refine",
+        "description": "Test, improve and prepare the final website for launch."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "ABOUT NIVORA",
+    "title": "Independent digital studio for the modern web.",
+    "description": "NIVORA is an independent digital studio focused on creating modern websites and digital experiences. We combine thoughtful design with modern frontend development to create products that look good, work smoothly and adapt across devices.",
+    "paragraphs": [
+      "We believe that a website should be more than a digital brochure—it should be a fast, clear, and engaging extension of your business.",
+      "By maintaining an independent studio approach, you work directly with the person designing and writing the code. There are no account managers, no inflated overheads, and no generic cookie-cutter templates.",
+      "Whether you are launching a new company, introducing a new product, or modernizing an existing web presence, we focus on what matters: clean code, thoughtful interfaces, and reliable delivery."
+    ],
+    "principles": [
+      {
+        "title": "Direct collaboration",
+        "description": "Work directly with the builder with zero agency layers."
+      },
+      {
+        "title": "Performance first",
+        "description": "Fast load times, minimal dependencies, and clean code."
+      },
+      {
+        "title": "Responsive by design",
+        "description": "Crafted to look beautiful on every screen size."
+      },
+      {
+        "title": "Honest timelines",
+        "description": "Realistic commitments with transparent communication."
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "FAQ",
+    "title": "Frequently Asked Questions",
+    "description": "Honest answers to common questions about working together.",
+    "items": [
+      {
+        "id": "faq-1",
+        "question": "What do you need to start a project?",
+        "answer": "A brief overview of your business or idea, your preferred timeline, any reference sites you admire, and any existing content or brand assets you have. If you don't have everything ready, we can help define the structure during discovery."
+      },
+      {
+        "id": "faq-2",
+        "question": "How long does a website take?",
+        "answer": "Timelines depend on scope and complexity. A focused landing page typically takes 1 to 2 weeks, while a multi-page business website generally takes 2 to 4 weeks from initial concept to launch."
+      },
+      {
+        "id": "faq-3",
+        "question": "Can you work with an existing design?",
+        "answer": "Yes. If you already have Figma designs, wireframes, or brand guidelines, we can translate them into high-quality, pixel-accurate, responsive code."
+      },
+      {
+        "id": "faq-4",
+        "question": "Can you integrate APIs?",
+        "answer": "Yes. We integrate REST APIs, third-party forms, CMS platforms, analytics, and other services required by your web project."
+      },
+      {
+        "id": "faq-5",
+        "question": "Do you provide website maintenance?",
+        "answer": "Yes. We offer post-launch support and ongoing maintenance to keep your website updated, secure, and running smoothly."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "GET IN TOUCH",
+    "title": "Have a project in mind?",
+    "description": "Tell us what you're building and let's figure out the right way to bring it to life.",
+    "projectTypes": [
+      "Business Website",
+      "Landing Page",
+      "React / Next.js Website",
+      "WordPress Website",
+      "Other"
+    ],
+    "budgetRanges": [
+      "Under ₹10,000",
+      "₹10,000–₹25,000",
+      "₹25,000–₹50,000",
+      "₹50,000+",
+      "Not sure yet"
+    ],
+    "email": "nivora1403@gmail.com",
+    "phone": "+91 95754 50177",
+    "whatsapp": "https://wa.me/919575450177",
+    "queryTypes": [
+      "Website Development (Next.js / React)",
+      "PHP Web Application & Custom Booking Portal",
+      "WordPress & Elementor Institute/Business Website",
+      "Landing Page & Conversion Funnel",
+      "Website Redesign & Modernization",
+      "Regarding Pricing & Quotation",
+      "Regarding Project Timeline & Availability",
+      "Existing Website Fixes & Maintenance",
+      "General Consultation / Enquiry"
+    ]
+  }
+}
