@@ -74,6 +74,21 @@ export interface SiteConfig {
   copyright: string;
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  companyUrl: string;
+  avatar: string;
+  avatarBg: string;
+  rating: number;
+  quote: string;
+  projectSlug: string;
+  projectTitle: string;
+  tag: string;
+}
+
 export interface SiteContent {
   site: SiteConfig;
   navigation: {
@@ -141,6 +156,13 @@ export interface SiteContent {
     queryTypes: string[];
     email: string;
   };
+  testimonials: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: Testimonial[];
+  };
 }
 
 export type Theme = "light" | "dark";
+

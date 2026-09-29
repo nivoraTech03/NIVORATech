@@ -356,5 +356,40 @@
       "Existing Website Fixes & Maintenance",
       "General Consultation / Enquiry"
     ]
+  },
+  "testimonials": {
+    "eyebrow": "CLIENT STORIES",
+    "title": "What our clients say",
+    "description": "Real words from real clients who trusted us to build their digital presence.",
+    "items": [
+      {
+        "id": "skyodeals-testimonial",
+        "name": "Rajesh Sharma",
+        "role": "Founder & CEO",
+        "company": "SkyOdeals",
+        "companyUrl": "https://skyodeals.com/",
+        "avatar": "RS",
+        "avatarBg": "#4F46E5",
+        "rating": 5,
+        "quote": "NIVORA delivered exactly what we envisioned — a fast, professional travel portal that our customers love to use. The booking inquiry flow they built has significantly boosted our lead conversions. Their attention to detail on mobile responsiveness was exceptional.",
+        "projectSlug": "skyodeals",
+        "projectTitle": "SkyOdeals — Flight Booking Portal",
+        "tag": "PHP Web Application"
+      },
+      {
+        "id": "hitias-testimonial",
+        "name": "Dr. Amit Tiwari",
+        "role": "Director",
+        "company": "HIT IAS Academy",
+        "companyUrl": "https://hitias.renutech.in/",
+        "avatar": "AT",
+        "avatarBg": "#0EA5E9",
+        "rating": 5,
+        "quote": "The website NIVORA built for HIT IAS Academy has transformed how we reach students. Our admission inquiries jumped by over 110% within the first month. The WordPress setup is easy for our team to manage, and the site loads beautifully on mobile — exactly what our students need.",
+        "projectSlug": "hitias-academy",
+        "projectTitle": "HIT IAS Academy — UPSC Portal",
+        "tag": "WordPress & Elementor"
+      }
+    ]
   }
 }

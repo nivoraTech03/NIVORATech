@@ -6,68 +6,65 @@ import { Icon } from "./Icon";
 const QUERY_OPTIONS = [
   "Website Development (Next.js / React)",
   "PHP Web Application & Custom Booking Portal",
-  "WordPress & Elementor Institute/Coaching Website",
+  "WordPress & Elementor Website",
   "Landing Page & Conversion Funnel",
   "Website Redesign & Modernization",
-  "Regarding Pricing & Quotation",
-  "Regarding Project Timeline & Availability",
+  "Pricing & Quotation",
+  "Project Timeline & Availability",
   "Existing Website Fixes & Maintenance",
-  "General Consultation / Enquiry",
+  "General Consultation",
 ];
 
-const QUICK_CATEGORY_CHIPS = [
-  { label: "Custom Web App (Next.js)", icon: "code" as const },
-  { label: "Travel & Booking (PHP)", icon: "globe" as const },
-  { label: "Academy / Institute (WP)", icon: "layout" as const },
-  { label: "High-Converting Landing Page", icon: "sparkles" as const },
-  { label: "Website Redesign & Speed", icon: "check" as const },
+const PROJECT_TYPES = [
+  { label: "Next.js / React", icon: "code" as const },
+  { label: "PHP / Booking", icon: "globe" as const },
+  { label: "WordPress", icon: "layout" as const },
+  { label: "Landing Page", icon: "sparkles" as const },
+  { label: "Redesign", icon: "check" as const },
 ];
+
+const inputBase =
+  "w-full rounded-xl border border-[var(--border-strong)] bg-[var(--bg-surface-alt)] px-4 py-2.5 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-muted)] focus:outline-none focus:border-[var(--accent-primary)] focus:ring-2 focus:ring-[var(--accent-primary)]/15 transition-all";
+
+const labelBase = "block text-xs font-semibold text-[var(--text-secondary)] mb-1.5";
 
 export default function FloatingActions() {
-  // Enquiry Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isWAOpen, setIsWAOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // WhatsApp Query Dialog state
-  const [isWhatsAppDialogOpen, setIsWhatsAppDialogOpen] = useState(false);
-  const [waData, setWaData] = useState({
-    name: "",
-    queryType: QUERY_OPTIONS[0],
-    note: "",
-  });
-
-  // Modal Form state (NO BUDGET FIELD)
-  const [formData, setFormData] = useState({
-    selectedCategory: "Custom Web App (Next.js)",
+  const [form, setForm] = useState({
+    type: "Next.js / React",
+    query: QUERY_OPTIONS[0],
     name: "",
     phone: "",
     email: "",
-    queryType: QUERY_OPTIONS[0],
     message: "",
   });
 
-  // Handle ESC key & body scroll lock
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setIsModalOpen(false);
-        setIsWhatsAppDialogOpen(false);
-      }
-    };
-    if (isModalOpen || isWhatsAppDialogOpen) {
-      document.body.style.overflow = "hidden";
-      window.addEventListener("keydown", handleKeyDown);
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset";
-    };
-  }, [isModalOpen, isWhatsAppDialogOpen]);
+  const [wa, setWA] = useState({ name: "", query: QUERY_OPTIONS[0], note: "" });
 
-  // Handle Modal Form Submit
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setIsModalOpen(false); setIsWAOpen(false); }
+    };
+    const open = isModalOpen || isWAOpen;
+    document.body.style.overflow = open ? "hidden" : "";
+    if (open) window.addEventListener("keydown", onKey);
+    return () => { window.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [isModalOpen, isWAOpen]);
+
+  const sendWA = (name: string, query: string, phone?: string, note?: string) => {
+    const msg = encodeURIComponent(
+      `*New Enquiry — NIVORA*\n\n• *Name:* ${name || "Client"}\n` +
+      (phone ? `• *Phone:* ${phone}\n` : "") +
+      `• *Query:* ${query}\n` +
+      (note ? `• *Note:* ${note}` : "")
+    );
+    window.open(`https://wa.me/919575450177?text=${msg}`, "_blank");
+  };
+
   const handleModalSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -77,489 +74,298 @@ export default function FloatingActions() {
       setTimeout(() => {
         setIsModalOpen(false);
         setIsSubmitted(false);
-        setFormData({
-          selectedCategory: "Custom Web App (Next.js)",
-          name: "",
-          phone: "",
-          email: "",
-          queryType: QUERY_OPTIONS[0],
-          message: "",
-        });
+        setForm({ type: "Next.js / React", query: QUERY_OPTIONS[0], name: "", phone: "", email: "", message: "" });
       }, 3500);
     }, 700);
   };
 
-  // Launch WhatsApp with user query
-  const launchWhatsApp = (payload: { name: string; query: string; note?: string; phone?: string }) => {
-    const message = encodeURIComponent(
-      `*New Project Enquiry from Website:*\n\n` +
-      `• *Client Name:* ${payload.name || "Client"}\n` +
-      (payload.phone ? `• *Contact:* ${payload.phone}\n` : "") +
-      `• *Regarding:* ${payload.query}\n` +
-      (payload.note ? `• *Requirements:* ${payload.note}\n` : "") +
-      `\n_Sent via NIVORA Studio Quick Connect_`
-    );
-    window.open(`https://wa.me/919575450177?text=${message}`, "_blank");
-  };
-
-  const handleWhatsAppDialogSubmit = (e: React.FormEvent) => {
+  const handleWASubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    launchWhatsApp({
-      name: waData.name,
-      query: waData.queryType,
-      note: waData.note,
-    });
-    setIsWhatsAppDialogOpen(false);
-    setWaData({ name: "", queryType: QUERY_OPTIONS[0], note: "" });
+    sendWA(wa.name, wa.query, undefined, wa.note);
+    setIsWAOpen(false);
+    setWA({ name: "", query: QUERY_OPTIONS[0], note: "" });
   };
 
   return (
     <>
-      {/* Floating Action Buttons (Fixed Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
-        {/* Quick Enquiry Floating Pill */}
+      {/* ── Floating Buttons ── */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+        {/* Quick Enquiry pill */}
         <button
           type="button"
           onClick={() => setIsModalOpen(true)}
-          className="group flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-white text-slate-900 border border-slate-200/90 shadow-2xl hover:shadow-[0_8px_30px_rgba(79,70,229,0.25)] hover:border-indigo-500 hover:text-indigo-600 transition-all transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          aria-label="Open Project Enquiry Modal"
+          className="flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--bg-surface)] px-4 py-2.5 text-sm font-semibold text-[var(--text-primary)] shadow-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] hover:-translate-y-0.5 transition-all"
+          aria-label="Open project enquiry"
         >
-          <span className="flex h-2.5 w-2.5 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600"></span>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-indigo-600" />
           </span>
-          <span className="font-display text-xs sm:text-sm font-bold tracking-wide flex items-center gap-1.5">
-            <Icon name="sparkles" size={15} className="text-indigo-600" />
-            Quick Enquiry
-          </span>
+          Quick Enquiry
         </button>
 
-        {/* WhatsApp Floating Button */}
+        {/* WhatsApp button */}
         <button
           type="button"
-          onClick={() => setIsWhatsAppDialogOpen(true)}
-          className="relative group flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-xl hover:shadow-[0_8px_30px_rgba(37,211,102,0.4)] hover:bg-[#20BD5A] transition-all transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
-          aria-label="Ask query on WhatsApp"
+          onClick={() => setIsWAOpen(true)}
+          className="group relative flex h-13 w-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1EBF5C] hover:scale-105 hover:-translate-y-0.5 transition-all"
+          aria-label="Chat on WhatsApp"
         >
-          <Icon name="whatsapp" size={28} className="text-white drop-shadow-sm" />
-
-          {/* Hover Tooltip */}
-          <span className="font-display absolute right-full mr-3.5 whitespace-nowrap bg-slate-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl border border-slate-700">
-            💬 Chat with your query
+          <Icon name="whatsapp" size={26} />
+          <span className="absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[var(--bg-dark-section)] px-3 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
+            Chat on WhatsApp
           </span>
         </button>
       </div>
 
-      {/* 1. WHATSAPP QUERY QUICK DIALOG (Crisp Light Theme with Official Logo) */}
-      {isWhatsAppDialogOpen && (
+      {/* ── WhatsApp Dialog ── */}
+      {isWAOpen && (
         <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md animate-fadeIn"
-          onClick={() => setIsWhatsAppDialogOpen(false)}
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          onClick={() => setIsWAOpen(false)}
         >
           <div
-            className="relative w-full max-w-md rounded-3xl bg-white border border-slate-200 text-slate-900 shadow-2xl p-6 sm:p-7 overflow-hidden animate-scale-in"
-            onClick={(e) => e.stopPropagation()}
+            className="w-full max-w-sm rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-2xl overflow-hidden animate-scale-in"
+            onClick={e => e.stopPropagation()}
           >
-            {/* Top Green Accent Bar */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#25D366]" />
+            {/* Green top bar */}
+            <div className="h-1 bg-[#25D366]" />
 
-            {/* Header row with Brand Logo and Close */}
-            <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-5">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-600 to-sky-500 text-white shadow-md shadow-indigo-500/20">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M6 18V6l12 12V6" />
-                  </svg>
+            {/* Header */}
+            <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--border-subtle)]">
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#25D366] text-white">
+                  <Icon name="whatsapp" size={18} />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1.5">
-                    <span className="font-display text-base font-extrabold tracking-tight text-slate-900">
-                      NIVORA
-                    </span>
-                    <span className="font-display text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200/80">
-                      Studio
-                    </span>
-                  </div>
-                  <span className="font-body text-[11px] text-slate-500 font-medium">
-                    Technical Consultation
-                  </span>
+                  <p className="text-sm font-bold text-[var(--text-primary)]">WhatsApp Connect</p>
+                  <p className="text-xs text-[var(--text-muted)]">Quick reply in minutes</p>
                 </div>
               </div>
-
               <button
-                type="button"
-                onClick={() => setIsWhatsAppDialogOpen(false)}
-                className="text-slate-400 hover:text-slate-700 p-2 rounded-xl bg-slate-100 hover:bg-slate-200 transition-colors"
+                onClick={() => setIsWAOpen(false)}
+                className="rounded-lg p-1.5 text-[var(--text-muted)] hover:bg-[var(--bg-surface-alt)] hover:text-[var(--text-primary)] transition-colors"
                 aria-label="Close"
               >
                 <Icon name="close" size={16} />
               </button>
             </div>
 
-            <div className="mb-5 flex items-center gap-3 bg-emerald-50/80 p-3.5 rounded-2xl border border-emerald-100">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#25D366] text-white shadow-sm">
-                <Icon name="whatsapp" size={22} />
-              </div>
+            {/* Form */}
+            <form onSubmit={handleWASubmit} className="p-5 space-y-3.5">
               <div>
-                <h3 className="font-display text-sm font-bold text-slate-900 leading-snug">
-                  Direct WhatsApp Connect
-                </h3>
-                <p className="font-body text-xs text-slate-600 mt-0.5">
-                  Send your enquiry directly to our technical lead.
-                </p>
-              </div>
-            </div>
-
-            <form onSubmit={handleWhatsAppDialogSubmit} className="space-y-4 text-left">
-              <div>
-                <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                  Your Full Name <span className="text-rose-500">*</span>
-                </label>
+                <label className={labelBase}>Your Name <span className="text-rose-500">*</span></label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Rahul Sharma"
-                  value={waData.name}
-                  onChange={(e) => setWaData({ ...waData, name: e.target.value })}
-                  className="font-body w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-[#25D366] focus:ring-3 focus:ring-emerald-100 transition-all shadow-xs"
+                  placeholder="Rahul Sharma"
+                  value={wa.name}
+                  onChange={e => setWA({ ...wa, name: e.target.value })}
+                  className={inputBase}
                 />
               </div>
-
               <div>
-                <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                  Nature of Query <span className="text-rose-500">*</span>
-                </label>
+                <label className={labelBase}>Query Type <span className="text-rose-500">*</span></label>
                 <select
                   required
-                  value={waData.queryType}
-                  onChange={(e) => setWaData({ ...waData, queryType: e.target.value })}
-                  className="font-body w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium focus:outline-none focus:bg-white focus:border-[#25D366] focus:ring-3 focus:ring-emerald-100 transition-all shadow-xs"
+                  value={wa.query}
+                  onChange={e => setWA({ ...wa, query: e.target.value })}
+                  className={inputBase}
                 >
-                  {QUERY_OPTIONS.map((q) => (
-                    <option key={q} value={q} className="bg-white text-slate-900 font-medium">
-                      {q}
-                    </option>
-                  ))}
+                  {QUERY_OPTIONS.map(q => <option key={q}>{q}</option>)}
                 </select>
               </div>
-
               <div>
-                <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                  Brief Requirements / Note (Optional)
-                </label>
+                <label className={labelBase}>Note <span className="text-[var(--text-muted)] font-normal">(optional)</span></label>
                 <textarea
                   rows={2}
-                  placeholder="e.g. Need flight booking portal similar to SkyOdeals or coaching website like HIT IAS..."
-                  value={waData.note}
-                  onChange={(e) => setWaData({ ...waData, note: e.target.value })}
-                  className="font-body w-full px-4 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-[#25D366] resize-none transition-all shadow-xs"
+                  placeholder="Any specific requirements..."
+                  value={wa.note}
+                  onChange={e => setWA({ ...wa, note: e.target.value })}
+                  className={`${inputBase} resize-none`}
                 />
               </div>
-
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  className="font-display w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-sm tracking-wide transition-all shadow-lg shadow-emerald-200 flex items-center justify-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0"
-                >
-                  <Icon name="whatsapp" size={18} />
-                  <span>Start Chat on WhatsApp &rarr;</span>
-                </button>
-              </div>
+              <button
+                type="submit"
+                className="w-full rounded-xl bg-[#25D366] hover:bg-[#1EBF5C] py-2.5 text-sm font-semibold text-white transition-colors flex items-center justify-center gap-2"
+              >
+                <Icon name="whatsapp" size={16} />
+                Open WhatsApp Chat
+              </button>
             </form>
           </div>
         </div>
       )}
 
-      {/* 2. WORLD-CLASS ENQUIRY MODAL (Centered, Light Theme, Crisp Logo & Typography) */}
+      {/* ── Enquiry Modal ── */}
       {isModalOpen && (
         <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-6 bg-slate-950/70 backdrop-blur-md overflow-y-auto animate-fadeIn"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto"
           onClick={() => setIsModalOpen(false)}
         >
-          {/* Modal Container */}
           <div
-            className="relative w-full max-w-2xl bg-white text-slate-900 rounded-3xl border border-slate-200 shadow-2xl overflow-hidden my-auto animate-scale-in flex flex-col max-h-[92vh]"
-            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-lg my-auto rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-2xl overflow-hidden animate-scale-in"
+            onClick={e => e.stopPropagation()}
           >
-            {/* Top Royal Indigo Gradient Accent Stripe */}
-            <div className="h-1.5 bg-gradient-to-r from-indigo-600 via-indigo-500 to-sky-400" />
+            {/* Indigo top stripe */}
+            <div className="h-1 bg-gradient-to-r from-indigo-600 to-sky-500" />
 
-            {/* Modal Header Bar with Brand Logo & Studio Identity */}
-            <div className="flex items-center justify-between px-6 sm:px-8 py-4 border-b border-slate-100 bg-slate-50/60">
-              <div className="flex items-center gap-3.5">
-                {/* Glowing Indigo Logo Emblem */}
-                <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-sky-400 text-white shadow-lg shadow-indigo-500/25">
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.6"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <path d="M6 18V6l12 12V6" />
-                  </svg>
-                  {/* Live Status Ping */}
-                  <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 border-2 border-white"></span>
-                  </span>
-                </div>
-
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <span className="font-display text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 leading-tight">
-                      NIVORA
-                    </span>
-                    <span className="font-display text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200/80">
-                      Verified Studio
-                    </span>
-                  </div>
-                  <span className="font-body text-xs text-slate-500 font-medium">
-                    Digital Web Architecture &amp; Custom Engineering
-                  </span>
-                </div>
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border-subtle)]">
+              <div>
+                <h2 className="text-base font-bold text-[var(--text-primary)]">Start a Project</h2>
+                <p className="text-xs text-[var(--text-muted)] mt-0.5">We reply within 2–4 hours</p>
               </div>
-
-              {/* Close Button */}
-              <button
-                type="button"
-                onClick={() => setIsModalOpen(false)}
-                className="h-9 w-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition-colors flex items-center justify-center focus:outline-none"
-                aria-label="Close Enquiry Modal"
-              >
-                <Icon name="close" size={18} />
-              </button>
+              <div className="flex items-center gap-2">
+                <span className="hidden sm:flex items-center gap-1 text-[11px] font-medium text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-1 dark:bg-emerald-900/20 dark:border-emerald-800 dark:text-emerald-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Available now
+                </span>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="rounded-lg p-1.5 text-[var(--text-muted)] hover:bg-[var(--bg-surface-alt)] hover:text-[var(--text-primary)] transition-colors"
+                  aria-label="Close"
+                >
+                  <Icon name="close" size={18} />
+                </button>
+              </div>
             </div>
 
-            {/* Modal Scrollable Body */}
-            <div className="overflow-y-auto px-6 sm:px-8 py-5">
+            {/* Body */}
+            <div className="px-6 py-5 max-h-[75vh] overflow-y-auto">
               {isSubmitted ? (
-                /* Success Confirmation View */
-                <div className="py-12 sm:py-16 text-center space-y-5">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center border border-emerald-200 shadow-lg shadow-emerald-100">
-                    <Icon name="check" size={32} />
+                /* Success */
+                <div className="py-10 text-center space-y-3">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800">
+                    <Icon name="check" size={28} className="text-emerald-600" />
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                    Enquiry Dispatched Successfully!
-                  </h3>
-                  <p className="font-body text-slate-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="text-indigo-600 font-bold">{formData.name}</span>. Our technical architect will review your project scope regarding{" "}
-                    <span className="text-slate-900 font-semibold">{formData.queryType}</span> and contact you with estimates shortly.
+                  <h3 className="text-xl font-bold text-[var(--text-primary)]">Enquiry sent!</h3>
+                  <p className="text-sm text-[var(--text-secondary)] max-w-xs mx-auto leading-relaxed">
+                    Thanks <span className="font-semibold text-[var(--text-primary)]">{form.name}</span>! We&apos;ll review your project and get back to you shortly.
                   </p>
-                  <div className="pt-3">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        launchWhatsApp({
-                          name: formData.name,
-                          phone: formData.phone,
-                          query: formData.queryType,
-                          note: formData.message,
-                        })
-                      }
-                      className="font-display inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] text-white font-bold text-sm hover:bg-[#20BD5A] transition-all shadow-lg shadow-emerald-200"
-                    >
-                      <Icon name="whatsapp" size={18} />
-                      Continue on WhatsApp Now &rarr;
-                    </button>
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => sendWA(form.name, form.query, form.phone, form.message)}
+                    className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#1EBF5C] transition-colors"
+                  >
+                    <Icon name="whatsapp" size={16} />
+                    Also chat on WhatsApp
+                  </button>
                 </div>
               ) : (
-                /* Main Enquiry Form */
-                <>
-                  {/* Title & Trust Header */}
-                  <div className="pb-4 border-b border-slate-100">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="font-display inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-50 border border-indigo-200/80 text-indigo-700 text-[11px] font-bold tracking-wide">
-                        <Icon name="sparkles" size={13} className="text-indigo-600" />
-                        Direct Technical Enquiry
-                      </span>
-                      <span className="text-xs text-slate-400">•</span>
-                      <span className="font-body text-xs font-semibold text-emerald-600 flex items-center gap-1">
-                        ⚡ Quick Response in 2-4 Hours
-                      </span>
+                <form onSubmit={handleModalSubmit} className="space-y-4">
+                  {/* Project type chips */}
+                  <div>
+                    <label className={labelBase}>Project Type</label>
+                    <div className="flex flex-wrap gap-2">
+                      {PROJECT_TYPES.map(pt => (
+                        <button
+                          key={pt.label}
+                          type="button"
+                          onClick={() => setForm({ ...form, type: pt.label })}
+                          className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all ${
+                            form.type === pt.label
+                              ? "border-indigo-600 bg-indigo-600 text-white shadow-sm"
+                              : "border-[var(--border-strong)] bg-[var(--bg-surface-alt)] text-[var(--text-secondary)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)]"
+                          }`}
+                        >
+                          <Icon name={pt.icon} size={12} />
+                          {pt.label}
+                        </button>
+                      ))}
                     </div>
-
-                    <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
-                      Tell us about your project
-                    </h2>
-                    <p className="font-body text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">
-                      Select your project category or query. We will evaluate technical requirements and share architecture plan &amp; timelines.
-                    </p>
                   </div>
 
-                  <form onSubmit={handleModalSubmit} className="mt-5 space-y-4 sm:space-y-5">
-                    {/* 1. Category Selection Chips */}
+                  {/* Query */}
+                  <div>
+                    <label className={labelBase}>Query <span className="text-rose-500">*</span></label>
+                    <select
+                      required
+                      value={form.query}
+                      onChange={e => setForm({ ...form, query: e.target.value })}
+                      className={inputBase}
+                    >
+                      {QUERY_OPTIONS.map(q => <option key={q}>{q}</option>)}
+                    </select>
+                  </div>
+
+                  {/* Name + Phone */}
+                  <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                        1. Select Website / Project Type
-                      </label>
-                      <div className="flex flex-wrap gap-2">
-                        {QUICK_CATEGORY_CHIPS.map((chip) => {
-                          const isSelected = formData.selectedCategory === chip.label;
-                          return (
-                            <button
-                              key={chip.label}
-                              type="button"
-                              onClick={() =>
-                                setFormData({
-                                  ...formData,
-                                  selectedCategory: chip.label,
-                                })
-                              }
-                              className={`font-display px-3.5 py-2 rounded-xl text-xs sm:text-[13px] font-bold transition-all flex items-center gap-1.5 border ${
-                                isSelected
-                                  ? "bg-indigo-600 text-white border-indigo-600 shadow-md shadow-indigo-200/80 scale-[1.02]"
-                                  : "bg-slate-50 text-slate-700 border-slate-200/90 hover:bg-slate-100 hover:text-slate-900"
-                              }`}
-                            >
-                              <Icon name={chip.icon} size={14} />
-                              <span>{chip.label}</span>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                    {/* 2. Nature of Query (Required Dropdown) */}
-                    <div>
-                      <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        2. Nature of Query <span className="text-rose-500">*</span>
-                      </label>
-                      <select
-                        required
-                        value={formData.queryType}
-                        onChange={(e) =>
-                          setFormData({ ...formData, queryType: e.target.value })
-                        }
-                        className="font-body w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium focus:outline-none focus:bg-white focus:border-indigo-600 focus:ring-3 focus:ring-indigo-100 transition-all shadow-xs"
-                      >
-                        {QUERY_OPTIONS.map((opt) => (
-                          <option key={opt} value={opt} className="bg-white text-slate-900 font-medium">
-                            {opt}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* 3. Name & WhatsApp Phone (Required) */}
-                    <div className="grid gap-3.5 sm:grid-cols-2">
-                      <div>
-                        <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                          Your Full Name <span className="text-rose-500">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          placeholder="e.g. Rahul Sharma"
-                          value={formData.name}
-                          onChange={(e) =>
-                            setFormData({ ...formData, name: e.target.value })
-                          }
-                          className="font-body w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-indigo-600 focus:ring-3 focus:ring-indigo-100 transition-all shadow-xs"
-                        />
-                      </div>
-
-                      <div>
-                        <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                          WhatsApp / Phone <span className="text-rose-500">*</span>
-                        </label>
-                        <input
-                          type="tel"
-                          required
-                          placeholder="+91 98765 43210"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                          }
-                          className="font-body w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-indigo-600 focus:ring-3 focus:ring-indigo-100 transition-all shadow-xs"
-                        />
-                      </div>
-                    </div>
-
-                    {/* 4. Email (Optional) */}
-                    <div>
-                      <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Email Address (Optional)
-                      </label>
+                      <label className={labelBase}>Name <span className="text-rose-500">*</span></label>
                       <input
-                        type="email"
-                        placeholder="rahul@company.com"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({ ...formData, email: e.target.value })
-                        }
-                        className="font-body w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-indigo-600 focus:ring-3 focus:ring-indigo-100 transition-all shadow-xs"
-                      >
-                      </input>
-                    </div>
-
-                    {/* 5. Requirements Textarea */}
-                    <div>
-                      <label className="block font-display text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
-                        Project Scope / Key Requirements
-                      </label>
-                      <textarea
-                        rows={3}
-                        placeholder="Brief details about your website, references (e.g. flight booking portal like SkyOdeals, or coaching institute like HIT IAS), or timeline..."
-                        value={formData.message}
-                        onChange={(e) =>
-                          setFormData({ ...formData, message: e.target.value })
-                        }
-                        className="font-body w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm font-medium placeholder:text-slate-400 focus:outline-none focus:bg-white focus:border-indigo-600 focus:ring-3 focus:ring-indigo-100 resize-none transition-all shadow-xs"
+                        type="text"
+                        required
+                        placeholder="Rahul Sharma"
+                        value={form.name}
+                        onChange={e => setForm({ ...form, name: e.target.value })}
+                        className={inputBase}
                       />
                     </div>
-
-                    {/* Submit Buttons */}
-                    <div className="pt-2 flex flex-col sm:flex-row gap-3">
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="font-display flex-1 py-3.5 px-5 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 text-white font-bold text-sm tracking-wide transition-all shadow-lg shadow-indigo-500/25 disabled:opacity-60 flex items-center justify-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0"
-                      >
-                        {isSubmitting ? "Submitting..." : "Submit Project Enquiry ➜"}
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() =>
-                          launchWhatsApp({
-                            name: formData.name,
-                            phone: formData.phone,
-                            query: `${formData.selectedCategory} — ${formData.queryType}`,
-                            note: formData.message,
-                          })
-                        }
-                        className="font-display inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold text-sm transition-all shadow-md shadow-emerald-100 transform hover:-translate-y-0.5 active:translate-y-0"
-                      >
-                        <Icon name="whatsapp" size={17} />
-                        <span>Chat on WhatsApp</span>
-                      </button>
+                    <div>
+                      <label className={labelBase}>Phone <span className="text-rose-500">*</span></label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+91 98765 43210"
+                        value={form.phone}
+                        onChange={e => setForm({ ...form, phone: e.target.value })}
+                        className={inputBase}
+                      />
                     </div>
-                  </form>
-                </>
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className={labelBase}>Email <span className="text-[var(--text-muted)] font-normal">(optional)</span></label>
+                    <input
+                      type="email"
+                      placeholder="you@company.com"
+                      value={form.email}
+                      onChange={e => setForm({ ...form, email: e.target.value })}
+                      className={inputBase}
+                    />
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <label className={labelBase}>Brief Requirements <span className="text-[var(--text-muted)] font-normal">(optional)</span></label>
+                    <textarea
+                      rows={3}
+                      placeholder="Describe your project, references, timeline..."
+                      value={form.message}
+                      onChange={e => setForm({ ...form, message: e.target.value })}
+                      className={`${inputBase} resize-none`}
+                    />
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex gap-2.5 pt-1">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="flex-1 rounded-xl bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 py-2.5 text-sm font-semibold text-white transition-colors"
+                    >
+                      {isSubmitting ? "Sending…" : "Send Enquiry"}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => sendWA(form.name, form.query, form.phone, form.message)}
+                      className="flex items-center gap-2 rounded-xl bg-[#25D366] hover:bg-[#1EBF5C] px-4 py-2.5 text-sm font-semibold text-white transition-colors"
+                    >
+                      <Icon name="whatsapp" size={16} />
+                      WhatsApp
+                    </button>
+                  </div>
+                </form>
               )}
             </div>
 
-            {/* Modal Footer Guarantees */}
-            <div className="px-6 sm:px-8 py-3.5 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 flex flex-wrap items-center justify-between gap-2">
-              <span className="flex items-center gap-1 font-medium">
-                🛡️ 100% Confidential (NDA Protected)
-              </span>
-              <span className="flex items-center gap-1 font-bold text-indigo-600">
-                ⚡ Technical Estimate within 2–4 Hours
-              </span>
-              <span className="hidden sm:inline font-medium text-slate-400">
-                ⭐️ 4.9/5 Rating
-              </span>
+            {/* Footer */}
+            <div className="px-6 py-3 border-t border-[var(--border-subtle)] bg-[var(--bg-surface-alt)] flex items-center justify-between text-[11px] text-[var(--text-muted)]">
+              <span>🛡️ 100% Confidential</span>
+              <span>⚡ Reply in 2–4 hours</span>
+              <span>⭐ 5.0 rated</span>
             </div>
           </div>
         </div>

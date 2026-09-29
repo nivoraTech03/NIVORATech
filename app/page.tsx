@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { TechStack } from "@/components/sections/TechStack";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <TechStack />
       <ProjectsShowcase />
+      <TestimonialsSection />
       <ServicesGrid />
       <WhyChooseUs />
       <ProcessSection />
@@ -23,3 +25,4 @@ export default function Home() {
     </>
   );
 }
+
