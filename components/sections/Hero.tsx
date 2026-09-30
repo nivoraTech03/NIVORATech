@@ -168,106 +168,93 @@ export function Hero() {
         <div className="lg:col-span-6">
           <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
 
-            {/* Browser mockup */}
-            <div className="overflow-hidden rounded-2xl border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.04)] bg-[#0C1222]">
+            {/* Stacked Background Cards for Depth */}
+            <div className="absolute -inset-1 z-0 rounded-[32px] bg-gradient-to-br from-indigo-500/20 via-purple-500/10 to-transparent blur-xl transition-all duration-700 group-hover:blur-2xl group-hover:from-indigo-500/30 group-hover:via-purple-500/20" />
+            
+            <div className="absolute top-4 -right-4 z-0 h-full w-full rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-3xl transition-transform duration-700 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:rotate-1" />
+            <div className="absolute top-8 -right-8 z-0 h-full w-full rounded-3xl border border-white/5 bg-white/[0.005] backdrop-blur-2xl transition-transform duration-700 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-2" />
 
-              {/* Browser chrome */}
-              <div className="flex items-center gap-3 border-b border-white/[0.07] bg-[#080D1A] px-4 py-3">
-                <div className="flex items-center gap-1.5">
-                  <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
-                  <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
-                  <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
-                </div>
-                <div className="flex flex-1 items-center gap-1.5 rounded-md border border-white/[0.08] bg-white/[0.04] px-3 py-1 font-mono text-[11px] text-slate-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-indigo-400/80">https://</span>
-                  <span
-                    className="transition-all duration-300"
-                    style={{ opacity: animating ? 0 : 1 }}
-                  >
-                    {active.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
-                  </span>
-                </div>
-                <a
-                  href={active.liveUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-slate-500 hover:text-white transition-colors"
-                  aria-label="Open live site"
-                >
-                  <Icon name="externalLink" size={13} />
-                </a>
-              </div>
+            {/* Main Clean Glass Card Presentation */}
+            <div className="group relative z-10 overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0A101F]/80 p-2.5 shadow-2xl shadow-indigo-900/50 backdrop-blur-xl transition-all duration-700 hover:border-white/20 hover:bg-[#0A101F]/90">
 
-              {/* Image canvas */}
-              <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
-                {projects.map((p, i) => (
-                  <div
-                    key={p.id}
-                    className="absolute inset-0 transition-all duration-500"
-                    style={{
-                      opacity: i === current ? (animating ? 0 : 1) : 0,
-                      transform: i === current
-                        ? animating ? "scale(1.03)" : "scale(1)"
-                        : "scale(1.03)",
-                    }}
-                  >
-                    {p.image && (
-                      <Image
-                        src={p.image}
-                        alt={p.title}
-                        width={1200}
-                        height={750}
-                        priority={i === 0}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    )}
+              {/* Inner card containing the image */}
+              <div className="relative overflow-hidden rounded-2xl bg-black">
+
+                {/* Minimal Header */}
+                <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between bg-gradient-to-b from-black/80 to-transparent px-5 py-4">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                    </div>
                   </div>
-                ))}
-
-                {/* Bottom gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060B18]/80 via-transparent to-transparent pointer-events-none" />
-
-                {/* Floating metric — top right */}
-                <div
-                  className="absolute top-3 right-3 flex items-center gap-2 rounded-xl border border-white/15 bg-black/60 backdrop-blur-md px-3 py-2 transition-opacity duration-300"
-                  style={{ opacity: animating ? 0 : 1 }}
-                >
-                  <Icon name="sparkles" size={13} className="text-indigo-400" />
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400">Performance</p>
-                    <p className="text-xs font-bold text-white">{active.stats?.[2]?.value ?? "98/100"}</p>
+                  <div className="rounded-full bg-black/50 px-3 py-1 backdrop-blur-md border border-white/10">
+                    <p className="text-[10px] font-medium tracking-widest text-white/70 uppercase">
+                      Featured Work
+                    </p>
                   </div>
                 </div>
 
-                {/* Floating metric — bottom left */}
-                <div
-                  className="absolute bottom-3 left-3 flex items-center gap-2 rounded-xl border border-white/15 bg-black/60 backdrop-blur-md px-3 py-2 transition-opacity duration-300"
-                  style={{ opacity: animating ? 0 : 1 }}
-                >
-                  <Icon name="check" size={13} className="text-emerald-400" />
-                  <div>
-                    <p className="text-[9px] font-bold uppercase tracking-wider text-slate-400">Stack</p>
-                    <p className="text-xs font-bold text-white">{active.architecture?.split(",")[0] ?? "Production Ready"}</p>
-                  </div>
-                </div>
-              </div>
+                {/* Image Slider */}
+                <div className="relative aspect-[16/11] w-full">
+                  {projects.map((p, i) => (
+                    <div
+                      key={p.id}
+                      className="absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                      style={{
+                        opacity: i === current ? (animating ? 0 : 1) : 0,
+                        transform: i === current
+                          ? animating ? "scale(1.05)" : "scale(1)"
+                          : "scale(1.05)",
+                        zIndex: i === current ? 10 : 0,
+                      }}
+                    >
+                      {p.image && (
+                        <Image
+                          src={p.image}
+                          alt={p.title}
+                          width={1200}
+                          height={825}
+                          priority={i === 0}
+                          className="h-full w-full object-cover object-top"
+                        />
+                      )}
 
-              {/* Card footer */}
-              <div
-                className="flex items-center justify-between gap-3 border-t border-white/[0.07] bg-[#080D1A] px-4 py-3 transition-opacity duration-300"
-                style={{ opacity: animating ? 0 : 1 }}
-              >
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-semibold text-white">{active.title}</p>
-                  <p className="truncate text-xs text-slate-500">{active.category}</p>
+                      {/* Gradient Overlay for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+
+                      {/* Project Details overlaid on image */}
+                      <div className="absolute bottom-0 left-0 right-0 p-7 z-20 transform transition-transform duration-700" style={{ transform: i === current && !animating ? 'translateY(0)' : 'translateY(15px)' }}>
+                        <div className="flex items-end justify-between gap-4">
+                          <div className="space-y-3">
+                            <div className="inline-block rounded-md bg-indigo-500 px-2.5 py-1 shadow-lg shadow-indigo-500/30 ring-1 ring-white/20">
+                              <p className="text-[10px] font-extrabold text-white uppercase tracking-widest drop-shadow-sm">{p.category}</p>
+                            </div>
+                            <h3 className="text-[26px] font-extrabold text-white leading-tight drop-shadow-md">{p.title}</h3>
+                            <div className="flex flex-wrap gap-2 pt-1">
+                              <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
+                                <Icon name="sparkles" size={12} className="text-indigo-400" />
+                                {p.stats?.[2]?.value ?? "98/100"} Perf
+                              </span>
+                              <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
+                                <Icon name="code" size={12} className="text-emerald-400" />
+                                {p.architecture?.split(",")[0] ?? "React"}
+                              </span>
+                            </div>
+                          </div>
+                          <Link
+                            href={`/work/${p.slug}`}
+                            className="group/btn relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-black overflow-hidden transition-all hover:scale-110 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                          >
+                            <div className="absolute inset-0 bg-indigo-100 opacity-0 transition-opacity group-hover/btn:opacity-100" />
+                            <Icon name="arrowUpRight" size={22} className="relative z-10 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <Link
-                  href={`/work/${active.slug}`}
-                  className="shrink-0 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors"
-                >
-                  Case Study →
-                </Link>
               </div>
             </div>
 
@@ -283,11 +270,10 @@ export function Hero() {
                 >
                   {/* Project label */}
                   <span
-                    className={`text-[10px] font-semibold transition-colors ${
-                      i === current ? "text-indigo-400" : "text-slate-600 group-hover:text-slate-400"
-                    }`}
+                    className={`text-[11px] font-bold tracking-wider transition-all duration-300 ${i === current ? "text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]" : "text-slate-500 group-hover:text-slate-300"
+                      }`}
                   >
-                    {i === 0 ? "✈ SkyOdeals" : "🎓 HIT IAS"}
+                    {p.title.includes('Sky') ? "✈ SkyOdeals" : p.title.includes('HIT IAS') ? "🎓 HIT IAS" : p.title.includes('XChat') ? "💬 XChat" : p.title.split(' ')[0]}
                   </span>
                   {/* Progress track */}
                   <span className="relative h-0.5 w-16 overflow-hidden rounded-full bg-white/10">

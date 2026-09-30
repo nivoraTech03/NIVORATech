@@ -100,7 +100,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 text-xs text-white/40 sm:flex-row">
-          <p>{site.copyright}</p>
+          <p>&copy; {new Date().getFullYear()} NIVORA. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms &amp; Privacy

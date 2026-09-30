@@ -33,6 +33,7 @@ export default function FloatingActions() {
   const [isWAOpen, setIsWAOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const [form, setForm] = useState({
     type: "Next.js / React",
@@ -65,10 +66,24 @@ export default function FloatingActions() {
     window.open(`https://wa.me/919575450177?text=${msg}`, "_blank");
   };
 
-  const handleModalSubmit = (e: React.FormEvent) => {
+  const handleModalSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
+    setErrorMsg("");
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       setTimeout(() => {
@@ -76,7 +91,10 @@ export default function FloatingActions() {
         setIsSubmitted(false);
         setForm({ type: "Next.js / React", query: QUERY_OPTIONS[0], name: "", phone: "", email: "", message: "" });
       }, 3500);
-    }, 700);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    }
   };
 
   const handleWASubmit = (e: React.FormEvent) => {
@@ -94,13 +112,15 @@ export default function FloatingActions() {
         <button
           type="button"
           onClick={() => setIsModalOpen(true)}
-          className="flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--bg-surface)] px-4 py-2.5 text-sm font-semibold text-[var(--text-primary)] shadow-lg hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)] hover:-translate-y-0.5 transition-all"
+          className="group flex items-center gap-2.5 rounded-full border border-[var(--border-strong)] bg-[var(--bg-surface)] px-4 py-2.5 text-sm font-semibold text-[var(--text-primary)] shadow-lg hover:border-indigo-500 hover:text-indigo-500 hover:-translate-y-0.5 transition-all"
           aria-label="Open project enquiry"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-60" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-indigo-600" />
-          </span>
+          <div className="relative flex items-center justify-center">
+            <span className="absolute inline-flex h-6 w-6 rounded-full bg-indigo-500 opacity-20 animate-ping" />
+            <div className="relative flex h-7 w-7 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+              <Icon name="sparkles" size={14} />
+            </div>
+          </div>
           Quick Enquiry
         </button>
 
@@ -108,7 +128,7 @@ export default function FloatingActions() {
         <div className="relative flex items-center justify-center">
           {/* Animated pulse ring */}
           <div className="absolute -inset-1 rounded-full bg-[#25D366] opacity-40 animate-ping" style={{ animationDuration: '2s' }}></div>
-          
+
           <button
             type="button"
             onClick={() => setIsWAOpen(true)}
@@ -133,44 +153,41 @@ export default function FloatingActions() {
       {/* ── WhatsApp Dialog ── */}
       {isWAOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
           onClick={() => setIsWAOpen(false)}
         >
           <div
-            className="w-full max-w-sm rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-2xl overflow-hidden animate-scale-in"
+            className="w-full max-w-sm rounded-3xl bg-[var(--bg-surface)] shadow-2xl overflow-hidden animate-scale-in border border-[var(--border-subtle)]"
             onClick={e => e.stopPropagation()}
           >
-            {/* Green top bar */}
-            <div className="h-1 bg-[#25D366]" />
-
             {/* Header */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-[var(--border-subtle)]">
-              <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#25D366] text-white">
-                  <Icon name="whatsapp" size={18} />
+            <div className="bg-[#25D366] px-6 py-5 flex items-center justify-between text-white">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                  <Icon name="whatsapp" size={24} />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-[var(--text-primary)]">WhatsApp Connect</p>
-                  <p className="text-xs text-[var(--text-muted)]">Quick reply in minutes</p>
+                  <p className="text-base font-bold">WhatsApp Connect</p>
+                  <p className="text-xs font-medium text-white/80">Typically replies instantly</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsWAOpen(false)}
-                className="rounded-lg p-1.5 text-[var(--text-muted)] hover:bg-[var(--bg-surface-alt)] hover:text-[var(--text-primary)] transition-colors"
+                className="rounded-full p-2 hover:bg-white/20 transition-colors"
                 aria-label="Close"
               >
-                <Icon name="close" size={16} />
+                <Icon name="close" size={18} />
               </button>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleWASubmit} className="p-5 space-y-3.5">
+            <form onSubmit={handleWASubmit} className="p-6 space-y-4 bg-[var(--bg-surface)]">
               <div>
                 <label className={labelBase}>Your Name <span className="text-rose-500">*</span></label>
                 <input
                   type="text"
                   required
-                  placeholder="Rahul Sharma"
+                  placeholder="e.g. John Doe"
                   value={wa.name}
                   onChange={e => setWA({ ...wa, name: e.target.value })}
                   className={inputBase}
@@ -188,10 +205,10 @@ export default function FloatingActions() {
                 </select>
               </div>
               <div>
-                <label className={labelBase}>Note <span className="text-[var(--text-muted)] font-normal">(optional)</span></label>
+                <label className={labelBase}>Message <span className="text-[var(--text-muted)] font-normal">(optional)</span></label>
                 <textarea
                   rows={2}
-                  placeholder="Any specific requirements..."
+                  placeholder="How can we help you?"
                   value={wa.note}
                   onChange={e => setWA({ ...wa, note: e.target.value })}
                   className={`${inputBase} resize-none`}
@@ -199,10 +216,10 @@ export default function FloatingActions() {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-xl bg-[#25D366] hover:bg-[#1EBF5C] py-2.5 text-sm font-semibold text-white transition-colors flex items-center justify-center gap-2"
+                className="w-full mt-2 rounded-xl bg-[#25D366] hover:bg-[#1EBF5C] py-3 text-sm font-bold text-white transition-all hover:shadow-[0_0_15px_rgba(37,211,102,0.4)] flex items-center justify-center gap-2"
               >
-                <Icon name="whatsapp" size={16} />
-                Open WhatsApp Chat
+                <Icon name="whatsapp" size={18} />
+                Start Chat
               </button>
             </form>
           </div>
@@ -212,15 +229,17 @@ export default function FloatingActions() {
       {/* ── Enquiry Modal ── */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-sm overflow-hidden sm:overflow-y-auto transition-opacity"
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="relative w-full max-w-lg my-auto rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-2xl overflow-hidden animate-scale-in"
+            className="relative w-full max-w-lg h-[calc(100vh-100px)] sm:h-auto sm:max-h-[90vh] rounded-t-[32px] sm:rounded-2xl bg-[var(--bg-surface)] border-t sm:border border-[var(--border-subtle)] shadow-2xl flex flex-col overflow-hidden animate-scale-in"
             onClick={e => e.stopPropagation()}
           >
-            {/* Indigo top stripe */}
-            <div className="h-1 bg-gradient-to-r from-indigo-600 to-sky-500" />
+            {/* Mobile Grab Handle */}
+            <div className="flex justify-center pt-3 pb-2 sm:hidden shrink-0">
+              <div className="h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
+            </div>
 
             {/* Header */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-[var(--border-subtle)]">
@@ -244,7 +263,7 @@ export default function FloatingActions() {
             </div>
 
             {/* Body */}
-            <div className="px-6 py-5 max-h-[75vh] overflow-y-auto">
+            <div className="px-6 py-5 flex-1 overflow-y-auto overscroll-contain pb-safe">
               {isSubmitted ? (
                 /* Success */
                 <div className="py-10 text-center space-y-3">
@@ -275,11 +294,10 @@ export default function FloatingActions() {
                           key={pt.label}
                           type="button"
                           onClick={() => setForm({ ...form, type: pt.label })}
-                          className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all ${
-                            form.type === pt.label
-                              ? "border-indigo-600 bg-indigo-600 text-white shadow-sm"
-                              : "border-[var(--border-strong)] bg-[var(--bg-surface-alt)] text-[var(--text-secondary)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)]"
-                          }`}
+                          className={`flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-semibold transition-all ${form.type === pt.label
+                            ? "border-indigo-600 bg-indigo-600 text-white shadow-sm"
+                            : "border-[var(--border-strong)] bg-[var(--bg-surface-alt)] text-[var(--text-secondary)] hover:border-[var(--accent-primary)] hover:text-[var(--accent-primary)]"
+                            }`}
                         >
                           <Icon name={pt.icon} size={12} />
                           {pt.label}
@@ -308,7 +326,7 @@ export default function FloatingActions() {
                       <input
                         type="text"
                         required
-                        placeholder="Rahul Sharma"
+                        placeholder="e.g. John Doe"
                         value={form.name}
                         onChange={e => setForm({ ...form, name: e.target.value })}
                         className={inputBase}
@@ -319,7 +337,9 @@ export default function FloatingActions() {
                       <input
                         type="tel"
                         required
-                        placeholder="+91 98765 43210"
+                        pattern="[0-9\+\-\s]{10,15}"
+                        title="Please enter a valid phone number"
+                        placeholder="e.g. +91 98765 43210"
                         value={form.phone}
                         onChange={e => setForm({ ...form, phone: e.target.value })}
                         className={inputBase}
@@ -332,12 +352,18 @@ export default function FloatingActions() {
                     <label className={labelBase}>Email <span className="text-[var(--text-muted)] font-normal">(optional)</span></label>
                     <input
                       type="email"
-                      placeholder="you@company.com"
+                      placeholder="e.g. john@company.com"
                       value={form.email}
                       onChange={e => setForm({ ...form, email: e.target.value })}
                       className={inputBase}
                     />
                   </div>
+
+                  {errorMsg && (
+                    <div className="rounded-lg bg-rose-50 dark:bg-rose-900/20 p-3 text-sm text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800/30">
+                      {errorMsg}
+                    </div>
+                  )}
 
                   {/* Message */}
                   <div>

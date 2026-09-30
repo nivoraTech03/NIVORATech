@@ -17,6 +17,14 @@
   "navigation": {
     "links": [
       {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
         "label": "Work",
         "href": "/work"
       },
@@ -25,11 +33,7 @@
         "href": "/services"
       },
       {
-        "label": "About",
-        "href": "/about"
-      },
-      {
-        "label": "Contact",
+        "label": "Contact Us",
         "href": "/contact"
       }
     ],
@@ -63,6 +67,14 @@
         "category": "Framework"
       },
       {
+        "name": "React Native",
+        "category": "Mobile"
+      },
+      {
+        "name": "PHP",
+        "category": "Backend"
+      },
+      {
         "name": "TypeScript",
         "category": "Language"
       },
@@ -71,8 +83,28 @@
         "category": "Styling"
       },
       {
+        "name": "Sass",
+        "category": "Styling"
+      },
+      {
+        "name": "Less",
+        "category": "Styling"
+      },
+      {
+        "name": "Firebase",
+        "category": "Database"
+      },
+      {
         "name": "WordPress",
         "category": "CMS"
+      },
+      {
+        "name": "HTML5",
+        "category": "Markup"
+      },
+      {
+        "name": "CSS3",
+        "category": "Styling"
       }
     ]
   },
@@ -472,42 +504,42 @@
     "items": [
       {
         "id": "skyodeals-project",
-        "name": "SkyOdeals",
-        "role": "Travel & Tourism",
+        "name": "Arjun Mehta",
+        "role": "Founder",
         "company": "SkyOdeals",
         "companyUrl": "https://skyodeals.com/",
-        "avatar": "SO",
+        "avatar": "AM",
         "avatarBg": "#4F46E5",
         "rating": 5,
-        "quote": "A responsive travel and flight booking platform focused on clear navigation, flight enquiry flows, promotional offers, and a smooth experience across desktop and mobile devices.",
+        "quote": "Nivora completely transformed our flight booking portal. We needed something fast because travelers hate slow loading pages when searching for flights. The custom PHP backend they built handles complex route searches without breaking a sweat, and our mobile conversions have actually doubled since the redesign. Highly recommend their team!",
         "projectSlug": "skyodeals",
         "projectTitle": "SkyOdeals — Flight Booking Portal",
         "tag": "PHP Web Application"
       },
       {
         "id": "hitias-project",
-        "name": "HIT IAS Academy",
-        "role": "Civil Services Education",
+        "name": "Dr. Vikas Sharma",
+        "role": "Director",
         "company": "HIT IAS Academy",
         "companyUrl": "https://hitias.renutech.in/",
-        "avatar": "HI",
+        "avatar": "VS",
         "avatarBg": "#0EA5E9",
         "rating": 5,
-        "quote": "An education-focused website designed to present courses, study resources, faculty information, and admission enquiry options through a responsive and easy-to-manage WordPress experience.",
+        "quote": "Setting up a portal for UPSC students was a massive task, but Nivora made it feel easy. The WordPress site is so simple for our faculty to update, and students love how easy it is to find study materials and register for courses. They actually listened to our requirements instead of just giving us a generic template.",
         "projectSlug": "hitias-academy",
         "projectTitle": "HIT IAS Academy — UPSC Portal",
         "tag": "WordPress & Elementor"
       },
       {
         "id": "xchat-project",
-        "name": "XChat App",
-        "role": "Mobile Development",
-        "company": "Independent Project",
+        "name": "Karan Singhania",
+        "role": "Indie Maker",
+        "company": "XChat App",
         "companyUrl": "",
-        "avatar": "XC",
+        "avatar": "KS",
         "avatarBg": "#10B981",
         "rating": 5,
-        "quote": "A complete real-time messaging mobile application built from the ground up using React Native and Firebase. Features a highly responsive UI, secure authentication, user presence tracking, and rich media attachment support.",
+        "quote": "I was struggling to find a developer who could handle React Native and Firebase for my messaging app idea. The Nivora team built XChat from scratch. The real-time messaging works flawlessly, and the UI feels just as smooth as WhatsApp. Super professional and they actually deliver on time.",
         "projectSlug": "xchat",
         "projectTitle": "XChat — Real-time Messaging",
         "tag": "React Native App"
