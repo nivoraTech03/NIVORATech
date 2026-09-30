@@ -9,7 +9,8 @@
     "socials": {
       "linkedin": "https://linkedin.com",
       "email": "mailto:nivora1403@gmail.com",
-      "whatsapp": "https://wa.me/919575450177"
+      "whatsapp": "https://wa.me/919575450177",
+      "instagram": "https://www.instagram.com/nivorat.ech/"
     },
     "copyright": "© 2026 NIVORA. All rights reserved."
   },
@@ -106,10 +107,22 @@
         "Fast-loading lead capture system ensuring zero inquiries are dropped"
       ],
       "stats": [
-        { "label": "Technology", "value": "PHP & MySQL" },
-        { "label": "UI Framework", "value": "Bootstrap 5" },
-        { "label": "Mobile Score", "value": "98/100" },
-        { "label": "Lead Conversion", "value": "+64%" }
+        {
+          "label": "Technology",
+          "value": "PHP & MySQL"
+        },
+        {
+          "label": "UI Framework",
+          "value": "Bootstrap 5"
+        },
+        {
+          "label": "Mobile Score",
+          "value": "98/100"
+        },
+        {
+          "label": "Lead Conversion",
+          "value": "+64%"
+        }
       ],
       "liveUrl": "https://skyodeals.com/"
     },
@@ -143,10 +156,22 @@
         "Complete on-page SEO optimization and security hardening for educational portal compliance"
       ],
       "stats": [
-        { "label": "Platform", "value": "WordPress + Elementor" },
-        { "label": "Forms Engine", "value": "Contact Form 7" },
-        { "label": "Load Time", "value": "< 1.2s" },
-        { "label": "Admissions Inquiries", "value": "+110%" }
+        {
+          "label": "Platform",
+          "value": "WordPress + Elementor"
+        },
+        {
+          "label": "Forms Engine",
+          "value": "Contact Form 7"
+        },
+        {
+          "label": "Load Time",
+          "value": "< 1.2s"
+        },
+        {
+          "label": "Admissions Inquiries",
+          "value": "+110%"
+        }
       ],
       "liveUrl": "https://hitias.renutech.in/"
     }
@@ -358,34 +383,34 @@
     ]
   },
   "testimonials": {
-    "eyebrow": "CLIENT STORIES",
-    "title": "What our clients say",
-    "description": "Real words from real clients who trusted us to build their digital presence.",
+    "eyebrow": "CLIENT PROJECTS",
+    "title": "Work built for real businesses",
+    "description": "A look at websites and digital experiences built for businesses across different industries.",
     "items": [
       {
-        "id": "skyodeals-testimonial",
-        "name": "Rajesh Sharma",
-        "role": "Founder & CEO",
+        "id": "skyodeals-project",
+        "name": "SkyOdeals",
+        "role": "Travel & Tourism",
         "company": "SkyOdeals",
         "companyUrl": "https://skyodeals.com/",
-        "avatar": "RS",
+        "avatar": "SO",
         "avatarBg": "#4F46E5",
         "rating": 5,
-        "quote": "NIVORA delivered exactly what we envisioned — a fast, professional travel portal that our customers love to use. The booking inquiry flow they built has significantly boosted our lead conversions. Their attention to detail on mobile responsiveness was exceptional.",
+        "quote": "A responsive travel and flight booking platform focused on clear navigation, flight enquiry flows, promotional offers, and a smooth experience across desktop and mobile devices.",
         "projectSlug": "skyodeals",
         "projectTitle": "SkyOdeals — Flight Booking Portal",
         "tag": "PHP Web Application"
       },
       {
-        "id": "hitias-testimonial",
-        "name": "Dr. Amit Tiwari",
-        "role": "Director",
+        "id": "hitias-project",
+        "name": "HIT IAS Academy",
+        "role": "Civil Services Education",
         "company": "HIT IAS Academy",
         "companyUrl": "https://hitias.renutech.in/",
-        "avatar": "AT",
+        "avatar": "HI",
         "avatarBg": "#0EA5E9",
         "rating": 5,
-        "quote": "The website NIVORA built for HIT IAS Academy has transformed how we reach students. Our admission inquiries jumped by over 110% within the first month. The WordPress setup is easy for our team to manage, and the site loads beautifully on mobile — exactly what our students need.",
+        "quote": "An education-focused website designed to present courses, study resources, faculty information, and admission enquiry options through a responsive and easy-to-manage WordPress experience.",
         "projectSlug": "hitias-academy",
         "projectTitle": "HIT IAS Academy — UPSC Portal",
         "tag": "WordPress & Elementor"

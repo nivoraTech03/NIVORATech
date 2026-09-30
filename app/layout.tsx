@@ -9,7 +9,6 @@ import FloatingActions from "@/components/ui/FloatingActions";
 
 const { site } = siteContent;
 
-// Self-hosted Google fonts via next/font (ZERO external CDN runtime requests)
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -24,36 +23,35 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-// Comprehensive Search Engine Metadata
 export const metadata: Metadata = {
   metadataBase: new URL("https://nivora-tech.vercel.app/"),
+
   title: {
     default: "NIVORA — Web Development & Digital Studio",
     template: "%s | NIVORA",
   },
+
   verification: {
     google: "9_ig4T7BLdksFSR3upAKndtwr3ZrlFCpVCjH4y1vcO0",
   },
+
   description:
-    "NIVORA builds modern responsive websites using technologies such as React, Next.js and WordPress. We are an independent digital studio serving businesses and startups.",
-  keywords: [
-    "NIVORA",
-    "web developer",
-    "freelance web developer",
-    "frontend developer",
-    "React developer",
-    "Next.js developer",
-    "website development",
-    "business website development",
-    "WordPress website development",
-    "responsive website development",
+    "NIVORA is a web development studio building modern, responsive websites with React, Next.js and WordPress for businesses, startups and growing brands.",
+
+  authors: [
+    {
+      name: "NIVORA Digital Studio",
+      url: "https://nivora-tech.vercel.app/",
+    },
   ],
-  authors: [{ name: "NIVORA Digital Studio", url: "https://nivora-tech.vercel.app/" }],
-  creator: "NIVORA Studio",
-  publisher: "NIVORA",
+
+  creator: "NIVORA Digital Studio",
+  publisher: "NIVORA Digital Studio",
+
   alternates: {
-    canonical: "https://nivora-tech.vercel.app/",
+    canonical: "/",
   },
+
   robots: {
     index: true,
     follow: true,
@@ -65,10 +63,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+
   openGraph: {
     title: "NIVORA — Web Development & Digital Studio",
     description:
-      "NIVORA builds modern responsive websites using technologies such as React, Next.js and WordPress.",
+      "Modern responsive websites built with React, Next.js and WordPress for businesses and startups.",
     url: "https://nivora-tech.vercel.app/",
     siteName: "NIVORA",
     locale: "en_US",
@@ -78,20 +77,20 @@ export const metadata: Metadata = {
         url: "/images/skyodeals.jpg",
         width: 1200,
         height: 630,
-        alt: "NIVORA Web Development Projects",
+        alt: "NIVORA web development projects",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "NIVORA — Web Development & Digital Studio",
     description:
-      "NIVORA builds modern responsive websites using technologies such as React, Next.js and WordPress.",
+      "Modern responsive websites built with React, Next.js and WordPress for businesses and startups.",
     images: ["/images/skyodeals.jpg"],
   },
 };
 
-// Google Schema.org JSON-LD Structured Data
 const jsonLdSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -104,10 +103,9 @@ const jsonLdSchema = {
       logo: "https://nivora-tech.vercel.app/favicon.ico",
       image: "https://nivora-tech.vercel.app/images/skyodeals.jpg",
       description:
-        "Independent digital studio and freelance web developer specializing in responsive websites using React, Next.js, and WordPress.",
+        "Independent digital studio and freelance web development service specializing in responsive websites using React, Next.js and WordPress.",
       email: "nivora1403@gmail.com",
       telephone: "+91-9575450177",
-      priceRange: "₹₹",
       address: {
         "@type": "PostalAddress",
         addressCountry: "IN",
@@ -126,8 +124,7 @@ const jsonLdSchema = {
         closes: "19:30",
       },
       sameAs: [
-        "https://wa.me/919575450177",
-        "https://linkedin.com",
+        "https://www.instagram.com/nivorat.ech/",
       ],
       knowsAbout: [
         "Web Development",
@@ -159,19 +156,31 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <head>
-        {/* NO EXTERNAL CDN LINKS: Fonts are 100% self-hosted locally by Next.js */}
-        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: themeInitScript,
+          }}
+        />
+
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLdSchema),
+          }}
         />
       </head>
-      <body className={`${inter.variable} ${plusJakarta.variable} min-h-screen bg-[var(--bg-body)] text-[var(--text-primary)] antialiased`}>
+
+      <body
+        className={`${inter.variable} ${plusJakarta.variable} min-h-screen bg-[var(--bg-body)] text-[var(--text-primary)] antialiased`}
+      >
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
+
             <main className="flex-1">{children}</main>
+
             <Footer />
+
             <FloatingActions />
           </div>
         </ThemeProvider>
