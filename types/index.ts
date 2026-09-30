@@ -22,6 +22,7 @@ export interface Project {
   whatWasBuilt: string[];
   liveUrl: string;
   image?: string;
+  gallery?: { src: string; caption: string }[];
   stats?: { label: string; value: string }[];
   clientType?: string;
   architecture?: string;
@@ -67,9 +68,10 @@ export interface SiteConfig {
   description: string;
   email: string;
   socials: {
-    linkedin: string;
+    linkedin?: string;
     email: string;
     whatsapp?: string;
+    instagram?: string;
   };
   copyright: string;
 }

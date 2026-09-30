@@ -20,11 +20,17 @@ export function Footer() {
             <p className="max-w-sm text-sm leading-relaxed text-white/55">
               {site.description}
             </p>
-            <div className="pt-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-accent-border)] bg-[var(--color-accent-soft)] px-3 py-1 text-xs text-[var(--color-accent)]">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--color-accent)]" />
-                Available for select projects
-              </span>
+            <div className="pt-4">
+              <div className="group relative inline-flex">
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-cyan-500 opacity-30 blur transition duration-1000 group-hover:opacity-60 group-hover:duration-200 animate-pulse"></div>
+                <span className="relative inline-flex items-center gap-2.5 rounded-full border border-[var(--color-accent-border)] bg-[var(--bg-dark-section)] px-4 py-2 text-sm font-medium text-[var(--color-accent)] shadow-xl backdrop-blur-sm">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-accent)] opacity-75"></span>
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]"></span>
+                  </span>
+                  Available for select projects
+                </span>
+              </div>
             </div>
           </div>
 
@@ -53,17 +59,19 @@ export function Footer() {
               Connect
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <li>
-                <a
-                  href={site.socials.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 text-white/60 transition-colors hover:text-white"
-                >
-                  <Icon name="linkedin" size={15} />
-                  <span>LinkedIn</span>
-                </a>
-              </li>
+              {site.socials.instagram && (
+                <li>
+                  <a
+                    href={site.socials.instagram}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 text-white/60 transition-colors hover:text-white"
+                  >
+                    <Icon name="instagram" size={15} />
+                    <span>Instagram</span>
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   href={site.socials.email}

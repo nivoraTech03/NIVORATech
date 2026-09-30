@@ -52,8 +52,13 @@ export function TestimonialsSection() {
           {testimonials.items.map((item) => (
             <div
               key={item.id}
-              className="group relative flex flex-col rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8 shadow-lg transition-all duration-300 hover:shadow-2xl hover:border-[var(--color-accent-border)] hover:-translate-y-1"
+              className="group relative flex flex-col rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-surface)]/60 backdrop-blur-xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 hover:shadow-2xl hover:bg-[var(--bg-surface)] hover:border-[var(--color-accent-border)] hover:-translate-y-2"
             >
+              {/* Glow effect behind the card on hover */}
+              <div
+                className="absolute inset-0 -z-10 rounded-3xl opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
+                style={{ background: item.avatarBg }}
+              />
               {/* Top accent line */}
               <div
                 className="absolute top-0 left-8 right-8 h-[2px] rounded-b-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -77,7 +82,7 @@ export function TestimonialsSection() {
 
               {/* Quote text */}
               <blockquote className="flex-1 mb-8">
-                <p className="text-base leading-relaxed text-[var(--text-secondary)] sm:text-[17px]">
+                <p className="text-base leading-relaxed text-[var(--text-primary)] font-medium sm:text-[17px]">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </blockquote>
@@ -146,8 +151,8 @@ export function TestimonialsSection() {
             </div>
             <div className="flex items-center gap-1.5 pl-1">
               <StarRating rating={5} />
-              <span className="text-xs font-semibold text-[var(--text-secondary)]">
-                5.0 · {testimonials.items.length} verified client reviews
+              <span className="text-xs font-semibold text-[var(--text-secondary)] tracking-wide">
+                5.0 Average Rating · Projects & Client Reviews
               </span>
             </div>
           </div>

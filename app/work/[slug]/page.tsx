@@ -106,6 +106,54 @@ export default async function ProjectDetailPage({
                 </div>
               )}
             </div>
+            {project.gallery && project.gallery.length > 0 && (
+              <div className="mt-12">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-lg font-bold text-[var(--text-primary)]">App Showcase Reel</h3>
+                  <span className="flex items-center gap-2 text-xs font-medium text-[var(--color-accent)] animate-pulse">
+                    <span className="h-2 w-2 rounded-full bg-[var(--color-accent)]"></span>
+                    Live Preview
+                  </span>
+                </div>
+                
+                <style>{`
+                  @keyframes scrollMarquee {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(calc(-50% - 1rem)); }
+                  }
+                  .animate-marquee {
+                    animation: scrollMarquee 30s linear infinite;
+                    width: max-content;
+                  }
+                  .animate-marquee:hover {
+                    animation-play-state: paused;
+                  }
+                `}</style>
+                
+                <div className="relative overflow-hidden rounded-2xl border border-[var(--border-subtle)] bg-slate-950/50 py-8 shadow-inner">
+                  {/* Gradient Masks for smooth fading edges */}
+                  <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 sm:w-32 bg-gradient-to-r from-slate-950 to-transparent"></div>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 sm:w-32 bg-gradient-to-l from-slate-950 to-transparent"></div>
+                  
+                  <div className="animate-marquee flex gap-8 px-4">
+                    {[...project.gallery, ...project.gallery].map((img, idx) => (
+                      <div key={idx} className="group relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 w-[280px] sm:w-[320px] flex-shrink-0 shadow-2xl transition-transform duration-500 hover:-translate-y-2">
+                        <Image
+                          src={img.src}
+                          alt={img.caption}
+                          width={600}
+                          height={1200}
+                          className="w-full h-auto object-cover"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                          <p className="text-sm font-semibold text-white">{img.caption}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Structured Detail Grid: Overview, Challenge, Approach */}

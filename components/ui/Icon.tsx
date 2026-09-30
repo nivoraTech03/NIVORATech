@@ -18,6 +18,7 @@ export type IconName =
   | "mapPin"
   | "github"
   | "linkedin"
+  | "instagram"
   | "whatsapp"
   | "check"
   | "plus";
@@ -53,6 +54,10 @@ const paths: Record<IconName, ReactPathSet> = {
     viewBox: "0 0 24 24",
     d: "M4.98 3.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.1c.5-1 1.9-2 3.9-2 4.2 0 5 2.7 5 6.3V21h-4v-5.3c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9Z",
     fill: true
+  },
+  instagram: {
+    viewBox: "0 0 24 24",
+    d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zm1.5-4.87h.01M6.5 2h11a5 5 0 0 1 5 5v11a5 5 0 0 1-5 5h-11a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5z"
   },
   whatsapp: {
     viewBox: "0 0 24 24",

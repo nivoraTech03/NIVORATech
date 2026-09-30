@@ -40,8 +40,8 @@
   },
   "hero": {
     "eyebrow": "INDEPENDENT DIGITAL STUDIO",
-    "heading": "Modern Websites Built for Growing Businesses",
-    "description": "Modern, responsive websites designed and developed with thoughtful interfaces, clean code and technologies like React, Next.js, and WordPress.",
+    "heading": "Modern Websites & Mobile Apps Built for Growing Businesses",
+    "description": "Modern, responsive websites and mobile applications designed and developed with thoughtful interfaces, clean code and technologies like React, React Native, Next.js, and WordPress.",
     "primaryCta": {
       "label": "View Our Work",
       "href": "/work"
@@ -174,6 +174,76 @@
         }
       ],
       "liveUrl": "https://hitias.renutech.in/"
+    },
+    {
+      "id": "xchat",
+      "slug": "xchat",
+      "number": "03",
+      "title": "XChat — Real-time Messaging",
+      "category": "React Native Mobile Application",
+      "clientType": "Independent Mobile Project",
+      "architecture": "React Native, Expo, TypeScript, Firebase",
+      "description": "A secure, real-time mobile messaging application built natively for Android and iOS using Expo and React Native.",
+      "technologies": [
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Firebase Auth",
+        "Firestore",
+        "AsyncStorage"
+      ],
+      "image": "/images/xchat/1.png",
+      "gallery": [
+        {
+          "src": "/images/xchat/1.png",
+          "caption": "XChat Splash Screen and Branding"
+        },
+        {
+          "src": "/images/xchat/2.png",
+          "caption": "Recent Chats and Active Users"
+        },
+        {
+          "src": "/images/xchat/3.png",
+          "caption": "Real-time Messaging Interface"
+        },
+        {
+          "src": "/images/xchat/4.png",
+          "caption": "User Profile and Privacy Controls"
+        },
+        {
+          "src": "/images/xchat/5.png",
+          "caption": "Rich Media and Attachment Support"
+        }
+      ],
+      "overview": "XChat is an independently developed, feature-rich mobile messaging application engineered to deliver a seamless real-time communication experience. Built with a modern React Native and Expo architecture, the application provides a smooth native feel. I designed and developed the entire application from the ground up, implementing everything from the user interface and secure Firebase authentication to the core real-time messaging engine, user presence system, and media attachments.",
+      "challenge": "Development Highlight",
+      "approach": "Building a real-time chat application requires precise state management and efficient database subscriptions. Using Firebase Firestore, I engineered a highly responsive message delivery system that handles typing indicators, read receipts, and online presence with minimal latency, ensuring a fluid user experience even on slower mobile networks.",
+      "whatWasBuilt": [
+        "Modern real-time chat experience with typing indicators and seen status",
+        "Secure Email/Password and Google authentication via Firebase",
+        "Comprehensive user profiles with avatars, bios, and online presence tracking",
+        "Advanced messaging features including reply, react, edit, delete, and star",
+        "Rich media support for image, file, and live location sharing"
+      ],
+      "stats": [
+        {
+          "label": "Platform",
+          "value": "React Native (Expo)"
+        },
+        {
+          "label": "Backend",
+          "value": "Firebase"
+        },
+        {
+          "label": "Architecture",
+          "value": "TypeScript"
+        },
+        {
+          "label": "Status",
+          "value": "Private APK"
+        }
+      ],
+      "liveUrl": ""
     }
   ],
   "services": {
@@ -231,6 +301,19 @@
           "Intuitive editor setup",
           "Performance tuning",
           "Security best practices"
+        ]
+      },
+      {
+        "id": "mobile-app-development",
+        "number": "05",
+        "title": "Mobile App Development",
+        "shortDescription": "Native-feeling mobile apps for iOS and Android.",
+        "description": "We build fast, responsive, and robust mobile applications using React Native and Expo. Deliver a seamless experience to your users on their smartphones.",
+        "deliverables": [
+          "Cross-platform App Development",
+          "React Native & Expo",
+          "Firebase & Backend Integration",
+          "App Store & Play Store Deployment"
         ]
       }
     ]
@@ -414,6 +497,20 @@
         "projectSlug": "hitias-academy",
         "projectTitle": "HIT IAS Academy — UPSC Portal",
         "tag": "WordPress & Elementor"
+      },
+      {
+        "id": "xchat-project",
+        "name": "XChat App",
+        "role": "Mobile Development",
+        "company": "Independent Project",
+        "companyUrl": "",
+        "avatar": "XC",
+        "avatarBg": "#10B981",
+        "rating": 5,
+        "quote": "A complete real-time messaging mobile application built from the ground up using React Native and Firebase. Features a highly responsive UI, secure authentication, user presence tracking, and rich media attachment support.",
+        "projectSlug": "xchat",
+        "projectTitle": "XChat — Real-time Messaging",
+        "tag": "React Native App"
       }
     ]
   }

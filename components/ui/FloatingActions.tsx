@@ -105,17 +105,29 @@ export default function FloatingActions() {
         </button>
 
         {/* WhatsApp button */}
-        <button
-          type="button"
-          onClick={() => setIsWAOpen(true)}
-          className="group relative flex h-13 w-13 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#1EBF5C] hover:scale-105 hover:-translate-y-0.5 transition-all"
-          aria-label="Chat on WhatsApp"
-        >
-          <Icon name="whatsapp" size={26} />
-          <span className="absolute right-full mr-3 whitespace-nowrap rounded-lg bg-[var(--bg-dark-section)] px-3 py-1.5 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg">
-            Chat on WhatsApp
-          </span>
-        </button>
+        <div className="relative flex items-center justify-center">
+          {/* Animated pulse ring */}
+          <div className="absolute -inset-1 rounded-full bg-[#25D366] opacity-40 animate-ping" style={{ animationDuration: '2s' }}></div>
+          
+          <button
+            type="button"
+            onClick={() => setIsWAOpen(true)}
+            className="group relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#1EBF5C] hover:scale-110 hover:-translate-y-1 transition-all"
+            aria-label="Chat on WhatsApp"
+          >
+            <Icon name="whatsapp" size={28} className="animate-[wiggle_2s_ease-in-out_infinite]" />
+            <style>{`
+              @keyframes wiggle {
+                0%, 100% { transform: rotate(-3deg); }
+                50% { transform: rotate(3deg) scale(1.1); }
+              }
+            `}</style>
+            <span className="absolute right-full mr-4 whitespace-nowrap rounded-lg bg-slate-900 px-3 py-2 text-xs font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+              Chat on WhatsApp
+              <div className="absolute top-1/2 -right-1 -translate-y-1/2 border-4 border-transparent border-l-slate-900"></div>
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* ── WhatsApp Dialog ── */}
