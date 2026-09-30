@@ -109,10 +109,10 @@ export function ProcessSection() {
                 onMouseLeave={() => setActive(null)}
                 className="group relative cursor-default overflow-hidden rounded-3xl transition-all duration-500"
                 style={{
-                  border: `1px solid ${isActive ? meta!.borderColor : "rgba(255,255,255,0.06)"}`,
+                  border: `1px solid ${isActive ? meta!.borderColor : "rgba(255,255,255,0.12)"}`,
                   background: isActive
-                    ? "rgba(255,255,255,0.05)"
-                    : "rgba(255,255,255,0.02)",
+                    ? "rgba(255,255,255,0.06)"
+                    : "rgba(255,255,255,0.035)",
                   boxShadow: isActive
                     ? `0 0 60px -10px ${meta!.glowColor}, 0 20px 40px -10px rgba(0,0,0,0.6)`
                     : "none",
@@ -130,7 +130,7 @@ export function ProcessSection() {
                   className="absolute -right-4 -top-6 select-none font-black text-[120px] leading-none transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2"
                   style={{
                     color: meta!.accentHex,
-                    opacity: isActive ? 0.07 : 0.035,
+                    opacity: isActive ? 0.12 : 0.06,
                     fontVariantNumeric: "tabular-nums",
                   }}
                   aria-hidden="true"
@@ -154,7 +154,7 @@ export function ProcessSection() {
                   {/* Step label */}
                   <p
                     className="mb-2 text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300"
-                    style={{ color: isActive ? meta!.accentHex : "rgba(255,255,255,0.3)" }}
+                    style={{ color: isActive ? meta!.accentHex : "rgba(255,255,255,0.6)" }}
                   >
                     Step {step.step}
                   </p>
@@ -165,7 +165,7 @@ export function ProcessSection() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm leading-relaxed text-white/40 group-hover:text-white/60 transition-colors duration-300 flex-1">
+                  <p className="text-sm leading-relaxed text-white/60 group-hover:text-white/90 transition-colors duration-300 flex-1">
                     {step.description}
                   </p>
 
