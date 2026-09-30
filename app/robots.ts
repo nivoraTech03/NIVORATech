@@ -18,6 +18,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: "https://nivora-tech.vercel.app/sitemap.xml",
-    host: "https://nivora-tech.vercel.app/",
   };
 }
