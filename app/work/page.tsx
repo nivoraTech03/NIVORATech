@@ -11,8 +11,8 @@ import PageBanner from "@/components/layout/PageBanner";
 import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
-  title: "Selected Work | NIVORA — Independent Digital Studio",
-  description: "A showcase of production websites designed and developed with a focus on clarity, performance, and responsive experience.",
+  title: "Web Development Projects | NIVORA",
+  description: "A showcase of web development projects designed and developed with a focus on modern technologies, performance, and responsive experience.",
 };
 
 export default function WorkPage() {

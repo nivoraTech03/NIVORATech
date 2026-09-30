@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://nivora.studio/sitemap.xml",
-    host: "https://nivora.studio",
+    sitemap: "https://nivora-tech.vercel.app/sitemap.xml",
+    host: "https://nivora-tech.vercel.app/",
   };
 }

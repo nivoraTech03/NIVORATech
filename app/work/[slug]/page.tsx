@@ -29,7 +29,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} — Case Study | NIVORA`,
+    title: `${project.title} Project | NIVORA`,
     description: project.description,
   };
 }

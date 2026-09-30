@@ -39,8 +39,8 @@
   },
   "hero": {
     "eyebrow": "INDEPENDENT DIGITAL STUDIO",
-    "heading": "Websites built to make your business stand out.",
-    "description": "Modern, responsive websites designed and developed with thoughtful interfaces, clean code and technologies that fit the project.",
+    "heading": "Modern Websites Built for Growing Businesses",
+    "description": "Modern, responsive websites designed and developed with thoughtful interfaces, clean code and technologies like React, Next.js, and WordPress.",
     "primaryCta": {
       "label": "View Our Work",
       "href": "/work"

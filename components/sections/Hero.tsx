@@ -114,7 +114,7 @@ export function Hero() {
 
           {/* Headline */}
           <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.06] tracking-tight">
-            Websites built to make your{" "}
+            Modern Websites Built for{" "}
             <span
               className="relative inline-block"
               style={{
@@ -123,7 +123,7 @@ export function Hero() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              business stand out.
+              Growing Businesses
             </span>
           </h1>
 

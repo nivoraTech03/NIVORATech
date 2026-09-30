@@ -1,26 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us & Project Enquiry | NIVORA Digital Studio",
+  title: "Contact NIVORA | Start a Web Project",
   description:
-    "Connect directly with lead engineers at NIVORA Digital Studio. Inquire about custom Next.js web applications, PHP flight booking portals, or WordPress Elementor builds. Quick response in 2-4 hours.",
+    "Get in touch with NIVORA to discuss your next web development project. We specialize in React, Next.js, and WordPress websites.",
   keywords: [
     "Contact NIVORA",
-    "Hire Next.js Developer",
-    "Hire PHP Developer",
-    "Hire WordPress Elementor Developer",
-    "Web Application Quotation",
+    "freelance web developer",
+    "React developer",
+    "Next.js developer",
     "Project Enquiry",
     "Website Cost Estimate",
   ],
   alternates: {
-    canonical: "https://nivora.studio/contact",
+    canonical: "https://nivora-tech.vercel.app/contact",
   },
   openGraph: {
-    title: "Contact Us & Project Enquiry | NIVORA Digital Studio",
+    title: "Contact NIVORA | Start a Web Project",
     description:
-      "Speak directly with experienced web engineers. No middle-layers, zero spam. Inquire today for accurate estimates & architecture recommendations.",
-    url: "https://nivora.studio/contact",
+      "Get in touch with NIVORA to discuss your next web development project.",
+    url: "https://nivora-tech.vercel.app/contact",
     type: "website",
   },
 };

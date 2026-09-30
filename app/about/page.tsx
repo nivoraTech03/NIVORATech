@@ -9,8 +9,8 @@ import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
-  title: "About | NIVORA — Independent Digital Studio",
-  description: "NIVORA is an independent digital studio focused on creating modern websites and digital experiences with thoughtful design and clean code.",
+  title: "About NIVORA — Web Development & Digital Studio",
+  description: "NIVORA is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
 };
 
 export default function AboutPage() {

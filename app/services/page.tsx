@@ -7,8 +7,8 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 
 export const metadata: Metadata = {
-  title: "Services | NIVORA — Independent Digital Studio",
-  description: "Focused website design and development services. Business websites, landing pages, React/Next.js platforms, PHP applications, and WordPress builds.",
+  title: "Web Development Services | NIVORA",
+  description: "Focused website development services including business websites, responsive landing pages, React/Next.js platforms, and WordPress builds.",
 };
 
 export default function ServicesPage() {
