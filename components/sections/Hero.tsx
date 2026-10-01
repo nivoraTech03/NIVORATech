@@ -197,7 +197,7 @@ export function Hero() {
                 </div>
 
                 {/* Image Slider */}
-                <div className="relative aspect-[16/11] w-full">
+                <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full">
                   {projects.map((p, i) => (
                     <div
                       key={p.id}
@@ -223,23 +223,23 @@ export function Hero() {
                       )}
 
                       {/* Gradient Overlay for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
 
                       {/* Project Details overlaid on image */}
-                      <div className="absolute bottom-0 left-0 right-0 p-7 z-20 transform transition-transform duration-700" style={{ transform: i === current && !animating ? 'translateY(0)' : 'translateY(15px)' }}>
-                        <div className="flex items-end justify-between gap-4">
-                          <div className="space-y-3">
-                            <div className="inline-block rounded-md bg-indigo-500 px-2.5 py-1 shadow-lg shadow-indigo-500/30 ring-1 ring-white/20">
-                              <p className="text-[10px] font-extrabold text-white uppercase tracking-widest drop-shadow-sm">{p.category}</p>
+                      <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 z-20 transform transition-transform duration-700" style={{ transform: i === current && !animating ? 'translateY(0)' : 'translateY(15px)' }}>
+                        <div className="flex items-end justify-between gap-3 sm:gap-4">
+                          <div className="space-y-2 sm:space-y-3">
+                            <div className="inline-block rounded-md bg-indigo-500 px-2 py-0.5 sm:px-2.5 sm:py-1 shadow-lg shadow-indigo-500/30 ring-1 ring-white/20">
+                              <p className="text-[9px] sm:text-[10px] font-extrabold text-white uppercase tracking-widest drop-shadow-sm">{p.category}</p>
                             </div>
-                            <h2 className="text-[26px] font-extrabold text-white leading-tight drop-shadow-md">{p.title}</h2>
-                            <div className="flex flex-wrap gap-2 pt-1">
-                              <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
-                                <Icon name="sparkles" size={12} className="text-indigo-400" />
+                            <h2 className="text-xl sm:text-[26px] font-extrabold text-white leading-tight drop-shadow-md line-clamp-2">{p.title}</h2>
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-0.5 sm:pt-1">
+                              <span className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-black/40 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
+                                <Icon name="sparkles" size={10} className="text-indigo-400 sm:w-3 sm:h-3" />
                                 {p.stats?.[2]?.value ?? "98/100"} Perf
                               </span>
-                              <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
-                                <Icon name="code" size={12} className="text-emerald-400" />
+                              <span className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-black/40 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
+                                <Icon name="code" size={10} className="text-emerald-400 sm:w-3 sm:h-3" />
                                 {p.architecture?.split(",")[0] ?? "React"}
                               </span>
                             </div>
@@ -247,7 +247,7 @@ export function Hero() {
                           <Link
                             href={`/work/${p.slug}`}
                             aria-label={`View project ${p.title}`}
-                            className="group/btn relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-black overflow-hidden transition-all hover:scale-110 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                            className="group/btn relative flex h-10 w-10 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white text-black overflow-hidden transition-all hover:scale-110 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                           >
                             <div className="absolute inset-0 bg-indigo-100 opacity-0 transition-opacity group-hover/btn:opacity-100" />
                             <Icon name="arrowUpRight" size={22} className="relative z-10 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
