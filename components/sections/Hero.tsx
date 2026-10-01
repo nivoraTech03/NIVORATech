@@ -216,7 +216,8 @@ export function Hero() {
                           alt={p.title}
                           width={1200}
                           height={825}
-                          priority={i === 0}
+                          priority={true}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="h-full w-full object-cover object-top"
                         />
                       )}
