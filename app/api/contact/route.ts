@@ -24,6 +24,11 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
+    // Extract metadata (IP and Device)
+    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'Unknown IP';
+    const userAgent = req.headers.get('user-agent') || 'Unknown Device';
+    const isMobile = /mobile/i.test(userAgent);
+    const deviceType = isMobile ? 'Mobile' : 'Desktop/Tablet';
 
     const SMTP_EMAIL = process.env.SMTP_EMAIL;
     const SMTP_PASSWORD = process.env.SMTP_PASSWORD;
@@ -86,6 +91,14 @@ export async function POST(req: Request) {
                 <tr>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b; font-size: 14px;">Enquiry Subject</td>
                   <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #0f172a; font-weight: 600;">${safeQuery}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b; font-size: 14px;">Device Type</td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #0f172a; font-weight: 600;">${deviceType}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #64748b; font-size: 14px;">User IP Address</td>
+                  <td style="padding: 12px 0; border-bottom: 1px solid #e2e8f0; color: #0f172a; font-weight: 600;">${ip}</td>
                 </tr>
               </table>
               <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
