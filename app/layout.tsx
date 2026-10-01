@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nivora-tech.vercel.app/"),
 
   title: {
-    default: "NIVORA — Web Development & Digital Studio",
-    template: "%s | NIVORA",
+    default: "Web & App Development Agency in Delhi NCR | Nivora Tech",
+    template: "%s | Nivora Tech",
   },
 
   verification: {
@@ -36,17 +36,26 @@ export const metadata: Metadata = {
   },
 
   description:
-    "NIVORA is a web development studio building modern, responsive websites with React, Next.js and WordPress for businesses, startups and growing brands.",
+    "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups. Get a free consultation today!",
+
+  keywords: [
+    "web development agency in Delhi NCR",
+    "software development services Delhi",
+    "app development company",
+    "custom software Delhi NCR",
+    "UI/UX design agency",
+    "Nivora Tech",
+  ],
 
   authors: [
     {
-      name: "NIVORA Digital Studio",
+      name: "Nivora Tech",
       url: "https://nivora-tech.vercel.app/",
     },
   ],
 
-  creator: "NIVORA Digital Studio",
-  publisher: "NIVORA Digital Studio",
+  creator: "Nivora Tech",
+  publisher: "Nivora Tech",
 
   alternates: {
     canonical: "/",
@@ -65,29 +74,29 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "NIVORA — Web Development & Digital Studio",
+    title: "Web & App Development Agency in Delhi NCR | Nivora Tech",
     description:
-      "Modern responsive websites built with React, Next.js and WordPress for businesses and startups.",
+      "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups. Get a free consultation today!",
     url: "https://nivora-tech.vercel.app/",
-    siteName: "NIVORA",
-    locale: "en_US",
+    siteName: "Nivora Tech",
+    locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "/images/skyodeals.jpg",
+        url: "/images/skyodeals.webp",
         width: 1200,
         height: 630,
-        alt: "NIVORA web development projects",
+        alt: "Nivora Tech - Web and App Development Agency",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "NIVORA — Web Development & Digital Studio",
+    title: "Web & App Development Agency in Delhi NCR | Nivora Tech",
     description:
-      "Modern responsive websites built with React, Next.js and WordPress for businesses and startups.",
-    images: ["/images/skyodeals.jpg"],
+      "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups. Get a free consultation today!",
+    images: ["/images/skyodeals.webp"],
   },
 };
 
@@ -95,21 +104,26 @@ const jsonLdSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": "https://nivora-tech.vercel.app/#organization",
-      name: "NIVORA",
-      alternateName: "NIVORA Web Development",
+      name: "Nivora Tech",
+      alternateName: "Nivora Web Development",
       url: "https://nivora-tech.vercel.app/",
       logo: "https://nivora-tech.vercel.app/favicon.ico",
-      image: "https://nivora-tech.vercel.app/images/skyodeals.jpg",
+      image: "https://nivora-tech.vercel.app/images/skyodeals.webp",
       description:
-        "Independent digital studio and freelance web development service specializing in responsive websites using React, Next.js and WordPress.",
+        "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups.",
       email: "nivora1403@gmail.com",
       telephone: "+91-9575450177",
+      priceRange: "$$",
       address: {
         "@type": "PostalAddress",
+        addressLocality: "New Delhi",
+        addressRegion: "Delhi",
         addressCountry: "IN",
+        postalCode: "110001"
       },
+      areaServed: ["Delhi", "Noida", "Gurgaon", "Global"],
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: [
@@ -124,7 +138,10 @@ const jsonLdSchema = {
         closes: "19:30",
       },
       sameAs: [
-        "https://www.instagram.com/nivorat.ech/",
+        "https://www.linkedin.com/company/nivoratech",
+        "https://github.com/nivoratech",
+        "https://twitter.com/nivoratech",
+        "https://www.instagram.com/nivorat.ech/"
       ],
       knowsAbout: [
         "Web Development",

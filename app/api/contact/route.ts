@@ -17,12 +17,24 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { name, phone, email, type, query, message } = body;
 
-    // Server-side validation
-    if (!name || !phone || !query) {
-      return NextResponse.json(
-        { error: 'Missing required fields' },
-        { status: 400 }
-      );
+    // Server-side validation with constraints
+    if (!name || typeof name !== 'string' || name.length > 100) {
+      return NextResponse.json({ error: 'Invalid or missing name' }, { status: 400 });
+    }
+    if (!phone || typeof phone !== 'string' || phone.length > 20) {
+      return NextResponse.json({ error: 'Invalid or missing phone' }, { status: 400 });
+    }
+    if (email && (typeof email !== 'string' || email.length > 100 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))) {
+      return NextResponse.json({ error: 'Invalid email address' }, { status: 400 });
+    }
+    if (type && (typeof type !== 'string' || type.length > 100)) {
+      return NextResponse.json({ error: 'Invalid project type' }, { status: 400 });
+    }
+    if (!query || typeof query !== 'string' || query.length > 500) {
+      return NextResponse.json({ error: 'Invalid or missing query' }, { status: 400 });
+    }
+    if (message && (typeof message !== 'string' || message.length > 5000)) {
+      return NextResponse.json({ error: 'Message is too long (max 5000 chars)' }, { status: 400 });
     }
     // Extract metadata (IP and Device)
     const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'Unknown IP';
@@ -42,7 +54,9 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
         user: SMTP_EMAIL,
         pass: SMTP_PASSWORD,
@@ -200,6 +214,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"Nivora Website" <${SMTP_EMAIL}>`,
       to: SMTP_EMAIL,
+      replyTo: safeEmail !== 'Not provided' ? safeEmail : undefined,
       subject: `New Lead: ${safeType} from ${safeName}`,
       html: adminHtmlTemplate,
     });
@@ -209,6 +224,7 @@ export async function POST(req: Request) {
       await transporter.sendMail({
         from: '"Nivora (No-Reply)" <' + SMTP_EMAIL + '>',
         to: safeEmail,
+        replyTo: SMTP_EMAIL, // Allow them to reply directly to the studio email if needed
         subject: `We've received your enquiry, ${safeName.split(' ')[0]}!`,
         html: customerHtmlTemplate,
       });

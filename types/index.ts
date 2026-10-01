@@ -91,6 +91,22 @@ export interface Testimonial {
   tag: string;
 }
 
+export interface PricingPackage {
+  title: string;
+  subtitle: string;
+  price: string;
+  features: string[];
+  note?: string;
+}
+
+export interface MaintenancePackage {
+  title: string;
+  subtitle: string;
+  price: string;
+  included: string[];
+  excluded: string[];
+}
+
 export interface SiteContent {
   site: SiteConfig;
   navigation: {
@@ -163,6 +179,14 @@ export interface SiteContent {
     title: string;
     description: string;
     items: Testimonial[];
+  };
+  pricing: {
+    landing: PricingPackage;
+    website: PricingPackage;
+    maintenance: MaintenancePackage;
+    redesign: PricingPackage;
+    enhancement: PricingPackage;
+    modification: PricingPackage;
   };
 }
 

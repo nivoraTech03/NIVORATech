@@ -7,6 +7,7 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 import { Icon } from "@/components/ui/Icon";
+import { LocalPartnerSection } from "@/components/sections/LocalPartnerSection";
 
 export const metadata: Metadata = {
   title: "About NIVORA — Web Development & Digital Studio",
@@ -87,6 +88,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <LocalPartnerSection />
       <WhyChooseUs />
       <ProcessSection />
       <ProjectCtaBanner />

@@ -114,7 +114,7 @@ export function Hero() {
 
           {/* Headline */}
           <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.06] tracking-tight">
-            Modern Websites Built for{" "}
+            Custom Web & App Development in{" "}
             <span
               className="relative inline-block"
               style={{
@@ -123,13 +123,13 @@ export function Hero() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Growing Businesses
+              Delhi NCR
             </span>
           </h1>
 
           {/* Description */}
           <p className="max-w-lg text-base sm:text-lg leading-relaxed text-slate-300/80">
-            {hero.description}
+            Nivora Tech is a premium digital agency crafting blazing-fast Next.js websites, React Native apps, and UI/UX solutions for startups and local businesses.
           </p>
 
           {/* CTAs */}
@@ -213,7 +213,7 @@ export function Hero() {
                       {p.image && (
                         <Image
                           src={p.image}
-                          alt={p.title}
+                          alt={`${p.title} - App & Web Development Project by Nivora Tech`}
                           width={1200}
                           height={825}
                           priority={true}

@@ -17,8 +17,8 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { email } = body;
 
-    // Validation
-    if (!email || !email.includes('@')) {
+    // Validation with constraints
+    if (!email || typeof email !== 'string' || email.length > 100 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { error: 'Valid email address is required' },
         { status: 400 }
@@ -43,7 +43,9 @@ export async function POST(req: Request) {
     }
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
         user: SMTP_EMAIL,
         pass: SMTP_PASSWORD,
@@ -189,15 +191,17 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: '"Nivora (No-Reply)" <' + SMTP_EMAIL + '>',
       to: safeEmail,
+      replyTo: SMTP_EMAIL,
       subject: `Welcome to Nivora! Here's your exclusive offer 🎁`,
       html: userHtmlTemplate,
     });
 
     // 2. Send notification to admin (you)
     await transporter.sendMail({
-      from: `"Nivora System" < ${ SMTP_EMAIL } > `,
+      from: `"Nivora System" <${SMTP_EMAIL}>`,
       to: SMTP_EMAIL,
-      subject: `New Newsletter Subscription: ${ safeEmail }`,
+      replyTo: safeEmail,
+      subject: `New Newsletter Subscription: ${safeEmail}`,
       html: adminHtmlTemplate,
     });
 

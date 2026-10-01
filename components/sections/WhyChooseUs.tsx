@@ -8,7 +8,7 @@ export function WhyChooseUs() {
 
   return (
     <section
-      className="py-20 sm:py-28 relative overflow-hidden bg-[#0A0F1D] text-white border-y border-slate-800"
+      className="py-20 sm:py-28 relative overflow-hidden bg-slate-900 text-white border-y border-slate-800"
     >
       {/* Background ambient lighting */}
       <div

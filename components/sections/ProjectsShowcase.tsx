@@ -63,7 +63,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                         {project.image ? (
                           <Image
                             src={project.image}
-                            alt={`${project.title} Preview Mockup`}
+                            alt={`${project.title} - Custom Software & Web Design Portfolio Nivora Tech`}
                             width={1200}
                             height={750}
                             priority={idx === 0}

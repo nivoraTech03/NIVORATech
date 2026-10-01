@@ -3,10 +3,7 @@ import { TechStack } from "@/components/sections/TechStack";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
-import { ProcessSection } from "@/components/sections/ProcessSection";
-import { FaqSection } from "@/components/sections/FaqSection";
-import NewsletterSection from "@/components/sections/NewsletterSection";
+import { MiniPricing } from "@/components/sections/MiniPricing";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 
 export default function Home() {
@@ -17,10 +14,7 @@ export default function Home() {
       <ProjectsShowcase />
       <TestimonialsSection />
       <ServicesGrid />
-      <WhyChooseUs />
-      <ProcessSection />
-      <FaqSection />
-      <NewsletterSection />
+      <MiniPricing />
       <ProjectCtaBanner />
     </>
   );

@@ -62,7 +62,7 @@ export default function PageBanner({
 
         {/* Badge Pill */}
         {badge && (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-400/40 text-indigo-300 text-xs font-bold tracking-wider uppercase mb-5 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-400/40 text-indigo-300 text-xs font-bold tracking-wider uppercase mb-5 shadow-[0_0_15px_rgba(99,102,241,0.3)]">
             <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
             <span>{badge}</span>
           </div>

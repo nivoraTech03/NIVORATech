@@ -25,6 +25,10 @@
         "href": "/about"
       },
       {
+        "label": "Pricing",
+        "href": "/pricing"
+      },
+      {
         "label": "Work",
         "href": "/work"
       },
@@ -127,7 +131,7 @@
         "CSS3",
         "Responsive Design"
       ],
-      "image": "/images/skyodeals.jpg",
+      "image": "/images/skyodeals.webp",
       "overview": "SkyOdeals is a premier international flight and hotel booking agency platform. We developed a comprehensive web portal that allows prospective travelers to search routes, explore discounted international airfares, compare airline deals, and submit customized booking quote requests directly to travel agents.",
       "challenge": "The agency required a responsive, lightning-fast web platform capable of handling complex multi-city flight search UI, dynamic promotional fare banners, and customer booking lead capture that converts visitors into confirmed reservations across low-bandwidth mobile connections.",
       "approach": "Architected a modular PHP application with efficient database indexing for flight packages, dynamic search widgets using vanilla JavaScript and Bootstrap, and streamlined customer lead routing to travel agents for immediate follow-up via call or WhatsApp.",
@@ -176,7 +180,7 @@
         "SEO Optimization",
         "Responsive Design"
       ],
-      "image": "/images/hitias.jpg",
+      "image": "/images/hitias.webp",
       "overview": "HIT IAS Academy is a top-tier Civil Services preparation institute guiding aspirants for UPSC, UPPSC, and State PCS examinations. We designed and engineered a conversion-focused educational platform with dynamic course syllabi, faculty credentials, downloadable test papers, and instant student admission inquiry funnels.",
       "challenge": "The academy needed an accessible, non-technical editorial workflow to publish daily current affairs, batch schedules, and notification popups, while delivering sub-second load times and flawless mobile usability for hundreds of daily student visits.",
       "approach": "Engineered a bespoke WordPress site using Elementor Pro for modular page sections, customized Contact Form 7 with anti-spam protections and automated email alerts, and fine-tuned caching, asset delivery, and image optimization for rapid mobile rendering.",
@@ -224,26 +228,26 @@
         "Firestore",
         "AsyncStorage"
       ],
-      "image": "/images/xchat/1.jpg",
+      "image": "/images/xchat/1.webp",
       "gallery": [
         {
-          "src": "/images/xchat/1.jpg",
+          "src": "/images/xchat/1.webp",
           "caption": "XChat Splash Screen and Branding"
         },
         {
-          "src": "/images/xchat/2.jpg",
+          "src": "/images/xchat/2.webp",
           "caption": "Recent Chats and Active Users"
         },
         {
-          "src": "/images/xchat/3.jpg",
+          "src": "/images/xchat/3.webp",
           "caption": "Real-time Messaging Interface"
         },
         {
-          "src": "/images/xchat/4.jpg",
+          "src": "/images/xchat/4.webp",
           "caption": "User Profile and Privacy Controls"
         },
         {
-          "src": "/images/xchat/5.jpg",
+          "src": "/images/xchat/5.webp",
           "caption": "Rich Media and Attachment Support"
         }
       ],
@@ -545,5 +549,112 @@
         "tag": "React Native App"
       }
     ]
+  },
+  "pricing": {
+    "landing": {
+      "title": "Landing Page",
+      "subtitle": "Perfect for single product launches, services, lead generation or ad campaigns.",
+      "price": "₹2,999",
+      "features": [
+        "Single-page custom layout",
+        "Modern & conversion-focused design",
+        "Lead capture / enquiry form",
+        "WhatsApp CTA integration",
+        "Mobile responsive",
+        "Fast-loading structure",
+        "Clear Call-to-Action sections",
+        "Basic on-page SEO",
+        "Social media links",
+        "Contact information integration",
+        "Cross-browser compatibility",
+        "Deployment assistance"
+      ],
+      "note": "Note: Domain & hosting are not included. Major additional sections, custom features, integrations or third-party services may be charged separately."
+    },
+    "website": {
+      "title": "New Website",
+      "subtitle": "Complete business website tailored to your goals.",
+      "price": "₹3,999",
+      "features": [
+        "Custom UI Design",
+        "Up to 5 standard pages",
+        "Mobile Responsive",
+        "Fast & Lightweight Development",
+        "Basic On-page SEO",
+        "Contact / Enquiry Form",
+        "WhatsApp Integration",
+        "Social Media Integration",
+        "Clear Call-to-Action Sections",
+        "Basic Cross-Browser Compatibility",
+        "Deployment Assistance"
+      ],
+      "note": "Note: Domain & hosting are not included in this package. Major custom features, additional pages, third-party services and advanced integrations may be charged separately."
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "subtitle": "Keep your website fast, updated, and secure.",
+      "price": "₹899/mo",
+      "included": [
+        "Minor text/content updates",
+        "Image replacement/update",
+        "Small UI/design changes",
+        "Existing section updates",
+        "Contact/enquiry form checking",
+        "Basic website health monitoring",
+        "Minor bug fixes",
+        "Basic mobile responsiveness checks",
+        "Broken links/basic functionality checks",
+        "Basic technical support",
+        "Website backup assistance",
+        "Basic security/update checks"
+      ],
+      "excluded": [
+        "New website/page development",
+        "Complete website redesign",
+        "Major new features",
+        "Custom web applications",
+        "Major database changes",
+        "Third-party paid services",
+        "Domain & hosting charges",
+        "Premium plugins/themes/licenses",
+        "Large content/data entry work"
+      ]
+    },
+    "redesign": {
+      "title": "Existing Website Redesign",
+      "subtitle": "Transform an outdated website into a modern, responsive and more user-friendly experience.",
+      "price": "₹2,999",
+      "features": [
+        "Complete UI/UX overhaul",
+        "Mobile-first responsive rebuild",
+        "Performance & speed optimization",
+        "Improved navigation & structure",
+        "Core Web Vitals improvement"
+      ]
+    },
+    "enhancement": {
+      "title": "Website Enhancement",
+      "subtitle": "Improve an existing website without completely rebuilding it.",
+      "price": "₹1,499",
+      "features": [
+        "Speed optimization",
+        "SEO structure improvement",
+        "Adding new sections/pages",
+        "Mobile responsiveness fixes",
+        "Fixing specific bugs/issues"
+      ]
+    },
+    "modification": {
+      "title": "Website Modification",
+      "subtitle": "For specific changes or improvements to an existing website.",
+      "price": "Custom",
+      "features": [
+        "Content & image updates",
+        "Form additions/modifications",
+        "Third-party tool integration",
+        "Small design tweaks",
+        "Adding specific functionality"
+      ]
+    }
   }
 }
