@@ -1,3 +1,4 @@
+import Image from "next/image";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 
@@ -45,7 +46,7 @@ export function TechStack() {
                   className="group inline-flex items-center gap-2.5 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-card)] px-5 py-3 text-sm font-semibold text-[var(--text-primary)] transition-all duration-200 hover:border-indigo-500/50 hover:bg-indigo-50/50 dark:hover:bg-indigo-900/20 hover:text-indigo-600 dark:hover:text-indigo-400 cursor-default shrink-0 shadow-sm hover:shadow-md"
                 >
                   {TechLogos[tech.name] ? (
-                    <img src={TechLogos[tech.name]} alt={tech.name} className="w-5 h-5 object-contain" />
+                    <Image src={TechLogos[tech.name]} alt={tech.name} width={20} height={20} className="w-5 h-5 object-contain" />
                   ) : (
                     <span className="h-1.5 w-1.5 rounded-full bg-[var(--border-strong)] group-hover:bg-indigo-500 transition-colors" />
                   )}

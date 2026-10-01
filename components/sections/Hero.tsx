@@ -170,7 +170,7 @@ export function Hero() {
 
             {/* Stacked Background Cards for Depth */}
             <div className="absolute -inset-1 z-0 rounded-[32px] bg-gradient-to-br from-indigo-500/20 via-purple-500/10 to-transparent blur-xl transition-all duration-700 group-hover:blur-2xl group-hover:from-indigo-500/30 group-hover:via-purple-500/20" />
-            
+
             <div className="absolute top-4 -right-4 z-0 h-full w-full rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-3xl transition-transform duration-700 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:rotate-1" />
             <div className="absolute top-8 -right-8 z-0 h-full w-full rounded-3xl border border-white/5 bg-white/[0.005] backdrop-blur-2xl transition-transform duration-700 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-2" />
 
@@ -231,7 +231,7 @@ export function Hero() {
                             <div className="inline-block rounded-md bg-indigo-500 px-2.5 py-1 shadow-lg shadow-indigo-500/30 ring-1 ring-white/20">
                               <p className="text-[10px] font-extrabold text-white uppercase tracking-widest drop-shadow-sm">{p.category}</p>
                             </div>
-                            <h3 className="text-[26px] font-extrabold text-white leading-tight drop-shadow-md">{p.title}</h3>
+                            <h2 className="text-[26px] font-extrabold text-white leading-tight drop-shadow-md">{p.title}</h2>
                             <div className="flex flex-wrap gap-2 pt-1">
                               <span className="flex items-center gap-1.5 rounded-full bg-black/40 px-3 py-1.5 text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
                                 <Icon name="sparkles" size={12} className="text-indigo-400" />
