@@ -224,26 +224,26 @@
         "Firestore",
         "AsyncStorage"
       ],
-      "image": "/images/xchat/1.png",
+      "image": "/images/xchat/1.jpg",
       "gallery": [
         {
-          "src": "/images/xchat/1.png",
+          "src": "/images/xchat/1.jpg",
           "caption": "XChat Splash Screen and Branding"
         },
         {
-          "src": "/images/xchat/2.png",
+          "src": "/images/xchat/2.jpg",
           "caption": "Recent Chats and Active Users"
         },
         {
-          "src": "/images/xchat/3.png",
+          "src": "/images/xchat/3.jpg",
           "caption": "Real-time Messaging Interface"
         },
         {
-          "src": "/images/xchat/4.png",
+          "src": "/images/xchat/4.jpg",
           "caption": "User Profile and Privacy Controls"
         },
         {
-          "src": "/images/xchat/5.png",
+          "src": "/images/xchat/5.jpg",
           "caption": "Rich Media and Attachment Support"
         }
       ],
