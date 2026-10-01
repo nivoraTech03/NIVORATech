@@ -23,7 +23,7 @@ export function Footer() {
             <div className="pt-4">
               <div className="group relative inline-flex">
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-cyan-500 opacity-30 blur transition duration-1000 group-hover:opacity-60 group-hover:duration-200 animate-pulse"></div>
-                <span className="relative inline-flex items-center gap-2.5 rounded-full border border-[var(--color-accent-border)] bg-[var(--bg-dark-section)] px-4 py-2 text-sm font-medium text-[var(--color-accent)] shadow-xl backdrop-blur-sm">
+                <span className="relative inline-flex items-center gap-2.5 rounded-full border border-[var(--color-accent-border)] bg-[var(--bg-dark-section)] px-4 py-2 text-sm font-medium text-indigo-400 shadow-xl backdrop-blur-sm">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--color-accent)] opacity-75"></span>
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]"></span>

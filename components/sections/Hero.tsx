@@ -201,7 +201,7 @@ export function Hero() {
                   {projects.map((p, i) => (
                     <div
                       key={p.id}
-                      className="absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+                      className="absolute inset-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
                       style={{
                         opacity: i === current ? (animating ? 0 : 1) : 0,
                         transform: i === current
@@ -271,7 +271,7 @@ export function Hero() {
                 >
                   {/* Project label */}
                   <span
-                    className={`text-[11px] font-bold tracking-wider transition-all duration-300 ${i === current ? "text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]" : "text-slate-500 group-hover:text-slate-300"
+                    className={`text-[11px] font-bold tracking-wider transition-colors duration-300 ${i === current ? "text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]" : "text-slate-500 group-hover:text-slate-300"
                       }`}
                   >
                     {p.title.includes('Sky') ? "✈ SkyOdeals" : p.title.includes('HIT IAS') ? "🎓 HIT IAS" : p.title.includes('XChat') ? "💬 XChat" : p.title.split(' ')[0]}
@@ -303,8 +303,8 @@ export function Hero() {
 
       <style>{`
         @keyframes driftGrid {
-          0%   { background-position: 0px 0px; }
-          100% { background-position: 60px 60px; }
+          0%   { transform: translate(0px, 0px); }
+          100% { transform: translate(60px, 60px); }
         }
         @keyframes floatOrb {
           0%, 100% { transform: translateY(0px) translateX(0px); }

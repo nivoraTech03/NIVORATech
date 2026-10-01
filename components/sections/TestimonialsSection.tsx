@@ -94,7 +94,7 @@ export function TestimonialsSection() {
                   <div className="flex items-center gap-3">
                     {/* Avatar */}
                     <div
-                      className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-slate-900 shadow-md"
+                      className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold text-white shadow-md"
                       style={{ background: item.avatarBg }}
                       aria-hidden="true"
                     >
@@ -121,7 +121,7 @@ export function TestimonialsSection() {
                   {/* Project tag + link */}
                   <Link
                     href={`/work/${item.projectSlug}`}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-surface-alt)] px-3 py-1.5 text-[11px] font-semibold text-[var(--text-muted)] hover:border-[var(--color-accent-border)] hover:text-[var(--color-accent)] transition-all duration-150"
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-surface-alt)] px-3 py-1.5 text-[11px] font-semibold text-[var(--text-secondary)] hover:border-[var(--color-accent-border)] hover:text-[var(--color-accent)] transition-all duration-150"
                   >
                     <span
                       className="h-1.5 w-1.5 rounded-full flex-shrink-0"
@@ -142,7 +142,7 @@ export function TestimonialsSection() {
               {testimonials.items.map((item) => (
                 <div
                   key={item.id}
-                  className="flex h-7 w-7 items-center justify-center rounded-full text-[10px] font-bold text-slate-900 ring-2 ring-[var(--bg-surface)]"
+                  className="flex h-7 w-7 items-center justify-center rounded-full text-[10px] font-bold text-white ring-2 ring-[var(--bg-surface)]"
                   style={{ background: item.avatarBg }}
                 >
                   {item.avatar}

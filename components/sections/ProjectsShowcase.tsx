@@ -139,11 +139,11 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
 
                     {/* Actions */}
                     <div className="pt-3 flex flex-wrap items-center gap-3">
-                      <Button href={`/work/${project.slug}`} icon>
+                      <Button href={`/work/${project.slug}`} icon aria-label={`View case study for ${project.title}`}>
                         View Case Study
                       </Button>
                       {project.liveUrl && (
-                        <a
+                        <Link
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -151,7 +151,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                         >
                           <span>Visit Live Website</span>
                           <Icon name="externalLink" size={13} />
-                        </a>
+                        </Link>
                       )}
                     </div>
                   </div>
