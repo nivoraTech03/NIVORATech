@@ -14,16 +14,16 @@ export function FaqSection() {
     >
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5 space-y-6">
-          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-700 shadow-xs">
+          <span className="inline-flex items-center gap-2 rounded-full border border-indigo-200 dark:border-indigo-500/30 bg-indigo-50 dark:bg-indigo-500/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300 shadow-xs">
             <span className="h-2 w-2 rounded-full bg-indigo-600 animate-pulse" />
             {faqs.eyebrow}
           </span>
 
-          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] leading-tight">
             {faqs.title}
           </h2>
 
-          <p className="font-body text-base leading-relaxed text-slate-600">
+          <p className="font-body text-base leading-relaxed text-[var(--text-secondary)]">
             {faqs.description}
           </p>
 
