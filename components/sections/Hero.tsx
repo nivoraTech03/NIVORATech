@@ -135,7 +135,7 @@ export function Hero() {
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-1">
             <Button
-              href="#work"
+              href="/work"
               size="lg"
               className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all"
             >
@@ -245,6 +245,7 @@ export function Hero() {
                           </div>
                           <Link
                             href={`/work/${p.slug}`}
+                            aria-label={`View project ${p.title}`}
                             className="group/btn relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white text-black overflow-hidden transition-all hover:scale-110 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                           >
                             <div className="absolute inset-0 bg-indigo-100 opacity-0 transition-opacity group-hover/btn:opacity-100" />

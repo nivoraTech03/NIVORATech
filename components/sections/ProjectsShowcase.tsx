@@ -66,6 +66,8 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                             alt={`${project.title} Preview Mockup`}
                             width={1200}
                             height={750}
+                            priority={idx === 0}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                           />
                         ) : (
@@ -85,7 +87,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                         PROJECT {project.number}
                       </span>
                       {project.clientType && (
-                        <span className="text-xs font-medium text-[var(--text-muted)] border border-[var(--border-subtle)] px-2 py-0.5 rounded">
+                        <span className="text-xs font-medium text-[var(--text-secondary)] border border-[var(--border-strong)] px-2 py-0.5 rounded">
                           {project.clientType}
                         </span>
                       )}
