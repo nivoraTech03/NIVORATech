@@ -4,8 +4,18 @@ import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
 import siteContent from '@/lib/content';
 
-export function MiniPricing() {
+export function MiniPricing({ 
+  pricingOverrides 
+}: { 
+  pricingOverrides?: { landing?: string; website?: string; maintenance?: string; } 
+}) {
   const { pricing } = siteContent;
+  
+  // Apply overrides if they exist
+  const landingPrice = pricingOverrides?.landing || pricing.landing.price;
+  const websitePrice = pricingOverrides?.website || pricing.website.price;
+  const maintenancePrice = pricingOverrides?.maintenance || pricing.maintenance.price;
+
   const landingFeatures = [
     "Single-page custom layout",
     "Modern & conversion-focused design",
@@ -89,7 +99,7 @@ export function MiniPricing() {
             <div className="mb-6 pb-6 border-b border-[var(--border-subtle)]">
               <span className="text-xs font-semibold text-[var(--text-muted)] block mb-1 uppercase tracking-wider">Starting from</span>
               <div className="font-display text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">
-                {pricing.landing.price.replace('+', '')}<span className="text-xl text-[var(--text-muted)] font-normal">+</span>
+                {landingPrice.replace('+', '')}<span className="text-xl text-[var(--text-muted)] font-normal">+</span>
               </div>
             </div>
             <div className="h-[400px] overflow-y-auto pr-2 mb-8 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[var(--border-strong)] [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[var(--text-muted)]" style={{ scrollbarWidth: 'thin', scrollbarColor: 'var(--border-strong) transparent' }}>
@@ -123,7 +133,7 @@ export function MiniPricing() {
             <div className="mb-6 pb-6 border-b border-indigo-500/20">
               <span className="text-xs font-semibold text-indigo-400 block mb-1 uppercase tracking-wider">Starting from</span>
               <div className="font-display text-5xl font-extrabold text-white tracking-tight">
-                {pricing.website.price.replace('+', '')}<span className="text-2xl text-indigo-300 font-normal">+</span>
+                {websitePrice.replace('+', '')}<span className="text-2xl text-indigo-300 font-normal">+</span>
               </div>
             </div>
             <div className="h-[400px] overflow-y-auto pr-2 mb-8 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-indigo-500/30 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-indigo-500/50" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(99, 102, 241, 0.3) transparent' }}>
@@ -153,7 +163,7 @@ export function MiniPricing() {
             <div className="mb-6 pb-6 border-b border-[var(--border-subtle)]">
               <span className="text-xs font-semibold text-[var(--text-muted)] block mb-1 uppercase tracking-wider">Starting from</span>
               <div className="font-display text-4xl font-extrabold text-[var(--text-primary)] tracking-tight">
-                {pricing.maintenance.price.replace('/mo', '')}<span className="text-base text-[var(--text-muted)] font-normal">/mo</span>
+                {maintenancePrice.replace('/mo', '')}<span className="text-base text-[var(--text-muted)] font-normal">/mo</span>
               </div>
             </div>
             <div className="h-[400px] overflow-y-auto pr-2 mb-8 [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-[var(--border-strong)] [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[var(--text-muted)]" style={{ scrollbarWidth: 'thin', scrollbarColor: 'var(--border-strong) transparent' }}>

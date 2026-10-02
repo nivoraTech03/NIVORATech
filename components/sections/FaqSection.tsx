@@ -4,7 +4,12 @@ import { Button } from "@/components/ui/Button";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { Icon } from "@/components/ui/Icon";
 
-export function FaqSection() {
+interface FaqSectionProps {
+  title?: string;
+  description?: string;
+}
+
+export function FaqSection({ title, description }: FaqSectionProps = {}) {
   const { faqs } = siteContent;
 
   return (
@@ -20,11 +25,11 @@ export function FaqSection() {
           </span>
 
           <h2 className="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] leading-tight">
-            {faqs.title}
+            {title || faqs.title}
           </h2>
 
           <p className="font-body text-base leading-relaxed text-[var(--text-secondary)]">
-            {faqs.description}
+            {description || faqs.description}
           </p>
 
           {/* Contact nudge card */}

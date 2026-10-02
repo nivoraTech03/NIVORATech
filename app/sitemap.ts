@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import siteContent from "@/lib/content";
+import { locations } from "@/data/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nivora-tech.vercel.app";
@@ -29,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...projectRoutes];
+  const locationRoutes: MetadataRoute.Sitemap = Object.keys(locations).map((citySlug) => ({
+    url: `${baseUrl}/locations/${citySlug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...locationRoutes];
 }
