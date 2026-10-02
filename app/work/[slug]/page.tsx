@@ -75,7 +75,7 @@ export default async function ProjectDetailPage({
                 <span className="ml-2 font-medium">LIVE PRODUCTION PREVIEW</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-[var(--color-accent)] font-semibold">https://{displayUrl}</span>
+                <span className="text-[var(--color-accent)] font-semibold">{displayUrl ? `https://${displayUrl}` : `nivora.tech/work/${project.slug}`}</span>
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}

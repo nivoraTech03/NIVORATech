@@ -104,11 +104,11 @@ export function LocationHero({ city }: { city: string }) {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-400" />
             </span>
-            Local Web Experts in {city}
+            Website Development for Businesses in {city}
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.06] tracking-tight">
-            Top-Rated Website Development in{" "}
+            Professional Website Development in{" "}
             <span
               className="relative inline-block"
               style={{

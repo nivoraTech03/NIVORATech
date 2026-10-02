@@ -3,6 +3,7 @@ import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { Icon } from "@/components/ui/Icon";
+import { locations } from "@/data/locations";
 
 export function Footer() {
   const { site, navigation } = siteContent;
@@ -35,7 +36,7 @@ export function Footer() {
           </div>
 
           {/* Navigation */}
-          <div className="lg:col-span-4 lg:pl-8">
+          <div className="lg:col-span-2 lg:pl-8">
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-slate-400">
               Navigation
             </h3>
@@ -53,8 +54,27 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Locations */}
+          <div className="lg:col-span-3 lg:pl-4">
+            <h3 className="font-display text-xs font-bold uppercase tracking-wider text-slate-400">
+              Locations
+            </h3>
+            <ul className="mt-4 space-y-2.5 text-sm font-medium grid grid-cols-2 gap-x-4">
+              {Object.values(locations).map((loc) => (
+                <li key={loc.slug}>
+                  <Link
+                    href={`/locations/${loc.slug}`}
+                    className="text-slate-300 transition-colors hover:text-white"
+                  >
+                    {loc.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Connect */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-slate-400">
               Connect
             </h3>

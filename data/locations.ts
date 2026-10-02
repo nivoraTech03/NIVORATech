@@ -47,11 +47,7 @@ export const locations: Record<string, LocationData> = {
       "In today's digital era, having a professional website is no longer optional for businesses in Gwalior. Whether you run a bustling restaurant in DB City Mall, a coaching institute in Phool Bagh, or a professional clinic in Lashkar, a fast and responsive website acts as your 24/7 digital storefront.",
       "At NIVORA Tech, we specialize in building high-quality, conversion-focused websites tailored specifically for the Gwalior market. We understand that local businesses need more than just a digital brochure—they need a platform that generates leads, builds trust, and seamlessly integrates with tools like WhatsApp to connect with local customers directly."
     ],
-    pricingOverrides: {
-      landing: "₹2,499",
-      website: "₹7,999",
-      maintenance: "₹699/mo",
-    },
+
     businessTypes: [
       {
         title: "Local Retail & Shops",
@@ -176,11 +172,7 @@ export const locations: Record<string, LocationData> = {
       "In the historic and bustling city of Agra, businesses need a modern digital presence to attract both local customers and tourists. A fast, beautifully designed website ensures your brand stands out in a crowded market.",
       "At NIVORA Tech, we specialize in building high-quality, conversion-focused websites tailored specifically for the Agra market. Whether you run a hospitality business, a manufacturing unit, or a retail store, we deliver digital solutions that drive real growth."
     ],
-    pricingOverrides: {
-      landing: "₹2,499",
-      website: "₹7,999",
-      maintenance: "₹699/mo",
-    },
+
     businessTypes: [
       {
         title: "Tourism & Hospitality",
@@ -239,11 +231,7 @@ export const locations: Record<string, LocationData> = {
       "For businesses in Mathura, a strong digital presence is crucial to reaching a wider audience. Whether you cater to locals or the heavy influx of pilgrims and tourists, a responsive website acts as your primary digital storefront.",
       "NIVORA Tech partners with Mathura businesses to deliver modern, fast, and easy-to-use websites. We focus on clear communication, engaging design, and seamless WhatsApp integrations so you can connect with your customers instantly."
     ],
-    pricingOverrides: {
-      landing: "₹2,499",
-      website: "₹7,999",
-      maintenance: "₹699/mo",
-    },
+
     businessTypes: [
       {
         title: "Hospitality & Travel",
@@ -348,7 +336,7 @@ export const locations: Record<string, LocationData> = {
     name: "Noida",
     state: "Uttar Pradesh",
     title: "Premium Website Development in Noida | NIVORA Tech",
-    description: "Top-rated website development and custom web applications in Noida. Partner with NIVORA Tech for scalable, modern, and high-converting digital platforms.",
+    description: "Premium website development and custom web applications in Noida. Partner with NIVORA Tech for scalable, modern, and high-converting digital platforms.",
     primaryKeyword: "website development company in Noida",
     secondaryKeywords: [
       "web development agency in Noida",
@@ -534,11 +522,7 @@ export const locations: Record<string, LocationData> = {
       "As Bhopal rapidly evolves into a digital-first city, local businesses need more than just a social media page. A professional website establishes credibility, builds trust, and allows you to reach customers effectively.",
       "At NIVORA Tech, we partner with businesses in Bhopal to deliver modern, fast, and easy-to-use websites. We focus on clear communication, engaging design, and seamless integrations so you can connect with your customers instantly."
     ],
-    pricingOverrides: {
-      landing: "₹2,499",
-      website: "₹7,999",
-      maintenance: "₹699/mo",
-    },
+
     businessTypes: [
       {
         title: "Educational Institutes",

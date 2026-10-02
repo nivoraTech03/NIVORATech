@@ -53,7 +53,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                         </div>
                         <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-mono text-[var(--text-secondary)]">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                          <span>https://{displayUrl}</span>
+                          <span>{displayUrl ? `https://${displayUrl}` : `nivora.tech/work/${project.slug}`}</span>
                         </div>
                         <div className="w-8" />
                       </div>
