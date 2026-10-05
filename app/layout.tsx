@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nivora-tech.vercel.app/"),
 
   title: {
-    default: "Web & App Development Agency in Delhi NCR | Nivora Tech",
-    template: "%s | Nivora Tech",
+    default: "Website Development Company in Delhi NCR | NIVORA Tech",
+    template: "%s | NIVORA Tech",
   },
 
   verification: {
@@ -36,26 +36,36 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups. Get a free consultation today!",
+    "NIVORA Tech is a website development company in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses. Landing pages from ₹2,999. Free consultation.",
 
   keywords: [
-    "web development agency in Delhi NCR",
-    "software development services Delhi",
-    "app development company",
-    "custom software Delhi NCR",
-    "UI/UX design agency",
-    "Nivora Tech",
+    "website development company in Delhi NCR",
+    "web development company in Delhi NCR",
+    "website developer in Delhi NCR",
+    "website design company in Delhi NCR",
+    "business website development Delhi NCR",
+    "professional website development Delhi NCR",
+    "website redesign company Delhi NCR",
+    "custom website development Delhi NCR",
+    "Next.js website development",
+    "React website development",
+    "WordPress website development",
+    "PHP website development",
+    "responsive website development",
+    "affordable website development",
+    "small business website development",
+    "NIVORA Tech",
   ],
 
   authors: [
     {
-      name: "Nivora Tech",
+      name: "NIVORA Tech",
       url: "https://nivora-tech.vercel.app/",
     },
   ],
 
-  creator: "Nivora Tech",
-  publisher: "Nivora Tech",
+  creator: "NIVORA Tech",
+  publisher: "NIVORA Tech",
 
   alternates: {
     canonical: "/",
@@ -74,11 +84,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Web & App Development Agency in Delhi NCR | Nivora Tech",
+    title: "Website Development Company in Delhi NCR | NIVORA Tech",
     description:
-      "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups. Get a free consultation today!",
+      "NIVORA Tech builds fast, responsive, and business-focused websites for startups and local businesses across Delhi NCR. Landing pages from ₹2,999. Free consultation.",
     url: "https://nivora-tech.vercel.app/",
-    siteName: "Nivora Tech",
+    siteName: "NIVORA Tech",
     locale: "en_IN",
     type: "website",
     images: [
@@ -86,16 +96,16 @@ export const metadata: Metadata = {
         url: "/images/skyodeals.webp",
         width: 1200,
         height: 630,
-        alt: "Nivora Tech - Web and App Development Agency",
+        alt: "NIVORA Tech — Website Development Company in Delhi NCR",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Web & App Development Agency in Delhi NCR | Nivora Tech",
+    title: "Website Development Company in Delhi NCR | NIVORA Tech",
     description:
-      "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups. Get a free consultation today!",
+      "NIVORA Tech builds fast, responsive, and business-focused websites for startups and local businesses across Delhi NCR. Landing pages from ₹2,999.",
     images: ["/images/skyodeals.webp"],
   },
 };
@@ -104,39 +114,22 @@ const jsonLdSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@type": ["ProfessionalService", "Organization"],
       "@id": "https://nivora-tech.vercel.app/#organization",
-      name: "Nivora Tech",
-      alternateName: "Nivora Web Development",
+      name: "NIVORA Tech",
+      alternateName: "NIVORA Web Development",
       url: "https://nivora-tech.vercel.app/",
-      logo: "https://nivora-tech.vercel.app/favicon.ico",
+      logo: "https://nivora-tech.vercel.app/icon.png",
       image: "https://nivora-tech.vercel.app/images/skyodeals.webp",
       description:
-        "Nivora Tech is a top web & app development agency in Delhi NCR offering custom software and UI/UX design for startups.",
+        "NIVORA Tech is a website development company in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses.",
       email: "nivora1403@gmail.com",
       telephone: "+91-9575450177",
-      priceRange: "$$",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "New Delhi",
-        addressRegion: "Delhi",
-        addressCountry: "IN",
-        postalCode: "110001"
-      },
-      areaServed: ["Delhi", "Noida", "Gurgaon", "Global"],
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ],
-        opens: "09:30",
-        closes: "19:30",
-      },
+      priceRange: "₹₹",
+      areaServed: [
+        "Delhi", "Noida", "Gurugram", "Gwalior", "Agra", "Mathura",
+        "Faridabad", "Indore", "Bhopal", "India"
+      ],
       sameAs: [
         "https://www.linkedin.com/company/nivoratech",
         "https://github.com/nivoratech",
@@ -144,23 +137,27 @@ const jsonLdSchema = {
         "https://www.instagram.com/nivorat.ech/"
       ],
       knowsAbout: [
+        "Website Development",
         "Web Development",
         "React Development",
         "Next.js Development",
         "WordPress Website Development",
+        "PHP Development",
         "Frontend Development",
         "Responsive Web Design",
+        "Mobile App Development",
+        "Landing Page Development",
       ],
     },
     {
       "@type": "WebSite",
       "@id": "https://nivora-tech.vercel.app/#website",
       url: "https://nivora-tech.vercel.app/",
-      name: "NIVORA — Web Development & Digital Studio",
+      name: "NIVORA Tech — Website Development Company",
       publisher: {
         "@id": "https://nivora-tech.vercel.app/#organization",
       },
-      inLanguage: "en-US",
+      inLanguage: "en-IN",
     },
   ],
 };

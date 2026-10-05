@@ -60,8 +60,15 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       title: location.title,
       description: location.description,
       url: `https://nivora-tech.vercel.app/locations/${city}`,
+      siteName: "NIVORA Tech",
+      locale: "en_IN",
       type: 'website',
-    }
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: location.title,
+      description: location.description,
+    },
   };
 }
 
@@ -126,7 +133,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         <LocationHero city={location.name} />
         <LocationIntro introParagraphs={location.introParagraphs} />
         <LocationServices city={location.name} />
-        <MiniPricing pricingOverrides={location.pricingOverrides} />
+        <MiniPricing />
         <LocationBusinessTypes businessTypes={location.businessTypes} city={location.name} />
         <LocationFeatures />
         <ProcessSection />

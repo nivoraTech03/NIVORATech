@@ -206,7 +206,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "Do you provide website maintenance in Agra?",
-        answer: "Yes, we offer ongoing website maintenance starting from ₹699/month to keep your website fast, updated, and secure post-launch."
+        answer: "Yes, we offer ongoing website maintenance starting from ₹899/month to keep your website fast, updated, and secure post-launch."
       },
       {
         question: "How can I start a website project with NIVORA?",
@@ -261,7 +261,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "What is the cost of a basic website in Mathura?",
-        answer: "Our landing page packages start at ₹2,499, and full multi-page business websites start at ₹7,999."
+        answer: "Our landing page packages start at ₹2,999+, and full multi-page business websites start at ₹3,999+. We also offer website redesigns from ₹2,999 and maintenance from ₹899/month."
       },
       {
         question: "Do you offer SEO services?",
@@ -335,7 +335,7 @@ export const locations: Record<string, LocationData> = {
     slug: "noida",
     name: "Noida",
     state: "Uttar Pradesh",
-    title: "Premium Website Development in Noida | NIVORA Tech",
+    title: "Website Development Company in Noida | NIVORA Tech",
     description: "Premium website development and custom web applications in Noida. Partner with NIVORA Tech for scalable, modern, and high-converting digital platforms.",
     primaryKeyword: "website development company in Noida",
     secondaryKeywords: [
@@ -393,7 +393,7 @@ export const locations: Record<string, LocationData> = {
     slug: "gurugram",
     name: "Gurugram",
     state: "Haryana",
-    title: "Premium Web & App Development in Gurugram | NIVORA Tech",
+    title: "Website Development Company in Gurugram | NIVORA Tech",
     description: "NIVORA Tech delivers world-class website development, custom web apps, and enterprise digital solutions for businesses and startups in Gurugram.",
     primaryKeyword: "website development company in Gurugram",
     secondaryKeywords: [
@@ -552,7 +552,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "What is the cost of a basic website in Bhopal?",
-        answer: "Our landing page packages start at ₹2,499, and full multi-page business websites start at ₹7,999."
+        answer: "Our landing page packages start at ₹2,999+, and full multi-page business websites start at ₹3,999+. We also offer website redesigns from ₹2,999 and maintenance from ₹899/month."
       },
       {
         question: "Do you offer SEO services?",

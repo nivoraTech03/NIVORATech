@@ -7,10 +7,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routeConfig: Record<string, { priority: number; changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" }> = {
     "": { priority: 1.0, changeFrequency: "daily" },
+    "/pricing": { priority: 0.9, changeFrequency: "weekly" },
     "/work": { priority: 0.9, changeFrequency: "weekly" },
     "/services": { priority: 0.9, changeFrequency: "weekly" },
     "/contact": { priority: 0.95, changeFrequency: "weekly" },
     "/about": { priority: 0.8, changeFrequency: "monthly" },
+    "/locations": { priority: 0.85, changeFrequency: "monthly" },
     "/terms": { priority: 0.3, changeFrequency: "yearly" },
   };
 

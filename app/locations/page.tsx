@@ -6,17 +6,24 @@ import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 
 export const metadata: Metadata = {
-  title: 'Service Locations | NIVORA Tech',
-  description: 'NIVORA Tech provides premium website development, web apps, and SEO services across multiple cities in India including Delhi NCR, Gwalior, Agra, and more.',
+  title: 'Website Development Services Across India | NIVORA Tech',
+  description: 'NIVORA Tech provides professional website development, web design, and digital solutions to businesses across India — including Delhi NCR, Gwalior, Agra, Noida, Gurugram, Indore, Bhopal and more.',
   alternates: {
     canonical: 'https://nivora-tech.vercel.app/locations',
   },
   openGraph: {
-    title: 'Service Locations | NIVORA Tech',
-    description: 'Find our website development and digital solutions available in your city.',
+    title: 'Website Development Services Across India | NIVORA Tech',
+    description: 'Find NIVORA Tech website development services available in your city across India.',
     url: 'https://nivora-tech.vercel.app/locations',
+    siteName: 'NIVORA Tech',
+    locale: 'en_IN',
     type: 'website',
-  }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Website Development Services Across India | NIVORA Tech',
+    description: 'Find NIVORA Tech website development services available in your city across India.',
+  },
 };
 
 export default function LocationsHubPage() {
