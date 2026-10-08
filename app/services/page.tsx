@@ -9,6 +9,14 @@ import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 export const metadata: Metadata = {
   title: "Web Development Services | NIVORA",
   description: "Focused website development services including business websites, responsive landing pages, React/Next.js platforms, and WordPress builds.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Web Development Services | NIVORA",
+    description: "Focused website development services including business websites, responsive landing pages, React/Next.js platforms, and WordPress builds.",
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {

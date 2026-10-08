@@ -67,10 +67,6 @@ export const metadata: Metadata = {
   creator: "NIVORA Tech",
   publisher: "NIVORA Tech",
 
-  alternates: {
-    canonical: "/",
-  },
-
   robots: {
     index: true,
     follow: true,

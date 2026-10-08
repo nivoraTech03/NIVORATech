@@ -12,6 +12,14 @@ import { LocalPartnerSection } from "@/components/sections/LocalPartnerSection";
 export const metadata: Metadata = {
   title: "About NIVORA — Web Development & Digital Studio",
   description: "NIVORA is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About NIVORA — Web Development & Digital Studio",
+    description: "NIVORA is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {

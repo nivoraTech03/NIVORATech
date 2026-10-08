@@ -13,6 +13,14 @@ import { Icon } from "@/components/ui/Icon";
 export const metadata: Metadata = {
   title: "Web Development Projects | NIVORA",
   description: "A showcase of web development projects designed and developed with a focus on modern technologies, performance, and responsive experience.",
+  alternates: {
+    canonical: "/work",
+  },
+  openGraph: {
+    title: "Web Development Projects | NIVORA",
+    description: "A showcase of web development projects designed and developed with a focus on modern technologies, performance, and responsive experience.",
+    url: "/work",
+  },
 };
 
 export default function WorkPage() {
