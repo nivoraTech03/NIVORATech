@@ -49,7 +49,7 @@
   "hero": {
     "eyebrow": "DIGITAL DEVELOPMENT STUDIO",
     "heading": "Custom Web & App Development in Delhi NCR",
-    "description": "NIVORA Tech builds fast, responsive and business-focused websites, web applications and mobile apps for startups, local businesses and growing brands.",
+    "description": "Nivora Tech is a premier digital agency crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.",
     "primaryCta": {
       "label": "View Our Work",
       "href": "/work"
@@ -114,9 +114,57 @@
   },
   "projects": [
     {
+      "id": "auralux-pg",
+      "slug": "auralux-pg",
+      "number": "01",
+      "title": "AURA LUXE SUITES — Luxury Executive PG & Serviced Residence",
+      "category": "Next.js & React Luxury Coliving Portal",
+      "clientType": "Luxury Serviced Residence & PG",
+      "architecture": "Next.js 15, React 19, TypeScript, Tailwind CSS & Lucide Icons",
+      "description": "A boutique 5-star PG and serviced living web platform in Sector 43 Golf Course Road, Gurugram. Engineered with an executive dark-gold UI, architectural suites catalog, instant private visit scheduler, and direct WhatsApp lead funnels.",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "SEO Schema",
+        "Responsive UI"
+      ],
+      "image": "/images/auralux.webp",
+      "overview": "AURA LUXE SUITES is a premier boutique PG residence located on Golf Course Road, Sector 43, Gurugram, designed for corporate executives, tech creators, and scholars. We engineered a luxury web application that replaces frustrating hostel websites with the polish and elegance of a 5-star serviced living experience.",
+      "challenge": "The client required a high-converting, luxury-grade web presence that appeals to professionals working in CyberHub and Golf Course Road. The portal needed acoustic quietness messaging, seamless suite comparison (Single, Double, Triple sharing), and zero-friction lead conversion via automated WhatsApp visit booking.",
+      "approach": "We architected a lightning-fast Next.js platform using Tailwind CSS and high-contrast dark gold aesthetics. We implemented structured LodgingBusiness schema for Gurugram local SEO, instant visit scheduling popups, responsive touch carousels, and sub-second page performance.",
+      "whatWasBuilt": [
+        "Architectural suites showcase with Single, Twin, and Triple sharing floorplans",
+        "Instant 'Schedule a Private Visit' and one-click WhatsApp inquiry funnel",
+        "Hospitality-grade amenities overview (300 Mbps Wi-Fi, chef dining, biometric security)",
+        "Full mobile-first responsiveness optimized for high-end mobile devices",
+        "Local SEO optimization with Google LodgingBusiness Schema for Sector 43 & Golf Course Road"
+      ],
+      "stats": [
+        {
+          "label": "Tech Stack",
+          "value": "Next.js 15"
+        },
+        {
+          "label": "UI Design",
+          "value": "5-Star Luxury"
+        },
+        {
+          "label": "Performance",
+          "value": "99/100"
+        },
+        {
+          "label": "Direct Inquiries",
+          "value": "+140%"
+        }
+      ],
+      "liveUrl": "http://auraluxpg.vercel.app/"
+    },
+    {
       "id": "skyodeals",
       "slug": "skyodeals",
-      "number": "01",
+      "number": "02",
       "title": "SkyOdeals — Flight Booking & Travel Portal",
       "category": "PHP Web Application & Booking Platform",
       "clientType": "Travel & Tourism Agency",
@@ -165,7 +213,7 @@
     {
       "id": "hitias-academy",
       "slug": "hitias-academy",
-      "number": "02",
+      "number": "03",
       "title": "HIT IAS Academy — UPSC & State PCS Portal",
       "category": "WordPress & Elementor Educational Platform",
       "clientType": "Civil Services Coaching Institute",
@@ -214,7 +262,7 @@
     {
       "id": "xchat",
       "slug": "xchat",
-      "number": "03",
+      "number": "04",
       "title": "XChat — Real-time Messaging",
       "category": "React Native Mobile Application",
       "clientType": "Independent Mobile Project",
@@ -228,7 +276,7 @@
         "Firestore",
         "AsyncStorage"
       ],
-      "image": "/images/xchat/1.webp",
+      "image": "/images/xchat.webp",
       "gallery": [
         {
           "src": "/images/xchat/1.webp",
@@ -547,6 +595,20 @@
         "projectSlug": "xchat",
         "projectTitle": "XChat — Real-time Messaging",
         "tag": "React Native App"
+      },
+      {
+        "id": "auralux-project",
+        "name": "Rohit Singhania",
+        "role": "Director & Managing Partner",
+        "company": "AURA LUXE SUITES",
+        "companyUrl": "http://auraluxpg.vercel.app/",
+        "avatar": "AL",
+        "avatarBg": "#D4AF37",
+        "rating": 5,
+        "quote": "Nivora created a world-class luxury web portal for our Golf Course Road executive PG residence. The dark gold aesthetic, mobile responsiveness, and seamless WhatsApp booking funnels have elevated our brand image and filled our suites in record time. Exceptional engineering and delivery!",
+        "projectSlug": "auralux-pg",
+        "projectTitle": "AURA LUXE SUITES — Golf Course Road, Gurugram",
+        "tag": "Next.js Luxury Living"
       }
     ]
   },
@@ -554,7 +616,7 @@
     "landing": {
       "title": "Landing Page",
       "subtitle": "Perfect for single product launches, services, lead generation or ad campaigns.",
-      "price": "₹2,999",
+      "price": "Custom Quote",
       "features": [
         "Single-page custom layout",
         "Modern & conversion-focused design",
@@ -569,12 +631,12 @@
         "Cross-browser compatibility",
         "Deployment assistance"
       ],
-      "note": "Note: Domain & hosting are not included. Major additional sections, custom features, integrations or third-party services may be charged separately."
+      "note": "Note: Project scope is tailored to your requirements with transparent milestone deliverables. Domain & hosting assistance provided."
     },
     "website": {
       "title": "New Website",
       "subtitle": "Complete business website tailored to your goals.",
-      "price": "₹3,999",
+      "price": "Custom Quote",
       "features": [
         "Custom UI Design",
         "Up to 5 standard pages",
@@ -588,12 +650,12 @@
         "Basic Cross-Browser Compatibility",
         "Deployment Assistance"
       ],
-      "note": "Note: Domain & hosting are not included in this package. Major custom features, additional pages, third-party services and advanced integrations may be charged separately."
+      "note": "Note: Custom-tailored to your exact business objectives with dedicated support and responsive design on all devices."
     },
     "maintenance": {
       "title": "Maintenance",
       "subtitle": "Keep your website fast, updated, and secure.",
-      "price": "₹899/mo",
+      "price": "Custom Plan",
       "included": [
         "Minor text/content updates",
         "Image replacement/update",
@@ -623,7 +685,7 @@
     "redesign": {
       "title": "Existing Website Redesign",
       "subtitle": "Transform an outdated website into a modern, responsive and more user-friendly experience.",
-      "price": "₹2,999",
+      "price": "Custom Quote",
       "features": [
         "Complete UI/UX overhaul",
         "Mobile-first responsive rebuild",
@@ -635,7 +697,7 @@
     "enhancement": {
       "title": "Website Enhancement",
       "subtitle": "Improve an existing website without completely rebuilding it.",
-      "price": "₹1,499",
+      "price": "Custom Quote",
       "features": [
         "Speed optimization",
         "SEO structure improvement",
@@ -647,7 +709,7 @@
     "modification": {
       "title": "Website Modification",
       "subtitle": "For specific changes or improvements to an existing website.",
-      "price": "Custom",
+      "price": "Custom Quote",
       "features": [
         "Content & image updates",
         "Form additions/modifications",

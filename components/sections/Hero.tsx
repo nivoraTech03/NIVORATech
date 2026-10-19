@@ -3,13 +3,94 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 
+interface FeaturedProject {
+  id: string;
+  tabLabel: string;
+  tabSub: string;
+  category: string;
+  title: string;
+  location: string;
+  metric: string;
+  techBadge: string;
+  slug: string;
+  image: string;
+  liveUrl?: string;
+  glowColor: string;
+  isNew?: boolean;
+}
+
+const FEATURED_PROJECTS: FeaturedProject[] = [
+  {
+    id: "auralux-pg",
+    tabLabel: "✨ AURA LUXE",
+    tabSub: "Luxury PG Gurugram",
+    category: "Next.js 15 & React Luxury Coliving Portal",
+    title: "AURA LUXE SUITES — Luxury Executive PG & Serviced Residence",
+    location: "Sector 43, Golf Course Road, Gurugram",
+    metric: "99/100 Perf · +140% Direct Inquiries",
+    techBadge: "Next.js 15",
+    slug: "auralux-pg",
+    image: "/images/auralux.webp",
+    liveUrl: "http://auraluxpg.vercel.app/",
+    glowColor: "rgba(212, 175, 55, 0.25)",
+    isNew: true,
+  },
+  {
+    id: "skyodeals",
+    tabLabel: "✈ SkyOdeals",
+    tabSub: "Flight Portal",
+    category: "PHP Web Application & Booking Platform",
+    title: "SkyOdeals — Flight Booking & Travel Portal",
+    location: "Delhi NCR & Global Travel Booking",
+    metric: "98/100 Perf · 1,200+ Bookings",
+    techBadge: "Custom PHP",
+    slug: "skyodeals",
+    image: "/images/skyodeals.webp",
+    liveUrl: "https://skyodeals.com",
+    glowColor: "rgba(14, 165, 233, 0.25)",
+  },
+  {
+    id: "hitias",
+    tabLabel: "🎓 HIT IAS",
+    tabSub: "Civil Services",
+    category: "WordPress & Elementor Educational Platform",
+    title: "HIT IAS Academy — UPSC & State PCS Portal",
+    location: "Delhi & Gwalior Centers",
+    metric: "< 1.2s Load · 2,500+ Aspirants",
+    techBadge: "WordPress CMS",
+    slug: "hitias",
+    image: "/images/hitias.webp",
+    liveUrl: "https://hitias.renutech.in/",
+    glowColor: "rgba(234, 179, 8, 0.25)",
+  },
+  {
+    id: "xchat",
+    tabLabel: "💬 XChat",
+    tabSub: "Mobile App",
+    category: "React Native Mobile Application",
+    title: "XChat — Real-time Messaging & Community",
+    location: "iOS & Android Cross-Platform",
+    metric: "60 FPS Native · 45k+ Users",
+    techBadge: "React Native",
+    slug: "xchat",
+    image: "/images/xchat.webp",
+    liveUrl: "https://github.com/nivoraTech03",
+    glowColor: "rgba(168, 85, 247, 0.25)",
+  },
+];
+
+const CORE_TECHS = [
+  { name: "Next.js / React", tag: "Frontend & Fullstack" },
+  { name: "React Native", tag: "iOS & Android Apps" },
+  { name: "PHP & MySQL", tag: "Custom Web Portals" },
+  { name: "WordPress & Elementor", tag: "High-Converting CMS" },
+];
+
 export function Hero() {
-  const { hero, projects } = siteContent;
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -20,299 +101,333 @@ export function Hero() {
       setTimeout(() => {
         setCurrent(idx);
         setAnimating(false);
-      }, 280);
+      }, 240);
     },
     [animating, current]
   );
 
-  // Auto-slide every 4s
+  const nextSlide = useCallback(() => {
+    slideTo((current + 1) % FEATURED_PROJECTS.length);
+  }, [current, slideTo]);
+
+  const prevSlide = useCallback(() => {
+    slideTo((current - 1 + FEATURED_PROJECTS.length) % FEATURED_PROJECTS.length);
+  }, [current, slideTo]);
+
+  // Auto slide every 6.5s
   useEffect(() => {
     const t = setInterval(() => {
       setCurrent((c) => {
         setAnimating(true);
-        setTimeout(() => setAnimating(false), 280);
-        return (c + 1) % projects.length;
+        setTimeout(() => setAnimating(false), 240);
+        return (c + 1) % FEATURED_PROJECTS.length;
       });
-    }, 4000);
+    }, 6500);
     return () => clearInterval(t);
-  }, [projects.length]);
+  }, []);
 
-  const active = projects[current] ?? projects[0]!;
+  const active = FEATURED_PROJECTS[current] ?? FEATURED_PROJECTS[0]!;
 
   return (
-    <section className="relative overflow-hidden bg-[#060B18] text-white border-b border-white/[0.06]" style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}>
-
-      {/* ─── Animated Grid Background ─── */}
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#0c1228] via-[#080d20] to-[#040713] text-white pt-28 pb-20 lg:pt-36 lg:pb-28">
+      {/* ─── Ambient Glow Mesh ─── */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        {/* Drifting grid — moves diagonally, very transparent */}
-        <div
-          className="absolute inset-[-10%] w-[120%] h-[120%]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(99,102,241,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.07) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-            maskImage: "radial-gradient(ellipse 80% 70% at 50% 50%, black 35%, transparent 100%)",
-            animation: "driftGrid 18s linear infinite",
-          }}
-        />
-
-        {/* Glowing intersection dots — also drift */}
+        {/* Subtle Perspective Grid */}
         <div
           className="absolute inset-[-10%] w-[120%] h-[120%] opacity-25"
           style={{
-            backgroundImage: "radial-gradient(circle, rgba(139,92,246,0.5) 1px, transparent 1px)",
+            backgroundImage:
+              "linear-gradient(rgba(99,102,241,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.08) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
-            maskImage: "radial-gradient(ellipse 65% 55% at 50% 50%, black 25%, transparent 100%)",
-            animation: "driftGrid 18s linear infinite",
+            maskImage: "radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 100%)",
+            animation: "driftGrid 32s linear infinite",
           }}
         />
 
-        {/* Large ambient glow — center top */}
+        {/* Dynamic Project Ambient Glow */}
         <div
-          className="absolute -top-32 left-1/2 -translate-x-1/2 h-[480px] w-[700px] rounded-full blur-[130px]"
-          style={{ background: "radial-gradient(circle, rgba(99,102,241,0.30) 0%, rgba(139,92,246,0.15) 50%, transparent 70%)" }}
-        />
-        {/* Right side glow */}
-        <div
-          className="absolute top-1/3 -right-24 h-[320px] w-[320px] rounded-full blur-[100px]"
-          style={{ background: "radial-gradient(circle, rgba(14,165,233,0.20) 0%, transparent 70%)" }}
-        />
-        {/* Bottom left glow */}
-        <div
-          className="absolute -bottom-20 -left-20 h-[280px] w-[280px] rounded-full blur-[90px]"
-          style={{ background: "radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%)" }}
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[600px] w-[950px] rounded-full blur-[160px] transition-all duration-1000 ease-out"
+          style={{ background: active.glowColor }}
         />
 
-        {/* Floating animated orbs */}
+        {/* Deep Studio Auras */}
         <div
-          className="absolute top-1/4 left-[15%] h-3 w-3 rounded-full bg-indigo-400/60"
-          style={{ animation: "floatOrb 8s ease-in-out infinite" }}
+          className="absolute -top-36 left-1/2 -translate-x-1/2 h-[520px] w-[850px] rounded-full blur-[150px]"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(56,189,248,0.15) 45%, transparent 75%)",
+          }}
         />
         <div
-          className="absolute top-1/2 right-[20%] h-2 w-2 rounded-full bg-violet-400/50"
-          style={{ animation: "floatOrb 10s ease-in-out infinite reverse" }}
+          className="absolute top-1/2 -left-32 h-[400px] w-[400px] rounded-full blur-[140px]"
+          style={{
+            background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)",
+          }}
         />
         <div
-          className="absolute bottom-1/3 left-[30%] h-1.5 w-1.5 rounded-full bg-sky-400/50"
-          style={{ animation: "floatOrb 12s ease-in-out infinite 2s" }}
+          className="absolute top-1/2 -right-32 h-[400px] w-[400px] rounded-full blur-[140px]"
+          style={{
+            background: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)",
+          }}
         />
       </div>
 
-      <Container className="relative z-10 grid items-center gap-14 lg:grid-cols-12 py-24 lg:py-0">
-
-        {/* ─── Left: Copy ─── */}
-        <div className="lg:col-span-6 space-y-7">
-
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-indigo-300 backdrop-blur-sm">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-indigo-400" />
+      <Container className="relative z-10">
+        {/* ─── Grand Centered Hero Header ─── */}
+        <div className="mx-auto max-w-4xl text-center space-y-6">
+          {/* Eyebrow Studio Pill */}
+          <div className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-indigo-500/20 via-purple-500/15 to-indigo-500/20 px-4 py-1.5 text-xs font-bold tracking-wider uppercase text-indigo-300 backdrop-blur-xl shadow-[0_0_30px_rgba(99,102,241,0.25)] ring-1 ring-white/10">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
-            {hero.eyebrow}
+            <span>DIGITAL DEVELOPMENT STUDIO</span>
+            <span className="text-white/30">•</span>
+            <span className="text-slate-300 font-medium">DELHI NCR &amp; GURUGRAM</span>
           </div>
 
-          {/* Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold leading-[1.06] tracking-tight">
-            Custom Web & App Development in{" "}
-            <span
-              className="relative inline-block"
-              style={{
-                background: "linear-gradient(135deg, #818CF8 0%, #6366F1 35%, #38BDF8 75%, #22D3EE 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Delhi NCR
+          {/* Epic Main Headline */}
+          <h1 className="font-display text-4xl sm:text-6xl lg:text-[64px] font-black leading-[1.08] tracking-tight text-white drop-shadow-sm">
+            Custom Web &amp; App Development{" "}
+            <span className="block mt-2 bg-gradient-to-r from-indigo-300 via-sky-300 to-teal-300 bg-clip-text text-transparent">
+              in Delhi NCR &amp; Gurugram
             </span>
           </h1>
 
-          {/* Description */}
-          <p className="max-w-lg text-base sm:text-lg leading-relaxed text-slate-300/80">
-            Nivora Tech is a premium digital agency crafting blazing-fast Next.js websites, React Native apps, and UI/UX solutions for startups and local businesses.
+          {/* Subtitle Value Proposition */}
+          <p className="mx-auto max-w-2xl text-base sm:text-lg lg:text-xl leading-relaxed text-slate-300/90 font-normal">
+            Nivora Tech is a premier digital agency crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-3 pt-1">
+          {/* CTA Buttons & WhatsApp Line */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
             <Button
               href="/work"
               size="lg"
-              className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all"
+              className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold shadow-xl shadow-indigo-600/35 hover:shadow-indigo-500/50 hover:-translate-y-0.5 transition-all px-8 py-3.5 text-sm"
             >
-              View Our Work
+              <span>View Selected Work</span>
+              <Icon name="arrowRight" size={16} className="ml-2" />
             </Button>
             <Button
               href="/contact"
               size="lg"
-              className="border border-white/15 bg-white/5 text-white hover:bg-white/10 hover:border-white/25 backdrop-blur-sm hover:-translate-y-0.5 transition-all"
+              className="w-full sm:w-auto bg-white/10 text-white hover:bg-white/15 backdrop-blur-md hover:-translate-y-0.5 transition-all px-8 py-3.5 text-sm font-semibold shadow-lg shadow-black/20"
             >
               Start a Project
             </Button>
+            <a
+              href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20am%20interested%20in%20discussing%20a%20website%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-all bg-emerald-950/50 px-5 py-3 rounded-full backdrop-blur-md shadow-lg shadow-black/20 ring-1 ring-emerald-500/30 hover:ring-emerald-400/50"
+            >
+              <Icon name="whatsapp" size={16} />
+              <span>WhatsApp Us (+91 95754 50177)</span>
+            </a>
           </div>
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap gap-2.5 pt-2">
-            {["Next.js / React", "React Native", "PHP & MySQL", "WordPress & Elementor"].map((b) => (
+          {/* Core Tech Stack Badges Strip */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs">
+            <span className="text-slate-400 font-semibold text-[11px] uppercase tracking-wider mr-1 hidden sm:inline">
+              Engineered With:
+            </span>
+            {CORE_TECHS.map((tech) => (
               <span
-                key={b}
-                className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-xs font-medium text-slate-300"
+                key={tech.name}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900/90 text-slate-200 text-xs font-medium backdrop-blur-md shadow-sm ring-1 ring-white/10 hover:ring-indigo-400/40 transition-all"
               >
-                <Icon name="check" size={11} className="text-indigo-400" />
-                {b}
+                <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                <span>{tech.name}</span>
               </span>
             ))}
           </div>
         </div>
 
-        {/* ─── Right: Auto-sliding project showcase ─── */}
-        <div className="lg:col-span-6">
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-
-            {/* Stacked Background Cards for Depth */}
-            <div className="absolute -inset-1 z-0 rounded-[32px] bg-gradient-to-br from-indigo-500/20 via-purple-500/10 to-transparent blur-xl transition-all duration-700 group-hover:blur-2xl group-hover:from-indigo-500/30 group-hover:via-purple-500/20" />
-
-            <div className="absolute top-4 -right-4 z-0 h-full w-full rounded-3xl border border-white/5 bg-white/[0.01] backdrop-blur-3xl transition-transform duration-700 group-hover:translate-x-2 group-hover:-translate-y-2 group-hover:rotate-1" />
-            <div className="absolute top-8 -right-8 z-0 h-full w-full rounded-3xl border border-white/5 bg-white/[0.005] backdrop-blur-2xl transition-transform duration-700 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-2" />
-
-            {/* Main Clean Glass Card Presentation */}
-            <div className="group relative z-10 overflow-hidden rounded-3xl border border-white/[0.08] bg-[#0A101F]/80 p-2.5 shadow-2xl shadow-indigo-900/50 backdrop-blur-xl transition-all duration-700 hover:border-white/20 hover:bg-[#0A101F]/90">
-
-              {/* Inner card containing the image */}
-              <div className="relative overflow-hidden rounded-2xl bg-black">
-
-                {/* Minimal Header */}
-                <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between bg-gradient-to-b from-black/80 to-transparent px-5 py-4">
-                  <div className="flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
-                    </div>
-                  </div>
-                  <div className="rounded-full bg-black/50 px-3 py-1 backdrop-blur-md border border-white/10">
-                    <p className="text-[10px] font-medium tracking-widest text-white/70 uppercase">
-                      Featured Work
-                    </p>
-                  </div>
-                </div>
-
-                {/* Image Slider */}
-                <div className="relative aspect-[4/3] sm:aspect-[16/11] w-full">
-                  {projects.map((p, i) => (
-                    <div
-                      key={p.id}
-                      className="absolute inset-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                      style={{
-                        opacity: i === current ? (animating ? 0 : 1) : 0,
-                        transform: i === current
-                          ? animating ? "scale(1.05)" : "scale(1)"
-                          : "scale(1.05)",
-                        zIndex: i === current ? 10 : 0,
-                      }}
-                    >
-                      {p.image && (
-                        <Image
-                          src={p.image}
-                          alt={`${p.title} - App & Web Development Project by Nivora Tech`}
-                          width={1200}
-                          height={825}
-                          priority={true}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="h-full w-full object-cover object-top"
-                        />
-                      )}
-
-                      {/* Gradient Overlay for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none" />
-
-                      {/* Project Details overlaid on image */}
-                      <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-7 z-20 transform transition-transform duration-700" style={{ transform: i === current && !animating ? 'translateY(0)' : 'translateY(15px)' }}>
-                        <div className="flex items-end justify-between gap-3 sm:gap-4">
-                          <div className="space-y-2 sm:space-y-3">
-                            <div className="inline-block rounded-md bg-indigo-500 px-2 py-0.5 sm:px-2.5 sm:py-1 shadow-lg shadow-indigo-500/30 ring-1 ring-white/20">
-                              <p className="text-[9px] sm:text-[10px] font-extrabold text-white uppercase tracking-widest drop-shadow-sm">{p.category}</p>
-                            </div>
-                            <h2 className="text-xl sm:text-[26px] font-extrabold text-white leading-tight drop-shadow-md line-clamp-2">{p.title}</h2>
-                            <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-0.5 sm:pt-1">
-                              <span className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-black/40 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
-                                <Icon name="sparkles" size={10} className="text-indigo-400 sm:w-3 sm:h-3" />
-                                {p.stats?.[2]?.value ?? "98/100"} Perf
-                              </span>
-                              <span className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-black/40 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold text-white/90 backdrop-blur-md border border-white/10 shadow-inner">
-                                <Icon name="code" size={10} className="text-emerald-400 sm:w-3 sm:h-3" />
-                                {p.architecture?.split(",")[0] ?? "React"}
-                              </span>
-                            </div>
-                          </div>
-                          <Link
-                            href={`/work/${p.slug}`}
-                            aria-label={`View project ${p.title}`}
-                            className="group/btn relative flex h-10 w-10 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full bg-white text-black overflow-hidden transition-all hover:scale-110 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-                          >
-                            <div className="absolute inset-0 bg-indigo-100 opacity-0 transition-opacity group-hover/btn:opacity-100" />
-                            <Icon name="arrowUpRight" size={22} className="relative z-10 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* ─── Slider dots + progress bar ─── */}
-            <div className="mt-4 flex items-center justify-center gap-3">
-              {projects.map((p, i) => (
+        {/* ─── Seamless Elevated Showcase Card (No Harsh Borders) ─── */}
+        <div className="mt-14 sm:mt-16 mx-auto max-w-5xl">
+          {/* Interactive Project Switcher Tabs */}
+          <div className="mb-4 sm:mb-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {FEATURED_PROJECTS.map((p, idx) => {
+              const isSelected = idx === current;
+              return (
                 <button
                   key={p.id}
                   type="button"
-                  aria-label={`View ${p.title}`}
-                  onClick={() => slideTo(i)}
-                  className="group flex flex-col items-center gap-1.5"
+                  onClick={() => slideTo(idx)}
+                  className={`relative px-4 sm:px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer overflow-hidden backdrop-blur-xl shadow-md ${
+                    isSelected
+                      ? "bg-gradient-to-r from-indigo-600/35 to-purple-600/25 text-white shadow-xl shadow-indigo-500/20 scale-[1.02] ring-1 ring-indigo-400/50"
+                      : "bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-900/90 ring-1 ring-white/5"
+                  }`}
                 >
-                  {/* Project label */}
-                  <span
-                    className={`text-[11px] font-bold tracking-wider transition-colors duration-300 ${i === current ? "text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]" : "text-slate-500 group-hover:text-slate-300"
-                      }`}
-                  >
-                    {p.title.includes('Sky') ? "✈ SkyOdeals" : p.title.includes('HIT IAS') ? "🎓 HIT IAS" : p.title.includes('XChat') ? "💬 XChat" : p.title.split(' ')[0]}
-                  </span>
-                  {/* Progress track */}
-                  <span className="relative h-0.5 w-16 overflow-hidden rounded-full bg-white/10">
-                    {i === current && (
-                      <span
-                        className="absolute left-0 top-0 h-full rounded-full bg-indigo-500"
-                        style={{ animation: "slideProgress 4s linear infinite" }}
-                      />
+                  {isSelected && (
+                    <div
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-400 via-sky-400 to-amber-300"
+                      style={{ animation: "tabProgress 6.5s linear infinite" }}
+                    />
+                  )}
+                  <span className="flex items-center gap-2">
+                    <span>{p.tabLabel}</span>
+                    {p.isNew && (
+                      <span className="px-1.5 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-teal-300 text-slate-950 shadow-sm animate-pulse">
+                        NEW
+                      </span>
                     )}
-                    {i !== current && (
-                      <span className="absolute left-0 top-0 h-full w-0 rounded-full bg-white/30 group-hover:w-full transition-all duration-300" />
-                    )}
+                    <span className="text-[10px] text-slate-400 font-normal hidden sm:inline">
+                      • {p.tabSub}
+                    </span>
                   </span>
                 </button>
+              );
+            })}
+          </div>
+
+          {/* Elevated Card Shell Designed with Soft Shadows & Glassmorphism (No Harsh Borders) */}
+          <div className="relative rounded-3xl sm:rounded-[36px] overflow-hidden bg-gradient-to-b from-white/[0.08] via-slate-900/80 to-[#060a18]/95 p-3 sm:p-5 shadow-[0_30px_100px_-20px_rgba(0,0,0,0.9),0_0_60px_rgba(99,102,241,0.18)] backdrop-blur-2xl ring-1 ring-inset ring-white/[0.08]">
+            {/* Top Bar with Live Indicator & Prev/Next Arrows */}
+            <div className="flex items-center justify-between px-3 sm:px-4 py-2 mb-3 text-xs">
+              <div className="flex items-center gap-2">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-200">
+                  Featured Client System
+                </span>
+                {active.isNew && (
+                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500/20 text-emerald-300 ring-1 ring-emerald-400/40 animate-pulse">
+                    ✨ NEW PROJECT 2026
+                  </span>
+                )}
+                <span className="text-white/20 hidden sm:inline">•</span>
+                <span className="text-[11px] text-indigo-300 font-mono hidden md:inline">
+                  {active.liveUrl ? active.liveUrl.replace(/^https?:\/\//, '') : active.slug}
+                </span>
+              </div>
+
+              {/* Slider Prev / Next Controls */}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={prevSlide}
+                  aria-label="Previous project"
+                  className="p-1.5 sm:p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer shadow-sm active:scale-95"
+                >
+                  <Icon name="arrowRight" size={13} className="rotate-180" />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextSlide}
+                  aria-label="Next project"
+                  className="p-1.5 sm:p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer shadow-sm active:scale-95"
+                >
+                  <Icon name="arrowRight" size={13} />
+                </button>
+              </div>
+            </div>
+
+            {/* ─── Main Showcase Canvas (Full 100% Width) ─── */}
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl sm:rounded-[26px] bg-slate-950 shadow-2xl">
+              {FEATURED_PROJECTS.map((p, i) => (
+                <div
+                  key={p.id}
+                  className="absolute inset-0 transition-all duration-500 ease-out"
+                  style={{
+                    opacity: i === current ? (animating ? 0 : 1) : 0,
+                    transform: i === current ? (animating ? "scale(1.015)" : "scale(1)") : "scale(1.02)",
+                    zIndex: i === current ? 10 : 0,
+                  }}
+                >
+                  <Image
+                    src={p.image}
+                    alt={`${p.title} - Showcase by NIVORA Tech`}
+                    fill
+                    priority={i === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1100px"
+                    className="object-cover object-center"
+                  />
+                </div>
               ))}
+
+              {/* Floating Metrics Pill on Main Slide */}
+              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 flex items-center gap-2">
+                <span className="px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 text-xs font-bold shadow-lg ring-1 ring-white/15">
+                  {active.metric}
+                </span>
+                <span className="px-3 py-1 rounded-full bg-indigo-600/90 backdrop-blur-md text-white text-xs font-bold shadow-lg ring-1 ring-indigo-400/30 hidden sm:inline">
+                  {active.techBadge}
+                </span>
+              </div>
+            </div>
+
+            {/* Bottom Meta & Action Bar */}
+            <div className="mt-3 sm:mt-4 p-3 sm:p-5 rounded-2xl bg-slate-950/70 backdrop-blur-xl flex flex-col md:flex-row md:items-center justify-between gap-4 ring-1 ring-inset ring-white/[0.06]">
+              <div className="space-y-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded bg-indigo-500/25 text-indigo-300">
+                    {active.category}
+                  </span>
+                  <span className="text-xs text-slate-300 font-medium">
+                    📍 {active.location}
+                  </span>
+                </div>
+                <h2 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  {active.title}
+                </h2>
+              </div>
+
+              <div className="flex items-center gap-3 shrink-0">
+                <Link
+                  href={`/work/${active.slug}`}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all shadow-sm active:scale-95"
+                >
+                  <span>Case Study</span>
+                  <Icon name="arrowRight" size={13} />
+                </Link>
+                {active.liveUrl && (
+                  <a
+                    href={active.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white text-xs font-bold transition-all shadow-md shadow-indigo-600/30 active:scale-95"
+                  >
+                    <span>Visit Live Site</span>
+                    <Icon name="externalLink" size={12} />
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* ─── Trust Counter Row ─── */}
+          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="p-4 rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm">
+              <div className="font-display text-2xl sm:text-3xl font-extrabold text-white">99.4%</div>
+              <div className="text-xs text-slate-400 mt-0.5">Core Web Vitals Avg</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm">
+              <div className="font-display text-2xl sm:text-3xl font-extrabold text-indigo-400">100%</div>
+              <div className="text-xs text-slate-400 mt-0.5">Bespoke Engineering</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm">
+              <div className="font-display text-2xl sm:text-3xl font-extrabold text-emerald-400">5.0 ★</div>
+              <div className="text-xs text-slate-400 mt-0.5">Verified Client Rating</div>
+            </div>
+            <div className="p-4 rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm">
+              <div className="font-display text-2xl sm:text-3xl font-extrabold text-amber-300">Delhi NCR</div>
+              <div className="text-xs text-slate-400 mt-0.5">Gurugram · Noida · Global</div>
             </div>
           </div>
         </div>
       </Container>
-
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-600 opacity-60">
-        <span className="text-[10px] font-medium uppercase tracking-widest">Scroll</span>
-        <div className="h-8 w-px bg-gradient-to-b from-transparent via-slate-500 to-transparent" />
-      </div>
 
       <style>{`
         @keyframes driftGrid {
           0%   { transform: translate(0px, 0px); }
           100% { transform: translate(60px, 60px); }
         }
-        @keyframes floatOrb {
-          0%, 100% { transform: translateY(0px) translateX(0px); }
-          33%       { transform: translateY(-18px) translateX(8px); }
-          66%       { transform: translateY(10px) translateX(-6px); }
-        }
-        @keyframes slideProgress {
+        @keyframes tabProgress {
           from { width: 0%; }
           to   { width: 100%; }
         }

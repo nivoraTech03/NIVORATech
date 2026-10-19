@@ -47,7 +47,7 @@ export function Header() {
           <Container className="flex items-center justify-between py-3.5 sm:py-4">
             <Logo />
 
-            <nav className="hidden items-center gap-7 lg:flex">
+            <nav className="hidden items-center gap-1.5 lg:flex p-1 rounded-full bg-[var(--bg-surface-alt)]/60 backdrop-blur-md">
               {navigation.links.map((item) => {
                 const active = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                 return (
@@ -55,13 +55,16 @@ export function Header() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "text-sm font-medium transition-colors hover:text-[var(--text-primary)]",
+                      "relative px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200",
                       active
-                        ? "text-[var(--text-primary)] font-semibold"
-                        : "text-[var(--text-secondary)]"
+                        ? "bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-500/25 scale-[1.02]"
+                        : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5"
                     )}
                   >
                     {item.label}
+                    {active && (
+                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-0.5 rounded-full bg-emerald-400 animate-pulse" />
+                    )}
                   </Link>
                 );
               })}
@@ -136,16 +139,23 @@ export function Header() {
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-150",
+                      "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200",
                       active
-                        ? "bg-[var(--accent-soft)] text-[var(--accent-primary)] font-semibold"
+                        ? "bg-gradient-to-r from-indigo-600/20 to-purple-600/15 text-indigo-400 font-bold border border-indigo-500/30 shadow-sm"
                         : "text-[var(--text-secondary)] hover:bg-[var(--bg-surface-alt)] hover:text-[var(--text-primary)]"
                     )}
                   >
+                    <div className="flex items-center gap-3">
+                      {active && (
+                        <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse flex-shrink-0" />
+                      )}
+                      <span>{item.label}</span>
+                    </div>
                     {active && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent-primary)] flex-shrink-0" />
+                      <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300">
+                        Active
+                      </span>
                     )}
-                    {item.label}
                   </Link>
                 </li>
               );

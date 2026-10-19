@@ -151,6 +151,19 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.gold-gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f9e9a2 50%, #aa8c2c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+  background: rgba(18, 24, 38, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 /* Subtle dot grid pattern */
 .bg-dot-grid {
   background-image: radial-gradient(rgba(99, 102, 241, 0.22) 1px, transparent 1px);
@@ -217,6 +230,7 @@ body {
     opacity: 0;
     transform: scale(0.96) translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: scale(1) translateY(0);

@@ -73,7 +73,7 @@ export const locations: Record<string, LocationData> = {
     faqs: [
       {
         question: "How much does website development cost in Gwalior?",
-        answer: "Our standard new business website package starts at ₹3,999+. Landing pages are even more affordable, and complex custom web apps are priced based on your exact requirements. We ensure transparent pricing with no hidden development fees."
+        answer: "Our website packages are custom-tailored to your exact business requirements. We provide transparent estimates with zero hidden agency fees after understanding your goals during a free consultation."
       },
       {
         question: "Do you build websites for small businesses in Gwalior?",
@@ -81,7 +81,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "Can you redesign an existing website?",
-        answer: "Yes, our website redesign services start at ₹2,999+. We can modernize your old, slow, or non-responsive website into a blazing-fast, mobile-friendly experience."
+        answer: "Yes, our website redesign services modernize old, slow, or non-responsive websites into blazing-fast, mobile-friendly experiences with updated SEO."
       },
       {
         question: "How long does it take to build a business website?",
@@ -89,7 +89,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "Do you provide website maintenance in Gwalior?",
-        answer: "Yes, we offer ongoing website maintenance starting from ₹899/month to keep your website fast, updated, and secure post-launch."
+        answer: "Yes, we offer ongoing website maintenance and support plans to keep your website fast, updated, and secure post-launch."
       },
       {
         question: "How can I start a website project with NIVORA?",
@@ -206,7 +206,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "Do you provide website maintenance in Agra?",
-        answer: "Yes, we offer ongoing website maintenance starting from ₹899/month to keep your website fast, updated, and secure post-launch."
+        answer: "Yes, we offer ongoing website maintenance plans to keep your website fast, updated, and secure post-launch."
       },
       {
         question: "How can I start a website project with NIVORA?",
@@ -261,7 +261,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "What is the cost of a basic website in Mathura?",
-        answer: "Our landing page packages start at ₹2,999+, and full multi-page business websites start at ₹3,999+. We also offer website redesigns from ₹2,999 and maintenance from ₹899/month."
+        answer: "We offer flexible, scope-based packages tailored to your business needs, ranging from focused landing pages to full multi-page business websites and ongoing maintenance with transparent quotes."
       },
       {
         question: "Do you offer SEO services?",
@@ -552,7 +552,7 @@ export const locations: Record<string, LocationData> = {
       },
       {
         question: "What is the cost of a basic website in Bhopal?",
-        answer: "Our landing page packages start at ₹2,999+, and full multi-page business websites start at ₹3,999+. We also offer website redesigns from ₹2,999 and maintenance from ₹899/month."
+        answer: "We offer tailored packages based on your business objectives, from focused lead-generation landing pages to multi-page corporate websites and maintenance plans."
       },
       {
         question: "Do you offer SEO services?",

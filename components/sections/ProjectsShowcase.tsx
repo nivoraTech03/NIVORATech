@@ -11,13 +11,17 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
   const list = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section id="work" className="scroll-mt-20 bg-[var(--bg-surface)] py-20 sm:py-28 relative">
-      <Container>
+    <section id="work" className="scroll-mt-20 bg-[var(--bg-surface)] py-20 sm:py-28 relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="absolute top-1/4 -right-40 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-40 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px] pointer-events-none" />
+
+      <Container className="relative z-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
             eyebrow="SELECTED CLIENT WORK"
             title="Real-World Projects & Case Studies"
-            description="Explore our production deployments spanning custom PHP web applications and bespoke WordPress & Elementor platforms."
+            description="Explore our production deployments spanning bespoke Next.js luxury web portals, custom booking engines, and high-performance enterprise platforms."
           />
           <Button href="/work" variant="secondary" icon className="self-start md:self-end">
             All Projects ({projects.length})
@@ -59,7 +63,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                       </div>
 
                       {/* Mockup Canvas with Real Image */}
-                      <div className="relative aspect-[16/10] overflow-hidden bg-slate-900">
+                      <div className="relative aspect-[16/9] overflow-hidden bg-slate-900">
                         {project.image ? (
                           <Image
                             src={project.image}
@@ -68,7 +72,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                             height={750}
                             priority={idx === 0}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                            className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center text-slate-400">
@@ -86,6 +90,12 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                       <span className="font-mono text-xs font-bold text-[var(--color-accent)] tracking-wider px-2.5 py-1 rounded-md bg-[var(--color-accent-soft)]">
                         PROJECT {project.number}
                       </span>
+                      {project.id === "auralux-pg" && (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-500/20 to-teal-500/15 text-emerald-400 border border-emerald-400/40 shadow-[0_0_15px_rgba(52,211,153,0.25)] animate-pulse">
+                          <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                          <span>NEW ADDITION</span>
+                        </span>
+                      )}
                       {project.clientType && (
                         <span className="text-xs font-medium text-[var(--text-secondary)] border border-[var(--border-strong)] px-2 py-0.5 rounded">
                           {project.clientType}

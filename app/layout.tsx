@@ -36,13 +36,20 @@ export const metadata: Metadata = {
   },
 
   description:
-    "NIVORA Tech is a website development company in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses. Landing pages from ₹2,999. Free consultation.",
+    "NIVORA Tech is a premier website development company in Delhi NCR building fast, responsive, and conversion-focused websites for startups, businesses, and luxury brands. Free consultation & custom tailored solutions.",
 
   keywords: [
     "website development company in Delhi NCR",
     "web development company in Delhi NCR",
     "website developer in Delhi NCR",
     "website design company in Delhi NCR",
+    "web development company in Gurugram",
+    "website designer Golf Course Road Gurugram",
+    "website development in Noida",
+    "website development company in Gwalior",
+    "web development company in Agra",
+    "website design in Mathura",
+    "luxury PG and hospitality website design",
     "business website development Delhi NCR",
     "professional website development Delhi NCR",
     "website redesign company Delhi NCR",
@@ -52,8 +59,7 @@ export const metadata: Metadata = {
     "WordPress website development",
     "PHP website development",
     "responsive website development",
-    "affordable website development",
-    "small business website development",
+    "local business website development",
     "NIVORA Tech",
   ],
 
@@ -82,14 +88,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Website Development Company in Delhi NCR | NIVORA Tech",
     description:
-      "NIVORA Tech builds fast, responsive, and business-focused websites for startups and local businesses across Delhi NCR. Landing pages from ₹2,999. Free consultation.",
+      "NIVORA Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
     url: "https://nivora-tech.vercel.app/",
     siteName: "NIVORA Tech",
     locale: "en_IN",
     type: "website",
     images: [
       {
-        url: "/images/skyodeals.webp",
+        url: "/images/auralux.webp",
         width: 1200,
         height: 630,
         alt: "NIVORA Tech — Website Development Company in Delhi NCR",
@@ -101,8 +107,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Website Development Company in Delhi NCR | NIVORA Tech",
     description:
-      "NIVORA Tech builds fast, responsive, and business-focused websites for startups and local businesses across Delhi NCR. Landing pages from ₹2,999.",
-    images: ["/images/skyodeals.webp"],
+      "NIVORA Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
+    images: ["/images/auralux.webp"],
   },
 };
 

@@ -98,7 +98,7 @@ export function LocationHero({ city }: { city: string }) {
             <span>&rarr;</span>
             <span className="text-white">{city}</span>
           </nav>
-          
+
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-indigo-300 backdrop-blur-sm">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75" />
@@ -250,7 +250,7 @@ export function LocationHero({ city }: { city: string }) {
                     className={`text-[11px] font-bold tracking-wider transition-colors duration-300 ${i === current ? "text-indigo-400 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]" : "text-slate-500 group-hover:text-slate-300"
                       }`}
                   >
-                    {p.title.includes('Sky') ? "✈ SkyOdeals" : p.title.includes('HIT IAS') ? "🎓 HIT IAS" : p.title.includes('XChat') ? "💬 XChat" : p.title.split(' ')[0]}
+                    {p.title.includes('AURA') ? "✨ AURA LUXE" : p.title.includes('Sky') ? "✈ SkyOdeals" : p.title.includes('HIT IAS') ? "🎓 HIT IAS" : p.title.includes('XChat') ? "💬 XChat" : p.title.split(' ')[0]}
                   </span>
                   <span className="relative h-0.5 w-16 overflow-hidden rounded-full bg-white/10">
                     {i === current && (

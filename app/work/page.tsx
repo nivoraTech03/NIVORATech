@@ -31,7 +31,7 @@ export default function WorkPage() {
       <PageBanner
         badge="PRODUCTION CASE STUDIES"
         title="Websites crafted with intention & precision."
-        description="Explore our production engagements. From custom PHP booking engines to bespoke WordPress & Elementor institutional platforms, each project is built for conversion, speed, and real business results."
+        description="Explore our production engagements. From 5-star Next.js luxury serviced living portals to custom flight booking engines and institutional platforms, each project is built for high conversion, speed, and real business growth."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Selected Work" },
@@ -73,14 +73,14 @@ export default function WorkPage() {
                           <div className="w-8" />
                         </div>
 
-                        <div className="relative aspect-[16/10] overflow-hidden bg-slate-950">
+                        <div className="relative aspect-[16/9] overflow-hidden bg-slate-950">
                           {project.image ? (
                             <Image
                               src={project.image}
                               alt={`${project.title} Preview`}
                               width={1200}
                               height={750}
-                              className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+                              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                             />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center text-slate-400">
@@ -98,6 +98,12 @@ export default function WorkPage() {
                         <span className="font-mono text-xs font-bold text-[var(--color-accent)] tracking-wider px-2.5 py-1 rounded-md bg-[var(--color-accent-soft)]">
                           PROJECT {project.number}
                         </span>
+                        {project.id === "auralux-pg" && (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-500/20 to-teal-500/15 text-emerald-400 border border-emerald-400/40 shadow-[0_0_15px_rgba(52,211,153,0.25)] animate-pulse">
+                            <span className="h-2 w-2 rounded-full bg-emerald-400" />
+                            <span>NEW ADDITION</span>
+                          </span>
+                        )}
                         {project.clientType && (
                           <span className="text-xs font-medium text-[var(--text-muted)] border border-[var(--border-subtle)] px-2 py-0.5 rounded">
                             {project.clientType}

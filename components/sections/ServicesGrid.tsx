@@ -255,13 +255,13 @@ export function ServicesGrid({ limit }: { limit?: number }) {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-sm text-[var(--text-secondary)] mb-4">Want to see a detailed breakdown of our pricing?</p>
+          <p className="text-sm text-[var(--text-secondary)] mb-4">Looking for a tailored plan for your project?</p>
           <Link
             href="/pricing"
-            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-600/20 transition-all hover:-translate-y-0.5"
           >
             <Icon name="layout" size={16} />
-            View Fare Breakup & Pricing
+            Explore Plans &amp; Custom Solutions
           </Link>
         </div>
       </Container>

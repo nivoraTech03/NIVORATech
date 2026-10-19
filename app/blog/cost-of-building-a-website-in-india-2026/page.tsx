@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: 'Cost of Building a Business Website in India (2026 Practical Guide)',
-  description: 'A complete breakdown of website design cost in India for 2026. Learn freelance web developer pricing and business website price breakup for your startup.',
+  description: 'A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions for your startup.',
   alternates: {
     canonical: 'https://nivora-tech.vercel.app/blog/cost-of-building-a-website-in-india-2026',
   },
@@ -16,7 +16,7 @@ const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Cost of Building a Business Website in India (2026 Practical Guide)",
-  "description": "A complete breakdown of website design cost in India for 2026. Learn freelance web developer pricing and business website price breakup for your startup.",
+  "description": "A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions for your startup.",
   "author": {
     "@type": "Organization",
     "name": "Nivora Tech"
@@ -115,15 +115,15 @@ export default function BlogCostGuide() {
             </div>
           </section>
 
-          {/* Pricing Breakup */}
+          {/* Tailored Packages */}
           <section className="max-w-6xl mx-auto mb-20">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-10 text-center">Transparent Business Website Price Breakup</h2>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-10 text-center">Tailored Business Website Packages</h2>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* Package 1 */}
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-indigo-500/50 transition-colors flex flex-col">
                 <h3 className="text-lg font-bold text-white mb-2">High-Converting Landing Page</h3>
-                <div className="text-indigo-400 font-display text-2xl font-bold mb-4">Starting from ₹2,999+</div>
+                <div className="text-indigo-400 font-display text-2xl font-bold mb-4">Custom Quote</div>
                 <p className="text-sm text-slate-400 mb-6 flex-grow">Perfect for single product launches, services, lead generation or ad campaigns.</p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center gap-2 text-sm text-slate-300"><Icon name="check" size={14} className="text-emerald-400 shrink-0" /> Single-page custom layout</li>
@@ -138,7 +138,7 @@ export default function BlogCostGuide() {
               <div className="bg-slate-800 border-2 border-indigo-500 rounded-2xl p-6 relative flex flex-col shadow-xl shadow-indigo-900/20 transform md:-translate-y-2">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">Most Popular</div>
                 <h3 className="text-lg font-bold text-white mb-2 mt-2">New Business Website</h3>
-                <div className="text-indigo-400 font-display text-2xl font-bold mb-4">Starting from ₹3,999+</div>
+                <div className="text-indigo-400 font-display text-2xl font-bold mb-4">Custom Quote</div>
                 <p className="text-sm text-slate-300 mb-6 flex-grow">Complete business website tailored to your goals.</p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center gap-2 text-sm text-slate-200"><Icon name="check" size={14} className="text-emerald-400 shrink-0" /> Custom UI Design</li>
@@ -153,7 +153,7 @@ export default function BlogCostGuide() {
               {/* Package 3 */}
               <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-indigo-500/50 transition-colors flex flex-col">
                 <h3 className="text-lg font-bold text-white mb-2">Website Maintenance</h3>
-                <div className="text-indigo-400 font-display text-2xl font-bold mb-4">Starting from ₹899/mo</div>
+                <div className="text-indigo-400 font-display text-2xl font-bold mb-4">Custom Plan</div>
                 <p className="text-sm text-slate-400 mb-6 flex-grow">Keep your website fast, updated, and secure.</p>
                 <ul className="space-y-2 mb-6">
                   <li className="flex items-center gap-2 text-sm text-slate-300"><Icon name="check" size={14} className="text-emerald-400 shrink-0" /> Minor text/content updates</li>
