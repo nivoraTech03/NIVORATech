@@ -90,7 +90,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                       <span className="font-mono text-xs font-bold text-[var(--color-accent)] tracking-wider px-2.5 py-1 rounded-md bg-[var(--color-accent-soft)]">
                         PROJECT {project.number}
                       </span>
-                      {project.id === "auralux-pg" && (
+                      {(project.id === "auralux-pg" || project.id === "aurabridal-studio") && (
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-500/20 to-teal-500/15 text-emerald-400 border border-emerald-400/40 shadow-[0_0_15px_rgba(52,211,153,0.25)] animate-pulse">
                           <span className="h-2 w-2 rounded-full bg-emerald-400" />
                           <span>NEW ADDITION</span>

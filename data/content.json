@@ -141,6 +141,28 @@
         "Full mobile-first responsiveness optimized for high-end mobile devices",
         "Local SEO optimization with Google LodgingBusiness Schema for Sector 43 & Golf Course Road"
       ],
+      "features": [
+        {
+          "title": "Architectural Suites Catalog & Floorplans",
+          "tag": "Suite Selector",
+          "description": "High-contrast suite selector showcasing Single, Twin, and Triple sharing suites with detailed square footage, furnishings, ensuite bathroom photos, and acoustic soundproofing ratings."
+        },
+        {
+          "title": "Instant Private Visit Scheduler & WhatsApp Routing",
+          "tag": "Booking Funnel",
+          "description": "One-click tour scheduling calendar enabling corporate executives from CyberHub and Golf Course Road to lock an on-site physical tour or video walkthrough with instant confirmation."
+        },
+        {
+          "title": "Hospitality-Grade Amenities & Infrastructure Showcase",
+          "tag": "Executive Living",
+          "description": "Visual breakdown of 300 Mbps high-speed fiber connectivity, chef-curated 3-course daily dining, biometric access control, and 100% power backup."
+        },
+        {
+          "title": "Google LodgingBusiness Local SEO Schema",
+          "tag": "Local SEO",
+          "description": "Full JSON-LD structured data integration targeting high-value corporate accommodation searches in Sector 43, DLF CyberCity, and Golf Course Road Gurugram."
+        }
+      ],
       "stats": [
         {
           "label": "Tech Stack",
@@ -162,9 +184,126 @@
       "liveUrl": "http://auraluxpg.vercel.app/"
     },
     {
+      "id": "aurabridal-studio",
+      "slug": "aurabridal-studio",
+      "number": "02",
+      "title": "Aura Bridal Studio — Luxury Editorial Bridal Makeup Atelier",
+      "category": "Next.js 15 Luxury Bridal & Beauty Platform",
+      "clientType": "Luxury Editorial Bridal Studio & Atelier",
+      "architecture": "Next.js 15, React 19, TypeScript, Tailwind CSS & Lucide Icons",
+      "description": "An elite editorial bridal makeup and beauty atelier platform in Mehrauli, Delhi NCR. Engineered with royal heritage aesthetics, 16-hour tear-resistant makeup showcase, interactive wedding date availability checker, and automated WhatsApp inquiry funnels.",
+      "technologies": [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "BeautySalon Schema",
+        "WhatsApp Booking API"
+      ],
+      "image": "/images/aurabridal.webp",
+      "overview": "AURA BRIDAL STUDIO is a prestigious editorial bridal makeup atelier led by Ananya Sharma in Mehrauli, Delhi NCR, serving brides across Delhi NCR and luxury destination weddings in Udaipur, Jaipur, and Goa. We engineered a high-converting, luxury web experience that bridges royal Indian wedding heritage with modern skin-first beauty artistry.",
+      "challenge": "The atelier needed a premier digital storefront to replace standard Instagram DMs with a streamlined, professional wedding booking funnel. High-net-worth brides needed to easily check ceremony dates, explore lookbooks across lighting conditions (Pheras, Sangeet, Reception), review hospital-grade hygiene standards, and lock bespoke consultation slots with zero booking friction.",
+      "approach": "We engineered a sub-second Next.js 15 web platform featuring warm champagne & blush luxury typography, interactive multi-step ceremony date reservation flows, high-resolution lookbook galleries, and automated WhatsApp routing with pre-filled wedding dates and venue details. Complete BeautySalon and LocalBusiness JSON-LD schema was deployed for dominant Delhi NCR search visibility.",
+      "whatWasBuilt": [
+        "Interactive Wedding Date Availability Checker and bespoke consultation scheduler",
+        "Editorial Bridal Lookbook featuring Royal Heritage Crimson, Golden Hour Glow, and Reception Glamour",
+        "Tiered bridal package breakdowns (Essential Bride, Regal Heritage, Empress Destination Couture)",
+        "Hospital-grade hygiene & 16-hour tear-resistance protocol breakdown for client trust",
+        "Instant pre-filled WhatsApp consultation routing with lead qualification",
+        "Google LocalBusiness and BeautySalon Structured Data Schema for Mehrauli and Delhi NCR"
+      ],
+      "features": [
+        {
+          "title": "Interactive Wedding Date Availability Checker (/book)",
+          "tag": "Conversion Funnel",
+          "description": "Real-time wedding date reservation calendar allowing prospective brides to immediately check date availability for the 2026–2027 wedding season. Automatically flags high-demand wedding muhurat dates and eliminates redundant inquiry calls."
+        },
+        {
+          "title": "Automated WhatsApp Concierge Booking Funnel",
+          "tag": "Lead Automation",
+          "description": "Intelligent pre-populated WhatsApp integration that automatically forwards the bride's preferred ceremony dates, chosen styling package, and venue destination (Delhi NCR or destination wedding) directly to the lead artist's concierge desk."
+        },
+        {
+          "title": "Multi-Ceremony Editorial Lookbook Reel & Showcase",
+          "tag": "Visual Showcase",
+          "description": "High-resolution editorial lookbook categorized across key Indian wedding functions: Royal Heritage Crimson (Pheras), Dewy Pastel Glass Skin (Engagement), Red-Carpet Glamour (Reception), and Dance-Proof styling (Sangeet)."
+        },
+        {
+          "title": "16-Hour Tear & Heat Resistance Protocol",
+          "tag": "Artistry Assurance",
+          "description": "A specialized multi-layer moisture barrier primer and micro-setting technique engineered to withstand humid environments, high-intensity photo flashlights, deep emotional moments, and warm ceremonial sacrificial pheras fires."
+        },
+        {
+          "title": "Exclusivity Guarantee: Single Bride Per Ceremony",
+          "tag": "Luxury Branding",
+          "description": "Clear brand positioning emphasizing undivided attention by founder Ananya Sharma—strictly adhering to one bride per ceremony slot, rejecting the rushed salon assembly-line model."
+        },
+        {
+          "title": "Hospital-Grade Sterilization & Hygiene Protocol",
+          "tag": "Client Trust",
+          "description": "Comprehensive hygiene transparency breakdown showcasing medical-grade UV brush sterilization, single-use spatulas, and strict zero double-dipping policies across all luxury cosmetics."
+        },
+        {
+          "title": "Pan-India Destination Wedding Logistics",
+          "tag": "Logistics & Travel",
+          "description": "Dedicated on-location coverage system for destination weddings across Udaipur, Jaipur, Goa, and Mussoorie, equipped with high-CRI portable vanity lights, styling assistants, and multi-ceremony wardrobe transitions."
+        },
+        {
+          "title": "Google LocalBusiness & BeautySalon JSON-LD SEO Schema",
+          "tag": "Local SEO",
+          "description": "Comprehensive Schema.org structured data deployment featuring geo-coordinates, operating hours, address details, and service catalogs—dominating high-intent search keywords across Mehrauli, South Delhi, and Gurugram."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "/images/aurabridal_gallery/hero_bride.jpg",
+          "caption": "Royal Heritage Crimson Bridal Look"
+        },
+        {
+          "src": "/images/aurabridal_gallery/service_bridal.jpg",
+          "caption": "Signature HD Bridal Artistry & Jewelry Setting"
+        },
+        {
+          "src": "/images/aurabridal_gallery/service_reception.jpg",
+          "caption": "Evening Reception Glamour & Hollywood Waves"
+        },
+        {
+          "src": "/images/aurabridal_gallery/service_engagement.jpg",
+          "caption": "Dewy Pastel Engagement & Ring Ceremony Look"
+        },
+        {
+          "src": "/images/aurabridal_gallery/service_party.jpg",
+          "caption": "Sweat-Resistant Sangeet & Bridesmaid Styling"
+        },
+        {
+          "src": "/images/aurabridal_gallery/service_prebridal.jpg",
+          "caption": "Botanical Facials & Pre-Bridal Skincare Rituals"
+        }
+      ],
+      "stats": [
+        {
+          "label": "Brides Styled",
+          "value": "220+"
+        },
+        {
+          "label": "Client Rating",
+          "value": "4.9 ★"
+        },
+        {
+          "label": "Core Web Vitals",
+          "value": "99/100"
+        },
+        {
+          "label": "Date Inquiries",
+          "value": "+165%"
+        }
+      ],
+      "liveUrl": "https://aurabridalstudio-one.vercel.app/"
+    },
+    {
       "id": "skyodeals",
       "slug": "skyodeals",
-      "number": "02",
+      "number": "03",
       "title": "SkyOdeals — Flight Booking & Travel Portal",
       "category": "PHP Web Application & Booking Platform",
       "clientType": "Travel & Tourism Agency",
@@ -213,7 +352,7 @@
     {
       "id": "hitias-academy",
       "slug": "hitias-academy",
-      "number": "03",
+      "number": "04",
       "title": "HIT IAS Academy — UPSC & State PCS Portal",
       "category": "WordPress & Elementor Educational Platform",
       "clientType": "Civil Services Coaching Institute",
@@ -262,7 +401,7 @@
     {
       "id": "xchat",
       "slug": "xchat",
-      "number": "04",
+      "number": "05",
       "title": "XChat — Real-time Messaging",
       "category": "React Native Mobile Application",
       "clientType": "Independent Mobile Project",
@@ -609,6 +748,20 @@
         "projectSlug": "auralux-pg",
         "projectTitle": "AURA LUXE SUITES — Golf Course Road, Gurugram",
         "tag": "Next.js Luxury Living"
+      },
+      {
+        "id": "aurabridal-project",
+        "name": "Ananya Sharma",
+        "role": "Founder & Creative Director",
+        "company": "Aura Bridal Studio",
+        "companyUrl": "https://aurabridalstudio-one.vercel.app/",
+        "avatar": "AS",
+        "avatarBg": "#BE185D",
+        "rating": 5,
+        "quote": "Nivora understood our luxury bridal aesthetic instantly. The interactive date availability tool and WhatsApp consultation funnel have completely streamlined how high-end brides book our Mehrauli atelier. We saw a 165% jump in qualified inquiries in our very first wedding season!",
+        "projectSlug": "aurabridal-studio",
+        "projectTitle": "Aura Bridal Studio — Mehrauli, Delhi NCR",
+        "tag": "Next.js 15 Luxury Atelier"
       }
     ]
   },

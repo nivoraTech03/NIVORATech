@@ -213,6 +213,51 @@ export default async function ProjectDetailPage({
                   ))}
                 </ul>
               </div>
+
+              {/* Detailed Key Features & Architecture Grid */}
+              {project.features && project.features.length > 0 && (
+                <div className="pt-6 border-t border-[var(--border-subtle)]">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+                    <div>
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-[var(--color-accent)] block mb-1">
+                        Engineered Capabilities
+                      </span>
+                      <h2 className="font-display text-xl font-bold tracking-tight text-[var(--text-primary)] sm:text-2xl">
+                        Key Features & Platform Architecture
+                      </h2>
+                    </div>
+                    <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[var(--color-accent-soft)] text-[var(--color-accent)] border border-[var(--color-accent-border)]">
+                      {project.features.length} Features
+                    </span>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {project.features.map((feat, fIdx) => (
+                      <div
+                        key={fIdx}
+                        className="group relative rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-surface-alt)] p-5 transition-all duration-300 hover:border-[var(--color-accent-border)] hover:bg-[var(--bg-surface)] hover:shadow-lg"
+                      >
+                        <div className="flex items-center justify-between gap-2 mb-2.5">
+                          {feat.tag && (
+                            <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent)] border border-[var(--color-accent-border)]/50">
+                              {feat.tag}
+                            </span>
+                          )}
+                          <span className="text-[10px] font-mono font-bold text-[var(--text-muted)]">
+                            0{fIdx + 1}
+                          </span>
+                        </div>
+                        <h3 className="font-display text-base font-bold text-[var(--text-primary)] group-hover:text-[var(--color-accent)] transition-colors leading-snug">
+                          {feat.title}
+                        </h3>
+                        <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[var(--text-secondary)]">
+                          {feat.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar: Metadata & Tech */}
@@ -276,6 +321,31 @@ export default async function ProjectDetailPage({
                         </div>
                       ))}
                     </div>
+                  </div>
+                )}
+
+                {project.liveUrl && (
+                  <div className="border-t border-[var(--border-subtle)] pt-4">
+                    <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--text-secondary)]">
+                      Live Deployment
+                    </h3>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2.5 flex items-center justify-between p-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] hover:border-[var(--color-accent-border)] transition-colors group"
+                    >
+                      <div className="min-w-0 pr-2">
+                        <span className="block text-xs font-bold text-[var(--text-primary)] group-hover:text-[var(--color-accent)] truncate">
+                          {project.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                        </span>
+                        <span className="block text-[11px] text-emerald-400 font-medium flex items-center gap-1.5 mt-0.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span>Verified Production</span>
+                        </span>
+                      </div>
+                      <Icon name="externalLink" size={14} className="text-[var(--text-muted)] group-hover:text-[var(--color-accent)] shrink-0" />
+                    </a>
                   </div>
                 )}
 

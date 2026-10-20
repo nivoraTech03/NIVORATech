@@ -23,6 +23,7 @@ export interface Project {
   liveUrl: string;
   image?: string;
   gallery?: { src: string; caption: string }[];
+  features?: { title: string; description: string; tag?: string; highlight?: string }[];
   stats?: { label: string; value: string }[];
   clientType?: string;
   architecture?: string;
