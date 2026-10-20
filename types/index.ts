@@ -1,4 +1,4 @@
-export interface NavItem {
+﻿export interface NavItem {
   label: string;
   href: string;
 }
@@ -38,7 +38,7 @@ export interface ServiceItem {
   deliverables: string[];
 }
 
-export interface WhyNivoraItem {
+export interface WhyNexnifyItem {
   number: string;
   title: string;
   description: string;
@@ -141,11 +141,11 @@ export interface SiteContent {
     description: string;
     items: ServiceItem[];
   };
-  whyNivora: {
+  whyNexnify: {
     eyebrow: string;
     title: string;
     description: string;
-    items: WhyNivoraItem[];
+    items: WhyNexnifyItem[];
   };
   process: {
     eyebrow: string;

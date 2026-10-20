@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, type FormEvent } from "react";
 import siteContent from "@/lib/content";
@@ -72,7 +72,7 @@ export default function ContactPage() {
       `• *Category:* ${formData.selectedCategory}\n` +
       `• *Regarding:* ${formData.queryType}\n` +
       (formData.message ? `• *Requirements:* ${formData.message}\n` : "") +
-      `\n_Sent via NIVORA Studio Contact Portal_`
+      `\n_Sent via NEXNIFY Studio Contact Portal_`
     );
     window.open(`https://wa.me/919575450177?text=${text}`, "_blank");
   };
@@ -157,7 +157,7 @@ export default function ContactPage() {
 
                 {/* Instagram Direct Card */}
                 <a
-                  href="https://www.instagram.com/nivorat.ech/"
+                  href="https://www.instagram.com/nexnify.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-4 p-5 rounded-2xl bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-pink-500 transition-all block"
@@ -170,7 +170,7 @@ export default function ContactPage() {
                       Follow our work
                     </span>
                     <span className="mt-0.5 block font-display text-base font-bold text-slate-900 dark:text-white group-hover:text-[#E1306C] transition-colors truncate">
-                      @nivorat.ech
+                      @nexnify.in
                     </span>
                     <span className="text-xs text-pink-600 dark:text-pink-400 font-semibold flex items-center gap-1 mt-0.5">
                       ● DM us for quick queries

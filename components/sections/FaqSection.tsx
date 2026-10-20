@@ -1,4 +1,4 @@
-import siteContent from "@/lib/content";
+﻿import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
@@ -50,7 +50,7 @@ export function FaqSection({ title, description }: FaqSectionProps = {}) {
                 Send an Inquiry
               </Button>
               <a
-                href="https://wa.me/919575450177?text=Hi%20NIVORA,%20I%20have%20a%20question%20regarding%20website%20services"
+                href="https://wa.me/919575450177?text=Hi%20Nexnify,%20I%20have%20a%20question%20regarding%20website%20services"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#25D366]/10 hover:bg-[#25D366]/20 border border-[#25D366]/30 text-xs font-semibold text-emerald-800 dark:text-[#25D366] transition-colors"

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
@@ -70,7 +70,7 @@ export function LocalPartnerSection() {
             </ul>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20would%20like%20to%20connect%20regarding%20a%20local%20website%20project." size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-lg shadow-[#25D366]/20">
+              <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20connect%20regarding%20a%20local%20website%20project." size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-lg shadow-[#25D366]/20">
                 <Icon name="whatsapp" size={18} className="mr-2" />
                 Chat on WhatsApp
               </Button>

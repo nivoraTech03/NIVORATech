@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
@@ -120,7 +120,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 text-xs text-slate-400 sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} NIVORA. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NEXNIFY. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms &amp; Privacy

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import siteContent from "@/lib/content";
 
 export function Logo({ inverted = false }: { inverted?: boolean }) {
@@ -33,7 +33,7 @@ export function Logo({ inverted = false }: { inverted?: boolean }) {
             inverted ? "text-white" : "text-slate-900 dark:text-white"
           }`}
         >
-          NIVORA
+          NEXNIFY
         </span>
         <span
           className={`font-body text-[10px] font-bold uppercase tracking-wider ${

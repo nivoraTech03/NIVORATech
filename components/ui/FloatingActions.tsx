@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import { Icon } from "./Icon";
@@ -58,7 +58,7 @@ export default function FloatingActions() {
 
   const sendWA = (name: string, query: string, phone?: string, note?: string) => {
     const msg = encodeURIComponent(
-      `*New Enquiry — NIVORA*\n\n• *Name:* ${name || "Client"}\n` +
+      `*New Enquiry — NEXNIFY*\n\n• *Name:* ${name || "Client"}\n` +
       (phone ? `• *Phone:* ${phone}\n` : "") +
       `• *Query:* ${query}\n` +
       (note ? `• *Note:* ${note}` : "")

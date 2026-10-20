@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import PageBanner from "@/components/layout/PageBanner";
@@ -10,14 +10,14 @@ import { Icon } from "@/components/ui/Icon";
 import { LocalPartnerSection } from "@/components/sections/LocalPartnerSection";
 
 export const metadata: Metadata = {
-  title: "About NIVORA — Web Development & Digital Studio",
-  description: "NIVORA is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
+  title: "ABOUT NEXNIFY — Web Development & Digital Studio",
+  description: "NEXNIFY is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About NIVORA — Web Development & Digital Studio",
-    description: "NIVORA is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
+    title: "ABOUT NEXNIFY — Web Development & Digital Studio",
+    description: "NEXNIFY is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
     url: "/about",
   },
 };
@@ -34,7 +34,7 @@ export default function AboutPage() {
         description={about.description}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "About NIVORA" },
+          { label: "ABOUT NEXNIFY" },
         ]}
       />
 

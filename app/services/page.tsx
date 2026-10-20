@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import siteContent from "@/lib/content";
 import PageBanner from "@/components/layout/PageBanner";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
@@ -7,13 +7,13 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 
 export const metadata: Metadata = {
-  title: "Web Development Services | NIVORA",
+  title: "Web Development Services | NEXNIFY",
   description: "Focused website development services including business websites, responsive landing pages, React/Next.js platforms, and WordPress builds.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Web Development Services | NIVORA",
+    title: "Web Development Services | NEXNIFY",
     description: "Focused website development services including business websites, responsive landing pages, React/Next.js platforms, and WordPress builds.",
     url: "/services",
   },

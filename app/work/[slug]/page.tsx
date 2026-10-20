@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import siteContent from "@/lib/content";
@@ -25,17 +25,17 @@ export async function generateMetadata({
   const project = siteContent.projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
-    return { title: "Project Not Found | NIVORA" };
+    return { title: "Project Not Found | NEXNIFY" };
   }
 
   return {
-    title: `${project.title} Project | NIVORA`,
+    title: `${project.title} Project | NEXNIFY`,
     description: project.description,
     alternates: {
       canonical: `/work/${project.slug}`,
     },
     openGraph: {
-      title: `${project.title} Project | NIVORA`,
+      title: `${project.title} Project | NEXNIFY`,
       description: project.description,
       url: `/work/${project.slug}`,
     },
@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({
                 <span className="ml-2 font-medium">LIVE PRODUCTION PREVIEW</span>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-[var(--color-accent)] font-semibold">{displayUrl ? `https://${displayUrl}` : `nivora.tech/work/${project.slug}`}</span>
+                <span className="text-[var(--color-accent)] font-semibold">{displayUrl ? `https://${displayUrl}` : `nexnify.in/work/${project.slug}`}</span>
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}

@@ -1,10 +1,10 @@
-# NIVORA — Independent Digital Studio
+﻿# NEXNIFY — Independent Digital Studio
 
 Modern freelance technology studio portfolio website built with Next.js 16 (App Router), TypeScript, and Tailwind CSS v4.
 
 ## Overview
 
-NIVORA is an independent digital studio focused on designing and building modern, high-performance, responsive websites.
+NEXNIFY is an independent digital studio focused on designing and building modern, high-performance, responsive websites.
 
 ## Tech Stack
 
@@ -56,7 +56,7 @@ All website content is managed in `data/content.json`:
 - `technologies`: Core modern technologies highlighted.
 - `projects`: Portfolio case studies (title, category, challenge, approach, deliverables, tech stack).
 - `services`: Services offered with descriptions and deliverables.
-- `whyNivora`: Studio value points ("Built with intention.").
+- `whyNexnify`: Studio value points ("Built with intention.").
 - `process`: 4-step studio delivery workflow.
 - `about`: Studio story and foundational principles.
 - `faqs`: Frequently asked questions and honest answers.

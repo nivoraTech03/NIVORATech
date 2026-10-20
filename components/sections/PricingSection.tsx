@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
@@ -65,7 +65,7 @@ export function PricingSection() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20am%20interested%20in%20discussing%20a%20New%20Website%20project." size="lg" className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 font-bold">
+                <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20am%20interested%20in%20discussing%20a%20New%20Website%20project." size="lg" className="bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 font-bold">
                   Discuss Your Project
                 </Button>
                 <Button href="/contact" variant="outline" size="lg" className="border-slate-700 text-white hover:bg-slate-800 font-semibold">
@@ -117,7 +117,7 @@ export function PricingSection() {
                 ))}
               </ul>
             </div>
-            <Button href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20need%20a%20Landing%20Page." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800">
+            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20need%20a%20Landing%20Page." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800">
               Inquire Now
             </Button>
           </div>
@@ -144,7 +144,7 @@ export function PricingSection() {
                 ))}
               </ul>
             </div>
-            <Button href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20want%20to%20redesign%20my%20existing%20website." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800">
+            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20want%20to%20redesign%20my%20existing%20website." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800">
               Discuss Redesign
             </Button>
           </div>
@@ -171,7 +171,7 @@ export function PricingSection() {
                 ))}
               </ul>
             </div>
-            <Button href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20need%20enhancements%20for%20my%20website." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800">
+            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20need%20enhancements%20for%20my%20website." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800">
               Inquire Regarding Fixes
             </Button>
           </div>
@@ -201,7 +201,7 @@ export function PricingSection() {
                 ))}
               </ul>
             </div>
-            <Button href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20would%20like%20to%20discuss%20a%20Monthly%20Maintenance%20plan." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800 mt-4">
+            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20discuss%20a%20Monthly%20Maintenance%20plan." variant="outline" className="w-full justify-center border-slate-700 text-white hover:bg-slate-800 mt-4">
               Discuss Maintenance Needs
             </Button>
           </div>
@@ -265,7 +265,7 @@ export function PricingSection() {
             Tell us about your idea, reference websites, or feature list. We’ll analyze your goals and share a tailored roadmap and quote within 24 hours.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button href="https://wa.me/919575450177?text=Hi%20Nivora%20Tech,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20my%20website%20project." size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg shadow-[#25D366]/20 font-bold">
+            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20get%20a%20free%20quote%20for%20my%20website%20project." size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg shadow-[#25D366]/20 font-bold">
               <Icon name="whatsapp" size={18} className="mr-2" />
               Chat on WhatsApp for Quote
             </Button>

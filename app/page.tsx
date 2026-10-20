@@ -1,4 +1,4 @@
-import { Hero } from "@/components/sections/Hero";
+﻿import { Hero } from "@/components/sections/Hero";
 import { TechStack } from "@/components/sections/TechStack";
 import { ProjectsShowcase } from "@/components/sections/ProjectsShowcase";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
@@ -11,8 +11,8 @@ import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Website Development Company in Delhi NCR | Gurugram, Noida, Gwalior | NIVORA Tech",
-  description: "NIVORA Tech builds fast, responsive, and conversion-focused websites and Next.js applications for startups, local businesses, and luxury brands across Delhi NCR, Gurugram, Noida, and MP.",
+  title: "Website Development Company in Delhi NCR | Gurugram, Noida, Gwalior | NEXNIFY Tech",
+  description: "NEXNIFY Tech builds fast, responsive, and conversion-focused websites and Next.js applications for startups, local businesses, and luxury brands across Delhi NCR, Gurugram, Noida, and MP.",
   alternates: {
     canonical: "/",
   },

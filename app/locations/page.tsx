@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import { locations } from '@/data/locations';
 import Link from 'next/link';
@@ -6,23 +6,23 @@ import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 
 export const metadata: Metadata = {
-  title: 'Website Development Services Across India | NIVORA Tech',
-  description: 'NIVORA Tech provides professional website development, web design, and digital solutions to businesses across India — including Delhi NCR, Gwalior, Agra, Noida, Gurugram, Indore, Bhopal and more.',
+  title: 'Website Development Services Across India | NEXNIFY Tech',
+  description: 'NEXNIFY Tech provides professional website development, web design, and digital solutions to businesses across India — including Delhi NCR, Gwalior, Agra, Noida, Gurugram, Indore, Bhopal and more.',
   alternates: {
-    canonical: 'https://nivora-tech.vercel.app/locations',
+    canonical: 'https://nexnify.in/locations',
   },
   openGraph: {
-    title: 'Website Development Services Across India | NIVORA Tech',
-    description: 'Find NIVORA Tech website development services available in your city across India.',
-    url: 'https://nivora-tech.vercel.app/locations',
-    siteName: 'NIVORA Tech',
+    title: 'Website Development Services Across India | NEXNIFY Tech',
+    description: 'Find NEXNIFY Tech website development services available in your city across India.',
+    url: 'https://nexnify.in/locations',
+    siteName: 'NEXNIFY Tech',
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Website Development Services Across India | NIVORA Tech',
-    description: 'Find NIVORA Tech website development services available in your city across India.',
+    title: 'Website Development Services Across India | NEXNIFY Tech',
+    description: 'Find NEXNIFY Tech website development services available in your city across India.',
   },
 };
 

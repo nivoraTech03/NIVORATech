@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+﻿import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 // Helper to escape HTML to prevent XSS in the email body
@@ -135,7 +135,7 @@ export async function POST(req: Request) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Thank You For Reaching Out - Nivora</title>
+        <title>Thank You For Reaching Out - NEXNIFY</title>
       </head>
       <body style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #030712; margin: 0; padding: 0; -webkit-font-smoothing: antialiased;">
         <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #030712; padding: 40px 20px;">
@@ -154,7 +154,7 @@ export async function POST(req: Request) {
                           </div>
                         </td>
                         <td valign="middle" style="text-align: left;">
-                          <h1 style="color: #ffffff; font-size: 24px; font-weight: 800; margin: 0; letter-spacing: -0.5px; line-height: 1;">NIVORA</h1>
+                          <h1 style="color: #ffffff; font-size: 24px; font-weight: 800; margin: 0; letter-spacing: -0.5px; line-height: 1;">NEXNIFY</h1>
                           <p style="color: #e0e7ff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 0 0;">Digital Studio</p>
                         </td>
                       </tr>
@@ -189,13 +189,13 @@ export async function POST(req: Request) {
                 <tr>
                   <td style="background-color: #0f172a; padding: 30px; text-align: center; border-top: 1px solid #1f2937;">
                     <div style="margin-bottom: 15px;">
-                      <a href="https://www.instagram.com/nivorat.ech/" style="text-decoration: none; display: inline-block; margin: 0 10px;">
+                      <a href="https://www.instagram.com/nexnify.in/" style="text-decoration: none; display: inline-block; margin: 0 10px;">
                         <img src="https://img.icons8.com/ios-filled/24/64748b/instagram-new.png" alt="Instagram" style="vertical-align: middle; width: 24px; height: 24px;" />
                       </a>
                     </div>
-                    <a href="https://nivora-tech.vercel.app" style="display: inline-block; background-color: #ffffff; color: #111827; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Visit Our Website</a>
+                    <a href="https://nexnify.in" style="display: inline-block; background-color: #ffffff; color: #111827; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Visit Our Website</a>
                     <p style="color: #64748b; font-size: 13px; margin: 0;">
-                      &copy; ${new Date().getFullYear()} Nivora Tech. All rights reserved.
+                      &copy; ${new Date().getFullYear()} NEXNIFY Tech. All rights reserved.
                     </p>
                     <p style="color: #475569; font-size: 11px; margin: 15px 0 0 0;">
                       This is an automated message. Please do not reply to this email.
@@ -212,7 +212,7 @@ export async function POST(req: Request) {
 
     // 1. Send notification to admin
     await transporter.sendMail({
-      from: `"Nivora Website" <${SMTP_EMAIL}>`,
+      from: `"NEXNIFY Website" <${SMTP_EMAIL}>`,
       to: SMTP_EMAIL,
       replyTo: safeEmail !== 'Not provided' ? safeEmail : undefined,
       subject: `New Lead: ${safeType} from ${safeName}`,
@@ -222,7 +222,7 @@ export async function POST(req: Request) {
     // 2. Send Auto-Reply to the customer (if they provided an email)
     if (email) {
       await transporter.sendMail({
-        from: '"Nivora (No-Reply)" <' + SMTP_EMAIL + '>',
+        from: '"NEXNIFY (No-Reply)" <' + SMTP_EMAIL + '>',
         to: safeEmail,
         replyTo: SMTP_EMAIL, // Allow them to reply directly to the studio email if needed
         subject: `We've received your enquiry, ${safeName.split(' ')[0]}!`,

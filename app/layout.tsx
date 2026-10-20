@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import siteContent from "@/lib/content";
@@ -24,11 +24,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nivora-tech.vercel.app/"),
+  metadataBase: new URL("https://nexnify.in/"),
 
   title: {
-    default: "Website Development Company in Delhi NCR | NIVORA Tech",
-    template: "%s | NIVORA Tech",
+    default: "Website Development Company in Delhi NCR | NEXNIFY Tech",
+    template: "%s | NEXNIFY Tech",
   },
 
   verification: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "NIVORA Tech is a premier website development company in Delhi NCR building fast, responsive, and conversion-focused websites for startups, businesses, and luxury brands. Free consultation & custom tailored solutions.",
+    "NEXNIFY Tech is a premier website development company in Delhi NCR building fast, responsive, and conversion-focused websites for startups, businesses, and luxury brands. Free consultation & custom tailored solutions.",
 
   keywords: [
     "website development company in Delhi NCR",
@@ -60,18 +60,18 @@ export const metadata: Metadata = {
     "PHP website development",
     "responsive website development",
     "local business website development",
-    "NIVORA Tech",
+    "NEXNIFY Tech",
   ],
 
   authors: [
     {
-      name: "NIVORA Tech",
-      url: "https://nivora-tech.vercel.app/",
+      name: "NEXNIFY Tech",
+      url: "https://nexnify.in/",
     },
   ],
 
-  creator: "NIVORA Tech",
-  publisher: "NIVORA Tech",
+  creator: "NEXNIFY Tech",
+  publisher: "NEXNIFY Tech",
 
   robots: {
     index: true,
@@ -86,11 +86,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Website Development Company in Delhi NCR | NIVORA Tech",
+    title: "Website Development Company in Delhi NCR | NEXNIFY Tech",
     description:
-      "NIVORA Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
-    url: "https://nivora-tech.vercel.app/",
-    siteName: "NIVORA Tech",
+      "NEXNIFY Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
+    url: "https://nexnify.in/",
+    siteName: "NEXNIFY Tech",
     locale: "en_IN",
     type: "website",
     images: [
@@ -98,16 +98,16 @@ export const metadata: Metadata = {
         url: "/images/auralux.webp",
         width: 1200,
         height: 630,
-        alt: "NIVORA Tech — Website Development Company in Delhi NCR",
+        alt: "NEXNIFY Tech — Website Development Company in Delhi NCR",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Website Development Company in Delhi NCR | NIVORA Tech",
+    title: "Website Development Company in Delhi NCR | NEXNIFY Tech",
     description:
-      "NIVORA Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
+      "NEXNIFY Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
     images: ["/images/auralux.webp"],
   },
 };
@@ -117,15 +117,15 @@ const jsonLdSchema = {
   "@graph": [
     {
       "@type": ["ProfessionalService", "Organization"],
-      "@id": "https://nivora-tech.vercel.app/#organization",
-      name: "NIVORA Tech",
-      alternateName: "NIVORA Web Development",
-      url: "https://nivora-tech.vercel.app/",
-      logo: "https://nivora-tech.vercel.app/icon.png",
-      image: "https://nivora-tech.vercel.app/images/skyodeals.webp",
+      "@id": "https://nexnify.in/#organization",
+      name: "NEXNIFY Tech",
+      alternateName: "NEXNIFY Web Development",
+      url: "https://nexnify.in/",
+      logo: "https://nexnify.in/icon.png",
+      image: "https://nexnify.in/images/skyodeals.webp",
       description:
-        "NIVORA Tech is a website development company in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses.",
-      email: "nivora1403@gmail.com",
+        "NEXNIFY Tech is a website development company in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses.",
+      email: "nexnifytech@gmail.com",
       telephone: "+91-9575450177",
       priceRange: "₹₹",
       areaServed: [
@@ -133,10 +133,10 @@ const jsonLdSchema = {
         "Faridabad", "Indore", "Bhopal", "India"
       ],
       sameAs: [
-        "https://www.linkedin.com/company/nivoratech",
-        "https://github.com/nivoratech",
-        "https://twitter.com/nivoratech",
-        "https://www.instagram.com/nivorat.ech/"
+        "https://www.linkedin.com/company/nexnifytech",
+        "https://github.com/nexnifytech",
+        "https://twitter.com/nexnifytech",
+        "https://www.instagram.com/nexnify.in/"
       ],
       knowsAbout: [
         "Website Development",
@@ -153,11 +153,11 @@ const jsonLdSchema = {
     },
     {
       "@type": "WebSite",
-      "@id": "https://nivora-tech.vercel.app/#website",
-      url: "https://nivora-tech.vercel.app/",
-      name: "NIVORA Tech — Website Development Company",
+      "@id": "https://nexnify.in/#website",
+      url: "https://nexnify.in/",
+      name: "NEXNIFY Tech — Website Development Company",
       publisher: {
-        "@id": "https://nivora-tech.vercel.app/#organization",
+        "@id": "https://nexnify.in/#organization",
       },
       inLanguage: "en-IN",
     },

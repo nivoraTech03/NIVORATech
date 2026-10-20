@@ -1,10 +1,10 @@
-import siteContent from "@/lib/content";
+﻿import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "../ui/Icon";
 
 export function WhyChooseUs() {
-  const { whyNivora } = siteContent;
+  const { whyNexnify } = siteContent;
 
   return (
     <section
@@ -19,15 +19,15 @@ export function WhyChooseUs() {
 
       <Container className="relative z-10">
         <SectionHeading
-          eyebrow={whyNivora.eyebrow}
-          title={whyNivora.title}
-          description={whyNivora.description}
+          eyebrow={whyNexnify.eyebrow}
+          title={whyNexnify.title}
+          description={whyNexnify.description}
           align="center"
           light
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {whyNivora.items.map((item) => (
+          {whyNexnify.items.map((item) => (
             <div
               key={item.number}
               className="group relative flex flex-col justify-between rounded-3xl border border-slate-800 bg-gradient-to-b from-[#111A30]/80 to-[#0A0F1D]/90 p-7 backdrop-blur-md transition-all duration-300 hover:border-indigo-500/60 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-indigo-500/10"

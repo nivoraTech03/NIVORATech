@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* NIVORA — Royal Indigo & Sapphire Studio Palette */
+  /* NEXNIFY — Royal Indigo & Sapphire Studio Palette */
   --bg-body: #F8FAFC;
   --bg-surface: #FFFFFF;
   --bg-surface-alt: #F1F5F9;
@@ -251,4 +251,13 @@ body {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }

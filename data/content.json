@@ -1,18 +1,18 @@
 {
   "site": {
-    "name": "NIVORA",
+    "name": "NEXNIFY",
     "descriptor": "Independent Digital Studio",
-    "shortName": "nivora",
+    "shortName": "NEXNIFY",
     "tagline": "Modern websites built with intention.",
-    "description": "NIVORA creates modern, responsive websites and digital experiences using React, Next.js and modern web technologies.",
-    "email": "nivora1403@gmail.com",
+    "description": "NEXNIFY creates modern, responsive websites and digital experiences using React, Next.js and modern web technologies.",
+    "email": "nexnifytech@gmail.com",
     "socials": {
       "linkedin": "https://linkedin.com",
-      "email": "mailto:nivora1403@gmail.com",
+      "email": "mailto:nexnifytech@gmail.com",
       "whatsapp": "https://wa.me/919575450177",
-      "instagram": "https://www.instagram.com/nivorat.ech/"
+      "instagram": "https://www.instagram.com/nexnify.in/"
     },
-    "copyright": "© 2026 NIVORA. All rights reserved."
+    "copyright": "© 2026 NEXNIFY. All rights reserved."
   },
   "navigation": {
     "links": [
@@ -49,7 +49,7 @@
   "hero": {
     "eyebrow": "DIGITAL DEVELOPMENT STUDIO",
     "heading": "Custom Web & App Development in Delhi NCR",
-    "description": "Nivora Tech is a premier digital agency crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.",
+    "description": "NEXNIFY Tech is a premier digital agency crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.",
     "primaryCta": {
       "label": "View Our Work",
       "href": "/work"
@@ -467,6 +467,77 @@
         }
       ],
       "liveUrl": ""
+    },
+    {
+      "id": "inkora-tattoo",
+      "slug": "inkora-tattoo",
+      "number": "06",
+      "title": "Inkora Tattoo Studio — Premium Ink & Body Art Studio",
+      "category": "Next.js Tattoo Studio & Booking Platform",
+      "clientType": "Premium Tattoo & Body Art Studio",
+      "architecture": "Next.js, React, TypeScript, Tailwind CSS",
+      "description": "A dark, premium tattoo studio web platform featuring an artist portfolio showcase, custom tattoo inquiry funnel, appointment booking workflow, and studio service catalog. Built with a high-contrast editorial aesthetic that captures the bold artistry of the studio.",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Responsive Design",
+        "Booking Funnel"
+      ],
+      "image": "/images/inkora.webp",
+      "overview": "Inkora Tattoo Studio is a premium ink and body art studio offering custom tattoo design, fine line, blackwork, and geometric tattoo styles. We built a bold, editorial web platform that positions the studio as a high-end creative destination—complete with an artist portfolio, service catalog, and frictionless WhatsApp booking funnel.",
+      "challenge": "The studio needed a digital presence that matched the edgy, premium aesthetic of their physical space. Standard portfolio templates looked generic and failed to convey the artistry and exclusivity of the brand. They needed a platform that converts visitors into booked appointments.",
+      "approach": "We designed a high-contrast, dark-mode Next.js platform with bold typography and editorial-style gallery sections. A WhatsApp-powered booking funnel was integrated to capture consultation requests instantly, while an SEO-optimized structure ensures visibility for local tattoo searches.",
+      "whatWasBuilt": [
+        "Dark premium editorial homepage with cinematic hero and animated elements",
+        "Artist portfolio showcase with categorized tattoo style galleries",
+        "Service catalog covering custom tattoos, touch-ups, and consultations",
+        "WhatsApp booking funnel for instant appointment inquiries",
+        "Mobile-first responsive design optimized for on-the-go discovery",
+        "SEO structure targeting local tattoo studio keywords"
+      ],
+      "features": [
+        {
+          "title": "Editorial Tattoo Portfolio Gallery",
+          "tag": "Showcase",
+          "description": "Categorized gallery showcasing the studio's work across custom designs, fine line, blackwork, geometric, and watercolor tattoo styles with high-resolution imagery."
+        },
+        {
+          "title": "WhatsApp Booking & Consultation Funnel",
+          "tag": "Booking",
+          "description": "One-tap WhatsApp inquiry system that pre-fills consultation details, allowing prospective clients to book appointments directly with zero friction."
+        },
+        {
+          "title": "Service Catalog & Pricing Transparency",
+          "tag": "Services",
+          "description": "Clear breakdown of studio services including custom tattoos, cover-ups, touch-ups, and aftercare guidance to build trust and convert visitors."
+        },
+        {
+          "title": "Premium Dark Editorial Design",
+          "tag": "UI / Brand",
+          "description": "High-contrast dark aesthetic with bold typography, micro-animations, and a cinematic hero section that mirrors the premium, artistic identity of the studio."
+        }
+      ],
+      "stats": [
+        {
+          "label": "Tech Stack",
+          "value": "Next.js"
+        },
+        {
+          "label": "Design",
+          "value": "Dark Editorial"
+        },
+        {
+          "label": "Performance",
+          "value": "100/100"
+        },
+        {
+          "label": "Booking",
+          "value": "WhatsApp Funnel"
+        }
+      ],
+      "liveUrl": "https://inkora-tattoo-studio.vercel.app/"
     }
   ],
   "services": {
@@ -541,8 +612,8 @@
       }
     ]
   },
-  "whyNivora": {
-    "eyebrow": "WHY NIVORA",
+  "whyNexnify": {
+    "eyebrow": "WHY NEXNIFY",
     "title": "Built with intention.",
     "description": "We treat every project as a piece of craftsmanship. No bloated templates, no unnecessary complexity.",
     "items": [
@@ -596,9 +667,9 @@
     ]
   },
   "about": {
-    "eyebrow": "ABOUT NIVORA",
+    "eyebrow": "ABOUT NEXNIFY",
     "title": "Independent digital studio for the modern web.",
-    "description": "NIVORA is an independent digital studio focused on creating modern websites and digital experiences. We combine thoughtful design with modern frontend development to create products that look good, work smoothly and adapt across devices.",
+    "description": "NEXNIFY is an independent digital studio focused on creating modern websites and digital experiences. We combine thoughtful design with modern frontend development to create products that look good, work smoothly and adapt across devices.",
     "paragraphs": [
       "We believe that a website should be more than a digital brochure—it should be a fast, clear, and engaging extension of your business.",
       "By maintaining an independent studio approach, you work directly with the person designing and writing the code. There are no account managers, no inflated overheads, and no generic cookie-cutter templates.",
@@ -673,7 +744,7 @@
       "₹50,000+",
       "Not sure yet"
     ],
-    "email": "nivora1403@gmail.com",
+    "email": "nexnifytech@gmail.com",
     "phone": "+91 95754 50177",
     "whatsapp": "https://wa.me/919575450177",
     "queryTypes": [
@@ -702,7 +773,7 @@
         "avatar": "AM",
         "avatarBg": "#3730A3",
         "rating": 5,
-        "quote": "Nivora completely transformed our flight booking portal. We needed something fast because travelers hate slow loading pages when searching for flights. The custom PHP backend they built handles complex route searches without breaking a sweat, and our mobile conversions have actually doubled since the redesign. Highly recommend their team!",
+        "quote": "NEXNIFY completely transformed our flight booking portal. We needed something fast because travelers hate slow loading pages when searching for flights. The custom PHP backend they built handles complex route searches without breaking a sweat, and our mobile conversions have actually doubled since the redesign. Highly recommend their team!",
         "projectSlug": "skyodeals",
         "projectTitle": "SkyOdeals — Flight Booking Portal",
         "tag": "PHP Web Application"
@@ -716,7 +787,7 @@
         "avatar": "VS",
         "avatarBg": "#0369A1",
         "rating": 5,
-        "quote": "Setting up a portal for UPSC students was a massive task, but Nivora made it feel easy. The WordPress site is so simple for our faculty to update, and students love how easy it is to find study materials and register for courses. They actually listened to our requirements instead of just giving us a generic template.",
+        "quote": "Setting up a portal for UPSC students was a massive task, but NEXNIFY made it feel easy. The WordPress site is so simple for our faculty to update, and students love how easy it is to find study materials and register for courses. They actually listened to our requirements instead of just giving us a generic template.",
         "projectSlug": "hitias-academy",
         "projectTitle": "HIT IAS Academy — UPSC Portal",
         "tag": "WordPress & Elementor"
@@ -730,7 +801,7 @@
         "avatar": "KS",
         "avatarBg": "#047857",
         "rating": 5,
-        "quote": "I was struggling to find a developer who could handle React Native and Firebase for my messaging app idea. The Nivora team built XChat from scratch. The real-time messaging works flawlessly, and the UI feels just as smooth as WhatsApp. Super professional and they actually deliver on time.",
+        "quote": "I was struggling to find a developer who could handle React Native and Firebase for my messaging app idea. The NEXNIFY team built XChat from scratch. The real-time messaging works flawlessly, and the UI feels just as smooth as WhatsApp. Super professional and they actually deliver on time.",
         "projectSlug": "xchat",
         "projectTitle": "XChat — Real-time Messaging",
         "tag": "React Native App"
@@ -744,7 +815,7 @@
         "avatar": "AL",
         "avatarBg": "#D4AF37",
         "rating": 5,
-        "quote": "Nivora created a world-class luxury web portal for our Golf Course Road executive PG residence. The dark gold aesthetic, mobile responsiveness, and seamless WhatsApp booking funnels have elevated our brand image and filled our suites in record time. Exceptional engineering and delivery!",
+        "quote": "NEXNIFY created a world-class luxury web portal for our Golf Course Road executive PG residence. The dark gold aesthetic, mobile responsiveness, and seamless WhatsApp booking funnels have elevated our brand image and filled our suites in record time. Exceptional engineering and delivery!",
         "projectSlug": "auralux-pg",
         "projectTitle": "AURA LUXE SUITES — Golf Course Road, Gurugram",
         "tag": "Next.js Luxury Living"
@@ -758,7 +829,7 @@
         "avatar": "AS",
         "avatarBg": "#BE185D",
         "rating": 5,
-        "quote": "Nivora understood our luxury bridal aesthetic instantly. The interactive date availability tool and WhatsApp consultation funnel have completely streamlined how high-end brides book our Mehrauli atelier. We saw a 165% jump in qualified inquiries in our very first wedding season!",
+        "quote": "NEXNIFY understood our luxury bridal aesthetic instantly. The interactive date availability tool and WhatsApp consultation funnel have completely streamlined how high-end brides book our Mehrauli atelier. We saw a 165% jump in qualified inquiries in our very first wedding season!",
         "projectSlug": "aurabridal-studio",
         "projectTitle": "Aura Bridal Studio — Mehrauli, Delhi NCR",
         "tag": "Next.js 15 Luxury Atelier"

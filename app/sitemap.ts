@@ -1,9 +1,9 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import siteContent from "@/lib/content";
 import { locations } from "@/data/locations";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://nivora-tech.vercel.app";
+  const baseUrl = "https://nexnify.in";
 
   const routeConfig: Record<string, { priority: number; changeFrequency: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never" }> = {
     "": { priority: 1.0, changeFrequency: "daily" },

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
@@ -11,13 +11,13 @@ import PageBanner from "@/components/layout/PageBanner";
 import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
-  title: "Web Development Projects | NIVORA",
+  title: "Web Development Projects | NEXNIFY",
   description: "A showcase of web development projects designed and developed with a focus on modern technologies, performance, and responsive experience.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
-    title: "Web Development Projects | NIVORA",
+    title: "Web Development Projects | NEXNIFY",
     description: "A showcase of web development projects designed and developed with a focus on modern technologies, performance, and responsive experience.",
     url: "/work",
   },
@@ -68,7 +68,7 @@ export default function WorkPage() {
                           </div>
                           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-mono text-[var(--text-secondary)]">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span>{displayUrl ? `https://${displayUrl}` : `nivora.tech/work/${project.slug}`}</span>
+                            <span>{displayUrl ? `https://${displayUrl}` : `NEXNIFY.tech/work/${project.slug}`}</span>
                           </div>
                           <div className="w-8" />
                         </div>

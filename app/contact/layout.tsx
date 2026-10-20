@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact NIVORA | Start a Web Project",
+  title: "Contact NEXNIFY | Start a Web Project",
   description:
-    "Get in touch with NIVORA to discuss your next web development project. We specialize in React, Next.js, and WordPress websites.",
+    "Get in touch with NEXNIFY to discuss your next web development project. We specialize in React, Next.js, and WordPress websites.",
   keywords: [
-    "Contact NIVORA",
+    "Contact NEXNIFY",
     "freelance web developer",
     "React developer",
     "Next.js developer",
@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     "Website Cost Estimate",
   ],
   alternates: {
-    canonical: "https://nivora-tech.vercel.app/contact",
+    canonical: "https://nexnify.in/contact",
   },
   openGraph: {
-    title: "Contact NIVORA | Start a Web Project",
+    title: "Contact NEXNIFY | Start a Web Project",
     description:
-      "Get in touch with NIVORA to discuss your next web development project.",
-    url: "https://nivora-tech.vercel.app/contact",
+      "Get in touch with NEXNIFY to discuss your next web development project.",
+    url: "https://nexnify.in/contact",
     type: "website",
   },
 };

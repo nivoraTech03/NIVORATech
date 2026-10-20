@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { locations } from '@/data/locations';
@@ -47,20 +47,20 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       `App Development in ${location.name}`,
       `Website Development for Businesses in ${location.name}`,
       `Professional Website Design in ${location.name}`,
-      `Nivora Tech ${location.name}`,
+      `NEXNIFY Tech ${location.name}`,
       `SEO Optimized Website in ${location.name}`,
       `Mobile App Developer ${location.name}`,
       `E-commerce Website Developer ${location.name}`,
       `Web Design Agency ${location.name}`
     ],
     alternates: {
-      canonical: `https://nivora-tech.vercel.app/locations/${city}`,
+      canonical: `https://nexnify.in/locations/${city}`,
     },
     openGraph: {
       title: location.title,
       description: location.description,
-      url: `https://nivora-tech.vercel.app/locations/${city}`,
-      siteName: "NIVORA Tech",
+      url: `https://nexnify.in/locations/${city}`,
+      siteName: "NEXNIFY Tech",
       locale: "en_IN",
       type: 'website',
     },
@@ -84,9 +84,9 @@ export default async function LocationPage({ params }: LocationPageProps) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nivora-tech.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://nivora-tech.vercel.app/locations" },
-      { "@type": "ListItem", "position": 3, "name": location.name, "item": `https://nivora-tech.vercel.app/locations/${location.slug}` }
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://nexnify.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://nexnify.in/locations" },
+      { "@type": "ListItem", "position": 3, "name": location.name, "item": `https://nexnify.in/locations/${location.slug}` }
     ]
   };
 
@@ -96,8 +96,8 @@ export default async function LocationPage({ params }: LocationPageProps) {
     "serviceType": "Website Development",
     "provider": {
       "@type": "Organization",
-      "name": "NIVORA Tech",
-      "url": "https://nivora-tech.vercel.app/"
+      "name": "NEXNIFY Tech",
+      "url": "https://nexnify.in/"
     },
     "areaServed": {
       "@type": "City",

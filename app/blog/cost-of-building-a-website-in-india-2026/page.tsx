@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Metadata } from 'next';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Cost of Building a Business Website in India (2026 Practical Guide)',
   description: 'A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions for your startup.',
   alternates: {
-    canonical: 'https://nivora-tech.vercel.app/blog/cost-of-building-a-website-in-india-2026',
+    canonical: 'https://nexnify.in/blog/cost-of-building-a-website-in-india-2026',
   },
 };
 
@@ -19,14 +19,14 @@ const articleSchema = {
   "description": "A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions for your startup.",
   "author": {
     "@type": "Organization",
-    "name": "Nivora Tech"
+    "name": "NEXNIFY Tech"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Nivora Tech",
+    "name": "NEXNIFY Tech",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://nivora-tech.vercel.app/icon.png"
+      "url": "https://nexnify.in/icon.png"
     }
   },
   "datePublished": "2026-10-01",
@@ -65,7 +65,7 @@ const faqSchema = {
 };
 
 export default function BlogCostGuide() {
-  const whatsappMsg = "Hi Nivora Tech, I read your 2026 pricing guide and need a quote for my website.";
+  const whatsappMsg = "Hi NEXNIFY Tech, I read your 2026 pricing guide and need a quote for my website.";
   const whatsappLink = `https://wa.me/919575450177?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
