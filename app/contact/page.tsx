@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, type FormEvent } from "react";
 import siteContent from "@/lib/content";
@@ -157,7 +157,7 @@ export default function ContactPage() {
 
                 {/* Instagram Direct Card */}
                 <a
-                  href="https://www.instagram.com/nexnify.in/"
+                  href="https://www.instagram.com/nexnify/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-start gap-4 p-5 rounded-2xl bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-pink-500 transition-all block"
@@ -179,25 +179,25 @@ export default function ContactPage() {
                 </a>
 
                 {/* Studio Live Availability & Timings Card */}
-                <div className="p-5 rounded-2xl bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
-                  <div className="flex items-center justify-between">
+                <div className="p-4 sm:p-5 rounded-2xl bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <span className="font-display text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                       Studio Status
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-400 text-[11px] font-bold">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500 animate-ping" />
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-400 text-[11px] font-bold w-fit">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                       Accepting New Projects
                     </span>
                   </div>
 
-                  <div className="pt-1 text-xs text-slate-600 dark:text-slate-300 space-y-1">
-                    <div className="flex items-center justify-between">
+                  <div className="pt-1 text-xs text-slate-600 dark:text-slate-300 space-y-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5">
                       <span className="font-medium text-slate-500 dark:text-slate-400">Working Hours:</span>
                       <span className="font-bold text-slate-900 dark:text-white">Mon — Sat, 9:30 AM – 7:30 PM IST</span>
                     </div>
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-0.5">
                       <span className="font-medium text-slate-500 dark:text-slate-400">Location:</span>
-                      <span className="font-bold text-slate-900 dark:text-white">Remote &amp; Global Delivery</span>
+                      <span className="font-bold text-slate-900 dark:text-white">Delhi NCR &amp; Global Remote</span>
                     </div>
                   </div>
                 </div>
@@ -240,7 +240,7 @@ export default function ContactPage() {
                         <span className="font-semibold text-slate-900 dark:text-white">{formData.queryType}</span>. Our technical lead will review and contact you within 2–4 hours.
                       </p>
                       <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                        
+
                         <button
                           type="button"
                           onClick={() => {
@@ -380,9 +380,9 @@ export default function ContactPage() {
                           id="email"
                           required
                           type="email"
-                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
-                            title="Please enter a valid email address"
-                            value={formData.email}
+                          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                          title="Please enter a valid email address"
+                          value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="e.g. john@company.com"
                           className="font-body w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white text-sm font-medium placeholder:text-slate-400 dark:placeholder:text-slate-500 placeholder:font-normal placeholder:text-[13px] focus:outline-none focus:bg-white dark:focus:bg-[#1e293b] focus:border-indigo-600 focus:ring-3 focus:ring-indigo-100 dark:focus:ring-indigo-900/50 transition-all shadow-none"
@@ -416,7 +416,7 @@ export default function ContactPage() {
                         >
                           {status === "submitting" ? "Submitting Inquiry..." : "Submit Project Inquiry ➜"}
                         </button>
-                        
+
                       </div>
                     </form>
                   )}

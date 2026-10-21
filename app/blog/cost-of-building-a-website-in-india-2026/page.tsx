@@ -1,5 +1,6 @@
-﻿import React from 'react';
+import React from 'react';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
@@ -8,22 +9,69 @@ export const metadata: Metadata = {
   title: 'Cost of Building a Business Website in India (2026 Practical Guide)',
   description: 'A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions for your startup.',
   alternates: {
-    canonical: 'https://nexnify.in/blog/cost-of-building-a-website-in-india-2026',
+    canonical: '/blog/cost-of-building-a-website-in-india-2026',
   },
+  openGraph: {
+    title: 'Cost of Building a Business Website in India (2026 Practical Guide) | NEXNIFY Tech',
+    description: 'A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions for your startup.',
+    url: '/blog/cost-of-building-a-website-in-india-2026',
+    siteName: 'NEXNIFY Tech',
+    locale: 'en_IN',
+    type: 'article',
+    publishedTime: '2026-10-01T00:00:00.000Z',
+    modifiedTime: '2026-10-01T00:00:00.000Z',
+    authors: ['NEXNIFY Tech'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cost of Building a Business Website in India (2026 Practical Guide) | NEXNIFY Tech',
+    description: 'A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions.',
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://nexnify.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog & Guides",
+      "item": "https://nexnify.in/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cost of Building a Business Website in India (2026 Guide)",
+      "item": "https://nexnify.in/blog/cost-of-building-a-website-in-india-2026"
+    }
+  ]
 };
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nexnify.in/blog/cost-of-building-a-website-in-india-2026"
+  },
   "headline": "Cost of Building a Business Website in India (2026 Practical Guide)",
   "description": "A complete guide to website design costs and planning in India for 2026. Learn freelance web developer cost factors and tailored solutions for your startup.",
   "author": {
     "@type": "Organization",
-    "name": "NEXNIFY Tech"
+    "name": "NEXNIFY Tech",
+    "url": "https://nexnify.in/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "NEXNIFY Tech",
+    "url": "https://nexnify.in/",
     "logo": {
       "@type": "ImageObject",
       "url": "https://nexnify.in/icon.png"
@@ -70,6 +118,7 @@ export default function BlogCostGuide() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
@@ -77,6 +126,13 @@ export default function BlogCostGuide() {
         <Container>
           {/* Header */}
           <header className="max-w-3xl mx-auto text-center mb-16">
+            <nav aria-label="Breadcrumb" className="flex items-center justify-center gap-2 text-xs md:text-sm text-slate-400 mb-6 font-medium">
+              <Link href="/" className="hover:text-indigo-400 transition-colors">Home</Link>
+              <span className="text-slate-600">/</span>
+              <Link href="/blog" className="hover:text-indigo-400 transition-colors">Blog &amp; Guides</Link>
+              <span className="text-slate-600">/</span>
+              <span className="text-slate-200 font-semibold truncate max-w-[200px] sm:max-w-none">Website Cost Guide 2026</span>
+            </nav>
             <h1 className="font-display text-4xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">
               Cost of Building a Business Website in India <span className="text-indigo-400">(2026 Guide)</span>
             </h1>

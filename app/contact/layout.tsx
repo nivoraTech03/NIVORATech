@@ -1,26 +1,35 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact NEXNIFY | Start a Web Project",
+  title: "Contact NEXNIFY Tech | Start Your Web Project",
   description:
-    "Get in touch with NEXNIFY to discuss your next web development project. We specialize in React, Next.js, and WordPress websites.",
+    "Get in touch with NEXNIFY Tech to discuss your website development project. We specialize in React, Next.js, WordPress, and custom web applications across Delhi NCR.",
   keywords: [
-    "Contact NEXNIFY",
-    "freelance web developer",
-    "React developer",
-    "Next.js developer",
-    "Project Enquiry",
-    "Website Cost Estimate",
+    "Contact NEXNIFY Tech",
+    "website development quote Delhi NCR",
+    "freelance web developer India",
+    "React developer Delhi NCR",
+    "Next.js developer India",
+    "website cost estimate India",
+    "web project enquiry",
   ],
   alternates: {
-    canonical: "https://nexnify.in/contact",
+    canonical: "/contact",
   },
   openGraph: {
-    title: "Contact NEXNIFY | Start a Web Project",
+    title: "Contact NEXNIFY Tech | Start Your Web Project",
     description:
-      "Get in touch with NEXNIFY to discuss your next web development project.",
-    url: "https://nexnify.in/contact",
+      "Get in touch with NEXNIFY Tech to discuss your website development project across Delhi NCR.",
+    url: "/contact",
+    siteName: "NEXNIFY Tech",
+    locale: "en_IN",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact NEXNIFY Tech | Start Your Web Project",
+    description:
+      "Get in touch with NEXNIFY Tech to discuss your website development project. Free consultation.",
   },
 };
 

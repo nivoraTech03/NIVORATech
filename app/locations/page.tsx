@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Metadata } from 'next';
 import { locations } from '@/data/locations';
 import Link from 'next/link';
@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: 'Website Development Services Across India | NEXNIFY Tech',
   description: 'NEXNIFY Tech provides professional website development, web design, and digital solutions to businesses across India — including Delhi NCR, Gwalior, Agra, Noida, Gurugram, Indore, Bhopal and more.',
   alternates: {
-    canonical: 'https://nexnify.in/locations',
+    canonical: '/locations',
   },
   openGraph: {
     title: 'Website Development Services Across India | NEXNIFY Tech',
     description: 'Find NEXNIFY Tech website development services available in your city across India.',
-    url: 'https://nexnify.in/locations',
+    url: '/locations',
     siteName: 'NEXNIFY Tech',
     locale: 'en_IN',
     type: 'website',

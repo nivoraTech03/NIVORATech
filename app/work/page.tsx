@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
@@ -11,15 +11,26 @@ import PageBanner from "@/components/layout/PageBanner";
 import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
-  title: "Web Development Projects | NEXNIFY",
-  description: "A showcase of web development projects designed and developed with a focus on modern technologies, performance, and responsive experience.",
+  title: "Web Development Projects & Case Studies | NEXNIFY Tech",
+  description:
+    "Explore NEXNIFY Tech's production website projects — luxury hospitality portals, custom booking engines, and business websites built with Next.js, React, and WordPress.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
-    title: "Web Development Projects | NEXNIFY",
-    description: "A showcase of web development projects designed and developed with a focus on modern technologies, performance, and responsive experience.",
+    title: "Web Development Projects & Case Studies | NEXNIFY Tech",
+    description:
+      "Explore NEXNIFY Tech's production website projects — luxury hospitality portals, custom booking engines, and business websites built with modern web technologies.",
     url: "/work",
+    siteName: "NEXNIFY Tech",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Web Development Projects & Case Studies | NEXNIFY Tech",
+    description:
+      "Production website projects by NEXNIFY Tech — luxury portals, custom booking engines, and business websites.",
   },
 };
 

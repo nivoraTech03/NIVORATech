@@ -1,18 +1,18 @@
 {
   "site": {
-    "name": "NEXNIFY",
+    "name": "NEXNIFY Tech",
     "descriptor": "Independent Digital Studio",
-    "shortName": "NEXNIFY",
-    "tagline": "Modern websites built with intention.",
-    "description": "NEXNIFY creates modern, responsive websites and digital experiences using React, Next.js and modern web technologies.",
+    "shortName": "NEXNIFY Tech",
+    "tagline": "Ideas to Impact — Modern websites & web apps built with intention.",
+    "description": "NEXNIFY Tech creates modern, responsive websites and digital experiences using React, Next.js and modern web technologies.",
     "email": "nexnifytech@gmail.com",
     "socials": {
       "linkedin": "https://linkedin.com",
       "email": "mailto:nexnifytech@gmail.com",
       "whatsapp": "https://wa.me/919575450177",
-      "instagram": "https://www.instagram.com/nexnify.in/"
+      "instagram": "https://www.instagram.com/nexnify/"
     },
-    "copyright": "© 2026 NEXNIFY. All rights reserved."
+    "copyright": "© 2026 NEXNIFY Tech. All rights reserved."
   },
   "navigation": {
     "links": [
@@ -256,27 +256,27 @@
       ],
       "gallery": [
         {
-          "src": "/images/aurabridal_gallery/hero_bride.jpg",
+          "src": "/images/aurabridal_gallery/hero_bride.webp",
           "caption": "Royal Heritage Crimson Bridal Look"
         },
         {
-          "src": "/images/aurabridal_gallery/service_bridal.jpg",
+          "src": "/images/aurabridal_gallery/service_bridal.webp",
           "caption": "Signature HD Bridal Artistry & Jewelry Setting"
         },
         {
-          "src": "/images/aurabridal_gallery/service_reception.jpg",
+          "src": "/images/aurabridal_gallery/service_reception.webp",
           "caption": "Evening Reception Glamour & Hollywood Waves"
         },
         {
-          "src": "/images/aurabridal_gallery/service_engagement.jpg",
+          "src": "/images/aurabridal_gallery/service_engagement.webp",
           "caption": "Dewy Pastel Engagement & Ring Ceremony Look"
         },
         {
-          "src": "/images/aurabridal_gallery/service_party.jpg",
+          "src": "/images/aurabridal_gallery/service_party.webp",
           "caption": "Sweat-Resistant Sangeet & Bridesmaid Styling"
         },
         {
-          "src": "/images/aurabridal_gallery/service_prebridal.jpg",
+          "src": "/images/aurabridal_gallery/service_prebridal.webp",
           "caption": "Botanical Facials & Pre-Bridal Skincare Rituals"
         }
       ],
@@ -467,77 +467,6 @@
         }
       ],
       "liveUrl": ""
-    },
-    {
-      "id": "inkora-tattoo",
-      "slug": "inkora-tattoo",
-      "number": "06",
-      "title": "Inkora Tattoo Studio — Premium Ink & Body Art Studio",
-      "category": "Next.js Tattoo Studio & Booking Platform",
-      "clientType": "Premium Tattoo & Body Art Studio",
-      "architecture": "Next.js, React, TypeScript, Tailwind CSS",
-      "description": "A dark, premium tattoo studio web platform featuring an artist portfolio showcase, custom tattoo inquiry funnel, appointment booking workflow, and studio service catalog. Built with a high-contrast editorial aesthetic that captures the bold artistry of the studio.",
-      "technologies": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Responsive Design",
-        "Booking Funnel"
-      ],
-      "image": "/images/inkora.webp",
-      "overview": "Inkora Tattoo Studio is a premium ink and body art studio offering custom tattoo design, fine line, blackwork, and geometric tattoo styles. We built a bold, editorial web platform that positions the studio as a high-end creative destination—complete with an artist portfolio, service catalog, and frictionless WhatsApp booking funnel.",
-      "challenge": "The studio needed a digital presence that matched the edgy, premium aesthetic of their physical space. Standard portfolio templates looked generic and failed to convey the artistry and exclusivity of the brand. They needed a platform that converts visitors into booked appointments.",
-      "approach": "We designed a high-contrast, dark-mode Next.js platform with bold typography and editorial-style gallery sections. A WhatsApp-powered booking funnel was integrated to capture consultation requests instantly, while an SEO-optimized structure ensures visibility for local tattoo searches.",
-      "whatWasBuilt": [
-        "Dark premium editorial homepage with cinematic hero and animated elements",
-        "Artist portfolio showcase with categorized tattoo style galleries",
-        "Service catalog covering custom tattoos, touch-ups, and consultations",
-        "WhatsApp booking funnel for instant appointment inquiries",
-        "Mobile-first responsive design optimized for on-the-go discovery",
-        "SEO structure targeting local tattoo studio keywords"
-      ],
-      "features": [
-        {
-          "title": "Editorial Tattoo Portfolio Gallery",
-          "tag": "Showcase",
-          "description": "Categorized gallery showcasing the studio's work across custom designs, fine line, blackwork, geometric, and watercolor tattoo styles with high-resolution imagery."
-        },
-        {
-          "title": "WhatsApp Booking & Consultation Funnel",
-          "tag": "Booking",
-          "description": "One-tap WhatsApp inquiry system that pre-fills consultation details, allowing prospective clients to book appointments directly with zero friction."
-        },
-        {
-          "title": "Service Catalog & Pricing Transparency",
-          "tag": "Services",
-          "description": "Clear breakdown of studio services including custom tattoos, cover-ups, touch-ups, and aftercare guidance to build trust and convert visitors."
-        },
-        {
-          "title": "Premium Dark Editorial Design",
-          "tag": "UI / Brand",
-          "description": "High-contrast dark aesthetic with bold typography, micro-animations, and a cinematic hero section that mirrors the premium, artistic identity of the studio."
-        }
-      ],
-      "stats": [
-        {
-          "label": "Tech Stack",
-          "value": "Next.js"
-        },
-        {
-          "label": "Design",
-          "value": "Dark Editorial"
-        },
-        {
-          "label": "Performance",
-          "value": "100/100"
-        },
-        {
-          "label": "Booking",
-          "value": "WhatsApp Funnel"
-        }
-      ],
-      "liveUrl": "https://inkora-tattoo-studio.vercel.app/"
     }
   ],
   "services": {

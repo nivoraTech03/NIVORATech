@@ -55,21 +55,6 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     isNew: true,
   },
   {
-    id: "inkora-tattoo",
-    tabLabel: "🖤 Inkora",
-    tabSub: "Tattoo Studio",
-    category: "Next.js Tattoo Studio & Booking Platform",
-    title: "Inkora Tattoo Studio — Premium Ink & Body Art Studio",
-    location: "India",
-    metric: "100 Perf · Booking Funnel",
-    techBadge: "Next.js",
-    slug: "inkora-tattoo",
-    image: "/images/inkora.webp",
-    liveUrl: "https://inkora-tattoo-studio.vercel.app/",
-    glowColor: "rgba(239, 68, 68, 0.20)",
-    isNew: true,
-  },
-  {
     id: "skyodeals",
     tabLabel: "✈ SkyOdeals",
     tabSub: "Flight Portal",
@@ -217,9 +202,9 @@ export function Hero() {
           </div>
 
           {/* Epic Main Headline */}
-          <h1 className="font-display text-[26px] xs:text-3xl sm:text-5xl lg:text-[64px] font-black leading-[1.15] tracking-tight text-white drop-shadow-sm px-1 sm:px-0 break-words">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-[60px] font-black leading-[1.14] tracking-tight text-white drop-shadow-sm px-1 sm:px-0 break-words">
             Custom Web &amp; App Development{" "}
-            <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-indigo-300 via-sky-300 to-teal-300 bg-clip-text text-transparent">
+            <span className="block mt-1 sm:mt-2 bg-gradient-to-r from-cyan-300 via-indigo-300 to-fuchsia-300 bg-clip-text text-transparent">
               in Delhi NCR &amp; Gurugram
             </span>
           </h1>
@@ -275,42 +260,35 @@ export function Hero() {
         </div>
 
         {/* ─── Seamless Elevated Showcase Card (No Harsh Borders) ─── */}
-        <div className="mt-8 sm:mt-14 lg:mt-16 mx-auto max-w-5xl">
-          {/* Interactive Project Switcher Tabs — scrollable on mobile */}
-          <div className="mb-3 sm:mb-6 flex items-center gap-2 sm:gap-3 overflow-x-auto pb-2 sm:overflow-visible sm:flex-wrap sm:justify-center scrollbar-hide px-1">
-            {FEATURED_PROJECTS.map((p, idx) => {
-              const isSelected = idx === current;
-              return (
-                <button
-                  key={p.id}
-                  type="button"
-                  onClick={() => slideTo(idx)}
-                  className={`relative px-3 sm:px-5 py-2 sm:py-2.5 rounded-2xl text-[11px] sm:text-sm font-bold transition-all duration-300 cursor-pointer overflow-hidden backdrop-blur-xl shadow-md whitespace-nowrap shrink-0 sm:shrink ${
-                    isSelected
-                      ? "bg-gradient-to-r from-indigo-600/35 to-purple-600/25 text-white shadow-xl shadow-indigo-500/20 scale-[1.02] ring-1 ring-indigo-400/50"
-                      : "bg-slate-900/60 text-slate-400 hover:text-white hover:bg-slate-900/90 ring-1 ring-white/5"
-                  }`}
-                >
-                  {isSelected && (
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-400 via-sky-400 to-amber-300"
-                      style={{ animation: "tabProgress 6.5s linear infinite" }}
-                    />
-                  )}
-                  <span className="flex items-center gap-2">
-                    <span>{p.tabLabel}</span>
-                    {p.isNew && (
-                      <span className="px-1.5 py-0.5 rounded-md text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-400 to-teal-300 text-slate-950 shadow-sm animate-pulse">
-                        NEW
-                      </span>
-                    )}
-                    <span className="text-[10px] text-slate-400 font-normal hidden sm:inline">
-                      • {p.tabSub}
+        <div className="mt-5 sm:mt-10 lg:mt-12 mx-auto max-w-5xl">
+          {/* Compact Space-Efficient Project Switcher Pill Bar */}
+          <div className="mb-2.5 sm:mb-4 flex justify-center px-1">
+            <div className="inline-flex items-center gap-1 sm:gap-1.5 p-1 rounded-full bg-slate-950/80 border border-white/10 shadow-xl backdrop-blur-xl overflow-x-auto max-w-full [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              {FEATURED_PROJECTS.map((p, idx) => {
+                const isSelected = idx === current;
+                return (
+                  <button
+                    key={p.id}
+                    type="button"
+                    onClick={() => slideTo(idx)}
+                    className={`relative px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 ${
+                      isSelected
+                        ? "bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 text-white shadow-md shadow-indigo-500/30 scale-[1.02]"
+                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                    }`}
+                  >
+                    <span className="flex items-center gap-1.5">
+                      <span>{p.tabLabel}</span>
+                      {p.isNew && (
+                        <span className="px-1.5 py-0.2 rounded-full text-[8.5px] font-black uppercase tracking-wider bg-emerald-400 text-slate-950 shadow-sm animate-pulse">
+                          NEW
+                        </span>
+                      )}
                     </span>
-                  </span>
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           {/* Elevated Card Shell Designed with Soft Shadows & Glassmorphism (No Harsh Borders) */}

@@ -57,7 +57,7 @@ export function Header() {
                     className={cn(
                       "relative px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200",
                       active
-                        ? "bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-500/25 scale-[1.02]"
+                        ? "bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 text-white shadow-md shadow-indigo-500/25 scale-[1.02]"
                         : "text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-white/5"
                     )}
                   >
@@ -141,7 +141,7 @@ export function Header() {
                     className={cn(
                       "flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200",
                       active
-                        ? "bg-gradient-to-r from-indigo-600/20 to-purple-600/15 text-indigo-400 font-bold border border-indigo-500/30 shadow-sm"
+                        ? "bg-gradient-to-r from-cyan-500/15 via-indigo-600/15 to-fuchsia-600/15 text-indigo-400 font-bold border border-indigo-500/30 shadow-sm"
                         : "text-[var(--text-secondary)] hover:bg-[var(--bg-surface-alt)] hover:text-[var(--text-primary)]"
                     )}
                   >
@@ -173,6 +173,8 @@ export function Header() {
             {[
               { label: "View Our Work", href: "/work" },
               { label: "Our Services", href: "/services" },
+              { label: "Pricing & Plans", href: "/pricing" },
+              { label: "Guides & Insights", href: "/blog" },
               { label: "Get a Quote", href: "/contact" },
             ].map((item) => (
               <li key={item.href}>

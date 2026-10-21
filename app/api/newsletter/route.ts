@@ -127,7 +127,7 @@ export async function POST(req: Request) {
                 <tr>
                   <td style="background-color: #0f172a; padding: 30px; text-align: center; border-top: 1px solid #1f2937;">
                     <div style="margin-bottom: 15px;">
-                      <a href="https://www.instagram.com/nexnify.in/" style="text-decoration: none; display: inline-block; margin: 0 10px;">
+                      <a href="https://www.instagram.com/nexnify/" style="text-decoration: none; display: inline-block; margin: 0 10px;">
                         <img src="https://img.icons8.com/ios-filled/24/64748b/instagram-new.png" alt="Instagram" style="vertical-align: middle; width: 24px; height: 24px;" />
                       </a>
                     </div>

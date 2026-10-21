@@ -7,7 +7,20 @@ export const metadata: Metadata = {
   title: "Privacy Policy & Terms of Service | NEXNIFY Tech",
   description: "Comprehensive legal policies, terms of service, and privacy guidelines for NEXNIFY Tech digital agency.",
   alternates: {
-    canonical: 'https://nexnify.in/terms',
+    canonical: '/terms',
+  },
+  openGraph: {
+    title: "Privacy Policy & Terms of Service | NEXNIFY Tech",
+    description: "Comprehensive legal policies, terms of service, and privacy guidelines for NEXNIFY Tech.",
+    url: "/terms",
+    siteName: "NEXNIFY Tech",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy & Terms of Service | NEXNIFY Tech",
+    description: "Legal policies, terms of service, and privacy guidelines for NEXNIFY Tech.",
   },
 };
 

@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import siteContent from "@/lib/content";
@@ -6,6 +6,7 @@ import { ThemeProvider, themeInitScript } from "@/context/ThemeContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import FloatingActions from "@/components/ui/FloatingActions";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 const { site } = siteContent;
 
@@ -22,6 +23,16 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
+    { media: "(prefers-color-scheme: dark)", color: "#070B16" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexnify.in/"),
@@ -122,21 +133,33 @@ const jsonLdSchema = {
       alternateName: "NEXNIFY Web Development",
       url: "https://nexnify.in/",
       logo: "https://nexnify.in/icon.png",
-      image: "https://nexnify.in/images/skyodeals.webp",
+      image: "https://nexnify.in/icon.png",
       description:
         "NEXNIFY Tech is a website development company in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses.",
       email: "nexnifytech@gmail.com",
       telephone: "+91-9575450177",
       priceRange: "₹₹",
       areaServed: [
-        "Delhi", "Noida", "Gurugram", "Gwalior", "Agra", "Mathura",
-        "Faridabad", "Indore", "Bhopal", "India"
+        "Delhi", "Gurugram", "Noida", "Faridabad", "Gwalior", "Agra", "Mathura",
+        "Indore", "Bhopal", "India"
       ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-9575450177",
+        contactType: "customer service",
+        email: "nexnifytech@gmail.com",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi"],
+      },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Delhi NCR",
+        addressRegion: "Delhi",
+        addressCountry: "IN",
+      },
       sameAs: [
-        "https://www.linkedin.com/company/nexnifytech",
-        "https://github.com/nexnifytech",
-        "https://twitter.com/nexnifytech",
-        "https://www.instagram.com/nexnify.in/"
+        "https://www.instagram.com/nexnify/",
+        "https://github.com/nexnifytech03"
       ],
       knowsAbout: [
         "Website Development",
@@ -170,7 +193,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+    <html lang="en-IN" suppressHydrationWarning className="scroll-smooth">
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -200,6 +223,7 @@ export default function RootLayout({
             <FloatingActions />
           </div>
         </ThemeProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-BT65ZEYQHW"} />
       </body>
     </html>
   );

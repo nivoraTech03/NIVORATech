@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { locations } from '@/data/locations';
@@ -54,12 +54,12 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       `Web Design Agency ${location.name}`
     ],
     alternates: {
-      canonical: `https://nexnify.in/locations/${city}`,
+      canonical: `/locations/${city}`,
     },
     openGraph: {
       title: location.title,
       description: location.description,
-      url: `https://nexnify.in/locations/${city}`,
+      url: `/locations/${city}`,
       siteName: "NEXNIFY Tech",
       locale: "en_IN",
       type: 'website',

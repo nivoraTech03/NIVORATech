@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import PageBanner from "@/components/layout/PageBanner";
@@ -10,15 +10,26 @@ import { Icon } from "@/components/ui/Icon";
 import { LocalPartnerSection } from "@/components/sections/LocalPartnerSection";
 
 export const metadata: Metadata = {
-  title: "ABOUT NEXNIFY — Web Development & Digital Studio",
-  description: "NEXNIFY is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
+  title: "About NEXNIFY Tech — Website Development Studio in Delhi NCR",
+  description:
+    "NEXNIFY Tech is a professional website development studio in Delhi NCR building modern, responsive websites and digital experiences with clean code for startups and businesses.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "ABOUT NEXNIFY — Web Development & Digital Studio",
-    description: "NEXNIFY is an independent digital studio focused on creating modern responsive websites and digital experiences using clean code.",
+    title: "About NEXNIFY Tech — Website Development Studio in Delhi NCR",
+    description:
+      "NEXNIFY Tech is a professional website development studio building modern, responsive websites with clean code for startups and businesses across Delhi NCR.",
     url: "/about",
+    siteName: "NEXNIFY Tech",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About NEXNIFY Tech — Website Development Studio",
+    description:
+      "NEXNIFY Tech is a professional website development studio building modern, responsive websites for startups and businesses across Delhi NCR.",
   },
 };
 
@@ -34,7 +45,7 @@ export default function AboutPage() {
         description={about.description}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "ABOUT NEXNIFY" },
+          { label: "About NEXNIFY Tech" },
         ]}
       />
 
