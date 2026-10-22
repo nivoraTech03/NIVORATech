@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import FloatingActions from "@/components/ui/FloatingActions";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -216,6 +217,7 @@ export default function RootLayout({
           </div>
         </ThemeProvider>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        <Analytics />
       </body>
     </html>
   );
