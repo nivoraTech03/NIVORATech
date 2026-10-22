@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Icon } from "./Icon";
-import { trackEvent } from "@/lib/gtag";
+import { trackWhatsAppClick, trackLeadFormSubmit } from "@/lib/gtag";
 
 const QUERY_OPTIONS = [
   "Website Development (Next.js / React)",
@@ -58,10 +58,7 @@ export default function FloatingActions() {
   }, [isModalOpen, isWAOpen]);
 
   const sendWA = (name: string, query: string, phone?: string, note?: string) => {
-    trackEvent("whatsapp_click", {
-      location: "floating_actions",
-      query,
-    });
+    trackWhatsAppClick("floating_dialog", query);
     const msg = encodeURIComponent(
       `*New Enquiry — Nexnify*\n\n• *Name:* ${name || "Client"}\n` +
       (phone ? `• *Phone:* ${phone}\n` : "") +
@@ -89,11 +86,8 @@ export default function FloatingActions() {
         throw new Error(data.error || 'Failed to send message');
       }
 
-      trackEvent("generate_lead", {
-        project_type: form.type,
-        query: form.query,
-        method: "quick_enquiry_modal",
-      });
+      // Track lead only on confirmed backend success (100% non-PII)
+      trackLeadFormSubmit("quick_enquiry_modal", "Quick Project Enquiry", form.type);
 
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -142,7 +136,10 @@ export default function FloatingActions() {
 
           <button
             type="button"
-            onClick={() => setIsWAOpen(true)}
+            onClick={() => {
+              trackWhatsAppClick("floating_launcher_button", "direct_chat");
+              setIsWAOpen(true);
+            }}
             className="group relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:bg-[#1EBF5C] hover:scale-110 hover:-translate-y-1 transition-all"
             aria-label="Chat on WhatsApp"
           >

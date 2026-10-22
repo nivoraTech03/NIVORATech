@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
+import { trackEvent } from "@/lib/gtag";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -24,6 +25,7 @@ export default function NewsletterSection() {
       });
       
       if (response.ok) {
+        trackEvent("newsletter_signup", { method: "footer_newsletter" });
         setStatus("success");
         setEmail("");
       } else {

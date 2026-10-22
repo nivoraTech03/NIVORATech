@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 
 export const metadata: Metadata = {
   title: "Website Redesign Checklist: 10 Critical Steps (2026 Guide)",
@@ -324,14 +325,16 @@ export default function WebsiteRedesignChecklistPage() {
                   Let Nexnify execute your website redesign with zero SEO disruption, sub-second speed, and high-converting modern layouts.
                 </p>
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Button
+                  <WhatsAppCta
                     href={whatsappLink}
+                    ctaLocation="blog_website_redesign_checklist"
+                    serviceCategory="blog_redesign"
                     size="lg"
                     className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-xl shadow-[#25D366]/30 border-none"
                   >
                     <Icon name="whatsapp" size={18} className="mr-2" />
                     Discuss Redesign on WhatsApp
-                  </Button>
+                  </WhatsAppCta>
                   <Button
                     href="/pricing"
                     size="lg"

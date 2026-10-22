@@ -3,6 +3,7 @@ import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { Icon } from "@/components/ui/Icon";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { locations } from "@/data/locations";
 
 export function Footer() {
@@ -155,15 +156,15 @@ export function Footer() {
               </li>
               {site.socials.whatsapp && (
                 <li>
-                  <a
+                  <WhatsAppCta
                     href={site.socials.whatsapp}
-                    target="_blank"
-                    rel="noreferrer"
+                    ctaLocation="footer_connect"
+                    serviceCategory="social_connect"
                     className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-[#25D366]"
                   >
                     <Icon name="whatsapp" size={15} />
                     <span>WhatsApp</span>
-                  </a>
+                  </WhatsAppCta>
                 </li>
               )}
             </ul>

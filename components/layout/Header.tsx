@@ -11,6 +11,7 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { Icon } from "@/components/ui/Icon";
 import { useScrolled } from "@/hooks/useScrollPosition";
 import { cn } from "@/lib/utils";
+import { trackWhatsAppClick } from "@/lib/gtag";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -202,6 +203,7 @@ export function Header() {
               href="https://wa.me/919575450177"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("mobile_drawer_bottom", "quick_chat")}
               className="text-[var(--accent-primary)] hover:underline"
             >
               Chat now

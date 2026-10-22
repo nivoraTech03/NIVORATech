@@ -7,6 +7,7 @@ import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import PageBanner from "@/components/layout/PageBanner";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Icon } from "@/components/ui/Icon";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
@@ -295,15 +296,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                     <span>Request a Custom Quote</span>
                     <Icon name="arrowRight" size={16} className="ml-2" />
                   </Button>
-                  <a
+                  <WhatsAppCta
                     href={`https://wa.me/919575450177?text=${whatsappText}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    ctaLocation="service_detail_sidebar"
+                    serviceCategory={service.slug}
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-lg shadow-[#25D366]/20 transition-all hover:-translate-y-0.5"
                   >
                     <Icon name="whatsapp" size={18} />
                     <span>WhatsApp Chat (+91 95754 50177)</span>
-                  </a>
+                  </WhatsAppCta>
                 </div>
 
                 {/* Technologies Badge Cloud */}

@@ -218,7 +218,7 @@ export default function RootLayout({
             <FloatingActions />
           </div>
         </ThemeProvider>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-BT65ZEYQHW"} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
+import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
 
 export function LocalPartnerSection() {
   const servedLocations = [
@@ -70,10 +71,16 @@ export function LocalPartnerSection() {
             </ul>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button href="https://wa.me/919575450177?text=Hi%20Nexnify,%20I%20would%20like%20to%20discuss%20a%20website%20project%20for%20my%20business%20in%20Delhi%20NCR." size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-lg shadow-[#25D366]/20">
+              <WhatsAppCta
+                href="https://wa.me/919575450177?text=Hi%20Nexnify,%20I%20would%20like%20to%20discuss%20a%20website%20project%20for%20my%20business%20in%20Delhi%20NCR."
+                ctaLocation="local_partner_section"
+                serviceCategory="delhi_ncr_project"
+                size="lg"
+                className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-lg shadow-[#25D366]/20"
+              >
                 <Icon name="whatsapp" size={18} className="mr-2" />
                 Chat on WhatsApp
-              </Button>
+              </WhatsAppCta>
               <Button href="tel:+919575450177" variant="outline" size="lg" className="border-slate-700 text-white hover:bg-slate-800 font-semibold">
                 <Icon name="phone" size={18} className="mr-2" />
                 +91 95754 50177

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
-import { trackEvent } from "@/lib/gtag";
+import { trackEvent, trackWhatsAppClick } from "@/lib/gtag";
 
 interface FeaturedProject {
   id: string;
@@ -246,7 +246,7 @@ export function Hero() {
               href="https://wa.me/919575450177?text=Hi%20Nexnify,%20I%20am%20interested%20in%20discussing%20a%20website%20project."
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent("whatsapp_click", { location: "hero_primary" })}
+              onClick={() => trackWhatsAppClick("hero_primary", "website_project")}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-all bg-emerald-950/50 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full backdrop-blur-md shadow-lg shadow-black/20 ring-1 ring-emerald-500/30 hover:ring-emerald-400/50"
             >
               <Icon name="whatsapp" size={16} />

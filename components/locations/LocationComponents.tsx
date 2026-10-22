@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { BusinessType } from '@/data/locations';
 import siteContent from "@/lib/content";
 import Link from 'next/link';
+import { trackWhatsAppClick } from "@/lib/gtag";
 
 export function LocationHero({ city }: { city: string }) {
   const { projects } = siteContent;
@@ -136,6 +137,7 @@ export function LocationHero({ city }: { city: string }) {
             <Button
               href={whatsappLink}
               size="lg"
+              onClick={() => trackWhatsAppClick(`location_hero_${city.toLowerCase().replace(/\s+/g, '_')}`, "city_service")}
               className="border border-white/15 bg-white/5 text-white hover:bg-white/10 hover:border-white/25 backdrop-blur-sm hover:-translate-y-0.5 transition-all"
             >
               <Icon name="whatsapp" size={18} className="mr-2" />
@@ -424,7 +426,13 @@ export function LocationCta({ city }: { city: string }) {
               <Button href="/contact" size="lg" className="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold border-none shadow-lg shadow-indigo-500/30">
                 Start Your Project
               </Button>
-              <Button href={whatsappLink} size="lg" variant="outline" className="w-full sm:w-auto border-white/15 bg-white/5 text-white hover:bg-[#25D366]/10 hover:text-[#25D366] hover:border-[#25D366]/30 transition-colors">
+              <Button
+                href={whatsappLink}
+                size="lg"
+                variant="outline"
+                onClick={() => trackWhatsAppClick(`location_bottom_${city.toLowerCase().replace(/\s+/g, '_')}`, "city_service")}
+                className="w-full sm:w-auto border-white/15 bg-white/5 text-white hover:bg-[#25D366]/10 hover:text-[#25D366] hover:border-[#25D366]/30 transition-colors"
+              >
                 <Icon name="whatsapp" size={18} className="mr-2" />
                 WhatsApp Nexnify
               </Button>

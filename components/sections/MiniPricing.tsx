@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
+import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
 import siteContent from '@/lib/content';
 
 export function MiniPricing({ 
@@ -72,9 +73,16 @@ export function MiniPricing({
               </div>
             </div>
 
-            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20discuss%20a%20Landing%20Page%20project." variant="outline" className="w-full justify-center border-[var(--border-strong)] group-hover:bg-[var(--bg-surface-alt)] font-semibold">
+            <WhatsAppCta
+              href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20discuss%20a%20Landing%20Page%20project."
+              ctaLocation="home_mini_pricing_landing"
+              serviceCategory="landing_page"
+              variant="outline"
+              size="md"
+              className="w-full justify-center border-[var(--border-strong)] group-hover:bg-[var(--bg-surface-alt)] font-semibold"
+            >
               Request Custom Quote
-            </Button>
+            </WhatsAppCta>
           </div>
 
           {/* New Website - Flagship / Most Popular */}
@@ -117,9 +125,15 @@ export function MiniPricing({
               </div>
             </div>
 
-            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20am%20interested%20in%20building%20a%20New%20Website%20with%20your%20team." className="w-full justify-center bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 font-bold py-3.5">
+            <WhatsAppCta
+              href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20am%20interested%20in%20building%20a%20New%20Website%20with%20your%20team."
+              ctaLocation="home_mini_pricing_website"
+              serviceCategory="new_website"
+              size="md"
+              className="w-full justify-center bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 font-bold py-3.5"
+            >
               Get Free Consultation
-            </Button>
+            </WhatsAppCta>
           </div>
 
           {/* Maintenance */}
@@ -154,9 +168,16 @@ export function MiniPricing({
               </div>
             </div>
 
-            <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20inquire%20about%20Website%20Maintenance." variant="outline" className="w-full justify-center border-[var(--border-strong)] group-hover:bg-[var(--bg-surface-alt)] font-semibold">
+            <WhatsAppCta
+              href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20inquire%20about%20Website%20Maintenance."
+              ctaLocation="home_mini_pricing_maintenance"
+              serviceCategory="maintenance"
+              variant="outline"
+              size="md"
+              className="w-full justify-center border-[var(--border-strong)] group-hover:bg-[var(--bg-surface-alt)] font-semibold"
+            >
               Inquire About Support
-            </Button>
+            </WhatsAppCta>
           </div>
         </div>
 

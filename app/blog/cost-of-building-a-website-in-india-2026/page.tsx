@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
+import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
 
 export const metadata: Metadata = {
   title: 'Cost of Building a Business Website in India (2026 Practical Guide)',
@@ -262,10 +263,16 @@ export default function BlogCostGuide() {
               <div className="relative z-10">
                 <h2 className="font-display text-2xl sm:text-3xl font-bold text-white mb-4">Ready to start your project?</h2>
                 <p className="text-indigo-100 mb-8 max-w-xl mx-auto">Skip the guesswork. Chat with us directly to get an exact quote tailored to your specific business requirements.</p>
-                <Button href={whatsappLink} size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-xl shadow-[#25D366]/30 border-none">
+                <WhatsAppCta
+                  href={whatsappLink}
+                  ctaLocation="blog_cost_of_building_website"
+                  serviceCategory="blog_cost_estimate"
+                  size="lg"
+                  className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-xl shadow-[#25D366]/30 border-none"
+                >
                   <Icon name="whatsapp" size={20} className="mr-2" />
                   Get a Free Website Cost Estimate on WhatsApp
-                </Button>
+                </WhatsAppCta>
               </div>
             </div>
           </section>

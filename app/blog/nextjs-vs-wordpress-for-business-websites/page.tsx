@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { Button } from "@/components/ui/Button";
+import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 
 export const metadata: Metadata = {
   title: "Next.js vs WordPress for Business Websites: 2026 Comparison",
@@ -362,14 +363,16 @@ export default function NextVsWordPressGuide() {
                   Discuss your goals directly with our technical lead. We will recommend the exact stack that fits your budget, timeline, and long-term business goals.
                 </p>
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Button
+                  <WhatsAppCta
                     href={whatsappLink}
+                    ctaLocation="blog_nextjs_vs_wordpress"
+                    serviceCategory="blog_consultation"
                     size="lg"
                     className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-xl shadow-[#25D366]/30 border-none"
                   >
                     <Icon name="whatsapp" size={18} className="mr-2" />
                     Discuss Your Stack on WhatsApp
-                  </Button>
+                  </WhatsAppCta>
                   <Button
                     href="/contact"
                     size="lg"
