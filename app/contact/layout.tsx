@@ -1,36 +1,55 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact NEXNIFY Tech | Start Your Web Project",
+  title: "Contact Nexnify | Website & Web Application Consultation",
   description:
-    "Get in touch with NEXNIFY Tech to discuss your website development project. We specialize in React, Next.js, WordPress, and custom web applications across Delhi NCR.",
+    "Get in touch with Nexnify to discuss your website development project. We build custom Next.js, React, WordPress, and custom web applications across Delhi NCR and India.",
   keywords: [
-    "Contact NEXNIFY Tech",
+    "Contact Nexnify",
     "website development quote Delhi NCR",
-    "freelance web developer India",
+    "web developer Delhi NCR",
     "React developer Delhi NCR",
     "Next.js developer India",
     "website cost estimate India",
     "web project enquiry",
   ],
   alternates: {
-    canonical: "/contact",
+    canonical: "https://nexnify.in/contact",
   },
   openGraph: {
-    title: "Contact NEXNIFY Tech | Start Your Web Project",
+    title: "Contact Nexnify | Website & Web Application Consultation",
     description:
-      "Get in touch with NEXNIFY Tech to discuss your website development project across Delhi NCR.",
-    url: "/contact",
-    siteName: "NEXNIFY Tech",
+      "Get in touch with Nexnify to discuss your website development project across Delhi NCR.",
+    url: "https://nexnify.in/contact",
+    siteName: "Nexnify",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact NEXNIFY Tech | Start Your Web Project",
+    title: "Contact Nexnify | Website & Web Application Consultation",
     description:
-      "Get in touch with NEXNIFY Tech to discuss your website development project. Free consultation.",
+      "Get in touch with Nexnify to discuss your website development project. Free technical consultation.",
   },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://nexnify.in/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact",
+      item: "https://nexnify.in/contact",
+    },
+  ],
 };
 
 export default function ContactLayout({
@@ -38,5 +57,13 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {children}
+    </>
+  );
 }

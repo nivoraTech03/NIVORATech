@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
@@ -57,7 +57,7 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                         </div>
                         <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-mono text-[var(--text-secondary)]">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                          <span>{displayUrl ? `https://${displayUrl}` : `NEXNIFY.tech/work/${project.slug}`}</span>
+                          <span>{displayUrl ? `https://${displayUrl}` : `nexnify.in/work/${project.slug}`}</span>
                         </div>
                         <div className="w-8" />
                       </div>
@@ -67,10 +67,10 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                         {project.image ? (
                           <Image
                             src={project.image}
-                            alt={`${project.title} - Custom Software & Web Design Portfolio NEXNIFY Tech`}
+                            alt={`${project.title} - Nexnify Case Study`}
                             width={1200}
                             height={750}
-                            priority={idx === 0}
+                            loading="lazy"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                           />

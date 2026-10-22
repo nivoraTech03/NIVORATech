@@ -1,16 +1,24 @@
-﻿import siteContent from "@/lib/content";
+import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { FaqAccordion } from "@/components/sections/FaqAccordion";
 import { Icon } from "@/components/ui/Icon";
+import type { Faq } from "@/types";
 
 interface FaqSectionProps {
   title?: string;
   description?: string;
+  items?: Array<{ id?: string; question: string; answer: string }>;
 }
 
-export function FaqSection({ title, description }: FaqSectionProps = {}) {
+export function FaqSection({ title, description, items }: FaqSectionProps = {}) {
   const { faqs } = siteContent;
+  const rawItems = items && items.length > 0 ? items : faqs.items;
+  const displayItems: Faq[] = rawItems.map((item, idx) => ({
+    id: item.id || `faq-${idx}`,
+    question: item.question,
+    answer: item.answer,
+  }));
 
   return (
     <section
@@ -63,7 +71,7 @@ export function FaqSection({ title, description }: FaqSectionProps = {}) {
         </div>
 
         <div className="lg:col-span-7">
-          <FaqAccordion items={faqs.items} />
+          <FaqAccordion items={displayItems} />
         </div>
       </Container>
     </section>

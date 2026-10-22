@@ -1,4 +1,4 @@
-﻿export interface NavItem {
+export interface NavItem {
   label: string;
   href: string;
 }
@@ -31,6 +31,7 @@ export interface Project {
 
 export interface ServiceItem {
   id: string;
+  slug?: string;
   number: string;
   title: string;
   shortDescription: string;

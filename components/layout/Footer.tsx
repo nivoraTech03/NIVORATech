@@ -18,7 +18,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4 lg:col-span-5">
             <Logo inverted />
-            <p className="max-w-sm text-sm leading-relaxed text-white/55">
+            <p className="max-w-sm text-sm leading-relaxed text-white/75">
               {site.description}
             </p>
             <div className="pt-4">
@@ -35,10 +35,49 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div className="lg:col-span-2 lg:pl-8">
+          {/* Services Column */}
+          <div className="lg:col-span-3 lg:pl-4">
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-slate-400">
-              Navigation
+              Services
+            </h3>
+            <ul className="mt-4 space-y-2.5 text-sm font-medium">
+              <li>
+                <Link href="/services/business-websites" className="text-slate-300 transition-colors hover:text-white">
+                  Business Websites
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/nextjs-react-development" className="text-slate-300 transition-colors hover:text-white">
+                  Next.js &amp; React Dev
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/wordpress-development" className="text-slate-300 transition-colors hover:text-white">
+                  WordPress Websites
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/web-applications" className="text-slate-300 transition-colors hover:text-white">
+                  Custom Web Apps
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/landing-pages" className="text-slate-300 transition-colors hover:text-white">
+                  Landing Pages
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/website-maintenance-redesign" className="text-slate-300 transition-colors hover:text-white">
+                  Redesign &amp; Maintenance
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Navigation */}
+          <div className="lg:col-span-2">
+            <h3 className="font-display text-xs font-bold uppercase tracking-wider text-slate-400">
+              Studio
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm font-medium">
               {navigation.links.map((link) => (
@@ -63,12 +102,12 @@ export function Footer() {
           </div>
 
           {/* Locations */}
-          <div className="lg:col-span-3 lg:pl-4">
+          <div className="lg:col-span-2">
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-slate-400">
               Locations
             </h3>
-            <ul className="mt-4 space-y-2.5 text-sm font-medium grid grid-cols-2 gap-x-4">
-              {Object.values(locations).map((loc) => (
+            <ul className="mt-4 space-y-2.5 text-sm font-medium">
+              {Object.values(locations).slice(0, 5).map((loc) => (
                 <li key={loc.slug}>
                   <Link
                     href={`/locations/${loc.slug}`}
@@ -78,11 +117,16 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/locations" className="text-indigo-400 hover:text-indigo-300">
+                  All Locations →
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Connect */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <h3 className="font-display text-xs font-bold uppercase tracking-wider text-slate-400">
               Connect
             </h3>
@@ -93,7 +137,7 @@ export function Footer() {
                     href={site.socials.instagram}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-white/60 transition-colors hover:text-white"
+                    className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-white"
                   >
                     <Icon name="instagram" size={15} />
                     <span>Instagram</span>
@@ -103,10 +147,10 @@ export function Footer() {
               <li>
                 <a
                   href={site.socials.email}
-                  className="inline-flex items-center gap-2 text-white/60 transition-colors hover:text-white"
+                  className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-white"
                 >
                   <Icon name="mail" size={15} />
-                  <span>{site.email}</span>
+                  <span>Email</span>
                 </a>
               </li>
               {site.socials.whatsapp && (
@@ -115,7 +159,7 @@ export function Footer() {
                     href={site.socials.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-white/60 transition-colors hover:text-[#25D366]"
+                    className="inline-flex items-center gap-2 text-white/80 transition-colors hover:text-[#25D366]"
                   >
                     <Icon name="whatsapp" size={15} />
                     <span>WhatsApp</span>
@@ -127,8 +171,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 text-xs text-slate-400 sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} NEXNIFY Tech. All rights reserved.</p>
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 text-xs text-slate-300 sm:flex-row">
+          <p>&copy; {new Date().getFullYear()} Nexnify. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms &amp; Privacy

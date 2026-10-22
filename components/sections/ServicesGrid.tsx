@@ -7,11 +7,14 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "@/components/ui/Icon";
 
-const iconMap: Record<string, "layout" | "globe" | "code" | "sparkles"> = {
+const iconMap: Record<string, "layout" | "globe" | "code" | "sparkles" | "check"> = {
   "business-websites": "layout",
   "landing-pages": "globe",
   "react-nextjs-websites": "code",
   "wordpress-websites": "sparkles",
+  "mobile-app-development": "sparkles",
+  "web-applications": "code",
+  "website-maintenance-redesign": "check",
 };
 
 export function ServicesGrid({ limit }: { limit?: number }) {
@@ -42,14 +45,26 @@ export function ServicesGrid({ limit }: { limit?: number }) {
   useEffect(() => {
     if (isPaused || !sliderRef.current || maxDots <= 1) return;
     
+    let isVisible = false;
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisible = entry.isIntersecting;
+    }, { threshold: 0.2 });
+
+    if (sliderRef.current) {
+      observer.observe(sliderRef.current);
+    }
+
     const interval = setInterval(() => {
-      if (!sliderRef.current) return;
+      if (!sliderRef.current || !isVisible) return;
       
       const nextDot = (activeDot + 1) % maxDots;
       scrollToDot(nextDot);
-    }, 3500);
+    }, 4500);
 
-    return () => clearInterval(interval);
+    return () => {
+      observer.disconnect();
+      clearInterval(interval);
+    };
   }, [isPaused, activeDot, maxDots]);
 
   const handleScroll = () => {
@@ -173,7 +188,9 @@ export function ServicesGrid({ limit }: { limit?: number }) {
                         (isFeatured ? "text-white" : "text-[var(--text-primary)]")
                       }
                     >
-                      {service.title}
+                      <Link href={service.slug ? `/services/${service.slug}` : `/services/${service.id}`} className="hover:underline">
+                        {service.title}
+                      </Link>
                     </h3>
 
                     <p
@@ -217,18 +234,29 @@ export function ServicesGrid({ limit }: { limit?: number }) {
                       </div>
                     ))}
 
-                    <div className="pt-3">
+                    <div className="pt-4 flex items-center justify-between gap-2 border-t border-current/10">
                       <Link
-                        href="/contact"
+                        href={service.slug ? `/services/${service.slug}` : `/services/${service.id}`}
                         className={
-                          "inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide transition-colors " +
+                          "inline-flex items-center gap-1.5 text-xs font-bold tracking-wide transition-colors " +
                           (isFeatured
                             ? "text-indigo-300 hover:text-white"
                             : "text-indigo-600 dark:text-indigo-400 hover:underline")
                         }
                       >
-                        <span>Inquire regarding this</span>
+                        <span>Explore Details</span>
                         <Icon name="arrowRight" size={12} />
+                      </Link>
+                      <Link
+                        href="/contact"
+                        className={
+                          "text-[11px] font-semibold transition-colors " +
+                          (isFeatured
+                            ? "text-slate-300 hover:text-white"
+                            : "text-[var(--text-muted)] hover:text-[var(--text-primary)]")
+                        }
+                      >
+                        Get Quote &rarr;
                       </Link>
                     </div>
                   </div>

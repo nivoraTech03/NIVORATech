@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 // Helper to escape HTML
@@ -59,7 +59,7 @@ export async function POST(req: Request) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to NEXNIFY - Exclusive Offer Inside</title>
+        <title>Welcome to Nexnify - Exclusive Offer Inside</title>
       </head>
       <body style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #030712; margin: 0; padding: 0; -webkit-font-smoothing: antialiased;">
         <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #030712; padding: 40px 20px;">
@@ -78,7 +78,7 @@ export async function POST(req: Request) {
                           </div>
                         </td>
                         <td valign="middle" style="text-align: left;">
-                          <h1 style="color: #ffffff; font-size: 24px; font-weight: 800; margin: 0; letter-spacing: -0.5px; line-height: 1;">NEXNIFY</h1>
+                          <h1 style="color: #ffffff; font-size: 24px; font-weight: 800; margin: 0; letter-spacing: -0.5px; line-height: 1;">Nexnify</h1>
                           <p style="color: #e0e7ff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 0 0;">Digital Studio</p>
                         </td>
                       </tr>
@@ -107,7 +107,7 @@ export async function POST(req: Request) {
                         <span style="color: #818cf8; font-family: monospace; font-size: 24px; font-weight: 800; letter-spacing: 2px;">NEXNIFY-WELCOME</span>
                       </div>
 
-                      <a href="https://NEXNIFY.in" style="display: inline-block; background-color: #ffffff; color: #111827; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 30px; border-radius: 12px; transition: all 0.3s ease;">
+                      <a href="https://nexnify.in" style="display: inline-block; background-color: #ffffff; color: #111827; font-weight: 700; font-size: 16px; text-decoration: none; padding: 14px 30px; border-radius: 12px; transition: all 0.3s ease;">
                         Start Your Project Today
                       </a>
                     </div>
@@ -132,10 +132,10 @@ export async function POST(req: Request) {
                       </a>
                     </div>
                     <p style="color: #64748b; font-size: 14px; margin: 0 0 10px 0;">
-                      You received this email because you subscribed to updates from NEXNIFY.
+                      You received this email because you subscribed to updates from Nexnify.
                     </p>
                     <p style="color: #475569; font-size: 13px; margin: 0;">
-                      &copy; ${new Date().getFullYear()} NEXNIFY Inc. All rights reserved.
+                      &copy; ${new Date().getFullYear()} Nexnify. All rights reserved.
                     </p>
                     <p style="color: #475569; font-size: 11px; margin: 15px 0 0 0;">
                       This is an automated message. Please do not reply to this email.
@@ -159,7 +159,7 @@ export async function POST(req: Request) {
             <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 700; letter-spacing: 1px;">NEW SUBSCRIBER</h1>
           </div>
           <div style="padding: 40px 30px;">
-            <p style="color: #52525b; font-size: 16px; margin-bottom: 30px;">You have a new subscriber for the NEXNIFY Studio Newsletter.</p>
+            <p style="color: #52525b; font-size: 16px; margin-bottom: 30px;">You have a new subscriber for the Nexnify Studio Newsletter.</p>
             
             <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px;">
               <table style="width: 100%; border-collapse: collapse;">
@@ -189,16 +189,16 @@ export async function POST(req: Request) {
 
     // 1. Send beautiful welcome/offer email to the subscriber
     await transporter.sendMail({
-      from: '"NEXNIFY (No-Reply)" <' + SMTP_EMAIL + '>',
+      from: '"Nexnify (No-Reply)" <' + SMTP_EMAIL + '>',
       to: safeEmail,
       replyTo: SMTP_EMAIL,
-      subject: `Welcome to NEXNIFY! Here's your exclusive offer 🎁`,
+      subject: `Welcome to Nexnify! Here's your exclusive offer 🎁`,
       html: userHtmlTemplate,
     });
 
     // 2. Send notification to admin (you)
     await transporter.sendMail({
-      from: `"NEXNIFY System" <${SMTP_EMAIL}>`,
+      from: `"Nexnify System" <${SMTP_EMAIL}>`,
       to: SMTP_EMAIL,
       replyTo: safeEmail,
       subject: `New Newsletter Subscription: ${safeEmail}`,

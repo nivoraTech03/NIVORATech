@@ -14,14 +14,14 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  preload: true,
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
   variable: "--font-plus-jakarta",
   display: "swap",
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nexnify.in/"),
 
   title: {
-    default: "Website Development Company in Delhi NCR | NEXNIFY Tech",
-    template: "%s | NEXNIFY Tech",
+    default: "Website Development Company in Delhi NCR | Nexnify",
+    template: "%s | Nexnify",
   },
 
   verification: {
@@ -47,42 +47,37 @@ export const metadata: Metadata = {
   },
 
   description:
-    "NEXNIFY Tech is a premier website development company in Delhi NCR building fast, responsive, and conversion-focused websites for startups, businesses, and luxury brands. Free consultation & custom tailored solutions.",
+    "Nexnify is an independent website development studio in Delhi NCR building fast, responsive, and conversion-focused websites for businesses, startups, and luxury brands. Free consultation & tailored web solutions.",
 
   keywords: [
     "website development company in Delhi NCR",
     "web development company in Delhi NCR",
     "website developer in Delhi NCR",
-    "website design company in Delhi NCR",
+    "website design company in Delhi",
     "web development company in Gurugram",
-    "website designer Golf Course Road Gurugram",
     "website development in Noida",
-    "website development company in Gwalior",
-    "web development company in Agra",
-    "website design in Mathura",
-    "luxury PG and hospitality website design",
-    "business website development Delhi NCR",
-    "professional website development Delhi NCR",
-    "website redesign company Delhi NCR",
-    "custom website development Delhi NCR",
-    "Next.js website development",
-    "React website development",
+    "custom website development services",
+    "business website development",
+    "Next.js development services",
+    "React.js development services",
     "WordPress website development",
-    "PHP website development",
-    "responsive website development",
-    "local business website development",
-    "NEXNIFY Tech",
+    "custom web application development",
+    "mobile app development company in India",
+    "website redesign services",
+    "website maintenance services",
+    "landing page design and development",
+    "Nexnify",
   ],
 
   authors: [
     {
-      name: "NEXNIFY Tech",
+      name: "Nexnify",
       url: "https://nexnify.in/",
     },
   ],
 
-  creator: "NEXNIFY Tech",
-  publisher: "NEXNIFY Tech",
+  creator: "Nexnify",
+  publisher: "Nexnify",
 
   robots: {
     index: true,
@@ -97,11 +92,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Website Development Company in Delhi NCR | NEXNIFY Tech",
+    title: "Website Development Company in Delhi NCR | Nexnify",
     description:
-      "NEXNIFY Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
+      "Nexnify builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
     url: "https://nexnify.in/",
-    siteName: "NEXNIFY Tech",
+    siteName: "Nexnify",
     locale: "en_IN",
     type: "website",
     images: [
@@ -109,16 +104,16 @@ export const metadata: Metadata = {
         url: "/images/auralux.webp",
         width: 1200,
         height: 630,
-        alt: "NEXNIFY Tech — Website Development Company in Delhi NCR",
+        alt: "Nexnify — Website Development Company in Delhi NCR",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Website Development Company in Delhi NCR | NEXNIFY Tech",
+    title: "Website Development Company in Delhi NCR | Nexnify",
     description:
-      "NEXNIFY Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
+      "Nexnify builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
     images: ["/images/auralux.webp"],
   },
 };
@@ -129,13 +124,13 @@ const jsonLdSchema = {
     {
       "@type": ["ProfessionalService", "Organization"],
       "@id": "https://nexnify.in/#organization",
-      name: "NEXNIFY Tech",
-      alternateName: "NEXNIFY Web Development",
+      name: "Nexnify",
+      alternateName: "Nexnify Web Development",
       url: "https://nexnify.in/",
       logo: "https://nexnify.in/icon.png",
       image: "https://nexnify.in/icon.png",
       description:
-        "NEXNIFY Tech is a website development company in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses.",
+        "Nexnify is an independent website development studio in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses.",
       email: "nexnifytech@gmail.com",
       telephone: "+91-9575450177",
       priceRange: "₹₹",
@@ -178,7 +173,7 @@ const jsonLdSchema = {
       "@type": "WebSite",
       "@id": "https://nexnify.in/#website",
       url: "https://nexnify.in/",
-      name: "NEXNIFY Tech — Website Development Company",
+      name: "Nexnify — Website Development Company",
       publisher: {
         "@id": "https://nexnify.in/#organization",
       },

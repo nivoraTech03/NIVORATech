@@ -10,27 +10,46 @@ import { Icon } from "@/components/ui/Icon";
 import { LocalPartnerSection } from "@/components/sections/LocalPartnerSection";
 
 export const metadata: Metadata = {
-  title: "About NEXNIFY Tech — Website Development Studio in Delhi NCR",
+  title: "About Nexnify — Independent Web Development Studio in Delhi NCR",
   description:
-    "NEXNIFY Tech is a professional website development studio in Delhi NCR building modern, responsive websites and digital experiences with clean code for startups and businesses.",
+    "Nexnify is an independent website development studio in Delhi NCR building modern, responsive websites and high-performance digital experiences with clean code for startups and businesses.",
   alternates: {
-    canonical: "/about",
+    canonical: "https://nexnify.in/about",
   },
   openGraph: {
-    title: "About NEXNIFY Tech — Website Development Studio in Delhi NCR",
+    title: "About Nexnify — Independent Web Development Studio in Delhi NCR",
     description:
-      "NEXNIFY Tech is a professional website development studio building modern, responsive websites with clean code for startups and businesses across Delhi NCR.",
-    url: "/about",
-    siteName: "NEXNIFY Tech",
+      "Nexnify is an independent website development studio building modern, responsive websites with clean code for startups and businesses across Delhi NCR.",
+    url: "https://nexnify.in/about",
+    siteName: "Nexnify",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About NEXNIFY Tech — Website Development Studio",
+    title: "About Nexnify — Independent Web Development Studio",
     description:
-      "NEXNIFY Tech is a professional website development studio building modern, responsive websites for startups and businesses across Delhi NCR.",
+      "Nexnify is an independent website development studio building modern, responsive websites for startups and businesses across Delhi NCR.",
   },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://nexnify.in/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About",
+      item: "https://nexnify.in/about",
+    },
+  ],
 };
 
 export default function AboutPage() {
@@ -38,6 +57,10 @@ export default function AboutPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Modern Dark Page Banner */}
       <PageBanner
         badge="STUDIO CRAFT & PHILOSOPHY"
@@ -45,7 +68,7 @@ export default function AboutPage() {
         description={about.description}
         breadcrumbs={[
           { label: "Home", href: "/" },
-          { label: "About NEXNIFY Tech" },
+          { label: "About Nexnify" },
         ]}
       />
 

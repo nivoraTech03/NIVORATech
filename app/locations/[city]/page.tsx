@@ -47,20 +47,20 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       `App Development in ${location.name}`,
       `Website Development for Businesses in ${location.name}`,
       `Professional Website Design in ${location.name}`,
-      `NEXNIFY Tech ${location.name}`,
+      `Nexnify ${location.name}`,
       `SEO Optimized Website in ${location.name}`,
       `Mobile App Developer ${location.name}`,
       `E-commerce Website Developer ${location.name}`,
       `Web Design Agency ${location.name}`
     ],
     alternates: {
-      canonical: `/locations/${city}`,
+      canonical: `https://nexnify.in/locations/${city}`,
     },
     openGraph: {
       title: location.title,
       description: location.description,
-      url: `/locations/${city}`,
-      siteName: "NEXNIFY Tech",
+      url: `https://nexnify.in/locations/${city}`,
+      siteName: "Nexnify",
       locale: "en_IN",
       type: 'website',
     },
@@ -96,7 +96,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
     "serviceType": "Website Development",
     "provider": {
       "@type": "Organization",
-      "name": "NEXNIFY Tech",
+      "name": "Nexnify",
       "url": "https://nexnify.in/"
     },
     "areaServed": {
@@ -139,7 +139,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         <ProcessSection />
         <ProjectsShowcase />
         <LocationPerformance />
-        <FaqSection title={`Frequently Asked Questions about Websites in ${location.name}`} description="Everything you need to know about starting your web project." />
+        <FaqSection title={`Frequently Asked Questions about Websites in ${location.name}`} description="Everything you need to know about starting your web project." items={location.faqs} />
         <LocationCta city={location.name} />
       </main>
     </>

@@ -91,7 +91,7 @@ export function Logo({
         </span>
         <span
           className={`font-mono text-[7.5px] sm:text-[8px] font-bold tracking-[0.2em] uppercase mt-1 ${
-            inverted ? "text-white/60" : "text-slate-400 dark:text-slate-400"
+            inverted ? "text-white/80" : "text-slate-600 dark:text-slate-300"
           }`}
         >
           IDEAS TO IMPACT

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
+import { trackEvent } from "@/lib/gtag";
 
 interface FeaturedProject {
   id: string;
@@ -129,7 +130,7 @@ export function Hero() {
     slideTo((current - 1 + FEATURED_PROJECTS.length) % FEATURED_PROJECTS.length);
   }, [current, slideTo]);
 
-  // Auto slide every 6.5s
+  // Auto slide every 8.5s (allows full mobile paint & hydration without frame contention)
   useEffect(() => {
     const t = setInterval(() => {
       setCurrent((c) => {
@@ -137,7 +138,7 @@ export function Hero() {
         setTimeout(() => setAnimating(false), 240);
         return (c + 1) % FEATURED_PROJECTS.length;
       });
-    }, 6500);
+    }, 8500);
     return () => clearInterval(t);
   }, []);
 
@@ -145,11 +146,19 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#0c1228] via-[#080d20] to-[#040713] text-white pt-20 pb-14 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28">
-      {/* ─── Ambient Glow Mesh ─── */}
+      {/* ─── Ambient Glow Mesh (Optimized for Mobile Performance) ─── */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        {/* Subtle Perspective Grid */}
+        {/* Mobile-optimized smooth radial gradient (Zero blur calculation overhead) */}
         <div
-          className="absolute inset-[-10%] w-[120%] h-[120%] opacity-25"
+          className="sm:hidden absolute inset-0"
+          style={{
+            background: `radial-gradient(circle at 50% 25%, ${active.glowColor} 0%, rgba(99,102,241,0.12) 40%, transparent 80%)`,
+          }}
+        />
+
+        {/* Desktop Perspective Grid & Deep Studio Auras */}
+        <div
+          className="hidden sm:block absolute inset-[-10%] w-[120%] h-[120%] opacity-25"
           style={{
             backgroundImage:
               "linear-gradient(rgba(99,102,241,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,0.08) 1px, transparent 1px)",
@@ -159,30 +168,30 @@ export function Hero() {
           }}
         />
 
-        {/* Dynamic Project Ambient Glow */}
+        {/* Dynamic Project Ambient Glow (Desktop) */}
         <div
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 h-[600px] w-[950px] rounded-full blur-[160px] transition-all duration-1000 ease-out"
+          className="hidden sm:block absolute top-1/3 left-1/2 -translate-x-1/2 h-[600px] w-[950px] rounded-full blur-[140px] transition-all duration-1000 ease-out"
           style={{ background: active.glowColor }}
         />
 
-        {/* Deep Studio Auras */}
+        {/* Deep Studio Auras (Desktop) */}
         <div
-          className="absolute -top-36 left-1/2 -translate-x-1/2 h-[520px] w-[850px] rounded-full blur-[150px]"
+          className="hidden sm:block absolute -top-36 left-1/2 -translate-x-1/2 h-[520px] w-[850px] rounded-full blur-[130px]"
           style={{
             background:
-              "radial-gradient(circle, rgba(99,102,241,0.25) 0%, rgba(56,189,248,0.15) 45%, transparent 75%)",
+              "radial-gradient(circle, rgba(99,102,241,0.22) 0%, rgba(56,189,248,0.12) 45%, transparent 75%)",
           }}
         />
         <div
-          className="absolute top-1/2 -left-32 h-[400px] w-[400px] rounded-full blur-[140px]"
+          className="hidden sm:block absolute top-1/2 -left-32 h-[400px] w-[400px] rounded-full blur-[120px]"
           style={{
-            background: "radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)",
           }}
         />
         <div
-          className="absolute top-1/2 -right-32 h-[400px] w-[400px] rounded-full blur-[140px]"
+          className="hidden sm:block absolute top-1/2 -right-32 h-[400px] w-[400px] rounded-full blur-[120px]"
           style={{
-            background: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(14,165,233,0.12) 0%, transparent 70%)",
           }}
         />
       </div>
@@ -211,7 +220,7 @@ export function Hero() {
 
           {/* Subtitle Value Proposition */}
           <p className="mx-auto max-w-2xl text-xs sm:text-base lg:text-xl leading-relaxed text-slate-300/90 font-normal px-2 sm:px-0">
-            NEXNIFY Tech is a premier digital agency crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.
+            Nexnify is an independent digital studio crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.
           </p>
 
           {/* CTA Buttons & WhatsApp Line */}
@@ -219,6 +228,7 @@ export function Hero() {
             <Button
               href="/work"
               size="lg"
+              onClick={() => trackEvent("cta_click", { button: "view_work", location: "hero" })}
               className="w-full sm:w-auto bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold shadow-xl shadow-indigo-600/35 hover:shadow-indigo-500/50 hover:-translate-y-0.5 transition-all px-6 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-sm"
             >
               <span>View Selected Work</span>
@@ -227,14 +237,16 @@ export function Hero() {
             <Button
               href="/contact"
               size="lg"
+              onClick={() => trackEvent("cta_click", { button: "start_project", location: "hero" })}
               className="w-full sm:w-auto bg-white/10 text-white hover:bg-white/15 backdrop-blur-md hover:-translate-y-0.5 transition-all px-6 sm:px-8 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold shadow-lg shadow-black/20"
             >
               Start a Project
             </Button>
             <a
-              href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20am%20interested%20in%20discussing%20a%20website%20project."
+              href="https://wa.me/919575450177?text=Hi%20Nexnify,%20I%20am%20interested%20in%20discussing%20a%20website%20project."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent("whatsapp_click", { location: "hero_primary" })}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-all bg-emerald-950/50 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full backdrop-blur-md shadow-lg shadow-black/20 ring-1 ring-emerald-500/30 hover:ring-emerald-400/50"
             >
               <Icon name="whatsapp" size={16} />
@@ -244,7 +256,7 @@ export function Hero() {
 
           {/* Core Tech Stack Badges Strip */}
           <div className="pt-1 sm:pt-2 flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 text-xs px-1 sm:px-0">
-            <span className="text-slate-400 font-semibold text-[11px] uppercase tracking-wider mr-1 hidden sm:inline">
+            <span className="text-slate-300 font-semibold text-[11px] uppercase tracking-wider mr-1 hidden sm:inline">
               Engineered With:
             </span>
             {CORE_TECHS.map((tech) => (
@@ -271,10 +283,11 @@ export function Hero() {
                     key={p.id}
                     type="button"
                     onClick={() => slideTo(idx)}
+                    aria-label={`View project ${p.tabSub}`}
                     className={`relative px-2.5 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold transition-all duration-300 cursor-pointer whitespace-nowrap shrink-0 ${
                       isSelected
                         ? "bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 text-white shadow-md shadow-indigo-500/30 scale-[1.02]"
-                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                        : "text-slate-300 hover:text-white hover:bg-white/5"
                     }`}
                   >
                     <span className="flex items-center gap-1.5">
@@ -335,28 +348,24 @@ export function Hero() {
               </div>
             </div>
 
-            {/* ─── Main Showcase Canvas (Full 100% Width) ─── */}
+            {/* ─── Main Showcase Canvas (Optimized Single LCP Image) ─── */}
             <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-xl sm:rounded-[26px] bg-slate-950 shadow-2xl">
-              {FEATURED_PROJECTS.map((p, i) => (
-                <div
-                  key={p.id}
-                  className="absolute inset-0 transition-all duration-500 ease-out"
-                  style={{
-                    opacity: i === current ? (animating ? 0 : 1) : 0,
-                    transform: i === current ? (animating ? "scale(1.015)" : "scale(1)") : "scale(1.02)",
-                    zIndex: i === current ? 10 : 0,
-                  }}
-                >
-                  <Image
-                    src={p.image}
-                    alt={`${p.title} - Showcase by NEXNIFY Tech`}
-                    fill
-                    priority={i === 0}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1100px"
-                    className="object-cover object-center"
-                  />
-                </div>
-              ))}
+              <div
+                key={active.id}
+                className={`absolute inset-0 transition-opacity duration-300 ease-out ${
+                  animating ? "opacity-40" : "opacity-100"
+                }`}
+              >
+                <Image
+                  src={active.image}
+                  alt={`${active.title} - Showcase by Nexnify`}
+                  fill
+                  priority={current === 0}
+                  fetchPriority={current === 0 ? "high" : "auto"}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1100px"
+                  className="object-cover object-center"
+                />
+              </div>
 
               {/* Floating Metrics Pill on Main Slide */}
               <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-20 flex items-center gap-1.5 sm:gap-2">
@@ -412,19 +421,19 @@ export function Hero() {
           <div className="mt-6 sm:mt-8 grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 text-center">
             <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm border border-white/5">
               <div className="font-display text-xl sm:text-3xl font-extrabold text-white">99.4%</div>
-              <div className="text-[10px] sm:text-xs text-slate-400 mt-0.5">Core Web Vitals Avg</div>
+              <div className="text-[10px] sm:text-xs text-slate-300 mt-0.5">Core Web Vitals Avg</div>
             </div>
             <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm border border-white/5">
               <div className="font-display text-xl sm:text-3xl font-extrabold text-indigo-400">100%</div>
-              <div className="text-[10px] sm:text-xs text-slate-400 mt-0.5">Bespoke Engineering</div>
+              <div className="text-[10px] sm:text-xs text-slate-300 mt-0.5">Bespoke Engineering</div>
             </div>
             <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm border border-white/5">
-              <div className="font-display text-xl sm:text-3xl font-extrabold text-emerald-400">5.0 ★</div>
-              <div className="text-[10px] sm:text-xs text-slate-400 mt-0.5">Verified Client Rating</div>
+              <div className="font-display text-xl sm:text-3xl font-extrabold text-emerald-400">&lt; 1.5s</div>
+              <div className="text-[10px] sm:text-xs text-slate-300 mt-0.5">Target Page Load Time</div>
             </div>
             <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/[0.03] backdrop-blur-md shadow-sm border border-white/5">
               <div className="font-display text-xl sm:text-3xl font-extrabold text-amber-300">Delhi NCR</div>
-              <div className="text-[10px] sm:text-xs text-slate-400 mt-0.5">Gurugram · Noida · Global</div>
+              <div className="text-[10px] sm:text-xs text-slate-300 mt-0.5">Gurugram · Noida · Global</div>
             </div>
           </div>
         </div>

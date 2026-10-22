@@ -4,9 +4,9 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Page Not Found | NEXNIFY Tech",
+  title: "Page Not Found | Nexnify",
   description:
-    "The page you are looking for does not exist. Navigate back to NEXNIFY Tech for website development services in Delhi NCR.",
+    "The page you are looking for does not exist. Navigate back to Nexnify for website development services in Delhi NCR.",
   robots: {
     index: false,
     follow: true,

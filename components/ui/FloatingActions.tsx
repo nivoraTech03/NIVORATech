@@ -1,7 +1,8 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect } from "react";
 import { Icon } from "./Icon";
+import { trackEvent } from "@/lib/gtag";
 
 const QUERY_OPTIONS = [
   "Website Development (Next.js / React)",
@@ -57,8 +58,12 @@ export default function FloatingActions() {
   }, [isModalOpen, isWAOpen]);
 
   const sendWA = (name: string, query: string, phone?: string, note?: string) => {
+    trackEvent("whatsapp_click", {
+      location: "floating_actions",
+      query,
+    });
     const msg = encodeURIComponent(
-      `*New Enquiry — NEXNIFY*\n\n• *Name:* ${name || "Client"}\n` +
+      `*New Enquiry — Nexnify*\n\n• *Name:* ${name || "Client"}\n` +
       (phone ? `• *Phone:* ${phone}\n` : "") +
       `• *Query:* ${query}\n` +
       (note ? `• *Note:* ${note}` : "")
@@ -83,6 +88,12 @@ export default function FloatingActions() {
       if (!response.ok) {
         throw new Error(data.error || 'Failed to send message');
       }
+
+      trackEvent("generate_lead", {
+        project_type: form.type,
+        query: form.query,
+        method: "quick_enquiry_modal",
+      });
 
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -403,7 +414,7 @@ export default function FloatingActions() {
             <div className="px-6 py-3 border-t border-[var(--border-subtle)] bg-[var(--bg-surface-alt)] flex items-center justify-between text-[11px] text-[var(--text-muted)]">
               <span>🛡️ 100% Confidential</span>
               <span>⚡ Reply in 2–4 hours</span>
-              <span>⭐ 5.0 rated</span>
+              <span>✨ Direct Lead Developer Support</span>
             </div>
           </div>
         </div>

@@ -11,27 +11,46 @@ import PageBanner from "@/components/layout/PageBanner";
 import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
-  title: "Web Development Projects & Case Studies | NEXNIFY Tech",
+  title: "Web Development Projects & Case Studies | Nexnify",
   description:
-    "Explore NEXNIFY Tech's production website projects — luxury hospitality portals, custom booking engines, and business websites built with Next.js, React, and WordPress.",
+    "Explore Nexnify's production website projects — luxury hospitality portals, custom booking engines, and business websites built with Next.js, React, and WordPress.",
   alternates: {
-    canonical: "/work",
+    canonical: "https://nexnify.in/work",
   },
   openGraph: {
-    title: "Web Development Projects & Case Studies | NEXNIFY Tech",
+    title: "Web Development Projects & Case Studies | Nexnify",
     description:
-      "Explore NEXNIFY Tech's production website projects — luxury hospitality portals, custom booking engines, and business websites built with modern web technologies.",
-    url: "/work",
-    siteName: "NEXNIFY Tech",
+      "Explore Nexnify's production website projects — luxury hospitality portals, custom booking engines, and business websites built with modern web technologies.",
+    url: "https://nexnify.in/work",
+    siteName: "Nexnify",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development Projects & Case Studies | NEXNIFY Tech",
+    title: "Web Development Projects & Case Studies | Nexnify",
     description:
-      "Production website projects by NEXNIFY Tech — luxury portals, custom booking engines, and business websites.",
+      "Production website projects by Nexnify — luxury portals, custom booking engines, and business websites.",
   },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://nexnify.in/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Work",
+      item: "https://nexnify.in/work",
+    },
+  ],
 };
 
 export default function WorkPage() {
@@ -39,6 +58,10 @@ export default function WorkPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <PageBanner
         badge="PRODUCTION CASE STUDIES"
         title="Websites crafted with intention & precision."
@@ -79,7 +102,7 @@ export default function WorkPage() {
                           </div>
                           <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-mono text-[var(--text-secondary)]">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <span>{displayUrl ? `https://${displayUrl}` : `NEXNIFY.tech/work/${project.slug}`}</span>
+                            <span>{displayUrl ? `https://${displayUrl}` : `nexnify.in/work/${project.slug}`}</span>
                           </div>
                           <div className="w-8" />
                         </div>
@@ -91,6 +114,8 @@ export default function WorkPage() {
                               alt={`${project.title} Preview`}
                               width={1200}
                               height={750}
+                              loading="lazy"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                               className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                             />
                           ) : (

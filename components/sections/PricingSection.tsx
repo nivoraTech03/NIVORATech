@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
@@ -89,7 +89,7 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-400 leading-relaxed italic">
+              <div className="mt-8 p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300 leading-relaxed italic">
                 Includes responsive layout testing across iOS &amp; Android viewports, speed optimization, and production deployment assistance.
               </div>
             </div>
@@ -100,13 +100,13 @@ export function PricingSection() {
             <div>
               <span className="text-[11px] font-bold text-indigo-400 uppercase tracking-wider block mb-2">Campaign &amp; Lead Gen</span>
               <h3 className="font-display text-xl font-bold text-white mb-2">{pricing.landing.title.toUpperCase()}</h3>
-              <p className="text-slate-400 text-sm mb-6 min-h-[40px] leading-relaxed">{pricing.landing.subtitle}</p>
+              <p className="text-slate-300 text-sm mb-6 min-h-[40px] leading-relaxed">{pricing.landing.subtitle}</p>
               <div className="mb-6 p-4 rounded-xl bg-slate-950 border border-slate-800">
                 <span className="text-xs font-semibold text-slate-500 block mb-1 uppercase tracking-wider">Project Investment</span>
                 <div className="font-display text-2xl font-bold text-white">
                   Custom Quote
                 </div>
-                <span className="text-[11px] text-slate-400 mt-0.5 block">High-conversion landing page structure</span>
+                <span className="text-[11px] text-slate-300 mt-0.5 block">High-conversion landing page structure</span>
               </div>
               <ul className="space-y-3 mb-8">
                 {pricing.landing.features.slice(0, 6).map((feature, i) => (
@@ -127,13 +127,13 @@ export function PricingSection() {
             <div>
               <span className="text-[11px] font-bold text-indigo-400 uppercase tracking-wider block mb-2">Modernization</span>
               <h3 className="font-display text-xl font-bold text-white mb-2">{pricing.redesign.title.toUpperCase()}</h3>
-              <p className="text-slate-400 text-sm mb-6 min-h-[40px] leading-relaxed">{pricing.redesign.subtitle}</p>
+              <p className="text-slate-300 text-sm mb-6 min-h-[40px] leading-relaxed">{pricing.redesign.subtitle}</p>
               <div className="mb-6 p-4 rounded-xl bg-slate-950 border border-slate-800">
                 <span className="text-xs font-semibold text-slate-500 block mb-1 uppercase tracking-wider">Project Investment</span>
                 <div className="font-display text-2xl font-bold text-white">
                   Custom Quote
                 </div>
-                <span className="text-[11px] text-slate-400 mt-0.5 block">Full UI/UX overhaul &amp; mobile speed boost</span>
+                <span className="text-[11px] text-slate-300 mt-0.5 block">Full UI/UX overhaul &amp; mobile speed boost</span>
               </div>
               <ul className="space-y-3 mb-8">
                 {pricing.redesign.features.map((feature, i) => (
@@ -154,13 +154,13 @@ export function PricingSection() {
             <div>
               <span className="text-[11px] font-bold text-indigo-400 uppercase tracking-wider block mb-2">Enhancement &amp; Fixes</span>
               <h3 className="font-display text-xl font-bold text-white mb-2">{pricing.enhancement.title.toUpperCase()}</h3>
-              <p className="text-slate-400 text-sm mb-6 min-h-[40px] leading-relaxed">{pricing.enhancement.subtitle}</p>
+              <p className="text-slate-300 text-sm mb-6 min-h-[40px] leading-relaxed">{pricing.enhancement.subtitle}</p>
               <div className="mb-6 p-4 rounded-xl bg-slate-950 border border-slate-800">
                 <span className="text-xs font-semibold text-slate-500 block mb-1 uppercase tracking-wider">Project Investment</span>
                 <div className="font-display text-2xl font-bold text-white">
                   Custom Quote
                 </div>
-                <span className="text-[11px] text-slate-400 mt-0.5 block">Targeted fixes, new sections, or speed optimization</span>
+                <span className="text-[11px] text-slate-300 mt-0.5 block">Targeted fixes, new sections, or speed optimization</span>
               </div>
               <ul className="space-y-3 mb-8">
                 {pricing.enhancement.features.map((feature, i) => (
@@ -186,11 +186,11 @@ export function PricingSection() {
               <h3 className="font-display text-2xl font-bold text-white mb-2">{pricing.maintenance.title.toUpperCase()}</h3>
               <p className="text-slate-300 text-sm mb-6 leading-relaxed">{pricing.maintenance.subtitle}</p>
               <div className="mb-6 p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
-                <span className="text-xs font-semibold text-slate-400 block mb-1 uppercase tracking-wider">Monthly Retainer</span>
+                <span className="text-xs font-semibold text-slate-300 block mb-1 uppercase tracking-wider">Monthly Retainer</span>
                 <div className="font-display text-3xl font-bold text-white">
                   Custom Plan
                 </div>
-                <span className="text-xs text-slate-400 mt-1 block">Proactive monitoring, updates &amp; technical health checks</span>
+                <span className="text-xs text-slate-300 mt-1 block">Proactive monitoring, updates &amp; technical health checks</span>
               </div>
               <ul className="space-y-3 mb-6">
                 {pricing.maintenance.included.slice(0, 6).map((feature, i) => (
@@ -212,7 +212,7 @@ export function PricingSection() {
               <Icon name="plus" size={20} className="text-indigo-400" />
               Specialized Modules &amp; Add-ons
             </h3>
-            <p className="text-slate-400 text-sm mb-6">
+            <p className="text-slate-300 text-sm mb-6">
               Need advanced functionality? Add modular enhancements to your web build seamlessly.
             </p>
             <div className="grid sm:grid-cols-2 gap-3.5">
@@ -238,7 +238,7 @@ export function PricingSection() {
               <Icon name="check" size={16} className="text-indigo-400" />
               Transparent Scoping Guarantee
             </h4>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-slate-300 text-sm leading-relaxed">
               Every project is individually scoped based on your specific requirements, design fidelity, database structure, and timeline. You receive a clear, fixed quote with documented milestones before any coding begins.
             </p>
           </div>

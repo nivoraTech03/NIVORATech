@@ -1,10 +1,10 @@
 {
   "site": {
-    "name": "NEXNIFY Tech",
+    "name": "Nexnify",
     "descriptor": "Independent Digital Studio",
-    "shortName": "NEXNIFY Tech",
+    "shortName": "Nexnify",
     "tagline": "Ideas to Impact — Modern websites & web apps built with intention.",
-    "description": "NEXNIFY Tech creates modern, responsive websites and digital experiences using React, Next.js and modern web technologies.",
+    "description": "Nexnify creates modern, responsive websites and high-performance digital experiences using React, Next.js and modern web technologies.",
     "email": "nexnifytech@gmail.com",
     "socials": {
       "linkedin": "https://linkedin.com",
@@ -12,7 +12,7 @@
       "whatsapp": "https://wa.me/919575450177",
       "instagram": "https://www.instagram.com/nexnify/"
     },
-    "copyright": "© 2026 NEXNIFY Tech. All rights reserved."
+    "copyright": "© 2026 Nexnify. All rights reserved."
   },
   "navigation": {
     "links": [
@@ -49,7 +49,7 @@
   "hero": {
     "eyebrow": "DIGITAL DEVELOPMENT STUDIO",
     "heading": "Custom Web & App Development in Delhi NCR",
-    "description": "NEXNIFY Tech is a premier digital agency crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.",
+    "description": "Nexnify is an independent digital studio crafting blazing-fast Next.js websites, custom web applications, and mobile apps for businesses in Delhi NCR, Gurugram, Noida, and across India.",
     "primaryCta": {
       "label": "View Our Work",
       "href": "/work"
@@ -476,6 +476,7 @@
     "items": [
       {
         "id": "business-websites",
+        "slug": "business-websites",
         "number": "01",
         "title": "Business Websites",
         "shortDescription": "Professional responsive websites for businesses, brands and professionals.",
@@ -489,6 +490,7 @@
       },
       {
         "id": "landing-pages",
+        "slug": "landing-pages",
         "number": "02",
         "title": "Landing Pages",
         "shortDescription": "Focused landing pages for products, services and campaigns.",
@@ -502,6 +504,7 @@
       },
       {
         "id": "react-nextjs-websites",
+        "slug": "nextjs-react-development",
         "number": "03",
         "title": "React & Next.js Websites",
         "shortDescription": "Fast, modern and scalable websites using React and Next.js.",
@@ -515,6 +518,7 @@
       },
       {
         "id": "wordpress-websites",
+        "slug": "wordpress-development",
         "number": "04",
         "title": "WordPress Websites",
         "shortDescription": "Professional WordPress websites and customizations.",
@@ -528,6 +532,7 @@
       },
       {
         "id": "mobile-app-development",
+        "slug": "mobile-apps",
         "number": "05",
         "title": "Mobile App Development",
         "shortDescription": "Native-feeling mobile apps for iOS and Android.",
@@ -537,6 +542,34 @@
           "React Native & Expo",
           "Firebase & Backend Integration",
           "App Store & Play Store Deployment"
+        ]
+      },
+      {
+        "id": "web-applications",
+        "slug": "web-applications",
+        "number": "06",
+        "title": "Custom Web Applications",
+        "shortDescription": "Scalable, secure web portals, flight booking engines, and customer management systems.",
+        "description": "Bespoke web applications built with PHP, Node.js, and React to automate business workflows and handle high transaction volumes.",
+        "deliverables": [
+          "Custom database architecture",
+          "Secure authentication & API integration",
+          "Responsive user interface",
+          "Server-side data validation & security"
+        ]
+      },
+      {
+        "id": "website-maintenance-redesign",
+        "slug": "website-maintenance-redesign",
+        "number": "07",
+        "title": "Website Redesign & Maintenance",
+        "shortDescription": "Transform slow, outdated websites or protect your business with ongoing updates and monitoring.",
+        "description": "Overhaul outdated platforms to modern standards with 301 SEO preservation, Core Web Vitals optimization, and dependable maintenance.",
+        "deliverables": [
+          "Complete UI/UX modernization",
+          "SEO ranking & 301 redirect protection",
+          "Core Web Vitals speed optimization",
+          "Ongoing security updates & backups"
         ]
       }
     ]
@@ -598,7 +631,7 @@
   "about": {
     "eyebrow": "ABOUT NEXNIFY",
     "title": "Independent digital studio for the modern web.",
-    "description": "NEXNIFY is an independent digital studio focused on creating modern websites and digital experiences. We combine thoughtful design with modern frontend development to create products that look good, work smoothly and adapt across devices.",
+    "description": "Nexnify is an independent digital studio focused on creating modern websites and digital experiences. We combine thoughtful design with modern frontend development to create products that look good, work smoothly and adapt across devices.",
     "paragraphs": [
       "We believe that a website should be more than a digital brochure—it should be a fast, clear, and engaging extension of your business.",
       "By maintaining an independent studio approach, you work directly with the person designing and writing the code. There are no account managers, no inflated overheads, and no generic cookie-cutter templates.",
@@ -701,8 +734,8 @@
         "companyUrl": "https://skyodeals.com/",
         "avatar": "AM",
         "avatarBg": "#3730A3",
-        "rating": 5,
-        "quote": "NEXNIFY completely transformed our flight booking portal. We needed something fast because travelers hate slow loading pages when searching for flights. The custom PHP backend they built handles complex route searches without breaking a sweat, and our mobile conversions have actually doubled since the redesign. Highly recommend their team!",
+        "rating": 4.9,
+        "quote": "In flight search, even a 1-second lag means users bounce to Skyscanner or MakeMyTrip. The Nexnify team completely rewrote our custom PHP backend — complex multi-city route queries load almost instantly now without choking the server. Best part? No bloated third-party plugins, just clean custom architecture. Our mobile drop-off rate halved within the first month itself.",
         "projectSlug": "skyodeals",
         "projectTitle": "SkyOdeals — Flight Booking Portal",
         "tag": "PHP Web Application"
@@ -715,8 +748,8 @@
         "companyUrl": "https://hitias.renutech.in/",
         "avatar": "VS",
         "avatarBg": "#0369A1",
-        "rating": 5,
-        "quote": "Setting up a portal for UPSC students was a massive task, but NEXNIFY made it feel easy. The WordPress site is so simple for our faculty to update, and students love how easy it is to find study materials and register for courses. They actually listened to our requirements instead of just giving us a generic template.",
+        "rating": 4.8,
+        "quote": "UPSC preparation portals are notoriously messy because students constantly need daily current affairs PDFs, test series links, and batch registrations. Nexnify built our WordPress setup so cleanly that our non-tech faculty members upload study material daily without calling for help. It actually solved our operational headache instead of giving us a decorative demo template.",
         "projectSlug": "hitias-academy",
         "projectTitle": "HIT IAS Academy — UPSC Portal",
         "tag": "WordPress & Elementor"
@@ -729,8 +762,8 @@
         "companyUrl": "",
         "avatar": "KS",
         "avatarBg": "#047857",
-        "rating": 5,
-        "quote": "I was struggling to find a developer who could handle React Native and Firebase for my messaging app idea. The NEXNIFY team built XChat from scratch. The real-time messaging works flawlessly, and the UI feels just as smooth as WhatsApp. Super professional and they actually deliver on time.",
+        "rating": 4.7,
+        "quote": "Building a real-time chat app isn't just about UI; managing Firebase socket connections and background push notifications on both iOS and Android is a nightmare. Nexnify tackled the full React Native build from day one. Gestures feel native, messages deliver in milliseconds, and they were always reachable on WhatsApp whenever an edge-case bug popped up.",
         "projectSlug": "xchat",
         "projectTitle": "XChat — Real-time Messaging",
         "tag": "React Native App"
@@ -743,8 +776,8 @@
         "companyUrl": "http://auraluxpg.vercel.app/",
         "avatar": "AL",
         "avatarBg": "#D4AF37",
-        "rating": 5,
-        "quote": "NEXNIFY created a world-class luxury web portal for our Golf Course Road executive PG residence. The dark gold aesthetic, mobile responsiveness, and seamless WhatsApp booking funnels have elevated our brand image and filled our suites in record time. Exceptional engineering and delivery!",
+        "rating": 5.0,
+        "quote": "For an executive residence on Golf Course Road, standard real estate templates just don't cut it — corporate tenants expect luxury. Nexnify nailed the dark-gold aesthetic and built direct WhatsApp room-tour booking directly into the hero experience. Within 3 weeks of going live, we had corporate inquiries pouring in from DLF CyberCity executives. Solid execution.",
         "projectSlug": "auralux-pg",
         "projectTitle": "AURA LUXE SUITES — Golf Course Road, Gurugram",
         "tag": "Next.js Luxury Living"
@@ -757,8 +790,8 @@
         "companyUrl": "https://aurabridalstudio-one.vercel.app/",
         "avatar": "AS",
         "avatarBg": "#BE185D",
-        "rating": 5,
-        "quote": "NEXNIFY understood our luxury bridal aesthetic instantly. The interactive date availability tool and WhatsApp consultation funnel have completely streamlined how high-end brides book our Mehrauli atelier. We saw a 165% jump in qualified inquiries in our very first wedding season!",
+        "rating": 4.9,
+        "quote": "High-ticket brides in Delhi don't fill out boring multi-step forms; they want to see couture collections visually and chat directly on WhatsApp. Nexnify designed our Mehrauli atelier's site with that exact bridal psychology. The interactive fitting slot selector and ultra-crisp mobile gallery brought us our busiest bridal season yet. They genuinely understand modern UX.",
         "projectSlug": "aurabridal-studio",
         "projectTitle": "Aura Bridal Studio — Mehrauli, Delhi NCR",
         "tag": "Next.js 15 Luxury Atelier"

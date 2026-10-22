@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 import React, { useState, useEffect, useCallback } from 'react';
 import Image from "next/image";
 import { Container } from '@/components/ui/Container';
@@ -36,7 +36,7 @@ export function LocationHero({ city }: { city: string }) {
     return () => clearInterval(t);
   }, [projects.length]);
 
-  const whatsappMsg = `Hi NEXNIFY Tech, I need a website for my business in ${city}.`;
+  const whatsappMsg = `Hi Nexnify, I need a website for my business in ${city}.`;
   const whatsappLink = `https://wa.me/919575450177?text=${encodeURIComponent(whatsappMsg)}`;
 
   return (
@@ -194,10 +194,11 @@ export function LocationHero({ city }: { city: string }) {
                       {p.image && (
                         <Image
                           src={p.image}
-                          alt={`${p.title} - App & Web Development Project in ${city} by NEXNIFY Tech`}
+                          alt={`${p.title} - App & Web Development Project in ${city} by Nexnify`}
                           width={1200}
                           height={825}
-                          priority={true}
+                          priority={i === 0}
+                          loading={i === 0 ? "eager" : "lazy"}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="h-full w-full object-cover object-top"
                         />
@@ -407,7 +408,7 @@ export function LocationPerformance() {
 }
 
 export function LocationCta({ city }: { city: string }) {
-  const whatsappMsg = `Hi NEXNIFY Tech, I want to discuss a website project for my business in ${city}.`;
+  const whatsappMsg = `Hi Nexnify, I want to discuss a website project for my business in ${city}.`;
   const whatsappLink = `https://wa.me/919575450177?text=${encodeURIComponent(whatsappMsg)}`;
   return (
     <section className="py-24 bg-[#060B18] text-white border-t border-white/[0.06]">
@@ -425,7 +426,7 @@ export function LocationCta({ city }: { city: string }) {
               </Button>
               <Button href={whatsappLink} size="lg" variant="outline" className="w-full sm:w-auto border-white/15 bg-white/5 text-white hover:bg-[#25D366]/10 hover:text-[#25D366] hover:border-[#25D366]/30 transition-colors">
                 <Icon name="whatsapp" size={18} className="mr-2" />
-                WhatsApp NEXNIFY
+                WhatsApp Nexnify
               </Button>
             </div>
           </div>

@@ -6,26 +6,26 @@ import { Icon } from "@/components/ui/Icon";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 
 export const metadata: Metadata = {
-  title: "Web Development Guides & Digital Insights",
+  title: "Web Development Guides & Digital Insights | Nexnify",
   description:
-    "Explore actionable guides, realistic website development costs in India, technology comparisons, and practical digital growth advice from NEXNIFY Tech.",
+    "Explore actionable guides, realistic website development costs in India, technology comparisons, and practical digital growth advice from Nexnify.",
   alternates: {
-    canonical: "/blog",
+    canonical: "https://nexnify.in/blog",
   },
   openGraph: {
-    title: "Web Development Guides & Digital Insights | NEXNIFY Tech",
+    title: "Web Development Guides & Digital Insights | Nexnify",
     description:
-      "Explore actionable guides, realistic website development costs in India, technology comparisons, and practical digital growth advice from NEXNIFY Tech.",
-    url: "/blog",
-    siteName: "NEXNIFY Tech",
+      "Explore actionable guides, realistic website development costs in India, technology comparisons, and practical digital growth advice from Nexnify.",
+    url: "https://nexnify.in/blog",
+    siteName: "Nexnify",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development Guides & Digital Insights | NEXNIFY Tech",
+    title: "Web Development Guides & Digital Insights | Nexnify",
     description:
-      "Actionable web development guides, cost estimates, and technology insights from NEXNIFY Tech.",
+      "Actionable web development guides, cost estimates, and technology insights from Nexnify.",
   },
 };
 
@@ -52,13 +52,13 @@ export default function BlogHubPage() {
   const collectionSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "NEXNIFY Tech Guides & Insights",
+    name: "Nexnify Guides & Insights",
     url: "https://nexnify.in/blog",
     description:
       "Practical website development guides, Indian market cost breakdowns, and digital architecture advice.",
     publisher: {
       "@type": "Organization",
-      name: "NEXNIFY Tech",
+      name: "Nexnify",
       url: "https://nexnify.in/",
     },
   };
@@ -68,11 +68,31 @@ export default function BlogHubPage() {
       slug: "cost-of-building-a-website-in-india-2026",
       title: "Cost of Building a Business Website in India (2026 Practical Guide)",
       description:
-        "A transparent breakdown of website design costs, freelance web developer rates, agency pricing, and custom Next.js vs template platform expenses for Indian startups and businesses.",
+        "A transparent breakdown of website design costs, freelance rates, agency pricing, and custom Next.js vs template platform expenses for Indian startups and businesses.",
       category: "Pricing & Budgeting",
       readTime: "6 min read",
       date: "October 2026",
       featured: true,
+    },
+    {
+      slug: "nextjs-vs-wordpress-for-business-websites",
+      title: "Next.js vs WordPress for Business Websites: Choosing the Right Engine in 2026",
+      description:
+        "An objective architectural comparison of Next.js and WordPress. Compare Core Web Vitals, security risks, plugin maintenance, and conversion advantages.",
+      category: "Tech Stack & Architecture",
+      readTime: "7 min read",
+      date: "October 2026",
+      featured: true,
+    },
+    {
+      slug: "website-redesign-checklist",
+      title: "Website Redesign Checklist: 10 Critical Steps Before Relaunching in 2026",
+      description:
+        "Avoid post-launch traffic drops and 404 errors. Follow this step-by-step pre- and post-launch checklist for redesigning your business website safely.",
+      category: "SEO & Growth",
+      readTime: "5 min read",
+      date: "October 2026",
+      featured: false,
     },
   ];
 
@@ -150,7 +170,7 @@ export default function BlogHubPage() {
                       <Icon name="arrowUpRight" size={16} />
                     </Link>
                     <span className="text-xs text-[var(--text-muted)]">
-                      By NEXNIFY Tech Research Team
+                      By Nexnify Engineering Team
                     </span>
                   </div>
                 </article>

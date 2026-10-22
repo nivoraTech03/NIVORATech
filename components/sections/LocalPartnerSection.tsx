@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 export function LocalPartnerSection() {
   const servedLocations = [
     { city: 'Gurugram', region: 'Golf Course Rd & CyberHub', slug: 'gurugram' },
-    { city: 'Delhi', region: 'Central & South Delhi NCR', slug: 'new-delhi' },
+    { city: 'Delhi NCR', region: 'Central & South Delhi NCR', slug: 'delhi-ncr' },
     { city: 'Noida', region: 'Sector 62 & Tech Zone', slug: 'noida' },
     { city: 'Faridabad', region: 'Industrial & B2B Hub', slug: 'faridabad' },
     { city: 'Agra', region: 'Tourism & Exports', slug: 'agra' },
@@ -70,7 +70,7 @@ export function LocalPartnerSection() {
             </ul>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button href="https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20to%20connect%20regarding%20a%20local%20website%20project." size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-lg shadow-[#25D366]/20">
+              <Button href="https://wa.me/919575450177?text=Hi%20Nexnify,%20I%20would%20like%20to%20discuss%20a%20website%20project%20for%20my%20business%20in%20Delhi%20NCR." size="lg" className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-lg shadow-[#25D366]/20">
                 <Icon name="whatsapp" size={18} className="mr-2" />
                 Chat on WhatsApp
               </Button>
@@ -105,7 +105,7 @@ export function LocalPartnerSection() {
                         <span>{location.city}</span>
                         <Icon name="arrowUpRight" size={12} className="opacity-0 group-hover:opacity-100 transition-opacity text-indigo-400" />
                       </div>
-                      <div className="text-[11px] text-slate-400 mt-1 leading-tight">{location.region}</div>
+                      <div className="text-[11px] text-slate-300 mt-1 leading-tight">{location.region}</div>
                     </div>
                   </Link>
                 ))}

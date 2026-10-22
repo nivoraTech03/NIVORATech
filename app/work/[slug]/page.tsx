@@ -25,26 +25,28 @@ export async function generateMetadata({
   const project = siteContent.projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
-    return { title: "Project Not Found | NEXNIFY Tech" };
+    return { title: "Project Not Found | Nexnify" };
   }
 
+  const canonicalUrl = `https://nexnify.in/work/${project.slug}`;
+
   return {
-    title: `${project.title} — Case Study | NEXNIFY Tech`,
+    title: `${project.title} — Case Study | Nexnify`,
     description: project.description,
     alternates: {
-      canonical: `/work/${project.slug}`,
+      canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${project.title} — Case Study | NEXNIFY Tech`,
+      title: `${project.title} — Case Study | Nexnify`,
       description: project.description,
-      url: `/work/${project.slug}`,
-      siteName: "NEXNIFY Tech",
+      url: canonicalUrl,
+      siteName: "Nexnify",
       locale: "en_IN",
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} — Case Study | NEXNIFY Tech`,
+      title: `${project.title} — Case Study | Nexnify`,
       description: project.description,
     },
   };
@@ -64,8 +66,55 @@ export default async function ProjectDetailPage({
 
   const displayUrl = project.liveUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://nexnify.in/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Work",
+        item: "https://nexnify.in/work",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: project.title,
+        item: `https://nexnify.in/work/${project.slug}`,
+      },
+    ],
+  };
+
+  const creativeWorkSchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    headline: project.title,
+    description: project.description,
+    creator: {
+      "@type": "Organization",
+      name: "Nexnify",
+      url: "https://nexnify.in/",
+    },
+    url: `https://nexnify.in/work/${project.slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+      />
       {/* Dark Studio Header Banner */}
       <PageBanner
         badge={`CASE STUDY • PROJECT ${project.number}`}
@@ -159,6 +208,7 @@ export default async function ProjectDetailPage({
                           alt={img.caption}
                           width={600}
                           height={1200}
+                          loading="lazy"
                           className="w-full h-auto object-cover"
                         />
                         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

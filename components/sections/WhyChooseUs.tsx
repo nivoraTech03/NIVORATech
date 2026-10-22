@@ -1,4 +1,4 @@
-﻿import siteContent from "@/lib/content";
+import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "../ui/Icon";
@@ -12,7 +12,7 @@ export function WhyChooseUs() {
     >
       {/* Background ambient lighting */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none"
+        className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-dot-grid opacity-25 pointer-events-none" aria-hidden="true" />

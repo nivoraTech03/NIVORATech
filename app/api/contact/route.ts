@@ -1,4 +1,4 @@
-﻿import { NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 // Helper to escape HTML to prevent XSS in the email body
@@ -135,7 +135,7 @@ export async function POST(req: Request) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Thank You For Reaching Out - NEXNIFY</title>
+        <title>Thank You For Reaching Out - Nexnify</title>
       </head>
       <body style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #030712; margin: 0; padding: 0; -webkit-font-smoothing: antialiased;">
         <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #030712; padding: 40px 20px;">
@@ -154,7 +154,7 @@ export async function POST(req: Request) {
                           </div>
                         </td>
                         <td valign="middle" style="text-align: left;">
-                          <h1 style="color: #ffffff; font-size: 24px; font-weight: 800; margin: 0; letter-spacing: -0.5px; line-height: 1;">NEXNIFY</h1>
+                          <h1 style="color: #ffffff; font-size: 24px; font-weight: 800; margin: 0; letter-spacing: -0.5px; line-height: 1;">Nexnify</h1>
                           <p style="color: #e0e7ff; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin: 4px 0 0 0;">Digital Studio</p>
                         </td>
                       </tr>
@@ -195,7 +195,7 @@ export async function POST(req: Request) {
                     </div>
                     <a href="https://nexnify.in" style="display: inline-block; background-color: #ffffff; color: #111827; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; margin-bottom: 20px;">Visit Our Website</a>
                     <p style="color: #64748b; font-size: 13px; margin: 0;">
-                      &copy; ${new Date().getFullYear()} NEXNIFY Tech. All rights reserved.
+                      &copy; ${new Date().getFullYear()} Nexnify. All rights reserved.
                     </p>
                     <p style="color: #475569; font-size: 11px; margin: 15px 0 0 0;">
                       This is an automated message. Please do not reply to this email.
@@ -212,7 +212,7 @@ export async function POST(req: Request) {
 
     // 1. Send notification to admin
     await transporter.sendMail({
-      from: `"NEXNIFY Website" <${SMTP_EMAIL}>`,
+      from: `"Nexnify Website" <${SMTP_EMAIL}>`,
       to: SMTP_EMAIL,
       replyTo: safeEmail !== 'Not provided' ? safeEmail : undefined,
       subject: `New Lead: ${safeType} from ${safeName}`,
@@ -222,7 +222,7 @@ export async function POST(req: Request) {
     // 2. Send Auto-Reply to the customer (if they provided an email)
     if (email) {
       await transporter.sendMail({
-        from: '"NEXNIFY (No-Reply)" <' + SMTP_EMAIL + '>',
+        from: '"Nexnify (No-Reply)" <' + SMTP_EMAIL + '>',
         to: safeEmail,
         replyTo: SMTP_EMAIL, // Allow them to reply directly to the studio email if needed
         subject: `We've received your enquiry, ${safeName.split(' ')[0]}!`,

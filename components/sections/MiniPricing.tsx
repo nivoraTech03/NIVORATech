@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
@@ -18,8 +18,9 @@ export function MiniPricing({
       style={{ background: "var(--bg-surface)" }}
     >
       {/* Background ambient lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[450px] bg-indigo-600/10 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-96 h-96 bg-cyan-500/10 blur-[120px] pointer-events-none" />
+      <div className="hidden sm:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[450px] bg-indigo-600/10 blur-[130px] pointer-events-none" />
+      <div className="hidden sm:block absolute bottom-0 right-10 w-96 h-96 bg-cyan-500/10 blur-[120px] pointer-events-none" />
+      <div className="sm:hidden absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.06),transparent_70%)] pointer-events-none" />
 
       <Container className="relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16 sm:mb-20">

@@ -13,24 +13,24 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Website Development Company in Delhi NCR | Gurugram, Noida, Gwalior | NEXNIFY Tech",
+    absolute: "Website Development Company in Delhi NCR & India | Nexnify",
   },
-  description: "NEXNIFY Tech builds fast, responsive, and conversion-focused websites and Next.js applications for startups, local businesses, and luxury brands across Delhi NCR, Gurugram, Noida, and MP.",
+  description: "Nexnify builds fast, responsive, and conversion-focused websites, Next.js web applications, and mobile apps for businesses and startups in Delhi NCR, Gurugram, Noida, and across India.",
   alternates: {
-    canonical: "/",
+    canonical: "https://nexnify.in/",
   },
   openGraph: {
-    title: "Website Development Company in Delhi NCR | NEXNIFY Tech",
-    description: "NEXNIFY Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
+    title: "Website Development Company in Delhi NCR & India | Nexnify",
+    description: "Nexnify builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
     url: "https://nexnify.in/",
-    siteName: "NEXNIFY Tech",
+    siteName: "Nexnify",
     locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Development Company in Delhi NCR | NEXNIFY Tech",
-    description: "NEXNIFY Tech builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
+    title: "Website Development Company in Delhi NCR & India | Nexnify",
+    description: "Nexnify builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
   },
 };
 

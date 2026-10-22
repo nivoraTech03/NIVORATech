@@ -5,6 +5,7 @@ import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import PageBanner from "@/components/layout/PageBanner";
 import { Icon } from "@/components/ui/Icon";
+import { trackEvent } from "@/lib/gtag";
 
 const QUICK_PROJECT_TYPES = [
   { label: "Custom Web App (Next.js)", icon: "code" as const },
@@ -51,6 +52,11 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
+        trackEvent("generate_lead", {
+          project_type: formData.selectedCategory,
+          query_type: formData.queryType,
+          method: "contact_page_form",
+        });
         setStatus("success");
       } else {
         alert("Something went wrong. Please try again.");
@@ -64,6 +70,10 @@ export default function ContactPage() {
   }
 
   const handleWhatsAppDirect = () => {
+    trackEvent("whatsapp_click", {
+      location: "contact_page",
+      category: formData.selectedCategory,
+    });
     const text = encodeURIComponent(
       `*New Project Inquiry from Website:*\n\n` +
       `• *Client Name:* ${formData.name || "Client"}\n` +
@@ -72,7 +82,7 @@ export default function ContactPage() {
       `• *Category:* ${formData.selectedCategory}\n` +
       `• *Regarding:* ${formData.queryType}\n` +
       (formData.message ? `• *Requirements:* ${formData.message}\n` : "") +
-      `\n_Sent via NEXNIFY Studio Contact Portal_`
+      `\n_Sent via Nexnify Contact Portal_`
     );
     window.open(`https://wa.me/919575450177?text=${text}`, "_blank");
   };
@@ -114,6 +124,7 @@ export default function ContactPage() {
                 {/* Email Direct Card */}
                 <a
                   href={`mailto:${site.email}`}
+                  onClick={() => trackEvent("email_click", { location: "contact_page_card" })}
                   className="group flex items-start gap-4 p-5 rounded-2xl bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-indigo-500 transition-all block"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 border border-indigo-100 dark:border-indigo-900/50 group-hover:scale-105 transition-transform">
@@ -121,7 +132,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <span className="block font-display text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                      Official Email Address
+                       Official Email Address
                     </span>
                     <span className="mt-0.5 block font-display text-base font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 transition-colors truncate">
                       {site.email}
@@ -137,6 +148,7 @@ export default function ContactPage() {
                   href="https://wa.me/919575450177"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent("whatsapp_click", { location: "contact_page_card" })}
                   className="group flex items-start gap-4 p-5 rounded-2xl bg-white dark:bg-[#0B1120] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-emerald-500 transition-all block"
                 >
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 dark:bg-emerald-900/20 text-[#25D366] border border-emerald-100 dark:border-emerald-900/50 group-hover:scale-105 transition-transform">
@@ -431,7 +443,7 @@ export default function ContactPage() {
                     ⚡ Accurate Estimate in 2-4 Hours
                   </span>
                   <span className="font-medium text-slate-400 dark:text-slate-500">
-                    ⭐️ 4.9/5 Rating
+                    🚀 Direct Studio Delivery
                   </span>
                 </div>
               </div>
