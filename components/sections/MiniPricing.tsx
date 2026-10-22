@@ -34,11 +34,11 @@ export function MiniPricing() {
           <span>Swipe cards horizontally to compare plans</span>
         </div>
 
-        <div className="flex md:grid md:grid-cols-3 gap-5 lg:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16 items-stretch overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div className="flex md:grid md:grid-cols-3 gap-5 lg:gap-8 max-w-6xl mx-auto mb-12 sm:mb-16 items-stretch overflow-x-auto md:overflow-visible snap-x snap-mandatory pt-6 pb-6 md:pt-4 md:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
           {/* 1. Static Business Website */}
-          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 md:shrink snap-center bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-2xl p-5 sm:p-7 hover:border-indigo-500/40 transition-all duration-300 shadow-sm hover:shadow-xl group flex flex-col justify-between">
+          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 md:shrink snap-center bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-2xl p-5 sm:p-7 pt-7 sm:pt-7 hover:border-indigo-500/40 transition-all duration-300 shadow-sm hover:shadow-xl group flex flex-col justify-between">
             <div>
-              <div className="inline-block px-3 py-1 rounded-full bg-[var(--bg-surface-alt)] border border-[var(--border-subtle)] text-[11px] font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[var(--bg-surface-alt)] border border-[var(--border-subtle)] text-[11px] font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 mb-3 mt-1">
                 Static &bull; SEO First
               </div>
               <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-2">Static Website</h3>
@@ -47,7 +47,7 @@ export function MiniPricing() {
               <div className="mb-5 pb-5 border-b border-[var(--border-subtle)]">
                 <span className="text-[10px] font-bold text-indigo-500 dark:text-indigo-400 block mb-1 uppercase tracking-wider">Starting Investment</span>
                 <div className="font-display text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] tracking-tight">
-                  Starting from ₹14,999
+                  Starting from ₹4,999
                 </div>
                 <span className="text-xs text-[var(--text-muted)] mt-1 block">Transparent milestone scope &bull; Zero lock-in</span>
               </div>
@@ -108,10 +108,10 @@ export function MiniPricing() {
           </div>
 
           {/* Dynamic Web App - Flagship / Most Popular */}
-          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 md:shrink snap-center bg-gradient-to-b from-[#131E38] via-[#0E1528] to-[#0A0F1D] border-2 border-indigo-500/60 rounded-2xl p-5 sm:p-7 md:-mt-4 shadow-2xl shadow-indigo-950/60 relative group flex flex-col justify-between text-white">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-[10px] font-extrabold px-3.5 py-1 rounded-full uppercase tracking-widest shadow-[0_0_25px_rgba(99,102,241,0.6)] border border-indigo-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              Most Popular Choice
+          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 md:shrink snap-center bg-gradient-to-b from-[#131E38] via-[#0E1528] to-[#0A0F1D] border-2 border-indigo-500/60 rounded-2xl p-5 sm:p-7 pt-7 sm:pt-7 md:-mt-4 shadow-2xl shadow-indigo-950/60 relative group flex flex-col justify-between text-white">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-[10px] sm:text-[11px] font-extrabold px-3.5 py-1 sm:py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-[0_0_25px_rgba(99,102,241,0.6)] border border-indigo-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse shrink-0" />
+              <span>Most Popular Choice</span>
             </div>
 
             <div>
@@ -126,7 +126,7 @@ export function MiniPricing() {
               <div className="mb-5 pb-5 border-b border-indigo-500/20">
                 <span className="text-[10px] font-bold text-indigo-300 block mb-1 uppercase tracking-wider">Starting Investment</span>
                 <div className="font-display text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                  Starting from ₹34,999
+                  Starting from ₹13,500
                 </div>
                 <span className="text-xs text-indigo-200/70 mt-1 block">Full-stack Next.js, API &amp; database backend</span>
               </div>
@@ -186,9 +186,9 @@ export function MiniPricing() {
           </div>
 
           {/* E-Commerce Store */}
-          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 md:shrink snap-center bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-2xl p-5 sm:p-7 hover:border-indigo-500/40 transition-all duration-300 shadow-sm hover:shadow-xl group flex flex-col justify-between">
+          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 md:shrink snap-center bg-[var(--bg-card)] border border-[var(--border-subtle)] rounded-2xl p-5 sm:p-7 pt-7 sm:pt-7 hover:border-indigo-500/40 transition-all duration-300 shadow-sm hover:shadow-xl group flex flex-col justify-between">
             <div>
-              <div className="inline-block px-3 py-1 rounded-full bg-[var(--bg-surface-alt)] border border-[var(--border-subtle)] text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[var(--bg-surface-alt)] border border-[var(--border-subtle)] text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-3 mt-1">
                 High-Conversion Sales
               </div>
               <h3 className="font-display text-xl sm:text-2xl font-bold text-[var(--text-primary)] mb-2">E-Commerce Store</h3>

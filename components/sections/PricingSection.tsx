@@ -13,7 +13,7 @@ export function PricingSection() {
   const staticPkg = pricing.staticSite || {
     title: "Static Business Website",
     subtitle: "Blazing fast, SEO-optimized website built with Next.js/HTML5 for professionals, clinics, and local services.",
-    price: "Starting from ₹14,999",
+    price: "Starting from ₹4,999",
     features: [
       "Up to 5 custom-designed pages",
       "100/100 Google PageSpeed mobile score target",
@@ -30,7 +30,7 @@ export function PricingSection() {
   const dynamicPkg = pricing.dynamicSite || {
     title: "Dynamic Web Application",
     subtitle: "Interactive, database-driven portal with admin panel, user logins, appointment booking, or custom workflows.",
-    price: "Starting from ₹34,999",
+    price: "Starting from ₹13,500",
     features: [
       "Custom database & REST/GraphQL API integration",
       "User authentication & role-based dashboard",
@@ -100,12 +100,12 @@ export function PricingSection() {
         </div>
 
         {/* 3 Core Packages (Static, Dynamic, E-commerce) - Mobile Slider */}
-        <div className="flex lg:grid lg:grid-cols-3 gap-6 lg:gap-8 mb-16 items-stretch overflow-x-auto lg:overflow-visible snap-x snap-mandatory pb-4 lg:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div className="flex lg:grid lg:grid-cols-3 gap-6 lg:gap-8 mb-16 items-stretch overflow-x-auto lg:overflow-visible snap-x snap-mandatory pt-6 pb-6 lg:pt-4 lg:pb-0 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
           
           {/* 1. Static Business Website */}
-          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 lg:shrink snap-center bg-slate-900/60 border border-slate-800 rounded-2xl p-5 sm:p-7 hover:border-slate-700 hover:bg-slate-900/80 transition-all flex flex-col justify-between">
+          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 lg:shrink snap-center bg-slate-900/60 border border-slate-800 rounded-2xl p-5 sm:p-7 pt-7 sm:pt-7 hover:border-slate-700 hover:bg-slate-900/80 transition-all flex flex-col justify-between">
             <div>
-              <div className="inline-block px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-[11px] font-bold uppercase tracking-wider text-indigo-400 mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-[11px] font-bold uppercase tracking-wider text-indigo-400 mb-3 mt-1">
                 Fast &amp; SEO-First
               </div>
               <h3 className="font-display text-2xl font-bold text-white mb-2">{staticPkg.title}</h3>
@@ -150,14 +150,14 @@ export function PricingSection() {
           </div>
 
           {/* 2. Dynamic Web Application (Featured) */}
-          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 lg:shrink snap-center bg-gradient-to-b from-[#131E38] via-[#0E1528] to-[#0A0F1D] border-2 border-indigo-500 rounded-2xl p-5 sm:p-7 shadow-2xl shadow-indigo-950/80 relative flex flex-col justify-between text-white lg:-mt-3 lg:mb-[-12px]">
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-[0_0_25px_rgba(99,102,241,0.6)] border border-indigo-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-              Most Popular Architecture
+          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 lg:shrink snap-center bg-gradient-to-b from-[#131E38] via-[#0E1528] to-[#0A0F1D] border-2 border-indigo-500 rounded-2xl p-5 sm:p-7 pt-7 sm:pt-7 shadow-2xl shadow-indigo-950/80 relative flex flex-col justify-between text-white lg:-mt-3 lg:mb-[-12px]">
+            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white text-[11px] font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap shadow-[0_0_25px_rgba(99,102,241,0.6)] border border-indigo-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse shrink-0" />
+              <span>Most Popular Architecture</span>
             </div>
 
             <div>
-              <div className="inline-block px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-[11px] font-bold uppercase tracking-wider text-indigo-300 mb-3 mt-2">
+              <div className="inline-block px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/40 text-[11px] font-bold uppercase tracking-wider text-indigo-300 mb-3 mt-1">
                 Custom CMS &amp; Portals
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white mb-2">{dynamicPkg.title}</h3>
@@ -201,7 +201,7 @@ export function PricingSection() {
           </div>
 
           {/* 3. E-Commerce & Online Store */}
-          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 lg:shrink snap-center bg-slate-900/60 border border-slate-800 rounded-2xl p-5 sm:p-7 hover:border-slate-700 hover:bg-slate-900/80 transition-all flex flex-col justify-between">
+          <div className="w-[86vw] max-w-[340px] sm:max-w-none sm:w-auto shrink-0 lg:shrink snap-center bg-slate-900/60 border border-slate-800 rounded-2xl p-5 sm:p-7 pt-7 sm:pt-7 hover:border-slate-700 hover:bg-slate-900/80 transition-all flex flex-col justify-between">
             <div>
               <div className="inline-block px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-[11px] font-bold uppercase tracking-wider text-cyan-400 mb-3">
                 High-Conversion Stores

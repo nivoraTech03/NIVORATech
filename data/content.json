@@ -907,7 +907,7 @@
     "staticSite": {
       "title": "Static Business Website",
       "subtitle": "Blazing fast, SEO-optimized website built with Next.js/HTML5 for professionals, clinics, and local services.",
-      "price": "Starting from ₹14,999",
+      "price": "Starting from ₹4,999",
       "features": [
         "Up to 5 custom-designed pages",
         "100/100 Google PageSpeed mobile score target",
@@ -923,7 +923,7 @@
     "dynamicSite": {
       "title": "Dynamic Web Application",
       "subtitle": "Interactive, database-driven portal with admin panel, user logins, appointment booking, or custom workflows.",
-      "price": "Starting from ₹34,999",
+      "price": "Starting from ₹13,500",
       "features": [
         "Custom database & REST/GraphQL API integration",
         "User authentication & role-based dashboard",
