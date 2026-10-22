@@ -70,6 +70,7 @@ export async function POST(req: Request) {
     const safeQuery = escapeHtml(query);
     const safeMessage = escapeHtml(message || 'No additional message.');
 
+
     // -----------------------------------------------------
     // 1. ADMIN NOTIFICATION EMAIL TEMPLATE (Normal Clean UI)
     // -----------------------------------------------------
