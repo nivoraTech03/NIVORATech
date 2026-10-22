@@ -3,7 +3,6 @@ import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
 import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
-import Link from 'next/link';
 import siteContent from '@/lib/content';
 
 export function PricingSection() {

@@ -5,11 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
 import siteContent from '@/lib/content';
 
-export function MiniPricing({ 
-  pricingOverrides 
-}: { 
-  pricingOverrides?: { landing?: string; website?: string; maintenance?: string; } 
-}) {
+export function MiniPricing() {
   const { pricing } = siteContent;
 
   return (

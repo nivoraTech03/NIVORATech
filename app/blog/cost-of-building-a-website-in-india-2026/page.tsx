@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
-import { Button } from '@/components/ui/Button';
 import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
 
 export const metadata: Metadata = {

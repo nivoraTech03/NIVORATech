@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import PageBanner from "@/components/layout/PageBanner";
 
@@ -25,8 +24,6 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
-  const { site } = siteContent;
-
   const sections = [
     { id: "information-we-collect", title: "1. Information We Collect" },
     { id: "how-we-use-data", title: "2. How We Use Data" },
@@ -109,7 +106,7 @@ export default function TermsPage() {
                   <div className="bg-amber-500/10 border border-amber-500/30 p-6 rounded-xl mt-6">
                     <h3 className="text-amber-500 text-lg font-bold mb-3 mt-0">Liability Protection Clause</h3>
                     <p className="text-amber-200/90 text-sm m-0">
-                      Third-party infrastructure, including but not limited to domain name registration, DNS management, and hosting servers (e.g., AWS, Vercel, Hostinger, GoDaddy), remain the strict legal property and financial liability of the client. <strong>Nexnify is not liable</strong> for third-party hosting downtimes, expired domain renewals, server data loss, or registrar outages. It is the client's sole responsibility to maintain timely renewals and payments for their respective hosting infrastructures.
+                      Third-party infrastructure, including but not limited to domain name registration, DNS management, and hosting servers (e.g., AWS, Vercel, Hostinger, GoDaddy), remain the strict legal property and financial liability of the client. <strong>Nexnify is not liable</strong> for third-party hosting downtimes, expired domain renewals, server data loss, or registrar outages. It is the client&apos;s sole responsibility to maintain timely renewals and payments for their respective hosting infrastructures.
                     </p>
                   </div>
                 </div>

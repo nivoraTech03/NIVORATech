@@ -16,13 +16,13 @@ import { trackWhatsAppClick } from "@/lib/gtag";
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setOpen(false);
+  }
   const scrolled = useScrolled();
   const { navigation } = siteContent;
-
-  // Close drawer on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   // Prevent body scroll when drawer is open
   useEffect(() => {

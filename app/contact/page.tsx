@@ -5,7 +5,7 @@ import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import PageBanner from "@/components/layout/PageBanner";
 import { Icon } from "@/components/ui/Icon";
-import { trackWhatsAppClick, trackLeadFormSubmit } from "@/lib/gtag";
+import { trackWhatsAppClick, trackLeadFormSubmit, trackEvent } from "@/lib/gtag";
 
 const QUICK_PROJECT_TYPES = [
   { label: "Custom Web App (Next.js)", icon: "code" as const },
@@ -70,20 +70,6 @@ export default function ContactPage() {
     }
   }
 
-  const handleWhatsAppDirect = () => {
-    trackWhatsAppClick("contact_page_direct_chat", formData.selectedCategory);
-    const text = encodeURIComponent(
-      `*New Project Inquiry from Website:*\n\n` +
-      `• *Client Name:* ${formData.name || "Client"}\n` +
-      `• *Phone/WhatsApp:* ${formData.phone || "N/A"}\n` +
-      `• *Email:* ${formData.email || "N/A"}\n` +
-      `• *Category:* ${formData.selectedCategory}\n` +
-      `• *Regarding:* ${formData.queryType}\n` +
-      (formData.message ? `• *Requirements:* ${formData.message}\n` : "") +
-      `\n_Sent via Nexnify Contact Portal_`
-    );
-    window.open(`https://wa.me/919575450177?text=${text}`, "_blank");
-  };
 
   return (
     <>

@@ -1,14 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import siteContent from "@/lib/content";
 import { ThemeProvider, themeInitScript } from "@/context/ThemeContext";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import FloatingActions from "@/components/ui/FloatingActions";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
-
-const { site } = siteContent;
 
 const inter = Inter({
   subsets: ["latin"],

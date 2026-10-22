@@ -209,7 +209,7 @@ export async function POST(req: Request) {
       { success: true, message: 'Successfully subscribed!' },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Newsletter error:', error);
     return NextResponse.json(
       { error: 'Failed to subscribe. Please try again later.' },

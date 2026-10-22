@@ -26,10 +26,20 @@ export function ServicesGrid({ limit }: { limit?: number }) {
   const [activeDot, setActiveDot] = useState(0);
   const [maxDots, setMaxDots] = useState(0);
 
+  const scrollToDot = (index: number) => {
+    if (!sliderRef.current) return;
+    const itemWidth = sliderRef.current.children[0]?.clientWidth || 0;
+    const gap = 24;
+    sliderRef.current.scrollTo({
+      left: index * (itemWidth + gap),
+      behavior: "smooth"
+    });
+  };
+
   useEffect(() => {
     const updateDots = () => {
       if (!sliderRef.current) return;
-      const { scrollWidth, clientWidth } = sliderRef.current;
+      const { clientWidth } = sliderRef.current;
       // Number of dots = total items - visible items + 1
       const itemWidth = sliderRef.current.children[0]?.clientWidth || 0;
       const gap = 24; // 1.5rem gap
@@ -74,16 +84,6 @@ export function ServicesGrid({ limit }: { limit?: number }) {
     const gap = 24;
     const index = Math.round(scrollLeft / (itemWidth + gap));
     setActiveDot(Math.min(index, maxDots - 1));
-  };
-
-  const scrollToDot = (index: number) => {
-    if (!sliderRef.current) return;
-    const itemWidth = sliderRef.current.children[0]?.clientWidth || 0;
-    const gap = 24;
-    sliderRef.current.scrollTo({
-      left: index * (itemWidth + gap),
-      behavior: "smooth"
-    });
   };
 
   const scrollPrev = () => {

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 

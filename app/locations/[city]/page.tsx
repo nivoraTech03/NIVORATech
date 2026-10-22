@@ -15,8 +15,6 @@ import { MiniPricing } from '@/components/sections/MiniPricing';
 import { ProcessSection } from '@/components/sections/ProcessSection';
 import { ProjectsShowcase } from '@/components/sections/ProjectsShowcase';
 import { FaqSection } from '@/components/sections/FaqSection';
-import Link from 'next/link';
-import { Container } from '@/components/ui/Container';
 
 interface LocationPageProps {
   params: Promise<{

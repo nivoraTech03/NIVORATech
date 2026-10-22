@@ -96,9 +96,10 @@ export default function FloatingActions() {
         setIsSubmitted(false);
         setForm({ type: "Next.js / React", query: QUERY_OPTIONS[0], name: "", phone: "", email: "", message: "" });
       }, 3500);
-    } catch (err: any) {
+    } catch (err: unknown) {
       setIsSubmitting(false);
-      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+      const msg = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+      setErrorMsg(msg);
     }
   };
 
