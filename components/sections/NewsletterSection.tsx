@@ -24,6 +24,7 @@ export default function NewsletterSection() {
         body: JSON.stringify({ email }),
       });
       
+      const data = await response.json();
       if (response.ok) {
         trackEvent("newsletter_signup", { method: "footer_newsletter" });
         setStatus("success");
@@ -83,6 +84,15 @@ export default function NewsletterSection() {
                 onSubmit={handleSubmit}
                 className="flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto pt-2"
               >
+                {/* Honeypot field for bot trapping */}
+                <input
+                  type="text"
+                  name="website_hp"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden pointer-events-none"
+                  aria-hidden="true"
+                />
                 <div className="relative w-full">
                   <input
                     type="email"

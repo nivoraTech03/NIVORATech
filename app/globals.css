@@ -273,3 +273,9 @@ body {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
 }
+
+/* Accessibility Focus Rings (WCAG 2.2 AA SC 2.4.7 Focus Visible & SC 2.4.11 Focus Appearance) */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}

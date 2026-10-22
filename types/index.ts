@@ -189,6 +189,9 @@ export interface SiteContent {
     redesign: PricingPackage;
     enhancement: PricingPackage;
     modification: PricingPackage;
+    staticSite?: PricingPackage;
+    dynamicSite?: PricingPackage;
+    ecommerce?: PricingPackage;
   };
 }
 

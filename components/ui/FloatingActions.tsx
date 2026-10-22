@@ -162,41 +162,45 @@ export default function FloatingActions() {
       {/* ── WhatsApp Dialog ── */}
       {isWAOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs"
           onClick={() => setIsWAOpen(false)}
         >
           <div
-            className="w-full max-w-sm rounded-3xl bg-[var(--bg-surface)] shadow-2xl overflow-hidden animate-scale-in border border-[var(--border-subtle)]"
+            className="w-full max-w-sm sm:max-w-md rounded-2xl bg-[var(--bg-surface)] shadow-2xl overflow-hidden animate-scale-in border border-[var(--border-subtle)]"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="bg-[#25D366] px-6 py-5 flex items-center justify-between text-white">
+            <div className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 px-5 py-4 flex items-center justify-between text-white border-b border-emerald-500/20">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                  <Icon name="whatsapp" size={24} />
+                <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 backdrop-blur-sm border border-white/20">
+                  <Icon name="whatsapp" size={22} />
+                  <span className="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full bg-emerald-300 border-2 border-emerald-800 animate-pulse" />
                 </div>
                 <div>
-                  <p className="text-base font-bold">WhatsApp Connect</p>
-                  <p className="text-xs font-medium text-white/80">Typically replies instantly</p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-sm font-bold tracking-tight">WhatsApp Direct</p>
+                    <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded-md bg-white/20 text-white">Online</span>
+                  </div>
+                  <p className="text-xs text-emerald-100/90 font-medium">Replies within minutes &bull; Free advice</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsWAOpen(false)}
-                className="rounded-full p-2 hover:bg-white/20 transition-colors"
+                className="rounded-lg p-1.5 text-white/80 hover:text-white hover:bg-white/20 transition-colors"
                 aria-label="Close"
               >
-                <Icon name="close" size={18} />
+                <Icon name="close" size={16} />
               </button>
             </div>
 
             {/* Form */}
-            <form onSubmit={handleWASubmit} className="p-6 space-y-4 bg-[var(--bg-surface)]">
+            <form onSubmit={handleWASubmit} className="p-5 sm:p-6 space-y-3.5 bg-[var(--bg-surface)]">
               <div>
                 <label className={labelBase}>Your Name <span className="text-rose-500">*</span></label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. John Doe"
+                  placeholder="e.g. Rahul Sharma"
                   value={wa.name}
                   onChange={e => setWA({ ...wa, name: e.target.value })}
                   className={inputBase}
@@ -217,7 +221,7 @@ export default function FloatingActions() {
                 <label className={labelBase}>Message <span className="text-[var(--text-muted)] font-normal">(optional)</span></label>
                 <textarea
                   rows={2}
-                  placeholder="How can we help you?"
+                  placeholder="Describe your project goals or questions..."
                   value={wa.note}
                   onChange={e => setWA({ ...wa, note: e.target.value })}
                   className={`${inputBase} resize-none`}
@@ -225,10 +229,10 @@ export default function FloatingActions() {
               </div>
               <button
                 type="submit"
-                className="w-full mt-2 rounded-xl bg-[#25D366] hover:bg-[#1EBF5C] py-3 text-sm font-bold text-white transition-all hover:shadow-[0_0_15px_rgba(37,211,102,0.4)] flex items-center justify-center gap-2"
+                className="w-full mt-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 py-3 text-xs sm:text-sm font-bold text-white transition-all shadow-md shadow-emerald-600/25 hover:shadow-lg flex items-center justify-center gap-2 active:scale-[0.98] cursor-pointer"
               >
                 <Icon name="whatsapp" size={18} />
-                Start Chat
+                <span>Open WhatsApp Chat &rarr;</span>
               </button>
             </form>
           </div>
@@ -238,16 +242,16 @@ export default function FloatingActions() {
       {/* ── Enquiry Modal ── */}
       {isModalOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-sm overflow-hidden sm:overflow-y-auto transition-opacity"
+          className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-black/60 backdrop-blur-xs overflow-hidden sm:overflow-y-auto transition-opacity"
           onClick={() => setIsModalOpen(false)}
         >
           <div
-            className="relative w-full max-w-lg h-[calc(100vh-100px)] sm:h-auto sm:max-h-[90vh] rounded-t-[32px] sm:rounded-2xl bg-[var(--bg-surface)] border-t sm:border border-[var(--border-subtle)] shadow-2xl flex flex-col overflow-hidden animate-scale-in"
+            className="relative w-full max-w-lg h-[calc(100vh-80px)] sm:h-auto sm:max-h-[90vh] rounded-t-2xl sm:rounded-2xl bg-[var(--bg-surface)] border-t sm:border border-[var(--border-subtle)] shadow-2xl flex flex-col overflow-hidden animate-scale-in"
             onClick={e => e.stopPropagation()}
           >
             {/* Mobile Grab Handle */}
             <div className="flex justify-center pt-3 pb-2 sm:hidden shrink-0">
-              <div className="h-1.5 w-12 rounded-full bg-slate-200 dark:bg-slate-700" />
+              <div className="h-1.5 w-12 rounded-full bg-slate-300 dark:bg-slate-700" />
             </div>
 
             {/* Header */}

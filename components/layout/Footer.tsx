@@ -93,6 +93,23 @@ export function Footer() {
               ))}
               <li>
                 <Link
+                  href="/free-website-audit"
+                  className="text-amber-300 font-semibold transition-colors hover:text-white flex items-center gap-1.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                  Free Website Audit
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/annual-care-plan"
+                  className="text-slate-300 transition-colors hover:text-white"
+                >
+                  Annual Care Plan
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/blog"
                   className="text-slate-300 transition-colors hover:text-white"
                 >
@@ -175,6 +192,9 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-8 text-xs text-slate-300 sm:flex-row">
           <p>&copy; {new Date().getFullYear()} Nexnify. All rights reserved.</p>
           <div className="flex items-center gap-6">
+            <Link href="/accessibility" className="hover:text-white transition-colors">
+              Accessibility
+            </Link>
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms &amp; Privacy
             </Link>

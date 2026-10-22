@@ -114,6 +114,17 @@ export const metadata: Metadata = {
       "Nexnify builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
     images: ["/images/auralux.webp"],
   },
+
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/icon.png"],
+  },
 };
 
 const jsonLdSchema = {
@@ -188,6 +199,8 @@ export default function RootLayout({
   return (
     <html lang="en-IN" suppressHydrationWarning className="scroll-smooth">
       <head>
+        <link rel="icon" href="/icon.png" sizes="192x192" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
         <script
           dangerouslySetInnerHTML={{
             __html: themeInitScript,
@@ -206,10 +219,16 @@ export default function RootLayout({
         className={`${inter.variable} ${plusJakarta.variable} min-h-screen bg-[var(--bg-body)] text-[var(--text-primary)] antialiased`}
       >
         <ThemeProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-indigo-600 focus:text-white focus:font-semibold focus:rounded-xl focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-900 transition-all"
+          >
+            Skip to main content
+          </a>
           <div className="flex min-h-screen flex-col">
             <Header />
 
-            <main className="flex-1">{children}</main>
+            <main id="main-content" tabIndex={-1} className="flex-1 outline-none">{children}</main>
 
             <Footer />
 

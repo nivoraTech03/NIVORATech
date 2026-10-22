@@ -65,6 +65,26 @@ export default function BlogHubPage() {
 
   const articles = [
     {
+      slug: "accessibility-widget-vs-real-fix",
+      title: "Why Accessibility Widgets Can't Fix Bad Code: Overlays vs. Native WCAG 2.2 AA",
+      description:
+        "An in-depth technical analysis of why accessibility overlay widgets fail to deliver true WCAG compliance, hurt Core Web Vitals, and how to fix accessibility in the source code.",
+      category: "WCAG & Compliance",
+      readTime: "11 min read",
+      date: "February 2026",
+      featured: true,
+    },
+    {
+      slug: "website-development-cost-india",
+      title: "Website Development Cost in India: 2026 Transparent Pricing Guide",
+      description:
+        "Honest breakdown of website development cost in India for 2026. Compare Static websites, Dynamic Next.js web applications, and E-commerce stores with transparent pricing tiers.",
+      category: "Pricing & Budgeting",
+      readTime: "12 min read",
+      date: "February 2026",
+      featured: true,
+    },
+    {
       slug: "cost-of-building-a-website-in-india-2026",
       title: "Cost of Building a Business Website in India (2026 Practical Guide)",
       description:
@@ -72,7 +92,7 @@ export default function BlogHubPage() {
       category: "Pricing & Budgeting",
       readTime: "6 min read",
       date: "October 2026",
-      featured: true,
+      featured: false,
     },
     {
       slug: "nextjs-vs-wordpress-for-business-websites",
@@ -82,7 +102,7 @@ export default function BlogHubPage() {
       category: "Tech Stack & Architecture",
       readTime: "7 min read",
       date: "October 2026",
-      featured: true,
+      featured: false,
     },
     {
       slug: "website-redesign-checklist",

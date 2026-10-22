@@ -258,6 +258,15 @@ export default function ContactPage() {
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-6">
+                      {/* Honeypot field for bot trapping */}
+                      <input
+                        type="text"
+                        name="website_hp"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        className="hidden pointer-events-none"
+                        aria-hidden="true"
+                      />
                       <div>
                         <div className="flex items-center gap-2 mb-1.5">
                           <span className="font-display inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 text-[11px] font-bold">

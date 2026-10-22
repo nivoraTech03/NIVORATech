@@ -211,6 +211,158 @@ export default function WorkPage() {
               );
             })}
           </div>
+
+          {/* Before & After Case Study Transformation Grid */}
+          <div className="mt-24 pt-16 border-t border-[var(--border-subtle)]">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <span className="text-xs font-bold uppercase tracking-wider text-indigo-500 block mb-2">
+                Proven Engineering Impact
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[var(--text-primary)] mb-3">
+                Client Transformations: Before vs. After Nexnify
+              </h2>
+              <p className="text-sm sm:text-base text-[var(--text-muted)]">
+                Real code, real architectural upgrades, and measurable business performance improvements.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Case 1: AuraLux */}
+              <div className="p-6 sm:p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-sm hover:border-indigo-500/40 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                      Hospitality &bull; Real Estate
+                    </span>
+                    <span className="text-xs font-mono text-[var(--text-muted)]">Case #1</span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-[var(--text-primary)] mb-3">
+                    AuraLux Residences
+                  </h3>
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <span className="text-xs font-bold text-rose-500 block mb-0.5 uppercase tracking-wide">The Challenge:</span>
+                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        Unresponsive template, uncompressed high-res images freezing mobile browsers, and zero direct booking inquiries from corporate executives.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 block mb-0.5 uppercase tracking-wide">Technical Solution:</span>
+                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        Next.js 15 App Router architecture, LodgingBusiness Schema, 1-tap WhatsApp private visit scheduler, and modern WebP picture elements.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-[var(--border-subtle)] space-y-2.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] block">Before / After Metrics:</span>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Mobile PageSpeed</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 38] &rarr; <span className="text-emerald-500">[PLACEHOLDER: 99/100]</span></span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Direct Inquiries</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 4/mo] &rarr; <span className="text-emerald-500">[PLACEHOLDER: +140%]</span></span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Accessibility</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: Failing] &rarr; <span className="text-emerald-500">WCAG 2.2 AA</span></span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Case 2: Aura Bridal */}
+              <div className="p-6 sm:p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-sm hover:border-indigo-500/40 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                      Luxury Atelier &bull; Beauty
+                    </span>
+                    <span className="text-xs font-mono text-[var(--text-muted)]">Case #2</span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-[var(--text-primary)] mb-3">
+                    Aura Bridal Studio
+                  </h3>
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <span className="text-xs font-bold text-rose-500 block mb-0.5 uppercase tracking-wide">The Challenge:</span>
+                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        Leads trapped in Instagram DMs, friction checking high-muhurat wedding dates, and lack of luxury brand differentiation for destination weddings.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 block mb-0.5 uppercase tracking-wide">Technical Solution:</span>
+                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        Interactive wedding date reservation checker (`/book`), automated WhatsApp concierge routing with pre-filled venue fields, and BeautySalon Schema.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-[var(--border-subtle)] space-y-2.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] block">Before / After Metrics:</span>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Date Inquiry Surge</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: Baseline] &rarr; <span className="text-emerald-500">[PLACEHOLDER: +165%]</span></span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Lead Booking Speed</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 24h] &rarr; <span className="text-emerald-500">&lt; 5 mins</span></span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Core Web Vitals</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 52] &rarr; <span className="text-emerald-500">99/100</span></span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Case 3: SkyOdeals */}
+              <div className="p-6 sm:p-8 rounded-3xl bg-[var(--bg-card)] border border-[var(--border-subtle)] shadow-sm hover:border-indigo-500/40 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider">
+                      Flight Booking &bull; Travel
+                    </span>
+                    <span className="text-xs font-mono text-[var(--text-muted)]">Case #3</span>
+                  </div>
+                  <h3 className="font-display text-xl font-bold text-[var(--text-primary)] mb-3">
+                    SkyOdeals Travel Portal
+                  </h3>
+                  <div className="space-y-3 mb-6">
+                    <div>
+                      <span className="text-xs font-bold text-rose-500 block mb-0.5 uppercase tracking-wide">The Challenge:</span>
+                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        Complex multi-city flight searches lagging heavily on mobile 4G networks, causing travelers to drop off before submitting quote requests.
+                      </p>
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400 block mb-0.5 uppercase tracking-wide">Technical Solution:</span>
+                      <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+                        Custom PHP architecture with indexed MySQL database queries, vanilla JS search widgets, and instant quote capture without page reloads.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-[var(--border-subtle)] space-y-2.5">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] block">Before / After Metrics:</span>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Search Response Time</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 4.8s] &rarr; <span className="text-emerald-500">0.6s</span></span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Quote Conversions</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: Low] &rarr; <span className="text-emerald-500">[PLACEHOLDER: +64%]</span></span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
+                    <span className="text-[var(--text-muted)]">Mobile Usability</span>
+                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 61] &rarr; <span className="text-emerald-500">98/100</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 

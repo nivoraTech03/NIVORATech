@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { checkRateLimit, sanitizeSingleLine, getClientIp } from '@/lib/rateLimit';
 
 // Helper to escape HTML
 function escapeHtml(unsafe: string) {
@@ -14,7 +15,32 @@ function escapeHtml(unsafe: string) {
 
 export async function POST(req: Request) {
   try {
+    const ip = getClientIp(req);
+
+    // 1. Sliding Window Rate Limiting (Defense against automated subscription loops & SMTP exhaustion)
+    const rateLimit = checkRateLimit(`newsletter:${ip}`, { limit: 5, windowMs: 15 * 60 * 1000 });
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please wait a few minutes before trying again.' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(Math.ceil(rateLimit.resetInMs / 1000)),
+          },
+        }
+      );
+    }
+
     const body = await req.json();
+
+    // 2. Honeypot check for bots
+    if (body.website_hp || body.hp_field || body.company_url_hp) {
+      return NextResponse.json(
+        { success: true, message: 'Successfully subscribed!' },
+        { status: 200 }
+      );
+    }
+
     const { email } = body;
 
     // Validation with constraints
@@ -25,11 +51,12 @@ export async function POST(req: Request) {
       );
     }
 
-    const safeEmail = escapeHtml(email);
+    // 3. CRLF / Header Injection prevention
+    const cleanEmail = sanitizeSingleLine(email);
+    const safeEmail = escapeHtml(cleanEmail);
 
-    // Extract metadata (IP and Device)
-    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'Unknown IP';
-    const userAgent = req.headers.get('user-agent') || 'Unknown Device';
+    // Extract device metadata
+    const userAgent = sanitizeSingleLine(req.headers.get('user-agent') || 'Unknown Device');
     const isMobile = /mobile/i.test(userAgent);
     const deviceType = isMobile ? 'Mobile' : 'Desktop/Tablet';
     const SMTP_EMAIL = process.env.SMTP_EMAIL;
@@ -45,14 +72,14 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
-      secure: true, // true for 465, false for other ports
+      secure: true,
       auth: {
         user: SMTP_EMAIL,
         pass: SMTP_PASSWORD,
       },
     });
 
-    // Normal Clean Welcome Email Template
+    // Clean Welcome Email Template
     const userHtmlTemplate = `
       <!DOCTYPE html>
       <html>
@@ -105,7 +132,7 @@ export async function POST(req: Request) {
       </html>
     `;
 
-    // Normal Clean Admin Notification Template
+    // Clean Admin Notification Template
     const adminHtmlTemplate = `
       <!DOCTYPE html>
       <html>
@@ -158,27 +185,27 @@ export async function POST(req: Request) {
 
     // Plain text alternative for admin notification email
     const adminTextTemplate = `NEW NEWSLETTER SUBSCRIBER\n\n` +
-      `Subscriber Email: ${email}\n` +
+      `Subscriber Email: ${cleanEmail}\n` +
       `Device Type: ${deviceType}\n` +
       `User IP: ${ip}\n` +
       `Date: ${new Date().toISOString()}`;
 
-    // 1. Send beautiful welcome/offer email to the subscriber
+    // 1. Send welcome email to subscriber
     await transporter.sendMail({
       from: `"Nexnify" <${SMTP_EMAIL}>`,
-      to: safeEmail,
+      to: cleanEmail,
       replyTo: SMTP_EMAIL,
       subject: `Welcome to Nexnify - Web Development Guide & Offer`,
       text: userTextTemplate,
       html: userHtmlTemplate,
     });
 
-    // 2. Send notification to admin (you)
+    // 2. Send notification to admin
     await transporter.sendMail({
       from: `"Nexnify System" <${SMTP_EMAIL}>`,
       to: SMTP_EMAIL,
-      replyTo: safeEmail,
-      subject: `New Newsletter Subscription: ${safeEmail}`,
+      replyTo: cleanEmail,
+      subject: `New Newsletter Subscription: ${cleanEmail}`,
       text: adminTextTemplate,
       html: adminHtmlTemplate,
     });

@@ -107,7 +107,7 @@ export function ProcessSection() {
                 key={step.step}
                 onMouseEnter={() => setActive(index)}
                 onMouseLeave={() => setActive(null)}
-                className="group relative cursor-default overflow-hidden rounded-3xl transition-all duration-500"
+                className="group relative cursor-default overflow-hidden rounded-2xl transition-all duration-500"
                 style={{
                   border: `1px solid ${isActive ? meta!.borderColor : "rgba(255,255,255,0.12)"}`,
                   background: isActive
@@ -127,7 +127,7 @@ export function ProcessSection() {
 
                 {/* Giant step number watermark */}
                 <span
-                  className="absolute -right-4 -top-6 select-none font-black text-[120px] leading-none transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2"
+                  className="absolute -right-4 -top-6 select-none font-black text-[100px] sm:text-[120px] leading-none transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2 pointer-events-none"
                   style={{
                     color: meta!.accentHex,
                     opacity: isActive ? 0.12 : 0.06,
@@ -138,7 +138,7 @@ export function ProcessSection() {
                   {step.step}
                 </span>
 
-                <div className="relative z-10 p-7 sm:p-8 flex flex-col h-full min-h-[280px]">
+                <div className="relative z-10 p-5 sm:p-7 flex flex-col h-full">
 
                   {/* Icon with gradient ring */}
                   <div className="mb-6">

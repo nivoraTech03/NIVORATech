@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { checkRateLimit, sanitizeSingleLine, getClientIp } from '@/lib/rateLimit';
 
 // Helper to escape HTML to prevent XSS in the email body
 function escapeHtml(unsafe: string) {
@@ -14,7 +15,32 @@ function escapeHtml(unsafe: string) {
 
 export async function POST(req: Request) {
   try {
+    const ip = getClientIp(req);
+
+    // 1. Sliding Window Rate Limiting (Defense against DoS and SMTP flooding)
+    const rateLimit = checkRateLimit(`contact:${ip}`, { limit: 5, windowMs: 10 * 60 * 1000 });
+    if (!rateLimit.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please wait a few minutes before submitting again.' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(Math.ceil(rateLimit.resetInMs / 1000)),
+          },
+        }
+      );
+    }
+
     const body = await req.json();
+
+    // 2. Honeypot check for automated bot scrapers
+    if (body.website_hp || body.hp_field || body.company_url_hp) {
+      return NextResponse.json(
+        { success: true, message: 'Message sent successfully!' },
+        { status: 200 }
+      );
+    }
+
     const { name, phone, email, type, query, message } = body;
 
     // Server-side validation with constraints
@@ -36,9 +62,16 @@ export async function POST(req: Request) {
     if (message && (typeof message !== 'string' || message.length > 5000)) {
       return NextResponse.json({ error: 'Message is too long (max 5000 chars)' }, { status: 400 });
     }
-    // Extract metadata (IP and Device)
-    const ip = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'Unknown IP';
-    const userAgent = req.headers.get('user-agent') || 'Unknown Device';
+
+    // 3. CRLF / Header Injection prevention
+    const cleanName = sanitizeSingleLine(name);
+    const cleanPhone = sanitizeSingleLine(phone);
+    const cleanEmail = email ? sanitizeSingleLine(email) : '';
+    const cleanType = sanitizeSingleLine(type || 'General Inquiry');
+    const cleanQuery = sanitizeSingleLine(query);
+
+    // Extract device metadata
+    const userAgent = sanitizeSingleLine(req.headers.get('user-agent') || 'Unknown Device');
     const isMobile = /mobile/i.test(userAgent);
     const deviceType = isMobile ? 'Mobile' : 'Desktop/Tablet';
 
@@ -56,18 +89,18 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
-      secure: true, // true for 465, false for other ports
+      secure: true,
       auth: {
         user: SMTP_EMAIL,
         pass: SMTP_PASSWORD,
       },
     });
 
-    const safeName = escapeHtml(name);
-    const safePhone = escapeHtml(phone);
-    const safeEmail = escapeHtml(email || 'Not provided');
-    const safeType = escapeHtml(type || 'Not specified');
-    const safeQuery = escapeHtml(query);
+    const safeName = escapeHtml(cleanName);
+    const safePhone = escapeHtml(cleanPhone);
+    const safeEmail = escapeHtml(cleanEmail || 'Not provided');
+    const safeType = escapeHtml(cleanType);
+    const safeQuery = escapeHtml(cleanQuery);
     const safeMessage = escapeHtml(message || 'No additional message.');
 
 
@@ -188,18 +221,18 @@ export async function POST(req: Request) {
 
     // Plain text alternative for admin email (essential to pass spam filters)
     const adminTextTemplate = `NEW LEAD RECEIVED - Nexnify Website\n\n` +
-      `Name: ${name}\n` +
-      `Email: ${email || 'Not provided'}\n` +
-      `Phone: ${phone}\n` +
-      `Project Category: ${type || 'Not specified'}\n` +
-      `Enquiry Subject: ${query}\n` +
+      `Name: ${cleanName}\n` +
+      `Email: ${cleanEmail || 'Not provided'}\n` +
+      `Phone: ${cleanPhone}\n` +
+      `Project Category: ${cleanType}\n` +
+      `Enquiry Subject: ${cleanQuery}\n` +
       `Device Type: ${deviceType}\n` +
       `User IP: ${ip}\n\n` +
       `Message / Requirements:\n${message || 'No additional message.'}`;
 
     // Plain text alternative for customer auto-reply
-    const customerTextTemplate = `Hi ${name.split(' ')[0]},\n\n` +
-      `Thank you for reaching out to Nexnify! We have received your inquiry regarding "${type || 'your project'}" and our engineering team is reviewing your requirements.\n\n` +
+    const customerTextTemplate = `Hi ${cleanName.split(' ')[0]},\n\n` +
+      `Thank you for reaching out to Nexnify! We have received your inquiry regarding "${cleanType}" and our engineering team is reviewing your requirements.\n\n` +
       `We aim to respond to all inquiries within 24 hours. In the meantime, feel free to reply directly to this email or connect with us on WhatsApp at +91 95754 50177.\n\n` +
       `Best regards,\n` +
       `The Nexnify Team\n` +
@@ -209,17 +242,17 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"Nexnify Website" <${SMTP_EMAIL}>`,
       to: SMTP_EMAIL,
-      replyTo: safeEmail !== 'Not provided' ? safeEmail : undefined,
-      subject: `New Lead: ${safeType} from ${safeName}`,
+      replyTo: cleanEmail && cleanEmail !== 'Not provided' ? cleanEmail : undefined,
+      subject: `New Lead: ${cleanType} from ${cleanName}`,
       text: adminTextTemplate,
       html: adminHtmlTemplate,
     });
 
     // 2. Send Auto-Reply to the customer (if they provided an email)
-    if (email) {
+    if (cleanEmail) {
       await transporter.sendMail({
         from: `"Nexnify" <${SMTP_EMAIL}>`,
-        to: safeEmail,
+        to: cleanEmail,
         replyTo: SMTP_EMAIL,
         subject: `We've received your inquiry, ${safeName.split(' ')[0]} - Nexnify`,
         text: customerTextTemplate,

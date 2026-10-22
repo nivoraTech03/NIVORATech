@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import siteContent from "@/lib/content";
 import { locations } from "@/data/locations";
 import { servicesData } from "@/data/services";
+import { industries, cities } from "@/data/industries";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://nexnify.in";
@@ -25,10 +26,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services": { priority: 0.95, changeFrequency: "weekly", lastModified: new Date("2026-10-22") },
     "/work": { priority: 0.9, changeFrequency: "weekly", lastModified: new Date("2026-10-22") },
     "/pricing": { priority: 0.9, changeFrequency: "weekly", lastModified: new Date("2026-10-22") },
+    "/free-website-audit": { priority: 0.95, changeFrequency: "weekly", lastModified: new Date("2026-10-22") },
+    "/annual-care-plan": { priority: 0.9, changeFrequency: "weekly", lastModified: new Date("2026-10-22") },
+    "/accessibility": { priority: 0.8, changeFrequency: "monthly", lastModified: new Date("2026-10-22") },
     "/contact": { priority: 0.95, changeFrequency: "weekly", lastModified: new Date("2026-10-22") },
     "/about": { priority: 0.8, changeFrequency: "monthly", lastModified: new Date("2026-10-22") },
     "/locations": { priority: 0.85, changeFrequency: "monthly", lastModified: new Date("2026-10-22") },
     "/blog": { priority: 0.85, changeFrequency: "weekly", lastModified: new Date("2026-10-22") },
+    "/blog/accessibility-widget-vs-real-fix": {
+      priority: 0.9,
+      changeFrequency: "monthly",
+      lastModified: new Date("2026-10-22"),
+    },
+    "/blog/website-development-cost-india": {
+      priority: 0.9,
+      changeFrequency: "monthly",
+      lastModified: new Date("2026-10-22"),
+    },
     "/blog/cost-of-building-a-website-in-india-2026": {
       priority: 0.85,
       changeFrequency: "monthly",
@@ -79,5 +93,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...projectRoutes, ...locationRoutes];
+  const industryRoutes: MetadataRoute.Sitemap = [];
+  for (const industry of Object.keys(industries)) {
+    for (const city of Object.keys(cities)) {
+      industryRoutes.push({
+        url: `${baseUrl}/industries/${industry}/${city}`,
+        lastModified: new Date("2026-10-22"),
+        changeFrequency: "weekly" as const,
+        priority: 0.85,
+      });
+    }
+  }
+
+  return [...staticRoutes, ...serviceRoutes, ...projectRoutes, ...locationRoutes, ...industryRoutes];
 }

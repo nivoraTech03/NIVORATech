@@ -11,6 +11,7 @@ export type IconName =
   | "moon"
   | "chevronDown"
   | "arrowRight"
+  | "arrowLeft"
   | "arrowUpRight"
   | "externalLink"
   | "mail"
@@ -21,7 +22,17 @@ export type IconName =
   | "instagram"
   | "whatsapp"
   | "check"
-  | "plus";
+  | "plus"
+  | "shield"
+  | "zap"
+  | "trending"
+  | "message"
+  | "calendar"
+  | "user"
+  | "map"
+  | "download"
+  | "shoppingBag"
+  | "creditCard";
 
 interface ReactPathSet {
   viewBox: string;
@@ -40,6 +51,7 @@ const paths: Record<IconName, ReactPathSet> = {
   moon: { viewBox: "0 0 24 24", d: "M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" },
   chevronDown: { viewBox: "0 0 24 24", d: "m6 9 6 6 6-6" },
   arrowRight: { viewBox: "0 0 24 24", d: "M5 12h14M13 6l6 6-6 6" },
+  arrowLeft: { viewBox: "0 0 24 24", d: "M19 12H5M11 18l-6-6 6-6" },
   arrowUpRight: { viewBox: "0 0 24 24", d: "M7 17 17 7M7 7h10v10" },
   externalLink: { viewBox: "0 0 24 24", d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" },
   mail: { viewBox: "0 0 24 24", d: "M3 6h18v12H3V6Zm0 0 9 7 9-7" },
@@ -66,6 +78,16 @@ const paths: Record<IconName, ReactPathSet> = {
   },
   check: { viewBox: "0 0 24 24", d: "m5 12 5 5 9-10" },
   plus: { viewBox: "0 0 24 24", d: "M12 5v14M5 12h14" },
+  shield: { viewBox: "0 0 24 24", d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" },
+  zap: { viewBox: "0 0 24 24", d: "M13 2 3 14h9l-1 8 10-12h-9l1-8z" },
+  trending: { viewBox: "0 0 24 24", d: "m22 7-8.5 8.5-5-5L2 17M22 7h-6M22 7v6" },
+  message: { viewBox: "0 0 24 24", d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" },
+  calendar: { viewBox: "0 0 24 24", d: "M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" },
+  user: { viewBox: "0 0 24 24", d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" },
+  map: { viewBox: "0 0 24 24", d: "M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4zM8 2v16M16 6v16" },
+  download: { viewBox: "0 0 24 24", d: "M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" },
+  shoppingBag: { viewBox: "0 0 24 24", d: "M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0" },
+  creditCard: { viewBox: "0 0 24 24", d: "M1 4h22v16H1zM1 10h22" },
 };
 
 interface IconProps extends SVGProps<SVGSVGElement> {
