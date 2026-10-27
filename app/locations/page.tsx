@@ -6,7 +6,7 @@ import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 
 export const metadata: Metadata = {
-  title: 'Website Development Services Across India | Nexnify',
+  title: 'Website Development Services Across India',
   description: 'Nexnify provides professional website development, web design, and digital solutions to businesses across India — including Delhi NCR, Gurugram, Noida, and other genuine markets.',
   alternates: {
     canonical: 'https://nexnify.in/locations',

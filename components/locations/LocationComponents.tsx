@@ -313,28 +313,69 @@ export function LocationIntro({ introParagraphs }: { introParagraphs: string[] }
 
 export function LocationServices({ city }: { city: string }) {
   const services = [
-    { title: "New Website Development", desc: "Custom designed, fast-loading business websites.", icon: "layout" as const },
-    { title: "Website Redesign", desc: "Modernize your existing outdated website.", icon: "sparkles" as const },
-    { title: "Landing Page Development", desc: "High-converting single pages for ads.", icon: "code" as const },
-    { title: "Website Maintenance", desc: "Keep your site fast, updated, and secure.", icon: "check" as const },
+    {
+      title: "Business Website Development",
+      desc: "Custom designed, fast-loading Next.js websites engineered for local lead conversion.",
+      icon: "layout" as const,
+      href: "/services/business-websites",
+      cta: "Explore Business Websites",
+    },
+    {
+      title: "WordPress Development",
+      desc: "Clean Elementor Pro and Gutenberg builds with fast loading and total editorial control.",
+      icon: "sparkles" as const,
+      href: "/services/wordpress-development",
+      cta: "Explore WordPress Builds",
+    },
+    {
+      title: "Website Redesign & Speed",
+      desc: "Modernize slow, outdated websites without losing current Google search rankings.",
+      icon: "check" as const,
+      href: "/services/website-maintenance-redesign",
+      cta: "Explore Redesign Services",
+    },
+    {
+      title: "Mobile App Development",
+      desc: "Cross-platform iOS and Android mobile apps engineered with React Native and Expo.",
+      icon: "sparkles" as const,
+      href: "/services/mobile-apps",
+      cta: "Explore Mobile Apps",
+    },
+    {
+      title: "Custom Web Applications",
+      desc: "Bespoke database portals, flight/hotel booking engines, and customer management systems.",
+      icon: "code" as const,
+      href: "/services/web-applications",
+      cta: "Explore Web Apps",
+    },
+    {
+      title: "Landing Page Development",
+      desc: "High-converting single pages with one-tap WhatsApp routing for Google & Meta Ads.",
+      icon: "globe" as const,
+      href: "/services/landing-pages",
+      cta: "Explore Landing Pages",
+    },
   ];
   return (
     <section className="py-24 border-y border-white/[0.06] bg-[#060B18] text-white">
       <Container>
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Website Development Services in {city}</h2>
-          <p className="text-slate-400">Everything you need to establish and grow your business online.</p>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Website &amp; App Development Services in {city}</h2>
+          <p className="text-slate-400">Tailored digital engineering solutions to help {city} businesses generate leads and scale online.</p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {services.map((s, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-indigo-500/50 transition-all">
-              <div className="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4">
-                <Icon name={s.icon} size={20} />
+            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-indigo-500/50 hover:bg-white/[0.07] transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4">
+                  <Icon name={s.icon} size={20} />
+                </div>
+                <h3 className="font-bold text-white mb-2 text-lg">{s.title}</h3>
+                <p className="text-sm text-slate-300 leading-relaxed mb-5">{s.desc}</p>
               </div>
-              <h3 className="font-bold text-white mb-2">{s.title}</h3>
-              <p className="text-sm text-slate-400 mb-4">{s.desc}</p>
-              <Link href="/services" className="text-sm text-indigo-400 font-semibold flex items-center gap-1 hover:text-indigo-300">
-                Learn more <Icon name="arrowRight" size={14} />
+              <Link href={s.href} className="text-xs sm:text-sm text-indigo-400 font-semibold inline-flex items-center gap-1.5 hover:text-indigo-300 transition-colors">
+                <span>{s.cta}</span>
+                <Icon name="arrowRight" size={13} />
               </Link>
             </div>
           ))}

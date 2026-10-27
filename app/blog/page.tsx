@@ -6,7 +6,7 @@ import { Icon } from "@/components/ui/Icon";
 import { ProjectCtaBanner } from "@/components/layout/ProjectCtaBanner";
 
 export const metadata: Metadata = {
-  title: "Web Development Guides & Digital Insights | Nexnify",
+  title: "Web Development Guides & Digital Insights",
   description:
     "Explore actionable guides, realistic website development costs in India, technology comparisons, and practical digital growth advice from Nexnify.",
   alternates: {

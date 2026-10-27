@@ -6,7 +6,7 @@ import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Website Development Cost in India: 2026 Transparent Pricing Guide | Nexnify",
+  title: "Website Development Cost in India: 2026 Transparent Pricing Guide",
   description:
     "Honest breakdown of website development cost in India for 2026. Compare Static websites, Dynamic Next.js web applications, and E-commerce stores with transparent pricing tiers.",
   alternates: {

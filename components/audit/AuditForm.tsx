@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Icon } from '@/components/ui/Icon';
 import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
+import { trackAuditRequest } from '@/lib/gtag';
 
 export function AuditForm() {
   const [formData, setFormData] = useState({
@@ -35,6 +36,7 @@ export function AuditForm() {
       }
 
       setStatus('success');
+      trackAuditRequest(formData.industry, formData.concerns);
     } catch (err: unknown) {
       setStatus('error');
       setErrorMessage(err instanceof Error ? err.message : 'Something went wrong. Please try again or WhatsApp us.');

@@ -73,3 +73,28 @@ export const trackLeadFormSubmit = (
     project_type: category,
   });
 };
+
+/**
+ * Standardized Phone Call Click Event
+ * Strictly non-personally identifiable (records button location).
+ */
+export const trackPhoneClick = (location: string) => {
+  trackEvent("phone_click", {
+    cta_location: location,
+  });
+};
+
+/**
+ * Standardized Website Audit Request Event
+ * Fired only upon successful HTTP 200 from /api/audit (strictly non-personally identifiable).
+ */
+export const trackAuditRequest = (industry?: string, concerns?: string) => {
+  trackEvent("audit_request_submit", {
+    industry: industry || "general",
+    concerns: concerns || "general",
+  });
+  trackEvent("generate_lead", {
+    form_id: "free_website_audit",
+    project_type: "technical_audit",
+  });
+};

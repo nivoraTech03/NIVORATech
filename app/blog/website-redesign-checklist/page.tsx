@@ -7,16 +7,16 @@ import { Button } from "@/components/ui/Button";
 import { WhatsAppCta } from "@/components/ui/WhatsAppCta";
 
 export const metadata: Metadata = {
-  title: "Website Redesign Checklist: 10 Critical Steps (2026 Guide)",
+  title: "Website & WordPress Redesign Checklist: 10 Critical Steps (2026)",
   description:
-    "A step-by-step website redesign checklist to revamp your site without losing SEO rankings, organic traffic, or existing client leads in 2026.",
+    "A step-by-step website and WordPress redesign checklist to revamp your site without losing Google SEO rankings, organic traffic, or existing client leads in 2026.",
   alternates: {
     canonical: "https://nexnify.in/blog/website-redesign-checklist",
   },
   openGraph: {
-    title: "Website Redesign Checklist: 10 Critical Steps for 2026 | Nexnify",
+    title: "Website & WordPress Redesign Checklist: 10 Critical Steps for 2026 | Nexnify",
     description:
-      "Avoid post-launch traffic drops. Follow this comprehensive pre- and post-launch checklist for redesigning your business website safely.",
+      "Avoid post-launch traffic drops. Follow this comprehensive pre- and post-launch checklist for redesigning your business website or WordPress CMS safely.",
     url: "https://nexnify.in/blog/website-redesign-checklist",
     siteName: "Nexnify",
     locale: "en_IN",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Redesign Checklist: 10 Critical Steps (2026 Guide)",
+    title: "Website & WordPress Redesign Checklist: 10 Critical Steps (2026)",
     description:
-      "A complete guide to redesigning your website without dropping Google rankings or losing lead conversions.",
+      "A complete guide to redesigning your website or WordPress site without dropping Google rankings or losing lead conversions.",
   },
 };
 
@@ -282,6 +282,95 @@ export default function WebsiteRedesignChecklistPage() {
                   <Icon name="arrowRight" size={12} />
                 </Link>
               </div>
+            </div>
+          </section>
+
+          {/* WordPress Specific Redesign Section */}
+          <section className="max-w-4xl mx-auto mb-16 rounded-3xl border border-indigo-500/30 bg-slate-900/60 p-6 sm:p-10 backdrop-blur-md">
+            <div className="max-w-3xl mb-8">
+              <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-2">
+                CMS SPECIFIC PROTOCOL
+              </span>
+              <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-white mb-3">
+                Dedicated WordPress Website Redesign Checklist
+              </h2>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                WordPress powers millions of business websites, but redesigning a WordPress installation carries unique pitfalls with database bloat, plugin conflicts, and altered permalinks. Before switching themes or rewriting templates, verify these WordPress-specific steps:
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-5 mb-8">
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800">
+                <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                  <Icon name="check" size={15} className="text-emerald-400" />
+                  <span>1. Lock Existing Permalink Structure</span>
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Never change your WordPress permalink structure (e.g. from <code>/%postname%/</code> to <code>/%year%/%month%/%postname%/</code>) without 301 rewrite rules. Unintentional permalink changes instantly drop Google rankings.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800">
+                <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                  <Icon name="check" size={15} className="text-emerald-400" />
+                  <span>2. Build in Staging First</span>
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Never redesign on your live WordPress site. Clone your site to a password-protected staging server with <code>noindex</code> enabled to test layouts, plugins, and mobile responsive behavior safely.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800">
+                <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                  <Icon name="check" size={15} className="text-emerald-400" />
+                  <span>3. Audit &amp; Eliminate Plugin Bloat</span>
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Most slow WordPress sites have 25+ conflicting plugins. A redesign is the perfect opportunity to replace multiple plugins with clean child-theme code or lightweight block patterns.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800">
+                <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                  <Icon name="check" size={15} className="text-emerald-400" />
+                  <span>4. Clean Database &amp; wp_options</span>
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Purge expired transients, post revisions, and orphaned metadata left by deleted plugins. A clean MySQL database accelerates server response time (TTFB) significantly.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800">
+                <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                  <Icon name="check" size={15} className="text-emerald-400" />
+                  <span>5. Test Contact Forms &amp; SMTP</span>
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Ensure Contact Form 7, WP Mail SMTP, or WooCommerce checkout triggers correct email and WhatsApp alerts upon launch. Test real submissions from an incognito mobile session.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-slate-950/70 border border-slate-800">
+                <h3 className="text-sm font-bold text-white mb-2 flex items-center gap-2">
+                  <Icon name="check" size={15} className="text-emerald-400" />
+                  <span>6. Configure LiteSpeed / WP Rocket Caching</span>
+                </h3>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Implement server-level caching, automatic WebP image compression, and CSS minification to ensure your redesigned WordPress site loads in under 1.5 seconds.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20">
+              <p className="text-xs sm:text-sm text-indigo-200 font-medium">
+                Looking for professional WordPress engineering with sub-1.5s mobile speed and real case study results?
+              </p>
+              <Link
+                href="/services/wordpress-development"
+                className="shrink-0 text-xs sm:text-sm font-bold text-indigo-300 hover:text-white underline underline-offset-4 transition-colors"
+              >
+                View WordPress Development Services &rarr;
+              </Link>
             </div>
           </section>
 

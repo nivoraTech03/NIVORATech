@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Nexnify | Website & Web Application Consultation",
+  title: "Contact Our Technical Team & Request a Quote",
   description:
     "Get in touch with Nexnify to discuss your website development project. We build custom Next.js, React, WordPress, and custom web applications across Delhi NCR and India.",
   keywords: [

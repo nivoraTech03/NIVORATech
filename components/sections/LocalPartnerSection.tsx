@@ -1,9 +1,12 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
 import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
+import { trackPhoneClick } from '@/lib/gtag';
 
 export function LocalPartnerSection() {
   const servedLocations = [
@@ -81,7 +84,13 @@ export function LocalPartnerSection() {
                 <Icon name="whatsapp" size={18} className="mr-2" />
                 Chat on WhatsApp
               </WhatsAppCta>
-              <Button href="tel:+919575450177" variant="outline" size="lg" className="border-slate-700 text-white hover:bg-slate-800 font-semibold">
+              <Button
+                href="tel:+919575450177"
+                variant="outline"
+                size="lg"
+                onClick={() => trackPhoneClick("local_partner_section")}
+                className="border-slate-700 text-white hover:bg-slate-800 font-semibold"
+              >
                 <Icon name="phone" size={18} className="mr-2" />
                 +91 95754 50177
               </Button>

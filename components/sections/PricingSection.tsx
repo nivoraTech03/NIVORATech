@@ -351,6 +351,100 @@ export function PricingSection() {
           </div>
         </div>
 
+        {/* Website Development Cost in India Breakdown Guide */}
+        <div className="mb-16 rounded-3xl border border-slate-800 bg-slate-900/50 p-6 sm:p-10 backdrop-blur-md">
+          <div className="max-w-3xl mb-8">
+            <span className="text-xs font-bold uppercase tracking-wider text-indigo-400 block mb-2">
+              PRICING TRANSPARENCY &amp; SCOPING FACTORS
+            </span>
+            <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-white mb-3">
+              What Influences Website Development Cost in India?
+            </h3>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              When evaluating website development pricing in India, quotes can vary from ₹4,000 to ₹2,00,000+ depending on architectural decisions, custom logic, and code craftsmanship. Here is an honest breakdown of what drives actual project investment:
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+            <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
+              <div className="flex items-center gap-2 mb-2 text-indigo-400 font-bold text-sm">
+                <Icon name="layout" size={16} />
+                <span>1. Project Scope &amp; Page Count</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                A focused 1-page landing page requires less routing and layout structure than an 8–15 page corporate website with specialized service landing pages and legal documentation.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
+              <div className="flex items-center gap-2 mb-2 text-indigo-400 font-bold text-sm">
+                <Icon name="sparkles" size={16} />
+                <span>2. Design Complexity &amp; Branding</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Tailored UI/UX typography, bespoke micro-interactions, dark-mode themes, and custom iconography require dedicated design time compared to pre-made theme installations.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
+              <div className="flex items-center gap-2 mb-2 text-indigo-400 font-bold text-sm">
+                <Icon name="code" size={16} />
+                <span>3. Technology Stack &amp; CMS</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Modern Next.js and React web apps deliver sub-second performance and higher security but require fullstack engineering, whereas clean WordPress/Elementor builds provide visual drag-and-drop CMS control.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
+              <div className="flex items-center gap-2 mb-2 text-indigo-400 font-bold text-sm">
+                <Icon name="zap" size={16} />
+                <span>4. Dynamic Functionality &amp; APIs</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Custom booking engines, database search filters, user authentication portals, and real-time WhatsApp or CRM integrations require backend engineering and rigorous security audits.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
+              <div className="flex items-center gap-2 mb-2 text-indigo-400 font-bold text-sm">
+                <Icon name="globe" size={16} />
+                <span>5. E-Commerce &amp; Payment Gateway</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Product catalog management, 1-page checkout flows, automated invoice routing, and Indian payment gateways (Razorpay, Cashfree, UPI) involve deeper testing than standard informational sites.
+              </p>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-slate-950/60 border border-slate-800">
+              <div className="flex items-center gap-2 mb-2 text-indigo-400 font-bold text-sm">
+                <Icon name="check" size={16} />
+                <span>6. Maintenance, Backups &amp; SEO</span>
+              </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Ongoing Core Web Vitals monitoring, scheduled database backups, security patches, and on-page schema updates protect your website from downtime, hacks, and organic ranking decay.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/25">
+            <div className="flex items-center gap-3">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-indigo-500 text-white">
+                <Icon name="sparkles" size={16} />
+              </span>
+              <p className="text-xs sm:text-sm text-indigo-100 font-medium">
+                Want a complete, deep-dive comparison between Freelance vs Agency costs and hidden CMS fees?
+              </p>
+            </div>
+            <Link
+              href="/blog/website-development-cost-india"
+              className="shrink-0 text-xs sm:text-sm font-bold text-indigo-300 hover:text-white underline underline-offset-4 transition-colors"
+            >
+              Read Full 2026 Cost Guide &rarr;
+            </Link>
+          </div>
+        </div>
+
         {/* Scoping Transparency Notes */}
         <div className="grid lg:grid-cols-2 gap-6 mb-16">
           <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6">

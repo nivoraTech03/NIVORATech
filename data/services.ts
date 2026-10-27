@@ -31,7 +31,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Business Website Development",
     heroBadge: "ENTERPRISE & SME WEB SOLUTIONS",
     h1: "Custom Business Website Development in Delhi NCR & India",
-    metaTitle: "Business Website Development Company in Delhi NCR | Nexnify",
+    metaTitle: "Custom Business Website Development in Delhi NCR & India",
     metaDescription: "Build a modern, conversion-focused business website tailored for your brand. Nexnify crafts fast, responsive, and SEO-ready business websites across Delhi NCR and India.",
     shortDescription: "Tailored responsive websites for businesses, consultancies, and brands looking to establish credibility and capture high-intent leads.",
     overview: "In today's digital landscape, your website is often the very first touchpoint a prospective client or investor experiences. A template website that loads slowly and looks generic undermines trust. At Nexnify, we engineer custom business websites from scratch, combining modern visual hierarchy, brand-aligned aesthetics, clean semantic code, and seamless WhatsApp lead funnels to convert visitors into active enquiries.",
@@ -99,7 +99,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Next.js & React Development",
     heroBadge: "HIGH-PERFORMANCE MODERN WEB APPS",
     h1: "Next.js & React.js Development Services in Delhi NCR",
-    metaTitle: "Next.js & React Development Services in Delhi NCR | Nexnify",
+    metaTitle: "Next.js & React.js Development Services in Delhi NCR & India",
     metaDescription: "Accelerate your web platform with custom Next.js and React development. Nexnify engineers blazing-fast, SEO-optimized App Router web applications for ambitious brands.",
     shortDescription: "Blazing-fast, SEO-optimized web applications and portals engineered with Next.js App Router, React 19, and TypeScript.",
     overview: "Modern businesses cannot afford slow, clunky web experiences that drop users and hurt search rankings. Nexnify specializes in Next.js and React web engineering. By leveraging server-side rendering (SSR), static site generation (SSG), and incremental static regeneration (ISR), we deliver web applications that load in milliseconds, rank exceptionally well on search engines, and scale effortlessly as your traffic multiplies.",
@@ -163,61 +163,70 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "WordPress Website Development",
     heroBadge: "CONTENT-MANAGED WEB PLATFORMS",
     h1: "Professional WordPress Website Development in Delhi NCR",
-    metaTitle: "WordPress Website Development Company in Delhi NCR | Nexnify",
-    metaDescription: "Professional WordPress website design and development by Nexnify. Clean, custom WordPress and Elementor platforms built for speed, security, and effortless content management.",
+    metaTitle: "WordPress Website Development Services in India & Delhi NCR",
+    metaDescription: "Custom WordPress website development services in Delhi NCR & India. Fast Elementor builds, clean theme customizations, plugin setup & speed optimization.",
     shortDescription: "Clean, reliable WordPress builds and customizations designed for teams who need full content control without bloated templates.",
-    overview: "WordPress powers over 40% of the web, but poorly configured WordPress sites with dozens of conflicting plugins often become slow, vulnerable, and frustrating to update. At Nexnify, we build clean, speed-optimized WordPress websites. Whether you need an institutional educational portal, a blog, or a corporate site, we deliver an intuitive editing experience backed by rock-solid security and sub-second page loads.",
+    overview: "WordPress powers over 40% of the web, but poorly configured WordPress sites with dozens of conflicting plugins often become slow, vulnerable, and frustrating to update. At Nexnify, we build clean, speed-optimized WordPress websites. Whether you need an institutional educational portal, a blog, or a corporate site, we deliver an intuitive editing experience backed by rock-solid security, sub-1.5s mobile page loads, and real-world case study results like our HIT IAS Academy portal.",
     targetAudience: [
       "Institutes, academies, and coaching centers publishing regular notices and study material",
       "Marketing teams needing non-technical autonomy to create landing pages and publish blog posts",
       "Small-to-medium businesses wanting an easy-to-manage CMS with zero monthly SaaS fees",
-      "Brands looking to revamp a slow, outdated WordPress installation"
+      "Brands looking to revamp a slow, outdated WordPress installation safely"
     ],
     deliverables: [
-      "Custom WordPress theme architecture without unnecessary bloat",
-      "Modular Elementor Pro or Gutenberg block layouts for easy editing",
-      "Hardened WordPress security against brute-force attacks and malware",
-      "Anti-spam contact forms with instant email notifications",
-      "Automated database caching and image compression for rapid loading",
+      "Custom WordPress theme customization & responsive mobile-first design",
+      "Modular Elementor Pro or Gutenberg block layouts for easy visual editing",
+      "Plugin configuration & custom shortcode/hook scripting (Contact Form 7, SMTP)",
+      "WordPress website redesign with strict 301 redirects and SEO permalink preservation",
+      "Hardened WordPress security against brute-force attacks and vulnerability scanning",
+      "LiteSpeed / WP Rocket caching and image compression for sub-1.5 second loading",
       "Client walkthrough video training on managing pages and articles"
     ],
     process: [
       {
         step: "01",
-        title: "Content Strategy & Structure",
-        description: "We plan custom post types, categories, navigation menus, and media requirements to keep the WordPress dashboard clean and intuitive."
+        title: "Content Strategy & Information Architecture",
+        description: "We map custom post types, categories, navigation menus, and media requirements to keep the WordPress dashboard clean and intuitive."
       },
       {
         step: "02",
-        title: "Custom Theme & Layout Design",
-        description: "We configure responsive visual templates matching your brand guidelines, ensuring perfect display across phones, tablets, and desktops."
+        title: "Responsive Theme & Layout Customization",
+        description: "We build lightweight, brand-aligned visual templates matching your typography and colors, ensuring flawless rendering on all devices."
       },
       {
         step: "03",
-        title: "Performance & Security Tuning",
-        description: "We install server-level caching, disable XML-RPC, secure wp-admin, and compress all media assets to guarantee sub-1.5 second loading."
+        title: "Plugin Integration & Security Hardening",
+        description: "We configure essential plugins with zero bloat, custom login URLs, rate limiting, anti-spam form routing, and automated off-site backups."
       },
       {
         step: "04",
-        title: "Handoff & Staff Training",
-        description: "We train your team on publishing content, uploading media, and editing text so you have total autonomy moving forward."
+        title: "Speed Optimization, Handoff & Training",
+        description: "We fine-tune caching, verify Core Web Vitals, and provide step-by-step video training so your editorial team has total publishing autonomy."
       }
     ],
-    technologies: ["WordPress CMS", "Elementor Pro", "PHP", "MySQL", "Contact Form 7", "LiteSpeed / WP Rocket"],
+    technologies: ["WordPress CMS", "Elementor Pro", "PHP", "MySQL", "Contact Form 7", "LiteSpeed / WP Rocket", "Yoast / RankMath SEO"],
     relatedProjectSlug: "hitias-academy",
-    relatedProjectName: "HIT IAS Academy — UPSC & State PCS Platform",
+    relatedProjectName: "HIT IAS Academy — UPSC & State PCS Platform (<1.2s Load Time)",
     faqs: [
       {
-        question: "Will our WordPress website be slow?",
-        answer: "No. Unlike average WordPress sites that overload 30+ plugins, we practice strict performance hygiene, lightweight theme architectures, and optimized caching to keep load times under 1.5 seconds."
+        question: "How much does a custom WordPress website cost in India?",
+        answer: "WordPress website development costs depend on page count, theme complexity, and custom forms. Clean informational or institutional WordPress websites typically start from ₹7,500 to ₹35,000. We provide fixed milestone quotes with zero hidden plugin fees."
+      },
+      {
+        question: "Will our WordPress website be slow or bloated?",
+        answer: "No. Unlike average agencies that stack 30+ marketplace plugins, we follow strict performance hygiene: clean child themes, lightweight builders, server-level caching, and modern image compression to guarantee sub-1.5 second load times."
+      },
+      {
+        question: "Do you build custom WordPress plugins or customize existing ones?",
+        answer: "We specialize in custom WordPress theme engineering, plugin configuration, and custom PHP hooks/filters. If your project requires a custom WordPress plugin integration or workflow (like CRM webhooks or WhatsApp routing), we build it directly into your setup."
+      },
+      {
+        question: "Can you redesign our existing WordPress website without losing Google rankings?",
+        answer: "Yes. We preserve your existing URL structures, permalinks, and meta descriptions, and set up 301 redirects for any altered paths so your search rankings and backlink authority remain protected."
       },
       {
         question: "Can our non-technical team update text and images easily?",
-        answer: "Yes, that is the primary advantage of our WordPress builds. We configure a clean, visual drag-and-drop editor and provide step-by-step guidance so anyone on your team can edit content."
-      },
-      {
-        question: "How do you protect WordPress against hacking and spam?",
-        answer: "We implement multi-layered security: custom login URLs, rate limiting, disabled directory browsing, reCAPTCHA spam filtering, and automated database backups."
+        answer: "Yes, that is the primary advantage of our WordPress builds. We configure a clean, visual drag-and-drop editor and provide step-by-step guidance so anyone on your team can edit content with confidence."
       }
     ]
   },
@@ -227,7 +236,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Custom Web Application Development",
     heroBadge: "BESPOKE WEB PLATFORMS & PORTALS",
     h1: "Custom Web Application Development Services in Delhi NCR",
-    metaTitle: "Custom Web Application Development Company in Delhi NCR | Nexnify",
+    metaTitle: "Custom Web Application Development Services in Delhi NCR",
     metaDescription: "Engineer scalable, secure web applications, customer portals, and booking engines. Nexnify builds custom fullstack web applications with PHP, Node.js, and React.",
     shortDescription: "Bespoke web applications, flight/hotel booking engines, client dashboards, and custom business management platforms.",
     overview: "Off-the-shelf software rarely fits unique business workflows. When you need custom booking engines, multi-step enquiry funnels, customer management portals, or complex database filtering, Nexnify engineers bespoke web applications. We combine robust backend engineering (PHP/MySQL or Node.js) with responsive, interactive frontends to automate operations and handle thousands of simultaneous user transactions.",
@@ -291,7 +300,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Landing Page Design & Development",
     heroBadge: "HIGH-CONVERTING AD CAMPAIGN FUNNELS",
     h1: "High-Converting Landing Page Design & Development in Delhi NCR",
-    metaTitle: "Landing Page Design & Development Company in Delhi NCR | Nexnify",
+    metaTitle: "High-Converting Landing Page Design & Development in Delhi NCR",
     metaDescription: "Maximize your Google Ads and Meta campaign ROI. Nexnify designs and builds high-converting, lightning-fast landing pages engineered to turn traffic into qualified leads.",
     shortDescription: "High-converting, single-page experiences designed with clear visual hierarchy, compelling value propositions, and friction-free lead funnels.",
     overview: "Running paid traffic from Google Ads, Meta, or LinkedIn to a generic homepage is one of the most common causes of wasted marketing budgets. Nexnify designs dedicated landing pages laser-focused on a single objective: converting visitors into phone calls, WhatsApp messages, or form submissions. Every element—from headline hierarchy to social proof placement and form simplicity—is engineered for maximum conversion velocity.",
@@ -355,7 +364,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Website Redesign & Maintenance",
     heroBadge: "PERFORMANCE, SPEED & SECURITY",
     h1: "Website Redesign & Maintenance Services in Delhi NCR",
-    metaTitle: "Website Redesign & Maintenance Services in Delhi NCR | Nexnify",
+    metaTitle: "Website Redesign & Maintenance Services in Delhi NCR & India",
     metaDescription: "Modernize your outdated website or protect your existing digital presence. Nexnify provides comprehensive website redesigns, Core Web Vitals optimization, and maintenance.",
     shortDescription: "Transform outdated websites into fast, modern platforms, or protect your business with regular maintenance, security, and content updates.",
     overview: "Web standards evolve rapidly. If your website was built several years ago, it is likely losing traffic to competitors due to poor mobile responsiveness, sluggish load times, outdated design, or broken links. Nexnify provides strategic website redesigns that preserve your existing SEO rankings while transforming your visual authority. We also provide dependable ongoing maintenance to keep your digital storefront updated, secure, and running smoothly.",
@@ -419,7 +428,7 @@ export const servicesData: Record<string, ServiceDetail> = {
     title: "Mobile App Development",
     heroBadge: "CROSS-PLATFORM IOS & ANDROID APPS",
     h1: "Mobile App Development Services in Delhi NCR & India",
-    metaTitle: "Mobile App Development Company in Delhi NCR | Nexnify",
+    metaTitle: "Mobile App Development Services (React Native & Expo)",
     metaDescription: "Build native-feeling iOS and Android mobile apps with React Native & Expo. Nexnify engineers fast, secure, and scalable mobile apps for Indian startups and businesses.",
     shortDescription: "High-performance cross-platform mobile apps for iOS and Android built natively with React Native, Expo, and real-time cloud backends.",
     overview: "With over 70% of Indian internet traffic occurring on smartphones, certain business models require direct mobile app engagement. Nexnify engineers cross-platform mobile applications using React Native and Expo. By maintaining a single, clean TypeScript codebase that compiles to native iOS and Android binaries, we dramatically reduce development time and cost without compromising 60 FPS fluidity, push notifications, or native device features.",

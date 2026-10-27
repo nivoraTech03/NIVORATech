@@ -10,7 +10,7 @@ import { Icon } from "@/components/ui/Icon";
 import { LocalPartnerSection } from "@/components/sections/LocalPartnerSection";
 
 export const metadata: Metadata = {
-  title: "About Nexnify — Independent Web Development Studio in Delhi NCR",
+  title: "About Our Independent Web Development Studio in Delhi NCR",
   description:
     "Nexnify is an independent website development studio in Delhi NCR building modern, responsive websites and high-performance digital experiences with clean code for startups and businesses.",
   alternates: {

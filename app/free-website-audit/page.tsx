@@ -6,7 +6,7 @@ import { AuditForm } from '@/components/audit/AuditForm';
 import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
 
 export const metadata: Metadata = {
-  title: 'Free 15-Point Website Audit (Speed, WCAG 2.2 & SEO) | Nexnify',
+  title: 'Free 15-Point Technical Website Audit (Speed & SEO)',
   description:
     'Claim a free 15-point technical website audit by Nexnify engineers. We inspect Mobile PageSpeed, Core Web Vitals, WCAG 2.2 AA accessibility, and Schema.org markup.',
   alternates: {

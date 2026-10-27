@@ -5,7 +5,7 @@ import { Icon, type IconName } from '@/components/ui/Icon';
 import { WhatsAppCta } from '@/components/ui/WhatsAppCta';
 
 export const metadata: Metadata = {
-  title: 'Annual Website Care Plan & Maintenance | Nexnify',
+  title: 'Annual Website Care Plan & Maintenance Retainers',
   description:
     'Protect your investment with the Nexnify Annual Website Care Plan: managed hosting, proactive security updates, daily backups, and monthly speed & WCAG 2.2 accessibility scans.',
   alternates: {

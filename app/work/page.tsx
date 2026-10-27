@@ -10,7 +10,7 @@ import PageBanner from "@/components/layout/PageBanner";
 import { Icon } from "@/components/ui/Icon";
 
 export const metadata: Metadata = {
-  title: "Web Development Projects & Case Studies | Nexnify",
+  title: "Web Development Projects & Case Studies",
   description:
     "Explore Nexnify's production website projects — luxury hospitality portals, custom booking engines, and business websites built with Next.js, React, and WordPress.",
   alternates: {

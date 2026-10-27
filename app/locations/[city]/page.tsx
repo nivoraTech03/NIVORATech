@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
       canonical: `https://nexnify.in/locations/${city}`,
     },
     openGraph: {
-      title: location.title,
+      title: `${location.title} | Nexnify`,
       description: location.description,
       url: `https://nexnify.in/locations/${city}`,
       siteName: "Nexnify",
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
     },
     twitter: {
       card: "summary_large_image",
-      title: location.title,
+      title: `${location.title} | Nexnify`,
       description: location.description,
     },
   };

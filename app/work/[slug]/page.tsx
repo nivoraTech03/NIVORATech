@@ -30,7 +30,7 @@ export async function generateMetadata({
   const canonicalUrl = `https://nexnify.in/work/${project.slug}`;
 
   return {
-    title: `${project.title} — Case Study | Nexnify`,
+    title: `${project.title} — Case Study`,
     description: project.description,
     alternates: {
       canonical: canonicalUrl,

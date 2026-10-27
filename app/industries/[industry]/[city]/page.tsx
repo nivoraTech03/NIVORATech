@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: IndustryCityPageProps): Promi
     return { title: 'Page Not Found' };
   }
 
-  const title = `${industry.name} Website Development in ${city.name} | Nexnify`;
+  const title = `${industry.name} Website Development in ${city.name}`;
   const description = `Premier ${industry.name.toLowerCase()} website development company in ${city.name}, ${city.state}. Fast Next.js architecture, WCAG 2.2 AA accessibility, WhatsApp lead capture & Local SEO.`;
 
   return {
@@ -52,12 +52,17 @@ export async function generateMetadata({ params }: IndustryCityPageProps): Promi
       canonical: `https://nexnify.in/industries/${indKey}/${cityKey}`,
     },
     openGraph: {
-      title,
+      title: `${title} | Nexnify`,
       description,
       url: `https://nexnify.in/industries/${indKey}/${cityKey}`,
       siteName: 'Nexnify',
       locale: 'en_IN',
       type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} | Nexnify`,
+      description,
     },
   };
 }

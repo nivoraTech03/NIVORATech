@@ -72,6 +72,11 @@ export function Footer() {
                   Redesign &amp; Maintenance
                 </Link>
               </li>
+              <li>
+                <Link href="/services/mobile-apps" className="text-slate-300 transition-colors hover:text-white">
+                  Mobile App Development
+                </Link>
+              </li>
             </ul>
           </div>
 
