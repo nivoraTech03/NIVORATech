@@ -352,6 +352,22 @@ export default function NextVsWordPressGuide() {
             </div>
           </section>
 
+          {/* Related Architecture & Pricing Links */}
+          <div className="max-w-4xl mx-auto mb-16 p-6 rounded-2xl bg-slate-900/60 border border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
+            <span className="text-slate-300 font-medium">Explore Related Services &amp; Guides:</span>
+            <div className="flex flex-wrap items-center gap-4 text-indigo-400">
+              <Link href="/services/wordpress-development" className="hover:underline">
+                WordPress Development Services &rarr;
+              </Link>
+              <Link href="/services/nextjs-react-development" className="hover:underline">
+                Custom Next.js Development &rarr;
+              </Link>
+              <Link href="/blog/website-development-cost-india" className="hover:underline font-semibold text-emerald-400">
+                2026 Website Cost Guide &rarr;
+              </Link>
+            </div>
+          </div>
+
           {/* CTA Banner */}
           <section className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">

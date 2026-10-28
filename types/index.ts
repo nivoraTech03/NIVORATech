@@ -27,6 +27,8 @@ export interface Project {
   stats?: { label: string; value: string }[];
   clientType?: string;
   architecture?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 export interface ServiceItem {

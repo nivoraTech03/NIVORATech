@@ -114,9 +114,111 @@
   },
   "projects": [
     {
+      "id": "pactiva-energy",
+      "slug": "pactiva-energy",
+      "number": "01",
+      "title": "PACTIVA Energy — A Product-Focused Website Built for B2B Enquiries",
+      "category": "WordPress Development · WooCommerce · Custom Development",
+      "clientType": "Industrial Lithium Battery & ESS Manufacturer",
+      "architecture": "WordPress CMS, WooCommerce Product Engine, Custom PHP & MySQL Lead Storage, WhatsApp API Routing",
+      "metaTitle": "PACTIVA Energy Website Case Study | WordPress & WooCommerce",
+      "metaDescription": "Explore how Nexnify developed the PACTIVA Energy website using WordPress, WooCommerce, and custom code, with a product catalogue and WhatsApp-focused B2B enquiry workflow.",
+      "description": "We built a product-focused website for PACTIVA Energy, bringing its lithium battery catalogue, technical product information, and B2B enquiry journey together in one place. The website combines WordPress and WooCommerce with custom functionality for product discovery, quotation summaries, and WhatsApp enquiries.",
+      "technologies": [
+        "WordPress",
+        "WooCommerce",
+        "Custom PHP",
+        "MySQL",
+        "B2B Quotation Flow",
+        "WhatsApp Lead Engine",
+        "Responsive Design"
+      ],
+      "image": "/images/pactiva.webp",
+      "gallery": [
+        {
+          "src": "/images/pactiva_gallery/1_homepage.webp",
+          "caption": "PACTIVA Energy Desktop Homepage & Industrial Hardware Hero"
+        },
+        {
+          "src": "/images/pactiva_gallery/2_categories.webp",
+          "caption": "B2B Category Navigation with Electric Orange Active Filters"
+        },
+        {
+          "src": "/images/pactiva_gallery/3_hardware_products.webp",
+          "caption": "Featured Hardware Systems — Inverters, Monitors & LFP Battery Packs"
+        },
+        {
+          "src": "/images/pactiva_gallery/4_checkout_quotation.webp",
+          "caption": "B2B Quotation Summary Interface with Instant WhatsApp RFQ"
+        }
+      ],
+      "overview": "PACTIVA Energy (Pactiva Energy Tech India Pvt Ltd) is an industrial clean-tech and lithium battery manufacturing enterprise based in Sector 65, Noida. The company manufactures and supplies Grade-A lithium-ion and LiFePO4 cells, active balancing Smart BMS modules (DALY, JK), solar energy storage systems (ESS), and electric vehicle (EV) battery packs to commercial integrators and industrial clients across India. Nexnify engineered a focused digital platform combining WordPress content flexibility with a customized WooCommerce catalogue, enabling business customers to explore technical battery specifications, compile quotation lists, and initiate direct sales consultations without navigating a cumbersome consumer checkout.",
+      "challenge": "Presenting a broad and varied technical product catalogue—spanning raw 3.2V 280Ah LiFePO4 prismatic cells, active balancers, high-current DC fuses, and multi-protocol CAN/RS485 Smart BMS units—presented distinct structural challenges. Standard retail e-commerce checkouts are ill-suited for industrial B2B transactions, where buyers require bulk quotation terms, custom terminal arrangements, and engineering review rather than credit card payment gateways. The platform needed to organize complex battery products into logical categories, display critical specifications (voltage, capacity, discharge C-ratings, communication protocols) with absolute clarity, and provide a frictionless bridge between technical discovery and direct WhatsApp quotation enquiries.",
+      "approach": "We structured the platform using WordPress and WooCommerce, customized specifically around a B2B enquiry workflow rather than a conventional transactional store. Custom PHP modules were built to transform the shopping cart into an itemized quotation summary interface, while maintaining a secure database-backed log of customer requests on the server. To bridge product exploration with immediate commercial conversations, we engineered preformatted WhatsApp deep-links that automatically append product SKUs, selected quantities, and user requirements, delivering qualified leads directly to the PACTIVA technical sales desk.",
+      "whatWasBuilt": [
+        "Dynamic WooCommerce catalogue managing LiFePO4 cells, Smart BMS hardware, and solar ESS systems",
+        "B2B quotation summary interface replacing consumer checkout with formal quotation requests",
+        "Preformatted WhatsApp inquiry integration routing product SKUs and quantities to sales engineers",
+        "Database-backed custom lead capture to record enquiry submissions securely in MySQL",
+        "Detailed technical specification tables showcasing cell voltage, discharge ratings, and BMS communication protocols",
+        "Mobile-first responsive architecture tested for desktop, tablet, and smartphone field browsing"
+      ],
+      "features": [
+        {
+          "title": "Dynamic WooCommerce Product Catalogue",
+          "tag": "Product CMS",
+          "description": "Products and categories are structured and managed dynamically through WooCommerce. This allows the PACTIVA team to update stock status, specifications, tier pricing, and datasheets from an intuitive CMS backend without touching code."
+        },
+        {
+          "title": "Technical Battery & BMS Specification Displays",
+          "tag": "Specification Engine",
+          "description": "Clear, structured displays for technical parameters such as nominal voltage (3.2V / 3.7V / 48V / 51.2V), capacity (Ah), continuous discharge rates, cycle life, and communication protocols (CAN, RS485, UART) for engineering validation."
+        },
+        {
+          "title": "Cart-Based Quotation Summary Workflow",
+          "tag": "B2B Quotation",
+          "description": "Selected battery cells, BMS units, and accessories are organized into a clear quotation summary table. Buyers can review line items, adjust batch quantities, and generate an itemized inquiry list tailored for commercial procurement."
+        },
+        {
+          "title": "Direct WhatsApp Lead Generation with Product Context",
+          "tag": "WhatsApp Integration",
+          "description": "One-click WhatsApp routing automatically pre-populates the chat with exact product names, SKUs, and inquiry details, eliminating back-and-forth communication and accelerating technical sales discussions."
+        },
+        {
+          "title": "Database-Backed Lead Capture & Verification",
+          "tag": "Lead Storage",
+          "description": "Every quotation request and technical enquiry is mirrored into a secure database record on the server, ensuring zero lead loss and creating a reliable audit log for the sales engineering team."
+        },
+        {
+          "title": "Responsive Multi-Device Layout",
+          "tag": "Mobile Responsive",
+          "description": "Engineered with responsive breakpoints ensuring that complex specification tables, category filters, and enquiry CTAs render effortlessly on smartphones, tablets, and desktop workstations."
+        }
+      ],
+      "stats": [
+        {
+          "label": "Platform",
+          "value": "WordPress + WooCommerce"
+        },
+        {
+          "label": "Lead Workflow",
+          "value": "WhatsApp & MySQL"
+        },
+        {
+          "label": "Catalogue",
+          "value": "19+ B2B Hardware SKUs"
+        },
+        {
+          "label": "Enquiry Route",
+          "value": "Instant Direct RFQ"
+        }
+      ],
+      "liveUrl": "https://pactivaenergy.com/"
+    },
+    {
       "id": "auralux-pg",
       "slug": "auralux-pg",
-      "number": "01",
+      "number": "02",
       "title": "AURA LUXE SUITES — Luxury Executive PG & Serviced Residence",
       "category": "Next.js & React Luxury Coliving Portal",
       "clientType": "Luxury Serviced Residence & PG",
@@ -186,7 +288,7 @@
     {
       "id": "aurabridal-studio",
       "slug": "aurabridal-studio",
-      "number": "02",
+      "number": "03",
       "title": "Aura Bridal Studio — Luxury Editorial Bridal Makeup Atelier",
       "category": "Next.js 15 Luxury Bridal & Beauty Platform",
       "clientType": "Luxury Editorial Bridal Studio & Atelier",
@@ -303,7 +405,7 @@
     {
       "id": "skyodeals",
       "slug": "skyodeals",
-      "number": "03",
+      "number": "04",
       "title": "SkyOdeals — Flight Booking & Travel Portal",
       "category": "PHP Web Application & Booking Platform",
       "clientType": "Travel & Tourism Agency",
@@ -352,7 +454,7 @@
     {
       "id": "hitias-academy",
       "slug": "hitias-academy",
-      "number": "04",
+      "number": "05",
       "title": "HIT IAS Academy — UPSC & State PCS Portal",
       "category": "WordPress & Elementor Educational Platform",
       "clientType": "Civil Services Coaching Institute",
@@ -401,7 +503,7 @@
     {
       "id": "xchat",
       "slug": "xchat",
-      "number": "05",
+      "number": "06",
       "title": "XChat — Real-time Messaging",
       "category": "React Native Mobile Application",
       "clientType": "Independent Mobile Project",
@@ -776,7 +878,7 @@
         "companyUrl": "http://auraluxpg.vercel.app/",
         "avatar": "AL",
         "avatarBg": "#D4AF37",
-        "rating": 5.0,
+        "rating": 5,
         "quote": "For an executive residence on Golf Course Road, standard real estate templates just don't cut it — corporate tenants expect luxury. Nexnify nailed the dark-gold aesthetic and built direct WhatsApp room-tour booking directly into the hero experience. Within 3 weeks of going live, we had corporate inquiries pouring in from DLF CyberCity executives. Solid execution.",
         "projectSlug": "auralux-pg",
         "projectTitle": "AURA LUXE SUITES — Golf Course Road, Gurugram",

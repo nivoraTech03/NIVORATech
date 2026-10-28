@@ -167,12 +167,17 @@ export function ProjectsShowcase({ limit }: { limit?: number }) {
                           <span className="font-mono text-[11px] sm:text-xs font-bold text-indigo-500 tracking-wider px-2.5 py-0.5 rounded-md bg-indigo-500/10 border border-indigo-500/20">
                             PROJECT {project.number}
                           </span>
-                          {(project.id === "auralux-pg" || project.id === "aurabridal-studio") && (
+                          {project.id === "pactiva-energy" ? (
+                            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-orange-500/15 text-orange-400 border border-orange-500/30 shadow-[0_0_10px_rgba(249,115,22,0.25)] animate-pulse">
+                              <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+                              <span>LATEST DEPLOYED FOR HAPPY CLIENT</span>
+                            </span>
+                          ) : (project.id === "auralux-pg" || project.id === "aurabridal-studio") ? (
                             <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-emerald-500/15 text-emerald-500 border border-emerald-500/30">
                               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                               <span>FEATURED</span>
                             </span>
-                          )}
+                          ) : null}
                           {project.clientType && (
                             <span className="text-[11px] font-medium text-[var(--text-secondary)] border border-[var(--border-strong)] px-2.5 py-0.5 rounded-md bg-[var(--bg-surface)]">
                               {project.clientType}

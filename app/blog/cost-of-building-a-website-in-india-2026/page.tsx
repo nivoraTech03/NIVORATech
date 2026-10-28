@@ -256,6 +256,16 @@ export default function BlogCostGuide() {
             </div>
           </section>
 
+          {/* Cross-Link to Deep-Dive Pricing Guide */}
+          <div className="max-w-3xl mx-auto text-center mb-16 p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+            <p className="text-sm text-slate-300">
+              Looking for a comprehensive technical breakdown comparing Static Next.js, WordPress builds, and E-Commerce stores? Read our complete{" "}
+              <Link href="/blog/website-development-cost-india" className="text-indigo-400 font-semibold hover:underline">
+                Website Development Cost in India (2026 Pricing Guide) &rarr;
+              </Link>
+            </p>
+          </div>
+
           {/* CTA Banner */}
           <section className="max-w-4xl mx-auto">
             <div className="bg-gradient-to-r from-indigo-600 to-blue-600 rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">

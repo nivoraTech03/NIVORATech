@@ -93,7 +93,7 @@ export default async function IndustryCityPage({ params }: IndustryCityPageProps
     description: `Custom website engineering for ${industry.name.toLowerCase()} businesses in ${city.name}, ${city.state}.`,
     url: `https://nexnify.in/industries/${indKey}/${cityKey}`,
     telephone: '+919575450177',
-    priceRange: 'Starting from ₹[PLACEHOLDER]',
+    priceRange: `Starting from ${industry.startingPrice}`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: city.name,
@@ -282,26 +282,26 @@ export default async function IndustryCityPage({ params }: IndustryCityPageProps
                 Transparent &bull; No Hidden Agency Margins
               </span>
               <h2 className="font-display text-2xl sm:text-3xl font-extrabold mb-3">
-                Starting from ₹[PLACEHOLDER] for {industry.name} Solutions
+                Starting from {industry.startingPrice} for {industry.name} Solutions
               </h2>
               <p className="text-sm sm:text-base text-indigo-200/90 leading-relaxed mb-6">
                 Unlike competitors who hide prices behind endless sales calls, we provide transparent milestone-based scopes with 100% source code ownership and zero monthly lock-in.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button
+              <div className="flex flex-wrap items-center gap-4">
+                <Link
                   href="/pricing"
-                  className="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-indigo-600/30"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-fuchsia-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-indigo-600/30 transition-all duration-200 hover:brightness-110 hover:-translate-y-0.5 active:scale-[0.98]"
                 >
                   View All 3 Package Scopes &rarr;
-                </Button>
+                </Link>
                 <WhatsAppCta
                   href={`https://wa.me/919575450177?text=Hi%20Nexnify%20Tech,%20I%20would%20like%20a%20quote%20for%20${encodeURIComponent(industry.name)}%20in%20${encodeURIComponent(city.name)}.`}
                   ctaLocation={`industry_${indKey}_${cityKey}_pricing_box`}
                   serviceCategory={indKey}
-                  variant="outline"
-                  className="border-indigo-400 text-white hover:bg-indigo-500/20 font-semibold"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-indigo-400/50 bg-indigo-950/40 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-indigo-500/20 hover:border-indigo-400 active:scale-[0.98]"
                 >
-                  Inquire on WhatsApp
+                  <Icon name="message" size={16} className="text-emerald-400" />
+                  <span>Inquire on WhatsApp</span>
                 </WhatsAppCta>
               </div>
             </div>

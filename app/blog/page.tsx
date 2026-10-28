@@ -76,12 +76,12 @@ export default function BlogHubPage() {
     },
     {
       slug: "website-development-cost-india",
-      title: "Website Development Cost in India: 2026 Transparent Pricing Guide",
+      title: "Website Development Cost in India: A Practical Pricing Guide (2026)",
       description:
-        "Honest breakdown of website development cost in India for 2026. Compare Static websites, Dynamic Next.js web applications, and E-commerce stores with transparent pricing tiers.",
+        "Honest, comprehensive breakdown of website development cost in India for 2026. Compare static websites from ₹4,999, dynamic web apps, WordPress builds, and e-commerce stores.",
       category: "Pricing & Budgeting",
-      readTime: "12 min read",
-      date: "February 2026",
+      readTime: "14 min read",
+      date: "Updated October 2026",
       featured: true,
     },
     {

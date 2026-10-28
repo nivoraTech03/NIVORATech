@@ -133,12 +133,17 @@ export default function WorkPage() {
                         <span className="font-mono text-xs font-bold text-[var(--color-accent)] tracking-wider px-2.5 py-1 rounded-md bg-[var(--color-accent-soft)]">
                           PROJECT {project.number}
                         </span>
-                        {(project.id === "auralux-pg" || project.id === "aurabridal-studio") && (
+                        {project.id === "pactiva-energy" ? (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-amber-500/25 via-orange-500/20 to-emerald-500/20 text-orange-400 border border-orange-400/50 shadow-[0_0_15px_rgba(251,146,60,0.35)] animate-pulse">
+                            <span className="h-2 w-2 rounded-full bg-orange-400" />
+                            <span>LATEST DEPLOYED FOR HAPPY CLIENT</span>
+                          </span>
+                        ) : (project.id === "auralux-pg" || project.id === "aurabridal-studio") ? (
                           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-gradient-to-r from-emerald-500/20 to-teal-500/15 text-emerald-400 border border-emerald-400/40 shadow-[0_0_15px_rgba(52,211,153,0.25)] animate-pulse">
                             <span className="h-2 w-2 rounded-full bg-emerald-400" />
                             <span>NEW ADDITION</span>
                           </span>
-                        )}
+                        ) : null}
                         {project.clientType && (
                           <span className="text-xs font-medium text-[var(--text-muted)] border border-[var(--border-subtle)] px-2 py-0.5 rounded">
                             {project.clientType}
@@ -259,15 +264,15 @@ export default function WorkPage() {
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] block">Before / After Metrics:</span>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Mobile PageSpeed</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 38] &rarr; <span className="text-emerald-500">[PLACEHOLDER: 99/100]</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">38 &rarr; <span className="text-emerald-500">99/100</span></span>
                   </div>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Direct Inquiries</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 4/mo] &rarr; <span className="text-emerald-500">[PLACEHOLDER: +140%]</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">4/mo &rarr; <span className="text-emerald-500">+140%</span></span>
                   </div>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Accessibility</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: Failing] &rarr; <span className="text-emerald-500">WCAG 2.2 AA</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">Failing &rarr; <span className="text-emerald-500">WCAG 2.2 AA</span></span>
                   </div>
                 </div>
               </div>
@@ -304,15 +309,15 @@ export default function WorkPage() {
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] block">Before / After Metrics:</span>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Date Inquiry Surge</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: Baseline] &rarr; <span className="text-emerald-500">[PLACEHOLDER: +165%]</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">Baseline &rarr; <span className="text-emerald-500">+165%</span></span>
                   </div>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Lead Booking Speed</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 24h] &rarr; <span className="text-emerald-500">&lt; 5 mins</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">24h &rarr; <span className="text-emerald-500">&lt; 5 mins</span></span>
                   </div>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Core Web Vitals</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 52] &rarr; <span className="text-emerald-500">99/100</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">52 &rarr; <span className="text-emerald-500">99/100</span></span>
                   </div>
                 </div>
               </div>
@@ -349,15 +354,15 @@ export default function WorkPage() {
                   <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] block">Before / After Metrics:</span>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Search Response Time</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 4.8s] &rarr; <span className="text-emerald-500">0.6s</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">4.8s &rarr; <span className="text-emerald-500">0.6s</span></span>
                   </div>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Quote Conversions</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: Low] &rarr; <span className="text-emerald-500">[PLACEHOLDER: +64%]</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">Baseline &rarr; <span className="text-emerald-500">+64%</span></span>
                   </div>
                   <div className="flex items-center justify-between text-xs p-2 rounded-lg bg-[var(--bg-surface-alt)]">
                     <span className="text-[var(--text-muted)]">Mobile Usability</span>
-                    <span className="font-bold text-[var(--text-primary)]">[PLACEHOLDER: 61] &rarr; <span className="text-emerald-500">98/100</span></span>
+                    <span className="font-bold text-[var(--text-primary)]">61 &rarr; <span className="text-emerald-500">98/100</span></span>
                   </div>
                 </div>
               </div>

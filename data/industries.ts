@@ -4,6 +4,7 @@ export interface IndustryInfo {
   slug: string;
   name: string;
   badge: string;
+  startingPrice: string;
   heroHeadline: string;
   heroSubheadline: string;
   painPoints: { title: string; desc: string }[];
@@ -58,6 +59,7 @@ export const industries: Record<string, IndustryInfo> = {
     slug: 'healthcare',
     name: 'Clinic & Healthcare',
     badge: 'Medical & Healthcare Web Engineering',
+    startingPrice: '₹4,999',
     heroHeadline: 'Healthcare & Clinic Website Development in',
     heroSubheadline:
       'High-speed, WCAG-accessible patient portals and clinic websites built for doctors, hospitals, and diagnostic labs to maximize local OPD bookings and patient trust.',
@@ -119,6 +121,7 @@ export const industries: Record<string, IndustryInfo> = {
     slug: 'real-estate',
     name: 'Real Estate & Builders',
     badge: 'Real Estate Digital Solutions',
+    startingPrice: '₹13,500',
     heroHeadline: 'Real Estate & Builder Website Development in',
     heroSubheadline:
       'High-converting property launch microsites and luxury developer portals built for instant brochure downloads, 3D floor plan showcases, and verified site visit leads.',
@@ -180,6 +183,7 @@ export const industries: Record<string, IndustryInfo> = {
     slug: 'd2c',
     name: 'D2C Brands & Retail',
     badge: 'D2C & Retail E-Commerce Engineering',
+    startingPrice: '₹49,999',
     heroHeadline: 'D2C Brand & E-Commerce Website Development in',
     heroSubheadline:
       'Custom headless storefronts and fast WooCommerce/Shopify alternatives engineered for 1-click UPI checkout, zero monthly revenue fees, and sub-second catalog speeds.',
