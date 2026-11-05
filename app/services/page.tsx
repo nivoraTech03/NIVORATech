@@ -114,11 +114,11 @@ export default function ServicesPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesListSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesListSchema).replace(/</g, "\\u003c") }}
       />
       <PageBanner
         badge="TAILORED WEB SOLUTIONS"

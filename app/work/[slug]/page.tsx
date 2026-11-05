@@ -111,11 +111,11 @@ export default async function ProjectDetailPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema).replace(/</g, "\\u003c") }}
       />
       {/* Dark Studio Header Banner */}
       <PageBanner

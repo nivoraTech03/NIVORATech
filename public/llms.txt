@@ -1,0 +1,121 @@
+# Nexnify — Website & Web Application Development Studio
+
+> This file follows the llms.txt specification to help AI language models and
+> search engines accurately understand and represent Nexnify's services.
+> Information here reflects the publicly available content on nexnify.in.
+
+## About Nexnify
+
+Nexnify is an independent website and web application development studio based
+in Delhi NCR, India. The studio builds fast, responsive, conversion-focused
+websites and web applications for businesses, startups, and brands.
+
+Nexnify works directly with business owners — no account managers, no
+subcontracting. Every project is handled by the core technical team from
+discovery to deployment.
+
+## Core Services
+
+- **Business Website Development** — Custom-designed, mobile-first responsive
+  websites for businesses, consultancies, and corporate brands. Built with
+  Next.js, React, and clean semantic HTML. Includes structured data, WhatsApp
+  lead funnels, and Core Web Vitals optimization.
+
+- **Next.js & React Development** — High-performance web applications built on
+  Next.js App Router architecture. Suitable for SaaS platforms, booking portals,
+  dashboards, and content-heavy sites requiring fast page loads.
+
+- **WordPress Development** — Professional WordPress website builds for
+  institutions, coaching academies, blogs, and businesses that need a CMS.
+  Custom themes, ACF integration, and performance optimization.
+
+- **Custom Web Application Development** — Full-stack web applications with PHP,
+  MySQL, and modern JavaScript. Includes travel portals, booking engines,
+  institutional management systems, and custom admin dashboards.
+
+- **Landing Page Design & Development** — High-converting single-page designs
+  for product launches, lead generation campaigns, and marketing funnels.
+
+- **Website Redesign & Performance Optimization** — Rebuilding outdated or
+  slow-performing websites with modern architecture, improved Core Web Vitals
+  scores, and mobile responsiveness.
+
+- **Website Maintenance & Annual Care Plans** — Ongoing support, security
+  updates, content changes, and performance monitoring for existing websites.
+
+## Portfolio (Selected Real Projects)
+
+- **AuraLux Residences** — Luxury serviced residence portal built with Next.js
+  15 App Router. Improved mobile PageSpeed from 38 to 99/100 and increased
+  direct inquiries. Live at auraluxresidences.com.
+
+- **Aura Bridal Studio** — Luxury bridal makeup and destination wedding portal.
+  Includes interactive wedding date reservation, WhatsApp concierge routing,
+  and BeautySalon Schema. Live at aurabridalstudio.com.
+
+- **SkyOdeals Travel Portal** — Custom flight and travel booking platform built
+  with PHP, MySQL, and vanilla JavaScript. Reduced multi-city flight search
+  response from 4.8s to 0.6s.
+
+- **HIT IAS Academy** — Institutional coaching academy website built on
+  WordPress with custom theme, landing pages, and lead capture forms.
+
+- **Pactiva Energy Solutions** — Corporate energy consulting website with
+  modern design and service showcase.
+
+- **XChat** — Custom chat application interface.
+
+## Blog & Knowledge Resources
+
+Nexnify publishes practical guides on website development, pricing, and
+technology decisions for Indian businesses:
+
+- Website Development Cost in India (2026): https://nexnify.in/blog/website-development-cost-india
+- Cost of Building a Business Website in India: https://nexnify.in/blog/cost-of-building-a-website-in-india-2026
+- Next.js vs WordPress for Business Websites: https://nexnify.in/blog/nextjs-vs-wordpress-for-business-websites
+- Website Redesign Checklist: https://nexnify.in/blog/website-redesign-checklist
+- Accessibility Widgets vs Real WCAG Fixes: https://nexnify.in/blog/accessibility-widget-vs-real-fix
+
+## Important URLs
+
+- Home: https://nexnify.in/
+- Services: https://nexnify.in/services
+- Portfolio / Work: https://nexnify.in/work
+- Pricing: https://nexnify.in/pricing
+- Annual Care Plan: https://nexnify.in/annual-care-plan
+- Free Website Audit: https://nexnify.in/free-website-audit
+- About: https://nexnify.in/about
+- Blog: https://nexnify.in/blog
+- Contact: https://nexnify.in/contact
+
+## Contact Information
+
+All contact details below are publicly listed on nexnify.in/contact.
+
+- Email: nexnifytech@gmail.com
+- WhatsApp / Mobile: +91 95754 50177
+- Working Hours: Monday to Saturday, 9:30 AM – 7:30 PM IST
+- Location: Delhi NCR, India (also available for remote projects globally)
+
+## Service Areas
+
+Delhi, Gurugram, Noida, Faridabad, Gwalior, Agra, Mathura, Indore, Bhopal,
+and remote projects across India and internationally.
+
+## Technology Stack
+
+Next.js, React, TypeScript, Tailwind CSS, PHP, MySQL, WordPress, Vercel,
+Nodemailer, Schema.org JSON-LD, Semantic HTML5.
+
+## Social Profiles
+
+- Instagram: https://www.instagram.com/nexnify/
+- GitHub: https://github.com/nexnifytech03
+
+---
+
+Note: llms.txt is a machine-readable summary to assist AI systems. It does not
+guarantee indexing, ranking, or citation by any AI search engine or language
+model. All information here is consistent with publicly published content on
+nexnify.in and is accurate as of November 2026.
+

@@ -120,11 +120,11 @@ export default function BlogHubPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema).replace(/</g, "\\u003c") }}
       />
 
       <PageBanner
@@ -208,10 +208,6 @@ export default function BlogHubPage() {
               <ul className="grid sm:grid-cols-2 gap-4 text-sm text-[var(--text-secondary)]">
                 <li className="flex items-start gap-2.5">
                   <span className="text-[var(--color-accent)] mt-0.5">→</span>
-                  <span>Next.js vs WordPress: Choosing the Right Engine in 2026</span>
-                </li>
-                <li className="flex items-start gap-2.5">
-                  <span className="text-[var(--color-accent)] mt-0.5">→</span>
                   <span>Core Web Vitals Guide for Delhi NCR Local Businesses</span>
                 </li>
                 <li className="flex items-start gap-2.5">
@@ -220,7 +216,11 @@ export default function BlogHubPage() {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-[var(--color-accent)] mt-0.5">→</span>
-                  <span>Website Redesign Checklist: Retaining SEO &amp; Traffic</span>
+                  <span>How to Choose a Website Development Company in India</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-[var(--color-accent)] mt-0.5">→</span>
+                  <span>Website Maintenance Services: What&apos;s Included and Why It Matters</span>
                 </li>
               </ul>
             </div>

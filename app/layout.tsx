@@ -113,6 +113,8 @@ export const metadata: Metadata = {
     description:
       "Nexnify builds fast, responsive, modern, and business-focused websites for startups and brands across Delhi NCR, Gurugram, and Noida. Free consultation.",
     images: ["/images/auralux.webp"],
+    creator: "@nexnify",
+    site: "@nexnify",
   },
 
   icons: {
@@ -136,7 +138,12 @@ const jsonLdSchema = {
       name: "Nexnify",
       alternateName: "Nexnify Web Development",
       url: "https://nexnify.in/",
-      logo: "https://nexnify.in/icon.png",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://nexnify.in/icon.png",
+        width: 192,
+        height: 192,
+      },
       image: "https://nexnify.in/icon.png",
       description:
         "Nexnify is an independent website development studio in Delhi NCR building fast, responsive, and business-focused websites for startups and local businesses.",
@@ -163,7 +170,7 @@ const jsonLdSchema = {
       },
       sameAs: [
         "https://www.instagram.com/nexnify/",
-        "https://github.com/nexnifytech03"
+        "https://github.com/nexnifytech03",
       ],
       knowsAbout: [
         "Website Development",
@@ -187,6 +194,14 @@ const jsonLdSchema = {
         "@id": "https://nexnify.in/#organization",
       },
       inLanguage: "en-IN",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://nexnify.in/?q={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
     },
   ],
 };
@@ -210,7 +225,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLdSchema),
+            __html: JSON.stringify(jsonLdSchema).replace(/</g, "\\u003c"),
           }}
         />
       </head>

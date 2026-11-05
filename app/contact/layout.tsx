@@ -52,6 +52,22 @@ const breadcrumbSchema = {
   ],
 };
 
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://nexnify.in/contact#webpage",
+  url: "https://nexnify.in/contact",
+  name: "Contact Nexnify — Website Development Consultation",
+  description:
+    "Get in touch with Nexnify to discuss your website or web application development project. Direct technical consultation with no sales intermediaries.",
+  isPartOf: {
+    "@id": "https://nexnify.in/#website",
+  },
+  about: {
+    "@id": "https://nexnify.in/#organization",
+  },
+};
+
 export default function ContactLayout({
   children,
 }: {
@@ -61,7 +77,11 @@ export default function ContactLayout({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema).replace(/</g, "\\u003c") }}
       />
       {children}
     </>

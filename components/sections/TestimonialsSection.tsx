@@ -1,11 +1,25 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useSyncExternalStore } from "react";
 import Link from "next/link";
 import siteContent from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Icon } from "@/components/ui/Icon";
+
+function subscribeMediaQuery(callback: () => void) {
+  const media = window.matchMedia("(min-width: 768px)");
+  media.addEventListener("change", callback);
+  return () => media.removeEventListener("change", callback);
+}
+
+function getSnapshot() {
+  return window.matchMedia("(min-width: 768px)").matches;
+}
+
+function getServerSnapshot() {
+  return false;
+}
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -56,27 +70,14 @@ export function TestimonialsSection() {
   const items = testimonials.items;
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(false);
+  const isDesktop = useSyncExternalStore(subscribeMediaQuery, getSnapshot, getServerSnapshot);
   const [isPaused, setIsPaused] = useState(false);
 
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // Responsive items-per-view tracking
-  useEffect(() => {
-    const media = window.matchMedia("(min-width: 768px)");
-    setIsDesktop(media.matches);
-
-    const handler = (e: MediaQueryListEvent) => {
-      setIsDesktop(e.matches);
-      setCurrentIndex((prev) => Math.min(prev, e.matches ? Math.max(0, items.length - 2) : items.length - 1));
-    };
-
-    media.addEventListener("change", handler);
-    return () => media.removeEventListener("change", handler);
-  }, [items.length]);
-
   const maxIndex = isDesktop ? Math.max(0, items.length - 2) : items.length - 1;
+  const activeIndex = Math.min(currentIndex, maxIndex);
 
   const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
@@ -158,7 +159,7 @@ export function TestimonialsSection() {
             {/* Step Counter */}
             <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] font-mono text-xs text-[var(--text-secondary)] shadow-xs">
               <span className="text-[var(--color-accent)] font-bold">
-                {String(currentIndex + 1).padStart(2, "0")}
+                {String(activeIndex + 1).padStart(2, "0")}
               </span>
               <span className="text-[var(--text-muted)]">/</span>
               <span>{String(totalSteps).padStart(2, "0")}</span>
@@ -190,8 +191,8 @@ export function TestimonialsSection() {
         <div className="mt-8 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
           {items.map((item, idx) => {
             const isSelected = isDesktop
-              ? currentIndex === idx || (idx > 0 && currentIndex === idx - 1)
-              : currentIndex === idx;
+              ? activeIndex === idx || (idx > 0 && activeIndex === idx - 1)
+              : activeIndex === idx;
 
             return (
               <button
@@ -223,7 +224,7 @@ export function TestimonialsSection() {
           <div
             className="flex transition-transform duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] -mx-3"
             style={{
-              transform: `translateX(-${currentIndex * (isDesktop ? 50 : 100)}%)`,
+              transform: `translateX(-${activeIndex * (isDesktop ? 50 : 100)}%)`,
             }}
           >
             {items.map((item) => (
@@ -337,7 +338,7 @@ export function TestimonialsSection() {
                 onClick={() => goToSlide(idx)}
                 type="button"
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${currentIndex === idx
+                className={`h-2 transition-all duration-300 rounded-full cursor-pointer ${activeIndex === idx
                     ? "w-8 bg-[var(--color-accent)]"
                     : "w-2 bg-[var(--border-strong)]/40 hover:bg-[var(--border-strong)]"
                   }`}
